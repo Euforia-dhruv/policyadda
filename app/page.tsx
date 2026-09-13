@@ -1,29 +1,31 @@
-import Nav from "@/components/Nav";
+import { getCopy } from "@/lib/i18n";
+import { getLocale } from "@/lib/locale";
+import { data } from "@/lib/data";
 import Hero from "@/components/Hero";
 import Ticker from "@/components/Ticker";
-import Beats from "@/components/Beats";
-import How from "@/components/How";
-import Why from "@/components/Why";
-import Faq from "@/components/Faq";
-import Cta from "@/components/Cta";
-import Footer from "@/components/Footer";
+import TrustBand from "@/components/TrustBand";
+import CategoriesSection from "@/components/CategoriesSection";
+import HowSection from "@/components/HowSection";
+import FeaturedSection from "@/components/FeaturedSection";
+import WhySection from "@/components/WhySection";
+import FaqSection from "@/components/FaqSection";
+import CtaBand from "@/components/CtaBand";
 
-export default function Page() {
+export default function HomePage() {
+  const locale = getLocale();
+  const copy = getCopy(locale);
+
   return (
     <>
-      <div className="grain" aria-hidden="true" />
-      <div className="vignette" aria-hidden="true" />
-      <Nav />
-      <main>
-        <Hero />
-        <Ticker />
-        <Beats />
-        <How />
-        <Why />
-        <Faq />
-        <Cta />
-      </main>
-      <Footer />
+      <Hero copy={copy} locale={locale} />
+      <Ticker />
+      <TrustBand copy={copy} />
+      <CategoriesSection categories={data.categories()} copy={copy} locale={locale} />
+      <HowSection copy={copy} />
+      <FeaturedSection policies={data.featuredPolicies()} copy={copy} locale={locale} />
+      <WhySection copy={copy} />
+      <FaqSection copy={copy} locale={locale} />
+      <CtaBand copy={copy} />
     </>
   );
 }

@@ -1,14 +1,12 @@
 const ITEMS = [
-  "Health insurance",
-  "Motor insurance",
-  "Term life insurance",
-  "Home insurance",
-  "Travel insurance",
-  "Claim deadlines",
-  "Exclusions decoded",
-  "Rights you didn't know you had",
-  "Fine print, in plain language",
-  "Same-day claim help",
+  "Motor Insurance",
+  "Health Insurance",
+  "Business / SME Insurance",
+  "Explain me my policy",
+  "What am I covered for?",
+  "Claim support",
+  "Plain-language, always",
+  "Transparent & supportive",
 ];
 
 export default function Ticker() {

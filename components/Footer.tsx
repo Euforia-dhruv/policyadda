@@ -1,13 +1,68 @@
-export default function Footer() {
+import type { Locale } from "@/lib/types";
+import type { SiteConfig } from "@/lib/types";
+import type { SiteCopy } from "@/content/copy";
+import { pick } from "@/lib/i18n";
+import { getActiveCategories } from "@/content/categories";
+
+export default function Footer({
+  copy,
+  locale,
+  config,
+}: {
+  copy: SiteCopy;
+  locale: Locale;
+  config: SiteConfig;
+}) {
   return (
     <footer className="footer">
-      <div className="wrap footer-inner">
-        <p>© {new Date().getFullYear()} Policy ADDA. Your policy, made clear.</p>
-        <div className="footer-links">
-          <a href="#story">Story</a>
-          <a href="#how">How it works</a>
-          <a href="#why">Why us</a>
-          <a href="#faq">FAQ</a>
+      <div className="wrap">
+        <div className="footer-grid">
+          <div>
+            <div className="brand f-brand">
+              <div className="brand-mark">P</div>
+              PolicyAdda
+            </div>
+            <p className="f-note">
+              {config.slogan[locale]} — {copy.footer.tagline}
+            </p>
+            <p className="f-note" style={{ marginTop: 12 }}>
+              {config.contact.address ? pick(locale, config.contact.address) : ""} · {config.contact.phone.display}
+            </p>
+          </div>
+
+          <div>
+            <h4>{copy.footer.explore}</h4>
+            <ul>
+              <li><a href="/policies">{copy.nav.categories}</a></li>
+              <li><a href="/how-it-works">{copy.nav.how}</a></li>
+              <li><a href="/about">{copy.nav.about}</a></li>
+              <li><a href="/track">Track application</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>{copy.footer.categoriesLabel}</h4>
+            <ul>
+              {getActiveCategories().map((c) => (
+                <li key={c.id}><a href={`/policies/${c.slug}`}>{pick(locale, c.name)}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4>{copy.footer.legal}</h4>
+            <ul>
+              <li><a href="/privacy">{copy.footer.privacy}</a></li>
+              <li><a href="/terms">{copy.footer.terms}</a></li>
+              <li><a href="/disclaimer">{copy.footer.disclaimer}</a></li>
+              <li><a href="/contact">{copy.footer.contact}</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} {config.brand}. {copy.footer.rights}</span>
+          <span>{config.verificationNote}</span>
         </div>
       </div>
     </footer>

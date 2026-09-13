@@ -41,5 +41,11 @@ next-env.d.ts
 /video-gen/output
 /video-gen/**/__pycache__
 
+# local dev data
+.data
+
 # local screenshots
 /tmp
+
+# playwright mcp scratch
+.playwright-mcp

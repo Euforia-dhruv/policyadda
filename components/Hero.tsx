@@ -1,65 +1,56 @@
-import Reveal from "./Reveal";
+import type { Locale } from "@/lib/types";
+import type { SiteCopy } from "@/content/copy";
+import { pick } from "@/lib/i18n";
+import { siteConfig } from "@/content/config";
 
-export default function Hero() {
+export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale }) {
+  const c = siteConfig.contact;
   return (
     <section className="hero">
       <div className="hero-bg" aria-hidden="true">
-        <div className="hero-lamp" />
-        <div className="hero-lamp right" />
-        <div className="hero-brake" />
-        <div className="hero-dashes" />
-        <div className="hero-road" />
+        <div className="hero-grid" />
+        <div className="hero-glow" />
+        <div className="hero-glow right" />
       </div>
 
-      <div className="wrap hero-inner">
-        <Reveal>
-          <p className="eyebrow">AI legal clarity for policyholders</p>
-        </Reveal>
-        <Reveal delay={90}>
+      <div className="wrap">
+        <div className="hero-inner">
+          <p className="eyebrow">{copy.hero.eyebrow}</p>
           <h1>
-            Your policy is complicated.
-            <br />
-            <span className="grad">We make it obvious.</span>
+            <span className="block">{copy.hero.titleA}</span>
+            <span className="block grad">{copy.hero.titleB}</span>
           </h1>
-        </Reveal>
-        <Reveal delay={180}>
-          <p className="hero-sub">
-            Policy ADDA reads your insurance policies and explains every
-            clause, exclusion, and deadline in plain language. Ask anything
-            about your coverage, claims, or rights — get clear answers in
-            minutes, not phone menus.
-          </p>
-        </Reveal>
-        <Reveal delay={260}>
+          <p className="hero-sub">{copy.hero.sub}</p>
           <div className="hero-actions">
-            <a href="#cta" className="btn btn-primary">
-              Ask your first question
-            </a>
-            <a href="#how" className="btn btn-ghost">
-              How it works
-            </a>
+            <a href="/policies" className="btn btn-primary">{copy.hero.ctaPrimary}</a>
+            <a href="/support" className="btn btn-ghost">{copy.hero.ctaSecondary}</a>
           </div>
-        </Reveal>
-        <Reveal delay={340}>
-          <div className="hero-proof">
-            <div className="proof-item">
-              <span className="proof-num">10,000+</span>
-              <span className="proof-label">policies explained</span>
+          <div className="hero-meta">
+            <span className="chip">{c.phone.display}</span>
+            <span className="chip">{c.address ? pick(locale, c.address) : ""}</span>
+            <span className="chip">{pick(locale, c.hours ?? { en: [""], hi: [""] })[0]}</span>
+          </div>
+        </div>
+
+        <div className="hero-card" aria-hidden="true">
+          <div className="card">
+            <div className="hcline">
+              Motor Insurance <span>explained ✓</span>
             </div>
-            <div className="proof-item">
-              <span className="proof-num">98.2%</span>
-              <span className="proof-label">accurate answers</span>
+            <div className="dia">
+              <b>Accidental damage</b> — <span className="good">covered</span>
             </div>
-            <div className="proof-item">
-              <span className="proof-num">4 min</span>
-              <span className="proof-label">average resolution</span>
+            <div className="dia">
+              <b>Theft</b> — <span className="good">covered</span>
             </div>
-            <div className="proof-item">
-              <span className="proof-num">24/7</span>
-              <span className="proof-label">always available</span>
+            <div className="dia">
+              <b>Wear &amp; tear</b> — <span className="bad">excluded</span>
+            </div>
+            <div className="dia">
+              <b>DUI / no licence</b> — <span className="bad">excluded</span>
             </div>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );
