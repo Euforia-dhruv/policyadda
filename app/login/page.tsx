@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { getCopy } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
-import { isSupabaseConfigured } from "@/lib/supabase/client";
+import { getServerSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
 import LoginForm from "@/components/LoginForm";
 
 export const metadata: Metadata = {
@@ -9,9 +10,23 @@ export const metadata: Metadata = {
   description: "Secure sign-in for PolicyAdda customers and team.",
 };
 
-export default function LoginPage() {
+export const dynamic = "force-dynamic";
+
+export default async function LoginPage() {
   const locale = getLocale();
   const copy = getCopy(locale);
+
+  let signedInUser = false;
+  if (isSupabaseConfigured()) {
+    try {
+      const sb = await getServerSupabase();
+      const session = sb ? await sb.auth.getUser() : { data: null };
+      signedInUser = Boolean(session.data?.user);
+    } catch {
+      // keep the login form reachable if the session probe fails
+    }
+  }
+  if (signedInUser) redirect("/dashboard");
 
   return (
     <section className="pad">

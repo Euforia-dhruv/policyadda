@@ -10,7 +10,10 @@
 | Support ticket form | ✅ Functional | `POST /api/support` |
 | Configurable workflow statuses | ✅ Functional | `content/statuses.ts` + DB table `application_statuses` |
 | Light/dark theme, mobile-first | ✅ Functional | CSS variables + theme toggle |
-| Auth / customer dashboard | ⚠️ Placeholder | Requires Supabase credentials (see docs/BUSINESS-INFO-NEEDED.md) |
+| Brand design system | ✅ Applied | PolicyAdda palette, DM Serif Display + Inter, PA badge (see style guide) |
+| Auth (customer signup/login/logout) | ✅ Functional | `/api/auth/signup|login|logout`; service-role createUser + profile upsert + RLS |
+| Customer dashboard | ✅ Functional | RLS-scoped application list, profile, role, sign-out |
+| Application ↔ account linking | ✅ Functional | `customer_id` attached from server session on POST |
 | Internal staff workspace | 📋 Designed | Supabase migrations + RLS complete; no UI yet |
 | AI assistant, notifications, docs storage | 📋 Designed | Schema ready; disabled until services configured |
 

@@ -9,11 +9,15 @@ import ThemeToggle from "./ThemeToggle";
 export default function Nav({
   copy,
   locale,
+  signedIn,
 }: {
   copy: SiteCopy;
   locale: Locale;
+  signedIn?: boolean;
 }) {
   const [open, setOpen] = useState(false);
+  const accountHref = signedIn ? "/dashboard" : "/login";
+  const accountLabel = signedIn ? copy.nav.dashboard : copy.nav.login;
 
   return (
     <>
@@ -34,8 +38,8 @@ export default function Nav({
           <div className="nav-actions">
             <LanguageSwitch locale={locale} />
             <ThemeToggle />
-            <a href="/login" className="nav-link-login" style={{ fontSize: 14.5, color: "var(--muted)", fontWeight: 550 }}>
-              {copy.nav.login}
+            <a href={accountHref} className="nav-link-login" style={{ fontSize: 14.5, color: "var(--muted)", fontWeight: 550 }}>
+              {accountLabel}
             </a>
             <a href="/policies" className="btn btn-accent btn-sm nav-cta">
               {copy.nav.cta}
@@ -53,7 +57,7 @@ export default function Nav({
         <a href="/about" onClick={() => setOpen(false)}>{copy.nav.about}</a>
         <a href="/how-it-works" onClick={() => setOpen(false)}>{copy.nav.how}</a>
         <a href="/support" onClick={() => setOpen(false)}>{copy.nav.support}</a>
-        <a href="/login" onClick={() => setOpen(false)}>{copy.nav.login}</a>
+        <a href={accountHref} onClick={() => setOpen(false)}>{accountLabel}</a>
         <a href="/policies" className="btn btn-primary" style={{ marginTop: 10 }} onClick={() => setOpen(false)}>
           {copy.nav.cta}
         </a>

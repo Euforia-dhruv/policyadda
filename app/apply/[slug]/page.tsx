@@ -29,6 +29,8 @@ export default async function ApplyPage({ params }: { params: Promise<Params> })
   const policy = data.policyBySlug(slug);
   if (!policy || !policy.isActive) notFound();
 
+  const cat = data.categoryBySlug(policy.categorySlug);
+  const catName = cat ? pick(locale, cat.name) : policy.categorySlug;
   const statuses = data.statuses();
 
   return (
@@ -39,7 +41,7 @@ export default async function ApplyPage({ params }: { params: Promise<Params> })
           <span className="sep">/</span>
           <a href="/policies">{copy.nav.categories}</a>
           <span className="sep">/</span>
-          <a href={`/policies/${policy.categorySlug}`}>{policy.categorySlug}</a>
+          <a href={`/policies/${policy.categorySlug}`}>{catName}</a>
           <span className="sep">/</span>
           <a href={`/policies/${policy.categorySlug}/${policy.slug}`}>{policy.name}</a>
         </nav>
