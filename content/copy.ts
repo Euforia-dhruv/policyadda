@@ -123,6 +123,46 @@ export type SiteCopy = {
     submitted: string;
     policy: string;
     idLabel: string;
+    profile: string;
+    profileEdit: string;
+    saveChanges: string;
+    saved: string;
+    tickets: string;
+    noTickets: string;
+    newTicket: string;
+    notifications: string;
+    noNotifications: string;
+    markRead: string;
+    overview: string;
+    admin: string;
+    users: string;
+    policies: string;
+    allApplications: string;
+    allTickets: string;
+    team: string;
+    assignedTo: string;
+    unassigned: string;
+    internalNote: string;
+    addNote: string;
+    notes: string;
+    statusHistory: string;
+    updateStatus: string;
+    assignTo: string;
+    requestDocuments: string;
+    customerInfo: string;
+    workload: string;
+    totalApplications: string;
+    totalUsers: string;
+    totalTickets: string;
+    recentActivity: string;
+    pendingActions: string;
+    joinedOn: string;
+    lastActive: string;
+    roleLabel: string;
+    Actions: string;
+    View: string;
+    Edit: string;
+    Back: string;
   };
   auth: {
     signInTitle: string;
@@ -196,10 +236,12 @@ export const en: SiteCopy = {
     title: "From confusion to clarity, step by step.",
     lead: "A simple, transparent journey — no surprises.",
     steps: [
-      { t: "Explore", d: "Understand policy categories and basic information in plain language." },
-      { t: "Connect", d: "Submit your requirements with a short, no-commitment form." },
-      { t: "Get Assistance", d: "A PolicyAdda executive contacts you and guides you personally." },
-      { t: "Stay Organized", d: "Access policy details and track progress from your dashboard." },
+      { t: "Explore", d: "Browse insurance categories and understand your options in plain language." },
+      { t: "Understand", d: "Read clear, structured policy information — benefits, coverage, exclusions." },
+      { t: "Submit enquiry", d: "Fill a short form or use the provided application link. No commitment." },
+      { t: "Get contacted", d: "A PolicyAdda executive reaches out to assist you personally." },
+      { t: "Receive assistance", d: "Get helped through the policy process, from paperwork to answers." },
+      { t: "Access your policy", d: "Customers receive access to their policy information through our secure portal." },
     ],
   },
   featured: {
@@ -331,6 +373,46 @@ export const en: SiteCopy = {
     submitted: "Submitted",
     policy: "Policy",
     idLabel: "Application ID",
+    profile: "Profile",
+    profileEdit: "Edit Profile",
+    saveChanges: "Save changes",
+    saved: "Changes saved",
+    tickets: "Support Tickets",
+    noTickets: "No support tickets yet.",
+    newTicket: "Open a ticket",
+    notifications: "Notifications",
+    noNotifications: "No notifications yet.",
+    markRead: "Mark as read",
+    overview: "Overview",
+    admin: "Administration",
+    users: "Users",
+    policies: "Policies",
+    allApplications: "All Applications",
+    allTickets: "All Tickets",
+    team: "Team",
+    assignedTo: "Assigned to",
+    unassigned: "Unassigned",
+    internalNote: "Internal note",
+    addNote: "Add note",
+    notes: "Notes",
+    statusHistory: "Status history",
+    updateStatus: "Update status",
+    assignTo: "Assign to",
+    requestDocuments: "Request documents",
+    customerInfo: "Customer information",
+    workload: "Workload",
+    totalApplications: "Total applications",
+    totalUsers: "Total users",
+    totalTickets: "Total tickets",
+    recentActivity: "Recent activity",
+    pendingActions: "Pending actions",
+    joinedOn: "Joined",
+    lastActive: "Last active",
+    roleLabel: "Role",
+    Actions: "Actions",
+    View: "View",
+    Edit: "Edit",
+    Back: "Back",
   },
   auth: {
     signInTitle: "Sign in",
@@ -408,10 +490,12 @@ export const hi: SiteCopy = {
     title: "भ्रम से स्पष्टता तक, चरण दर चरण।",
     lead: "एक सरल, पारदर्शी यात्रा — बिना किसी आश्चर्य के।",
     steps: [
-      { t: "एक्सप्लोर करें", d: "बीमा श्रेणियाँ देखें और बुनियादी जानकारी सरल भाषा में समझें।" },
-      { t: "कनेक्ट हों", d: "छोटे, बिना किसी प्रतिबद्धता वाले फ़ॉर्म से अपनी आवश्यकताएँ जमा करें।" },
-      { t: "सहायता लें", d: "एक PolicyAdda कार्यकारी आपसे संपर्क कर आपका व्यक्तिगत मार्गदर्शन करता है।" },
-      { t: "व्यवस्थित रहें", d: "पॉलिसी विवरण और प्रगति को अपने डैशबोर्ड से एक्सेस करें।" },
+      { t: "एक्सप्लोर करें", d: "बीमा श्रेणियाँ देखें और अपने विकल्पों को सरल भाषा में समझें।" },
+      { t: "समझें", d: "स्पष्ट, संरचित पॉलिसी जानकारी पढ़ें — लाभ, कवरेज, बहिष्करण।" },
+      { t: "आवेदन जमा करें", d: "एक छोटा फ़ॉर्म भरें या दिए गए आवेदन लिंक का उपयोग करें। कोई प्रतिबद्धता नहीं।" },
+      { t: "संपर्क प्राप्त करें", d: "एक PolicyAdda कार्यकारी आपकी व्यक्तिगत सहायता के लिए पहुँचता है।" },
+      { t: "सहायता प्राप्त करें", d: "पॉलिसी प्रक्रिया में कागजी कार्रवाई से लेकर उत्तरों तक हर कदम पर सहायता।" },
+      { t: "अपनी पॉलिसी तक पहुँचें", d: "ग्राहकों को हमारे सुरक्षित पोर्टल के माध्यम से पॉलिसी जानकारी तक पहुँच मिलती है।" },
     ],
   },
 featured: {
@@ -543,6 +627,46 @@ check: "स्थिति देखें",
     submitted: "सबमिट किया गया",
     policy: "पॉलिसी",
     idLabel: "आवेदन आईडी",
+    profile: "प्रोफ़ाइल",
+    profileEdit: "प्रोफ़ाइल संपादित करें",
+    saveChanges: "परिवर्तन सहेजें",
+    saved: "परिवर्तन सहेजे गए",
+    tickets: "सपोर्ट टिकट",
+    noTickets: "अभी तक कोई सपोर्ट टिकट नहीं।",
+    newTicket: "टिकट खोलें",
+    notifications: "सूचनाएँ",
+    noNotifications: "अभी तक कोई सूचना नहीं।",
+    markRead: "पढ़ा हुआ चिन्हित करें",
+    overview: "अवलोकन",
+    admin: "प्रशासन",
+    users: "उपयोगकर्ता",
+    policies: "पॉलिसी",
+    allApplications: "सभी आवेदन",
+    allTickets: "सभी टिकट",
+    team: "टीम",
+    assignedTo: "सौंपा गया",
+    unassigned: "असाइन नहीं",
+    internalNote: "आंतरिक नोट",
+    addNote: "नोट जोड़ें",
+    notes: "नोट्स",
+    statusHistory: "स्थिति इतिहास",
+    updateStatus: "स्थिति अपडेट करें",
+    assignTo: "सौंपें",
+    requestDocuments: "दस्तावेज़ अनुरोध",
+    customerInfo: "ग्राहक जानकारी",
+    workload: "कार्यभार",
+    totalApplications: "कुल आवेदन",
+    totalUsers: "कुल उपयोगकर्ता",
+    totalTickets: "कुल टिकट",
+    recentActivity: "हालिया गतिविधि",
+    pendingActions: "लंबित कार्य",
+    joinedOn: "शामिल हुए",
+    lastActive: "अंतिम सक्रिय",
+    roleLabel: "भूमिका",
+    Actions: "क्रियाएँ",
+    View: "देखें",
+    Edit: "संपादित करें",
+    Back: "वापस",
   },
   auth: {
     signInTitle: "साइन इन करें",

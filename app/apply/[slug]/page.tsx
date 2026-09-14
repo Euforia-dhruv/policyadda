@@ -53,13 +53,13 @@ export default async function ApplyPage({ params }: { params: Promise<Params> })
         </div>
 
         <div className="detail-card">
-          <ApplyForm
-            locale={locale}
-            copy={copy}
-            statuses={statuses}
-            policyName={policy.name}
-            policyId={policy.slug}
-          />
+<ApplyForm
+          locale={locale}
+          copy={copy}
+          statuses={statuses}
+          policyName={policy.name}
+          policyId={policy.slug}
+        />
 
           <aside className="side-card">
             <div className="card" style={{ padding: 22 }}>

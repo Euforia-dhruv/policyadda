@@ -1,148 +1,195 @@
-import type { Metadata } from "next";
+import Link from "next/link";
 import { redirect } from "next/navigation";
+import { getServerSupabase } from "@/lib/supabase/client";
 import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
-import { getServerSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
-import SignOutButton from "@/components/SignOutButton";
-
-export const metadata: Metadata = {
-  title: "Dashboard — PolicyAdda",
-  description: "Your PolicyAdda dashboard.",
-};
+import { isStaff, isManager, isAdmin } from "@/lib/roles";
 
 export const dynamic = "force-dynamic";
-
-interface DashboardRow {
-  application_no: string;
-  status_code: string;
-  created_at: string;
-  updated_at?: string;
-  policies?: { slug?: string; name?: string } | null;
-  application_statuses?: { label?: { en: string; hi: string } } | null;
-}
 
 export default async function DashboardPage() {
   const locale = getLocale();
   const copy = getCopy(locale);
 
-  if (!isSupabaseConfigured()) {
-    return (
-      <section className="pad">
-        <div className="wrap" style={{ maxWidth: 720 }}>
-          <div className="section-head">
-            <p className="eyebrow">Dashboard</p>
-            <h2>Customer dashboard</h2>
-          </div>
-          <div className="dev-note">
-            ⓘ Placeholder — the dashboard requires Supabase Auth and credentials,
-            which are not configured yet. Once enabled, this page will show
-            your overview, applications, policies, documents, support tickets,
-            and notifications — scoped to your account only.
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   const sb = await getServerSupabase();
-  const { data } = sb ? await sb.auth.getUser() : { data: null };
-  if (!data?.user) {
-    redirect("/login");
+  if (!sb) redirect("/login");
+  const {
+    data: { user },
+  } = await sb.auth.getUser();
+  if (!user) redirect("/login");
+  const userId = user.id;
+
+  const { data: profile } = await sb.from("profiles").select("*").eq("user_id", userId).maybeSingle();
+  const role = (profile?.role_code || "customer") as string;
+  const name = profile?.full_name || user.email || "";
+
+  const statusLabelsRes = await sb.from("application_statuses").select("code, label");
+  const statusLabels = new Map<string, { en: string; hi: string }>();
+  (statusLabelsRes.data || []).forEach((s: any) => statusLabels.set(s.code, s.label));
+
+  let apps: any[] = [];
+  let tickets: any[] = [];
+
+  if (isAdmin(role) || isManager(role)) {
+    const [a, t] = await Promise.all([
+      sb.from("applications").select("id, application_no, status_code, full_name, created_at, policies(name)").order("created_at", { ascending: false }).limit(50),
+      sb.from("support_tickets").select("id, ticket_no, subject, status_code, created_at").order("created_at", { ascending: false }).limit(20),
+    ]);
+    apps = a.data || [];
+    tickets = t.data || [];
+  } else if (isStaff(role)) {
+    const [a, t] = await Promise.all([
+      sb.from("applications").select("id, application_no, status_code, full_name, created_at, policies(name)").eq("assigned_to", userId).order("created_at", { ascending: false }).limit(50),
+      sb.from("support_tickets").select("id, ticket_no, subject, status_code, created_at").eq("assigned_to", userId).order("created_at", { ascending: false }).limit(20),
+    ]);
+    apps = a.data || [];
+    tickets = t.data || [];
+  } else {
+    const [a, t] = await Promise.all([
+      sb.from("applications").select("id, application_no, status_code, full_name, created_at, policies(name)").eq("customer_id", userId).order("created_at", { ascending: false }).limit(50),
+      sb.from("support_tickets").select("id, ticket_no, subject, status_code, created_at, priority_code").eq("customer_id", userId).order("created_at", { ascending: false }).limit(20),
+    ]);
+    apps = a.data || [];
+    tickets = t.data || [];
   }
-  const userId = data.user.id;
 
-  const profileRes = await sb!
-    .from("profiles")
-    .select("full_name, role_code, phone, email")
-    .eq("user_id", userId)
-    .maybeSingle();
-  const profile = profileRes.data as
-    | { full_name: string | null; role_code: string | null; phone: string | null; email: string | null }
-    | null;
-
-  // RLS scopes this to the signed-in user (own rows / assigned staff rows).
-  const appsRes = await sb!
-    .from("applications")
-    .select("application_no, status_code, created_at, updated_at, policies(slug, name), application_statuses(label)")
-    .order("created_at", { ascending: false })
-    .limit(50);
-  const apps = (appsRes.error ? [] : (appsRes.data as DashboardRow[])) ?? [];
-
-  const name = profile?.full_name || data.user.email || "";
-  const role = profile?.role_code || "customer";
+  const counts = countBy(apps, (a: any) => a.status_code);
+  const ticketCounts = countBy(tickets, (t: any) => t.status_code);
 
   return (
-    <section className="pad">
-      <div className="wrap" style={{ maxWidth: 920 }}>
-        <div className="section-head" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 12 }}>
-          <div>
-            <p className="eyebrow">Dashboard</p>
-            <h2>Welcome back, {name}</h2>
-            <p className="lead">{copy.dashboard.lead}</p>
-          </div>
-          <SignOutButton label={copy.dashboard.signOut} busyLabel={copy.common.loading} />
-        </div>
+    <>
+      <div className="dash-head">
+        <h1>{copy.dashboard.title}</h1>
+        <p>{copy.dashboard.lead}</p>
+      </div>
 
-        <div className="support-grid" style={{ marginBottom: 40 }}>
-          <div className="card support-card">
-            <div>
-              <div className="ico">👤</div>
-              <h3>{copy.dashboard.title}</h3>
-              <p className="big">{name}</p>
-              {profile?.email ? <p>{profile.email}</p> : null}
-              {profile?.phone ? <p>{profile.phone}</p> : null}
-            </div>
-          </div>
-          <div className="card support-card">
-            <div>
-              <p style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--muted)" }}>{copy.dashboard.role}</p>
-              <p className="big" style={{ textTransform: "capitalize" }}>{role.replace("_", " ")}</p>
-            </div>
-          </div>
-        </div>
+      <div className="stat-grid">
+        <StatCard label={copy.dashboard.applications} value={apps.length.toString()} />
+        <StatCard label={copy.dashboard.tickets} value={tickets.length.toString()} />
+        {isAdmin(role) || isManager(role) ? (
+          <>
+            <StatCard label={copy.dashboard.workload} value={((counts.get("submitted") || 0) + (counts.get("under_review") || 0) + (counts.get("assigned") || 0)).toString()} />
+            <StatCard label="Pending" value={((ticketCounts.get("open") || 0) + (ticketCounts.get("in_progress") || 0) + (ticketCounts.get("waiting_customer") || 0)).toString()} />
+          </>
+        ) : null}
+      </div>
 
-        <h3 style={{ marginBottom: 16 }}>{copy.dashboard.applications}</h3>
+      <div className="dash-panel">
+        <h3 style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <span>{copy.dashboard.applications}</span>
+          <Link href="/dashboard/applications" style={{ fontSize: 13, color: "var(--accent-strong)", fontWeight: 600, textDecoration: "none" }}>
+            {copy.dashboard.View} →
+          </Link>
+        </h3>
         {apps.length === 0 ? (
-          <div className="card" style={{ padding: 26 }}>
-            <p style={{ color: "var(--muted)", marginBottom: 14 }}>{copy.dashboard.noApps}</p>
-            <a href="/policies" className="btn btn-primary btn-sm">{copy.dashboard.noAppsCta}</a>
-          </div>
+          <p style={{ color: "var(--muted)", fontSize: 14 }}>{copy.dashboard.noApps}</p>
         ) : (
-          <div className="acc-list">
-            {apps.map((a) => {
-              const label = a.application_statuses?.label ? pick(locale, a.application_statuses.label) : a.status_code;
-              const pillClass =
-                {
-                  completed: "pill pill-ok",
-                  cancelled: "pill pill-cancel",
-                  expired: "pill pill-muted",
-                  submitted: "pill pill-gold",
-                  under_review: "pill pill-gold",
-                  assigned: "pill pill-info",
-                  contacted: "pill pill-info",
-                  processing: "pill pill-info",
-                }[a.status_code ?? ""] ?? "pill pill-info";
-              return (
-                <div className="card" key={a.application_no} style={{ padding: "18px 20px" }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
-                    <div style={{ minWidth: 0 }}>
-                      <p style={{ fontWeight: 750, fontSize: 17 }}>
-                        {a.policies?.name || a.policies?.slug || "—"}
-                      </p>
-                      <p style={{ fontSize: 12.5, color: "var(--muted)", marginTop: 4 }}>
-                        {copy.dashboard.idLabel}: <span style={{ color: "var(--text)", fontWeight: 650 }}>{a.application_no}</span>
-                        {" · "}{copy.dashboard.submitted}:{" "}
-                        {new Date(a.created_at).toLocaleDateString(locale === "hi" ? "hi-IN" : "en-IN", { day: "numeric", month: "short", year: "numeric" })}
-                      </p>
-                    </div>
-                    <span className={pillClass}>{label}</span>
-                  </div>
-                </div>
-              );
-            })}
+          <div className="dash-table-scroll">
+            <table className="dash-table">
+              <thead>
+                <tr>
+                  <th>{copy.dashboard.idLabel}</th>
+                  <th>{copy.dashboard.policy}</th>
+                  <th>{copy.dashboard.status}</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {apps.slice(0, 8).map((a) => (
+                  <tr key={a.application_no}>
+                    <td className="td-mono">{a.application_no}</td>
+                    <td>{a.policies?.[0]?.name ?? recordPolicyName(a) ?? "—"}</td>
+                    <td>
+                      <span className={pillForStatus(a.status_code)}>{statusLabels.get(a.status_code) ? pick(locale, statusLabels.get(a.status_code)!) : a.status_code}</span>
+                    </td>
+                    <td className="td-actions">
+                      <Link href={`/dashboard/applications/${a.id ?? a.application_no}`}>{copy.dashboard.View}</Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         )}
       </div>
-    </section>
+
+      <div className="dash-panel">
+        <h3 style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <span>{copy.dashboard.tickets}</span>
+          <Link href="/dashboard/tickets" style={{ fontSize: 13, color: "var(--accent-strong)", fontWeight: 600, textDecoration: "none" }}>
+            {copy.dashboard.View} →
+          </Link>
+        </h3>
+        {tickets.length === 0 ? (
+          <p style={{ color: "var(--muted)", fontSize: 14 }}>{copy.dashboard.noTickets}</p>
+        ) : (
+          <div className="dash-table-scroll">
+            <table className="dash-table">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>{copy.dashboard.tickets}</th>
+                  <th>{copy.dashboard.status}</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {tickets.slice(0, 6).map((t) => (
+                  <tr key={t.ticket_no}>
+                    <td className="td-mono">{t.ticket_no}</td>
+                    <td>{t.subject}</td>
+                    <td>
+                      <span className={pillForStatus(t.status_code)}>{t.status_code}</span>
+                    </td>
+                    <td className="td-actions">
+                      <Link href={`/dashboard/tickets/${t.id ?? t.ticket_no}`}>{copy.dashboard.View}</Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+    </>
   );
+}
+
+function StatCard({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="stat-card">
+      <div className="stat-label">{label}</div>
+      <div className="stat-value">{value}</div>
+    </div>
+  );
+}
+
+function countBy(arr: any[], key: (x: any) => string): Map<string, number> {
+  const m = new Map<string, number>();
+  for (const x of arr) m.set(key(x), (m.get(key(x)) || 0) + 1);
+  return m;
+}
+
+function recordPolicyName(a: any): string {
+  const l = Array.isArray(a.policies) ? a.policies[0] : a.policies;
+  return l?.name || l?.slug || "—";
+}
+
+function pillForStatus(code: string): string {
+  return {
+    completed: "pill pill-ok",
+    cancelled: "pill pill-cancel",
+    rejected: "pill pill-cancel",
+    submitted: "pill pill-gold",
+    under_review: "pill pill-gold",
+    assigned: "pill pill-info",
+    contacted: "pill pill-info",
+    processing: "pill pill-info",
+    on_hold: "pill pill-muted",
+    open: "pill pill-gold",
+    in_progress: "pill pill-info",
+    waiting_customer: "pill pill-info",
+    resolved: "pill pill-ok",
+    closed: "pill pill-muted",
+  }[code] ?? "pill pill-info";
 }
