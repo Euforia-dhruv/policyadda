@@ -271,22 +271,42 @@ section { position: relative; }
   pointer-events: none;
   transition: opacity 0.4s ease;
 }
-/* Light theme — warm, subtle wash. The video stays visible; text stays legible. */
+/* Light theme — warm off-white wash. Video ~15-22% effective opacity.
+   Top/bottom are near-opaque so the video fades into the page bg;
+   the text band (35-65%) sits at ~0.82 alpha for legible-but-cinematic
+   video visibility. A left→right radial adds a subtle extra shield behind
+   the headline while letting the right side (card area) breathe. */
 .hero-tint-light {
   opacity: 1;
   background:
-    linear-gradient(180deg, rgba(247, 245, 240, 0.9) 0%, rgba(247, 245, 240, 0.6) 38%, rgba(242, 239, 231, 0.88) 100%),
-    radial-gradient(120% 90% at 72% 18%, rgba(255, 255, 255, 0.14) 0%, transparent 60%);
+    linear-gradient(180deg, rgba(247, 245, 240, 0.94) 0%, rgba(247, 245, 240, 0.82) 35%, rgba(247, 245, 240, 0.82) 65%, rgba(242, 239, 231, 0.93) 100%),
+    radial-gradient(ellipse at 35% 50%, rgba(247, 245, 240, 0.08) 0%, transparent 65%);
 }
-/* Dark theme — deep navy/black. Cinematic but clearly readable. */
+/* Dark theme — deep navy/black. Video ~20-28% effective opacity.
+   Same vertical structure as light, darker floor; a blue radial adds depth
+   behind the headline without washing out the road atmosphere. */
 .hero-tint-dark {
   opacity: 0;
   background:
-    linear-gradient(180deg, rgba(6, 11, 20, 0.88) 0%, rgba(9, 14, 26, 0.6) 42%, rgba(5, 9, 17, 0.92) 100%),
+    linear-gradient(180deg, rgba(6, 11, 20, 0.90) 0%, rgba(9, 14, 26, 0.75) 42%, rgba(5, 9, 17, 0.92) 100%),
+    radial-gradient(ellipse at 35% 50%, rgba(6, 11, 20, 0.08) 0%, transparent 65%),
     radial-gradient(120% 90% at 22% 12%, rgba(23, 79, 134, 0.24) 0%, transparent 55%);
 }
 [data-theme="dark"] .hero-tint-light { opacity: 0; }
 [data-theme="dark"] .hero-tint-dark { opacity: 1; }
+
+/* Mobile — bump overlay opacity so the video never competes with the headline
+   on narrow viewports where text sits closer to the frame edges. */
+@media (max-width: 767px) {
+  .hero-tint-light {
+    background:
+      linear-gradient(180deg, rgba(247, 245, 240, 0.96) 0%, rgba(247, 245, 240, 0.88) 40%, rgba(242, 239, 231, 0.94) 100%);
+  }
+  .hero-tint-dark {
+    background:
+      linear-gradient(180deg, rgba(6, 11, 20, 0.93) 0%, rgba(9, 14, 26, 0.82) 42%, rgba(5, 9, 17, 0.94) 100%);
+  }
+}
 
 .hero-bg { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
 /* On the video hero the old grid/glow texture steps aside — the video leads. */
