@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Locale } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
+import PolicyAddaBrand from "./brand/PolicyAddaBrand";
 
 type Mode = "signin" | "signup";
 
@@ -75,6 +76,9 @@ export default function LoginForm({ copy, locale }: { copy: SiteCopy; locale: Lo
 
   return (
     <form className="form-card" onSubmit={submit} style={{ width: "100%" }}>
+      <div className="auth-brand">
+        <PolicyAddaBrand variant="full" />
+      </div>
       <h3 style={{ marginBottom: 6 }}>{mode === "signin" ? t.signInTitle : t.signUpTitle}</h3>
       <p style={{ fontSize: 13, color: "var(--muted)", marginBottom: 18 }}>
         {mode === "signin" ? t.loginLead : t.signUpLead}

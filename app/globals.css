@@ -185,12 +185,40 @@ section { position: relative; }
   border-bottom: 1px solid var(--line);
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 14px 0; }
-.brand { display: flex; align-items: center; gap: 11px; font-weight: 800; font-size: 17px; letter-spacing: -0.02em; color: var(--text); }
-.brand-mark {
-  width: 36px; height: 36px; border-radius: var(--radius-sm); display: grid; place-items: center;
-  background: var(--maroon); color: var(--gold); font-weight: 800; font-size: 13px; letter-spacing: -0.01em;
-  border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent);
+.brand { display: inline-flex; align-items: center; gap: 11px; border-radius: 12px; }
+.brand-seal { width: 40px; height: 40px; object-fit: contain; flex: none; }
+.brand-wordmark { width: 201px; height: 34px; object-fit: contain; flex: none; }
+[data-theme="dark"] .brand {
+  background: #f4f1ea;
+  padding: 5px 11px;
+  box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.5);
 }
+@media (min-width: 1440px) {
+  .brand-seal { width: 44px; height: 44px; }
+  .brand-wordmark { width: 224px; height: 38px; }
+}
+@media (max-width: 767px) {
+  .brand { gap: 9px; }
+  .brand-seal { width: 34px; height: 34px; }
+  .brand-wordmark { width: 148px; height: 25px; }
+  [data-theme="dark"] .brand { padding: 5px 9px; }
+}
+@media (max-width: 340px) {
+  .brand-wordmark { display: none; }
+  .brand-seal { width: 32px; height: 32px; }
+  [data-theme="dark"] .brand { padding: 5px 8px; }
+}
+
+/* footer lockup (compact) */
+.footer .brand { gap: 10px; }
+.footer .brand-seal { width: 34px; height: 34px; }
+.footer .brand-wordmark { width: 154px; height: 26px; }
+[data-theme="dark"] .footer .brand { padding: 4px 9px; }
+
+/* auth pages lockup */
+.auth-brand { display: flex; justify-content: center; margin-bottom: 20px; }
+.auth-brand .brand-seal { width: 44px; height: 44px; }
+.auth-brand .brand-wordmark { width: 224px; height: 38px; }
 .nav-links { display: flex; align-items: center; gap: 26px; font-size: 14.5px; font-weight: 550; color: var(--muted); }
 .nav-links a { transition: color 0.15s ease; }
 .nav-links a:hover { color: var(--text); }

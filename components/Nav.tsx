@@ -6,6 +6,7 @@ import type { Locale } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import LanguageSwitch from "./LanguageSwitch";
 import ThemeToggle from "./ThemeToggle";
+import PolicyAddaBrand from "./brand/PolicyAddaBrand";
 
 export default function Nav({
   copy,
@@ -27,10 +28,7 @@ export default function Nav({
     <>
       <header className="nav">
         <div className="wrap nav-inner">
-          <a href="/" className="brand" aria-label="PolicyAdda home">
-            <div className="brand-mark">PA</div>
-            PolicyAdda
-          </a>
+          <PolicyAddaBrand variant="full" />
 
           <nav className="nav-links" aria-label="Primary">
             <a href="/policies" aria-current={isActive("/policies") ? "page" : undefined}>{copy.nav.categories}</a>

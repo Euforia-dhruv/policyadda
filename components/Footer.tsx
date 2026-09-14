@@ -3,6 +3,7 @@ import type { SiteConfig } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import { pick } from "@/lib/i18n";
 import { getActiveCategories } from "@/content/categories";
+import PolicyAddaBrand from "./brand/PolicyAddaBrand";
 
 export default function Footer({
   copy,
@@ -18,11 +19,8 @@ export default function Footer({
       <div className="wrap">
         <div className="footer-grid">
           <div>
-            <div className="brand f-brand">
-              <div className="brand-mark">P</div>
-              PolicyAdda
-            </div>
-            <p className="f-note">
+            <PolicyAddaBrand variant="full" className="f-brand" />
+            <p className="f-note" style={{ marginTop: 10 }}>
               {config.slogan[locale]} — {copy.footer.tagline}
             </p>
             <p className="f-note" style={{ marginTop: 12 }}>
