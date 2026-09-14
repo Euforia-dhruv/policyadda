@@ -25,7 +25,7 @@ export default function FeaturedSection({
             <PolicyCard key={p.id} policy={p} locale={locale} copy={copy} />
           ))}
         </div>
-        <p style={{ marginTop: 26 }}>
+        <p className="mt-6">
           <a href="/policies" className="cat-link">
             {copy.featured.viewAll} →
           </a>

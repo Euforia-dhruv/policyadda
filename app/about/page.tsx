@@ -15,7 +15,7 @@ export default function AboutPage() {
 
   return (
     <section className="pad">
-      <div className="wrap" style={{ maxWidth: 920 }}>
+      <div className="wrap max-w-lg">
         <div className="section-head">
           <p className="eyebrow">{copy.nav.about}</p>
           <h2>About PolicyAdda</h2>
@@ -25,10 +25,10 @@ export default function AboutPage() {
         </div>
 
         <div className="card" style={{ padding: "28px 30px", marginBottom: 24 }}>
-          <p style={{ fontSize: 15, color: "var(--text)", marginBottom: 12 }}>
+          <p style={{ fontSize: "var(--text-base)", color: "var(--text)", marginBottom: 12 }}>
             Insurance is often explained in complicated legal terms. Most customers are left confused — or worse, misled. PolicyAdda was created to change that experience.
           </p>
-          <p style={{ fontSize: 14.5, color: "var(--muted)" }}>
+          <p className="muted-text" style={{ fontSize: "var(--text-sm)" }}>
             We don't sell policies directly. Instead, we help you understand the available policy options for a given category, explain what is typically covered and excluded, and then assist you through the application process with a real person from our team.
           </p>
         </div>

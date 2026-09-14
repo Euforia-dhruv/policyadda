@@ -20,7 +20,7 @@ export default function PoliciesPage() {
     <>
       <CategoriesSection categories={categories} copy={copy} locale={locale} />
 
-      <section className="pad" style={{ paddingTop: 0 }}>
+      <section className="pad section-pad-0">
         <div className="wrap">
           <div className="section-head">
             <p className="eyebrow">{copy.featured.eyebrow}</p>

@@ -40,8 +40,8 @@ export function StatusUpdateForm({
 
   return (
     <div>
-      <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 10 }}>
-        <select className="field-select" value={statusCode} onChange={(e) => setStatusCode(e.target.value)} style={{ flex: 1, minWidth: 160 }}>
+      <div className="flex gap-2 flex-wrap" style={{ marginBottom: 10 }}>
+        <select className="field-select flex-1" value={statusCode} onChange={(e) => setStatusCode(e.target.value)} style={{ minWidth: 160 }}>
           {statuses.map((s) => (
             <option key={s.code} value={s.code}>
               {s.label}
@@ -60,7 +60,7 @@ export function StatusUpdateForm({
         {busy ? "Saving…" : actionLabel}
       </button>
       {msg && (
-        <p style={{ fontSize: 12.5, color: msg.ok ? "var(--ok)" : "var(--bad)", marginTop: 8 }}>
+        <p className="msg" style={{ color: msg.ok ? "var(--ok)" : "var(--bad)" }}>
           {msg.text}
         </p>
       )}

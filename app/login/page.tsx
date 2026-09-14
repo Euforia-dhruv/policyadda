@@ -30,7 +30,7 @@ export default async function LoginPage() {
 
   return (
     <section className="pad">
-      <div className="wrap" style={{ maxWidth: 520 }}>
+      <div className="wrap max-w-sm">
         <div className="section-head">
           <p className="eyebrow">{copy.nav.login}</p>
           <h2>{copy.nav.login}</h2>
@@ -42,7 +42,7 @@ export default async function LoginPage() {
         <LoginForm copy={copy} locale={locale} />
 
         {!isSupabaseConfigured() && (
-          <div className="dev-note" style={{ marginTop: 18 }}>
+          <div className="dev-note mt-5">
             ⓘ Development state: secure customer accounts are enabled through Supabase Auth.
             The login will activate once the PolicyAdda team provides project credentials (see docs/BUSINESS-INFO-NEEDED.md and docs/ARCHITECTURE.md).
           </div>

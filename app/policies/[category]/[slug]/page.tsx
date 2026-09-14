@@ -68,18 +68,18 @@ export default async function PolicyDetailPage({ params }: { params: Promise<Par
           <p className="lead">{pick(locale, policy.shortDescription)}</p>
         </div>
 
-        <p style={{ fontSize: 13.5, color: "var(--muted)", marginBottom: 6 }}>
+        <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginBottom: 6 }}>
           {pick(locale, policy.providerNote)}
         </p>
-        <p style={{ fontSize: 13, color: "var(--faint)" }}>
+        <p className="faint-text">
           <em>Provider lines shown above are informational. No official partnership with these insurers is claimed unless separately confirmed.</em>
         </p>
       </section>
 
-      <section className="wrap" style={{ paddingBottom: 90 }}>
+      <section className="wrap" style={{ paddingBottom: "var(--sp-12, 90px)" }}>
         <div className="detail-card">
           <div>
-            <div className="card" style={{ padding: "26px 28px" }}>
+            <div className="card card-pad">
               <div className="detail-block">
                 <h2>{copy.detail.about}</h2>
                 <p>{pick(locale, policy.fullDescription)}</p>
@@ -102,7 +102,7 @@ export default async function PolicyDetailPage({ params }: { params: Promise<Par
                   {policy.documents.map((d, i) => (
                     <li key={i}>
                       {pick(locale, d.label)}
-                      {d.optional ? <span style={{ color: "var(--faint)" }}> · {copy.common.optional}</span> : null}
+                      {d.optional ? <span className="faint-text"> · {copy.common.optional}</span> : null}
                     </li>
                   ))}
                 </ul>
@@ -128,9 +128,9 @@ export default async function PolicyDetailPage({ params }: { params: Promise<Par
           </div>
 
           <aside className="side-card">
-            <div className="card" style={{ padding: 24 }}>
+            <div className="card card-pad">
               <h3 style={{ marginBottom: 6 }}>{copy.detail.ready}</h3>
-              <p style={{ fontSize: 13.5, marginBottom: 16 }}>
+              <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginBottom: 16 }}>
                 {copy.detail.readySub}
               </p>
               <a
@@ -141,11 +141,11 @@ export default async function PolicyDetailPage({ params }: { params: Promise<Par
               >
                 {policy.googleFormUrl ? copy.detail.openSignup : copy.detail.applyNow}
               </a>
-              <a href="/support" className="btn btn-ghost btn-block" style={{ marginTop: 10 }}>
+              <a href="/support" className="btn btn-ghost btn-block mt-2">
                 {copy.detail.trustSupport}
               </a>
 
-              <div className="hero-meta" style={{ marginTop: 18, gap: 10, flexDirection: "column" }}>
+              <div className="hero-meta mt-5 flex-col gap-2">
                 <span className="chip">☎ {siteConfig.contact.phone.display}</span>
                 <span className="chip">🕘 {pick(locale, siteConfig.contact.hours ?? { en: [""], hi: [""] })[0]}</span>
               </div>

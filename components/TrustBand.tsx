@@ -1,6 +1,7 @@
 import type { SiteCopy } from "@/content/copy";
+import { Shield, User, Globe, Lock } from "@/lib/icons";
 
-const ICONS = ["⚖", "🧑‍💼", "🧭", "🔒"];
+const ICONS = [Shield, User, Globe, Lock];
 
 export default function TrustBand({ copy }: { copy: SiteCopy }) {
   return (
@@ -12,13 +13,16 @@ export default function TrustBand({ copy }: { copy: SiteCopy }) {
           <p className="lead">{copy.trust.lead}</p>
         </div>
         <div className="trust-band">
-          {copy.trust.items.map((it, i) => (
-            <div className="trust-item" key={it.t}>
-              <div className="t-ico">{ICONS[i % ICONS.length]}</div>
-              <h3>{it.t}</h3>
-              <p>{it.d}</p>
-            </div>
-          ))}
+          {copy.trust.items.map((it, i) => {
+            const Icon = ICONS[i % ICONS.length];
+            return (
+              <div className="trust-item" key={it.t}>
+                <div className="t-ico"><Icon size={28} /></div>
+                <h3>{it.t}</h3>
+                <p>{it.d}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

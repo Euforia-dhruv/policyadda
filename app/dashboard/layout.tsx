@@ -4,6 +4,7 @@ import { getServerSupabase } from "@/lib/supabase/client";
 import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { isStaff, isManager, isAdmin } from "@/lib/roles";
+import { rolePill } from "@/lib/utils";
 import SignOutButton from "@/components/SignOutButton";
 import DashToggle from "@/components/dashboard/DashToggle";
 
@@ -45,8 +46,8 @@ export default async function DashboardLayout({ children }: { children: React.Re
       <aside className="dash-side" id="dash-side">
         <div className="dash-side-head">
           <div className="dash-side-name">{name}</div>
-          <div style={{ marginTop: 6 }}>
-            <span className={"pill " + pillForRole(role)}>{role.replace("_", " ")}</span>
+          <div className="mt-1">
+            <span className={rolePill(role)}>{role.replace("_", " ")}</span>
           </div>
         </div>
         <nav className="dash-nav" aria-label="Dashboard">
@@ -58,7 +59,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
               </Link>
             ))}
         </nav>
-        <div style={{ borderTop: "1px solid var(--line)", paddingTop: 14, marginTop: 14 }}>
+        <div className="border-t-line" style={{ paddingTop: 14, marginTop: 14 }}>
           <SignOutButton label={copy.dashboard.signOut} busyLabel={copy.common.loading} />
         </div>
       </aside>
@@ -68,18 +69,3 @@ export default async function DashboardLayout({ children }: { children: React.Re
   );
 }
 
-function pillForRole(role: string): string {
-  switch (role) {
-    case "super_admin":
-    case "admin":
-      return "pill pill-cancel";
-    case "manager":
-      return "pill pill-gold";
-    case "sales":
-    case "support":
-    case "developer":
-      return "pill pill-info";
-    default:
-      return "pill pill-muted";
-  }
-}

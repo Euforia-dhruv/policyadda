@@ -43,7 +43,7 @@ export default function TrackForm({
 
   return (
     <div>
-      <form className="form-card" onSubmit={check} style={{ marginBottom: 24 }}>
+      <form className="form-card" onSubmit={check} style={{ marginBottom: "var(--sp-6)" }}>
         <div className="field">
           <label htmlFor="trackId">{copy.track.idInput}</label>
           <input
@@ -61,14 +61,14 @@ export default function TrackForm({
       </form>
 
       {result && result.found && result.data ? (
-        <div className="card" style={{ padding: 24 }}>
+        <div className="card card-pad">
           <div className="alert alert-ok" style={{ marginBottom: 16 }}>
             <strong>✓ {copy.track.found}</strong>
             <span style={{ marginLeft: 10, letterSpacing: "0.04em", fontWeight: 800 }}>{result.data.applicationNo}</span>
           </div>
-          <div style={{ marginBottom: 18, display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+          <div className="flex items-center gap-3 flex-wrap" style={{ marginBottom: 18 }}>
             <span className="pill pill-accent">{st?.label[locale] ?? result.data.status}</span>
-            <span style={{ fontSize: 12.5, color: "var(--faint)" }}>
+            <span className="faint-text">
               {copy.track.updated}: {new Date(result.data.updatedAt).toLocaleString(locale === "hi" ? "hi-IN" : "en-IN")}
             </span>
           </div>
@@ -78,7 +78,7 @@ export default function TrackForm({
         <div className="alert alert-err">{copy.track.notFound}</div>
       ) : null}
 
-      <p style={{ fontSize: 12.5, color: "var(--faint)", marginTop: 12 }}>🔒 {copy.track.privacy}</p>
+      <p className="faint-text" style={{ marginTop: 12 }}>🔒 {copy.track.privacy}</p>
     </div>
   );
 }

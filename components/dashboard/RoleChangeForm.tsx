@@ -35,7 +35,7 @@ export function RoleChangeForm({
   }
 
   return (
-    <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+    <div className="flex items-center gap-2 flex-wrap">
       <select className="field-select" value={role} onChange={(e) => setRole(e.target.value)} style={{ minWidth: 130 }}>
         {roles.map((r) => (
           <option key={r.code} value={r.code}>
@@ -46,7 +46,7 @@ export function RoleChangeForm({
       <button className="btn btn-sm" onClick={save} disabled={busy || role === currentRole}>
         {busy ? "…" : saveLabel}
       </button>
-      {msg && <span style={{ fontSize: 12, color: msg.ok ? "var(--ok)" : "var(--bad)" }}>{msg.text}</span>}
+      {msg && <span className="msg" style={{ color: msg.ok ? "var(--ok)" : "var(--bad)" }}>{msg.text}</span>}
     </div>
   );
 }

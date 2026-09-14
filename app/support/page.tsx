@@ -29,7 +29,7 @@ export default function SupportPage() {
         </div>
       </section>
 
-      <section className="pad" style={{ paddingTop: 0 }}>
+      <section className="pad section-pad-0">
         <div className="wrap">
           <div className="support-grid">
             <a href={`tel:${c.phone.tel}`} className="card support-card">
@@ -57,14 +57,14 @@ export default function SupportPage() {
         </div>
       </section>
 
-      <section className="pad" style={{ paddingTop: 0 }}>
+      <section className="pad section-pad-0">
         <div className="wrap">
           <div className="detail-card">
             <TicketForm locale={locale} copy={copy} />
             <aside className="side-card">
-              <div className="card" style={{ padding: 22 }}>
+              <div className="card card-pad">
                 <h3>{copy.support.ticket}</h3>
-                <p style={{ fontSize: 13.5, color: "var(--muted)", marginTop: 8 }}>
+                <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginTop: 8 }}>
                   {copy.support.tNote}
                 </p>
               </div>

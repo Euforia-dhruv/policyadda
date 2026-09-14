@@ -32,7 +32,7 @@ export function NoteForm({ applicationId, addLabel, placeholder }: { application
       <button className="btn btn-primary btn-sm" onClick={save} disabled={busy || !note.trim()}>
         {busy ? "Saving…" : addLabel}
       </button>
-      {msg && <p style={{ fontSize: 12.5, color: msg.ok ? "var(--ok)" : "var(--bad)", marginTop: 8 }}>{msg.text}</p>}
+      {msg && <p className="msg" style={{ color: msg.ok ? "var(--ok)" : "var(--bad)" }}>{msg.text}</p>}
     </div>
   );
 }

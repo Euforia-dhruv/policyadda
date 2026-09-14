@@ -4,6 +4,7 @@ import { getServerSupabase } from "@/lib/supabase/client";
 import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { isManager } from "@/lib/roles";
+import { statusPill, policyName, fmt } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
@@ -55,17 +56,17 @@ export default async function TeamPage() {
       <div className="stat-grid">
         {staff.length === 0 ? (
           <div className="dash-panel">
-            <p style={{ color: "var(--muted)" }}>No team members yet.</p>
+            <p className="muted-text">No team members yet.</p>
           </div>
         ) : (
           staff.map((s: any) => {
             const w = workload.get(s.user_id) || { assigned: 0, pending: 0 };
             return (
               <div className="stat-card" key={s.user_id}>
-                <div className="stat-label" style={{ textTransform: "none", fontWeight: 600 }}>
+                <div className="stat-label stat-label-cap">
                   {s.full_name || s.user_id}
                 </div>
-                <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 2 }}>{s.role_code}</div>
+                <div className="muted-text" style={{ fontSize: "var(--text-xs)", marginTop: "var(--sp-0)" }}>{s.role_code}</div>
                 <div className="stat-value">{w.assigned}</div>
                 <div className="stat-sub">
                   {w.pending} pending · {w.assigned - w.pending} progressing
@@ -81,7 +82,7 @@ export default async function TeamPage() {
           Unassigned applications ({unassigned.length})
         </h3>
         {unassigned.length === 0 ? (
-          <p style={{ color: "var(--muted)", fontSize: 14 }}>All applications are assigned.</p>
+          <p className="muted-text" style={{ fontSize: "var(--text-sm)" }}>All applications are assigned.</p>
         ) : (
           <div className="dash-table-scroll">
             <table className="dash-table">
@@ -99,18 +100,18 @@ export default async function TeamPage() {
                 {unassigned.slice(0, 12).map((a: any) => (
                   <tr key={a.id}>
                     <td className="td-mono">
-                      <Link href={`/dashboard/applications/${a.id}`} style={{ color: "var(--accent-strong)", textDecoration: "none" }}>
+                      <Link href={`/dashboard/applications/${a.id}`} className="dash-link" style={{ fontWeight: "inherit" }}>
                         {a.application_no}
                       </Link>
                     </td>
                     <td>{a.full_name}</td>
                     <td>{policyName(a)}</td>
                     <td>
-                      <span className={pill(a.status_code)}>{statusLabels.get(a.status_code) ? pick(locale, statusLabels.get(a.status_code)!) : a.status_code}</span>
+                      <span className={statusPill(a.status_code)}>{statusLabels.get(a.status_code) ? pick(locale, statusLabels.get(a.status_code)!) : a.status_code}</span>
                     </td>
-                    <td style={{ fontSize: 13, color: "var(--muted)", whiteSpace: "nowrap" }}>{fmt(locale, a.created_at)}</td>
+                    <td className="muted-text whitespace-nowrap" style={{ fontSize: "var(--text-sm)" }}>{fmt(locale, a.created_at)}</td>
                     <td>
-                      <Link href={`/dashboard/applications/${a.id}`} style={{ fontSize: 13, color: "var(--accent-strong)", fontWeight: 600, textDecoration: "none" }}>
+                      <Link href={`/dashboard/applications/${a.id}`} className="dash-link">
                         {copy.dashboard.assignTo} →
                       </Link>
                     </td>
@@ -125,27 +126,3 @@ export default async function TeamPage() {
   );
 }
 
-function policyName(a: any): string {
-  const l = Array.isArray(a.policies) ? a.policies[0] : a.policies;
-  return l?.name || "—";
-}
-
-function pill(code: string): string {
-  return (
-    {
-      completed: "pill pill-ok",
-      cancelled: "pill pill-cancel",
-      rejected: "pill pill-cancel",
-      submitted: "pill pill-gold",
-      under_review: "pill pill-gold",
-      assigned: "pill pill-info",
-      contacted: "pill pill-info",
-      processing: "pill pill-info",
-      on_hold: "pill pill-muted",
-    }[code] ?? "pill pill-info"
-  );
-}
-
-function fmt(locale: string, d: string) {
-  return new Date(d).toLocaleDateString(locale === "hi" ? "hi-IN" : "en-IN", { day: "numeric", month: "short", year: "numeric" });
-}

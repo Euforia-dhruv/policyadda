@@ -32,13 +32,13 @@ export default async function NotificationsPage() {
 
       {(notifs || []).length === 0 ? (
         <div className="dash-panel">
-          <p style={{ color: "var(--muted)" }}>{copy.dashboard.noNotifications}</p>
+          <p className="muted-text">{copy.dashboard.noNotifications}</p>
         </div>
       ) : (
         <div className="notif-list">
           {(notifs || []).map((n: any) => (
             <div key={n.id} className={"notif-item " + (n.read_at ? "" : "notif-unread")}>
-              <div className="notif-dot" style={{ opacity: n.read_at ? 0.25 : 1 }} />
+              <div className={"notif-dot" + (n.read_at ? " notif-dim" : "")} />
               <div className="notif-text">
                 <div className="notif-title">{n.title}</div>
                 {n.body ? <div className="notif-body">{n.body}</div> : null}

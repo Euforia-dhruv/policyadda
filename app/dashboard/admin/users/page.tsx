@@ -3,6 +3,7 @@ import { getServerSupabase } from "@/lib/supabase/client";
 import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { isAdmin } from "@/lib/roles";
+import { rolePill, fmt } from "@/lib/utils";
 import { RoleChangeForm } from "@/components/dashboard/RoleChangeForm";
 
 export const dynamic = "force-dynamic";
@@ -37,7 +38,7 @@ export default async function AdminUsersPage() {
         <p>{copy.dashboard.admin}</p>
       </div>
 
-      <div className="dash-panel" style={{ padding: 0, overflow: "hidden" }}>
+      <div className="dash-panel panel-np">
         <div className="dash-table-scroll">
           <table className="dash-table">
             <thead>
@@ -53,13 +54,13 @@ export default async function AdminUsersPage() {
             <tbody>
               {users.map((u: any) => (
                 <tr key={u.user_id}>
-                  <td style={{ fontWeight: 600 }}>{u.full_name || "—"}</td>
-                  <td style={{ fontSize: 13 }}>{u.email || "—"}</td>
-                  <td style={{ fontSize: 13 }}>{u.phone || "—"}</td>
+                  <td className="font-semibold">{u.full_name || "—"}</td>
+                  <td style={{ fontSize: "var(--text-sm)" }}>{u.email || "—"}</td>
+                  <td style={{ fontSize: "var(--text-sm)" }}>{u.phone || "—"}</td>
                   <td>
-                    <span className={rolePill(u.role_code)} style={{ fontSize: 12 }}>{u.role_code?.replace("_", " ")}</span>
+                    <span className={rolePill(u.role_code)} style={{ fontSize: "var(--text-xs)" }}>{u.role_code?.replace("_", " ")}</span>
                   </td>
-                  <td style={{ fontSize: 13, color: "var(--muted)", whiteSpace: "nowrap" }}>
+                  <td className="muted-text whitespace-nowrap" style={{ fontSize: "var(--text-sm)" }}>
                     {u.created_at ? fmt(locale, u.created_at) : "—"}
                   </td>
                   <td>
@@ -75,20 +76,3 @@ export default async function AdminUsersPage() {
   );
 }
 
-function rolePill(code: string): string {
-  return (
-    {
-      super_admin: "pill pill-cancel",
-      admin: "pill pill-cancel",
-      manager: "pill pill-gold",
-      sales: "pill pill-info",
-      support: "pill pill-info",
-      developer: "pill pill-info",
-      customer: "pill pill-muted",
-    }[code] ?? "pill pill-muted"
-  );
-}
-
-function fmt(locale: string, d: string) {
-  return new Date(d).toLocaleDateString(locale === "hi" ? "hi-IN" : "en-IN", { day: "numeric", month: "short", year: "numeric" });
-}

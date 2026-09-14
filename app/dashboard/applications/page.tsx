@@ -4,6 +4,7 @@ import { getServerSupabase } from "@/lib/supabase/client";
 import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { isStaff, isManager, isAdmin } from "@/lib/roles";
+import { statusPill, policyName, fmt } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
@@ -53,10 +54,10 @@ export default async function ApplicationsPage() {
 
       {(apps || []).length === 0 ? (
         <div className="dash-panel">
-          <p style={{ color: "var(--muted)" }}>{copy.dashboard.noApps}</p>
+          <p className="muted-text">{copy.dashboard.noApps}</p>
         </div>
       ) : (
-        <div className="dash-panel" style={{ padding: 0, overflow: "hidden" }}>
+        <div className="dash-panel panel-np">
           <div className="dash-table-scroll">
             <table className="dash-table">
               <thead>
@@ -79,11 +80,11 @@ export default async function ApplicationsPage() {
                     {(isAdmin(role) || isManager(role)) && <td>{a.full_name}</td>}
                     <td>{a.city || "—"}</td>
                     <td>
-                      <span className={pill(a.status_code)}>{statusLabels.get(a.status_code) ? pick(locale, statusLabels.get(a.status_code)!) : a.status_code}</span>
+                      <span className={statusPill(a.status_code)}>{statusLabels.get(a.status_code) ? pick(locale, statusLabels.get(a.status_code)!) : a.status_code}</span>
                     </td>
                     {(isAdmin(role) || isManager(role)) && <td>{staff.get(a.assigned_to) || "—"}</td>}
-                    <td style={{ whiteSpace: "nowrap", fontSize: 13, color: "var(--muted)" }}>
-                      {new Date(a.created_at).toLocaleDateString(locale === "hi" ? "hi-IN" : "en-IN", { day: "numeric", month: "short", year: "numeric" })}
+                    <td className="muted-text" style={{ whiteSpace: "nowrap", fontSize: "var(--text-sm)" }}>
+                      {fmt(locale, a.created_at)}
                     </td>
                     <td className="td-actions">
                       <Link href={`/dashboard/applications/${a.id}`}>{copy.dashboard.View}</Link>
@@ -99,23 +100,3 @@ export default async function ApplicationsPage() {
   );
 }
 
-function policyName(a: any): string {
-  const l = Array.isArray(a.policies) ? a.policies[0] : a.policies;
-  return l?.name || "—";
-}
-
-function pill(code: string): string {
-  return (
-    {
-      completed: "pill pill-ok",
-      cancelled: "pill pill-cancel",
-      rejected: "pill pill-cancel",
-      submitted: "pill pill-gold",
-      under_review: "pill pill-gold",
-      assigned: "pill pill-info",
-      contacted: "pill pill-info",
-      processing: "pill pill-info",
-      on_hold: "pill pill-muted",
-    }[code] ?? "pill pill-info"
-  );
-}

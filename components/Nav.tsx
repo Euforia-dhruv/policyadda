@@ -40,7 +40,7 @@ export default function Nav({
           <div className="nav-actions">
             <LanguageSwitch locale={locale} />
             <ThemeToggle />
-            <a href={accountHref} className="nav-link-login" style={{ fontSize: 14.5, color: "var(--muted)", fontWeight: 550 }}>
+            <a href={accountHref} className="nav-link-login muted-text font-medium" style={{ fontSize: "var(--text-sm)" }}>
               {accountLabel}
             </a>
             <a href="/policies" className="btn btn-accent btn-sm nav-cta">
@@ -60,7 +60,7 @@ export default function Nav({
         <a href="/how-it-works" onClick={() => setOpen(false)} aria-current={isActive("/how-it-works") ? "page" : undefined}>{copy.nav.how}</a>
         <a href="/support" onClick={() => setOpen(false)} aria-current={isActive("/support") ? "page" : undefined}>{copy.nav.support}</a>
         <a href={accountHref} onClick={() => setOpen(false)}>{accountLabel}</a>
-        <a href="/policies" className="btn btn-primary" style={{ marginTop: 10 }} onClick={() => setOpen(false)}>
+        <a href="/policies" className="btn btn-primary mt-2" onClick={() => setOpen(false)}>
           {copy.nav.cta}
         </a>
       </div>

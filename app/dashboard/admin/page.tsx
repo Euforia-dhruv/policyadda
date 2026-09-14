@@ -4,6 +4,8 @@ import { getServerSupabase } from "@/lib/supabase/client";
 import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { isAdmin } from "@/lib/roles";
+import { statusPill, policyName, fmt } from "@/lib/utils";
+import StatCard from "@/components/dashboard/StatCard";
 
 export const dynamic = "force-dynamic";
 
@@ -54,9 +56,9 @@ export default async function AdminOverviewPage() {
       </div>
 
       <div className="dash-panel">
-        <h3 style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <h3 className="flex items-center justify-between">
           <span>{copy.dashboard.allApplications}</span>
-          <Link href="/dashboard/applications" style={{ fontSize: 13, color: "var(--accent-strong)", fontWeight: 600, textDecoration: "none" }}>
+          <Link href="/dashboard/applications" className="dash-link">
             {copy.dashboard.View} →
           </Link>
         </h3>
@@ -79,9 +81,9 @@ export default async function AdminOverviewPage() {
                   <td>{a.full_name}</td>
                   <td>{policyName(a)}</td>
                   <td>
-                    <span className={pill(a.status_code)}>{statusLabels.get(a.status_code) ? pick(locale, statusLabels.get(a.status_code)!) : a.status_code}</span>
+                    <span className={statusPill(a.status_code)}>{statusLabels.get(a.status_code) ? pick(locale, statusLabels.get(a.status_code)!) : a.status_code}</span>
                   </td>
-                  <td style={{ fontSize: 13, color: "var(--muted)", whiteSpace: "nowrap" }}>{fmt(locale, a.created_at)}</td>
+                  <td className="muted-text whitespace-nowrap" style={{ fontSize: "var(--text-sm)" }}>{fmt(locale, a.created_at)}</td>
                   <td className="td-actions">
                     <Link href={`/dashboard/applications/${a.id}`}>{copy.dashboard.View}</Link>
                   </td>
@@ -94,7 +96,7 @@ export default async function AdminOverviewPage() {
 
       <div className="dash-panel">
         <h3>
-          {copy.dashboard.allTickets} · <Link href="/dashboard/admin/users" style={{ fontSize: 13, color: "var(--accent-strong)", fontWeight: 600, textDecoration: "none" }}>{copy.dashboard.users} →</Link>
+          {copy.dashboard.allTickets} · <Link href="/dashboard/admin/users" className="dash-link">{copy.dashboard.users} →</Link>
         </h3>
         <div className="dash-table-scroll">
           <table className="dash-table">
@@ -113,9 +115,9 @@ export default async function AdminOverviewPage() {
                   <td className="td-mono">{t.ticket_no}</td>
                   <td>{t.subject}</td>
                   <td>
-                    <span className={pill(t.status_code)}>{t.status_code}</span>
+                    <span className={statusPill(t.status_code)}>{t.status_code}</span>
                   </td>
-                  <td style={{ fontSize: 13, color: "var(--muted)", whiteSpace: "nowrap" }}>{fmt(locale, t.created_at)}</td>
+                  <td className="muted-text whitespace-nowrap" style={{ fontSize: "var(--text-sm)" }}>{fmt(locale, t.created_at)}</td>
                   <td className="td-actions">
                     <Link href={`/dashboard/tickets/${t.id}`}>{copy.dashboard.View}</Link>
                   </td>
@@ -129,39 +131,3 @@ export default async function AdminOverviewPage() {
   );
 }
 
-function StatCard({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="stat-card">
-      <div className="stat-label">{label}</div>
-      <div className="stat-value">{value}</div>
-    </div>
-  );
-}
-
-function policyName(a: any): string {
-  const l = Array.isArray(a.policies) ? a.policies[0] : a.policies;
-  return l?.name || "—";
-}
-
-function pill(code: string): string {
-  return {
-    completed: "pill pill-ok",
-    cancelled: "pill pill-cancel",
-    rejected: "pill pill-cancel",
-    submitted: "pill pill-gold",
-    under_review: "pill pill-gold",
-    assigned: "pill pill-info",
-    contacted: "pill pill-info",
-    processing: "pill pill-info",
-    on_hold: "pill pill-muted",
-    open: "pill pill-gold",
-    in_progress: "pill pill-info",
-    waiting_customer: "pill pill-info",
-    resolved: "pill pill-ok",
-    closed: "pill pill-muted",
-  }[code] ?? "pill pill-info";
-}
-
-function fmt(locale: string, d: string) {
-  return new Date(d).toLocaleDateString(locale === "hi" ? "hi-IN" : "en-IN", { day: "numeric", month: "short", year: "numeric" });
-}

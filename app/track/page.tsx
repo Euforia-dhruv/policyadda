@@ -15,7 +15,7 @@ export default function TrackPage() {
 
   return (
     <section className="pad">
-      <div className="wrap" style={{ maxWidth: 720 }}>
+      <div className="wrap max-w-md">
         <div className="section-head">
           <p className="eyebrow">{copy.track.title}</p>
           <h2>{copy.track.title}</h2>

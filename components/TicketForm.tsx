@@ -50,17 +50,17 @@ export default function TicketForm({ locale, copy }: { locale: Locale; copy: Sit
         <div className="alert alert-ok" style={{ marginBottom: 14 }}>
           <strong>✓ {copy.support.tSuccess}</strong>
         </div>
-        <p style={{ fontSize: 15, color: "var(--text)", fontWeight: 700 }}>{sent}</p>
-        <p style={{ fontSize: 13.5, color: "var(--muted)", marginTop: 8 }}>{copy.support.tSuccessSub}</p>
-        <p style={{ fontSize: 12.5, color: "var(--faint)", marginTop: 8 }}>{copy.support.tNote}</p>
+        <p style={{ fontSize: "var(--text-base)", color: "var(--text)", fontWeight: 700 }}>{sent}</p>
+        <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginTop: 8 }}>{copy.support.tSuccessSub}</p>
+        <p className="faint-text" style={{ marginTop: 8 }}>{copy.support.tNote}</p>
       </div>
     );
   }
 
   return (
     <form className="form-card" onSubmit={submit}>
-      <h3 style={{ marginBottom: 4 }}>{copy.support.openTicket}</h3>
-      <p style={{ fontSize: 13, color: "var(--muted)", marginBottom: 18 }}>{copy.support.ticketSub}</p>
+      <h3 style={{ marginBottom: "var(--sp-1)" }}>{copy.support.openTicket}</h3>
+      <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginBottom: 18 }}>{copy.support.ticketSub}</p>
 
       {err && <div className="alert alert-err" style={{ marginBottom: 14 }}>{err}</div>}
 

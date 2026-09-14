@@ -24,7 +24,7 @@ export default function StatusTimeline({
 
   return (
     <div>
-      <h3 style={{ fontSize: "1.05rem", marginBottom: 18 }}>{copy.apply.nextTitle}</h3>
+      <h3 className="text-base" style={{ marginBottom: 18 }}>{copy.apply.nextTitle}</h3>
       <div className="timeline">
         {sorted.map((s, i) => {
           const isDone = i < currentIdx;

@@ -4,6 +4,8 @@ import { getServerSupabase } from "@/lib/supabase/client";
 import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { isStaff, isManager, isAdmin } from "@/lib/roles";
+import { statusPill, policyName } from "@/lib/utils";
+import StatCard from "@/components/dashboard/StatCard";
 
 export const dynamic = "force-dynamic";
 
@@ -75,14 +77,14 @@ export default async function DashboardPage() {
       </div>
 
       <div className="dash-panel">
-        <h3 style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <h3 className="flex items-center justify-between">
           <span>{copy.dashboard.applications}</span>
-          <Link href="/dashboard/applications" style={{ fontSize: 13, color: "var(--accent-strong)", fontWeight: 600, textDecoration: "none" }}>
+          <Link href="/dashboard/applications" className="dash-link">
             {copy.dashboard.View} →
           </Link>
         </h3>
         {apps.length === 0 ? (
-          <p style={{ color: "var(--muted)", fontSize: 14 }}>{copy.dashboard.noApps}</p>
+          <p className="muted-text" style={{ fontSize: "var(--text-sm)" }}>{copy.dashboard.noApps}</p>
         ) : (
           <div className="dash-table-scroll">
             <table className="dash-table">
@@ -98,9 +100,9 @@ export default async function DashboardPage() {
                 {apps.slice(0, 8).map((a) => (
                   <tr key={a.application_no}>
                     <td className="td-mono">{a.application_no}</td>
-                    <td>{a.policies?.[0]?.name ?? recordPolicyName(a) ?? "—"}</td>
+                    <td>{a.policies?.[0]?.name ?? policyName(a) ?? "—"}</td>
                     <td>
-                      <span className={pillForStatus(a.status_code)}>{statusLabels.get(a.status_code) ? pick(locale, statusLabels.get(a.status_code)!) : a.status_code}</span>
+                      <span className={statusPill(a.status_code)}>{statusLabels.get(a.status_code) ? pick(locale, statusLabels.get(a.status_code)!) : a.status_code}</span>
                     </td>
                     <td className="td-actions">
                       <Link href={`/dashboard/applications/${a.id ?? a.application_no}`}>{copy.dashboard.View}</Link>
@@ -114,14 +116,14 @@ export default async function DashboardPage() {
       </div>
 
       <div className="dash-panel">
-        <h3 style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <h3 className="flex items-center justify-between">
           <span>{copy.dashboard.tickets}</span>
-          <Link href="/dashboard/tickets" style={{ fontSize: 13, color: "var(--accent-strong)", fontWeight: 600, textDecoration: "none" }}>
+          <Link href="/dashboard/tickets" className="dash-link">
             {copy.dashboard.View} →
           </Link>
         </h3>
         {tickets.length === 0 ? (
-          <p style={{ color: "var(--muted)", fontSize: 14 }}>{copy.dashboard.noTickets}</p>
+          <p className="muted-text" style={{ fontSize: "var(--text-sm)" }}>{copy.dashboard.noTickets}</p>
         ) : (
           <div className="dash-table-scroll">
             <table className="dash-table">
@@ -139,7 +141,7 @@ export default async function DashboardPage() {
                     <td className="td-mono">{t.ticket_no}</td>
                     <td>{t.subject}</td>
                     <td>
-                      <span className={pillForStatus(t.status_code)}>{t.status_code}</span>
+                      <span className={statusPill(t.status_code)}>{t.status_code}</span>
                     </td>
                     <td className="td-actions">
                       <Link href={`/dashboard/tickets/${t.id ?? t.ticket_no}`}>{copy.dashboard.View}</Link>
@@ -155,41 +157,8 @@ export default async function DashboardPage() {
   );
 }
 
-function StatCard({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="stat-card">
-      <div className="stat-label">{label}</div>
-      <div className="stat-value">{value}</div>
-    </div>
-  );
-}
-
 function countBy(arr: any[], key: (x: any) => string): Map<string, number> {
   const m = new Map<string, number>();
   for (const x of arr) m.set(key(x), (m.get(key(x)) || 0) + 1);
   return m;
-}
-
-function recordPolicyName(a: any): string {
-  const l = Array.isArray(a.policies) ? a.policies[0] : a.policies;
-  return l?.name || l?.slug || "—";
-}
-
-function pillForStatus(code: string): string {
-  return {
-    completed: "pill pill-ok",
-    cancelled: "pill pill-cancel",
-    rejected: "pill pill-cancel",
-    submitted: "pill pill-gold",
-    under_review: "pill pill-gold",
-    assigned: "pill pill-info",
-    contacted: "pill pill-info",
-    processing: "pill pill-info",
-    on_hold: "pill pill-muted",
-    open: "pill pill-gold",
-    in_progress: "pill pill-info",
-    waiting_customer: "pill pill-info",
-    resolved: "pill pill-ok",
-    closed: "pill pill-muted",
-  }[code] ?? "pill pill-info";
 }

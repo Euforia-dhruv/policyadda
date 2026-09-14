@@ -26,7 +26,7 @@ export default function CategoriesSection({
 }) {
   if (categories.length === 0) return null;
   return (
-    <section className="pad" id="categories" style={{ paddingTop: 0 }}>
+    <section className="pad section-pad-0" id="categories">
       <div className="wrap">
         <div className="section-head">
           <p className="eyebrow">{copy.categories.eyebrow}</p>

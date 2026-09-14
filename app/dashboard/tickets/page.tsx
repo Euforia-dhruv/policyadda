@@ -4,6 +4,7 @@ import { getServerSupabase } from "@/lib/supabase/client";
 import { getCopy } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { isStaff, isManager, isAdmin } from "@/lib/roles";
+import { statusPill, fmt } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
@@ -47,10 +48,10 @@ export default async function TicketsPage() {
 
       {(tickets || []).length === 0 ? (
         <div className="dash-panel">
-          <p style={{ color: "var(--muted)" }}>{copy.dashboard.noTickets}</p>
+          <p className="muted-text">{copy.dashboard.noTickets}</p>
         </div>
       ) : (
-        <div className="dash-panel" style={{ padding: 0, overflow: "hidden" }}>
+        <div className="dash-panel panel-np">
           <div className="dash-table-scroll">
             <table className="dash-table">
               <thead>
@@ -68,16 +69,16 @@ export default async function TicketsPage() {
                 {(tickets || []).map((t: any) => (
                   <tr key={t.id}>
                     <td className="td-mono">{t.ticket_no}</td>
-                    <td style={{ fontWeight: 600 }}>{t.subject}</td>
+                    <td className="font-semibold">{t.subject}</td>
                     <td>{t.category || "—"}</td>
                     <td>
-                      <span className={pill(t.status_code)}>{statusLabels.get(t.status_code)?.en || t.status_code}</span>
+                      <span className={statusPill(t.status_code)}>{statusLabels.get(t.status_code)?.en || t.status_code}</span>
                     </td>
                     <td>
-                      <span className={pill(t.priority_code)}>{t.priority_code}</span>
+                      <span className={statusPill(t.priority_code)}>{t.priority_code}</span>
                     </td>
-                    <td style={{ whiteSpace: "nowrap", fontSize: 13, color: "var(--muted)" }}>
-                      {new Date(t.created_at).toLocaleDateString(locale === "hi" ? "hi-IN" : "en-IN", { day: "numeric", month: "short", year: "numeric" })}
+                    <td className="muted-text" style={{ whiteSpace: "nowrap", fontSize: "var(--text-sm)" }}>
+                      {fmt(locale, t.created_at)}
                     </td>
                     <td className="td-actions">
                       <Link href={`/dashboard/tickets/${t.id}`}>{copy.dashboard.View}</Link>
@@ -93,18 +94,3 @@ export default async function TicketsPage() {
   );
 }
 
-function pill(code: string): string {
-  return (
-    {
-      open: "pill pill-gold",
-      in_progress: "pill pill-info",
-      waiting_customer: "pill pill-info",
-      resolved: "pill pill-ok",
-      closed: "pill pill-muted",
-      low: "pill pill-muted",
-      normal: "pill pill-info",
-      high: "pill pill-gold",
-      urgent: "pill pill-cancel",
-    }[code] ?? "pill pill-info"
-  );
-}

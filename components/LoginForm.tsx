@@ -75,12 +75,12 @@ export default function LoginForm({ copy, locale }: { copy: SiteCopy; locale: Lo
   const t = copy.auth;
 
   return (
-    <form className="form-card" onSubmit={submit} style={{ width: "100%" }}>
+    <form className="form-card w-full" onSubmit={submit}>
       <div className="auth-brand">
         <PolicyAddaBrand variant="icon" />
       </div>
-      <h3 style={{ marginBottom: 6 }}>{mode === "signin" ? t.signInTitle : t.signUpTitle}</h3>
-      <p style={{ fontSize: 13, color: "var(--muted)", marginBottom: 18 }}>
+      <h3 style={{ marginBottom: "var(--sp-1)" }}>{mode === "signin" ? t.signInTitle : t.signUpTitle}</h3>
+      <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginBottom: 18 }}>
         {mode === "signin" ? t.loginLead : t.signUpLead}
       </p>
 
@@ -112,27 +112,27 @@ export default function LoginForm({ copy, locale }: { copy: SiteCopy; locale: Lo
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={8} autoComplete={mode === "signin" ? "current-password" : "new-password"} />
       </div>
 
-      <button type="submit" className="btn btn-primary" style={{ width: "100%", marginTop: 4 }} disabled={busy}>
+      <button type="submit" className="btn btn-primary btn-block mt-1" disabled={busy}>
         {busy ? copy.common.loading : mode === "signin" ? t.signInCta : t.signUpCta}
       </button>
 
       {status === "notconfigured" && (
-        <div className="dev-note" style={{ marginTop: 16 }}>ⓘ {msg}</div>
+        <div className="dev-note mt-4">ⓘ {msg}</div>
       )}
       {status === "error" && (
-        <div className="form-err" style={{ marginTop: 16 }}>{msg}</div>
+        <div className="form-err mt-4">{msg}</div>
       )}
       {status === "ok" && (
-        <div className="form-ok" style={{ marginTop: 16 }}>{msg}</div>
+        <div className="form-ok mt-4">{msg}</div>
       )}
 
-      <p style={{ fontSize: 12.5, color: "var(--muted)", marginTop: 18 }}>
+      <p className="muted-text" style={{ fontSize: "var(--text-xs)", marginTop: 18 }}>
         {mode === "signin" ? (
           <button type="button" className="link-btn" onClick={() => { setMode("signup"); setStatus("idle"); }}>{t.switchToSignUp}</button>
         ) : (
           <button type="button" className="link-btn" onClick={() => { setMode("signin"); setStatus("idle"); }}>{t.switchToLogin}</button>
         )}
-        <span style={{ display: "block", marginTop: 10 }}>{t.policyNote}</span>
+        <span className="mt-2" style={{ display: "block" }}>{t.policyNote}</span>
       </p>
     </form>
   );

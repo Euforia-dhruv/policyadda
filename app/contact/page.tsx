@@ -15,7 +15,7 @@ export default function ContactPage() {
 
   return (
     <section className="pad">
-      <div className="wrap" style={{ maxWidth: 920 }}>
+      <div className="wrap max-w-lg">
         <div className="section-head">
           <p className="eyebrow">{copy.footer.contact}</p>
           <h2>Talk to PolicyAdda</h2>
@@ -48,14 +48,14 @@ export default function ContactPage() {
         <div className="card" style={{ padding: "24px 26px", marginTop: 10 }}>
           <h3 style={{ marginBottom: 10 }}>{copy.support.hours}</h3>
           {pick(locale, c.hours ?? { en: [], hi: [] }).map((h) => (
-            <p key={h} style={{ fontSize: 14.5 }}>{h}</p>
+            <p key={h} style={{ fontSize: "var(--text-sm)" }}>{h}</p>
           ))}
-          <p style={{ fontSize: 13, color: "var(--faint)", marginTop: 10 }}>
+          <p className="faint-text" style={{ marginTop: 10 }}>
             {copy.support.email}: {copy.support.emailSub}
           </p>
         </div>
 
-        <p style={{ marginTop: 20, fontSize: 13.5 }}>
+        <p className="mt-5" style={{ fontSize: "var(--text-sm)" }}>
           <a href="/support" className="cat-link">{copy.support.openTicket} →</a>
         </p>
       </div>

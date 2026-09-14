@@ -65,14 +65,14 @@ export default function ApplyForm({
           <strong>✓ {copy.apply.doneTitle}</strong>
         </div>
         <div className="form-card" style={{ marginBottom: 18 }}>
-          <p style={{ fontSize: 13.5, color: "var(--muted)", marginBottom: 4 }}>{copy.apply.yourId}</p>
-          <p style={{ fontSize: 26, fontWeight: 800, letterSpacing: "0.04em", color: "var(--text)" }}>
+          <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginBottom: 4 }}>{copy.apply.yourId}</p>
+          <p style={{ fontSize: "var(--text-3xl)", fontWeight: 800, letterSpacing: "0.04em", color: "var(--text)" }}>
             {state.applicationNo}
           </p>
-          <p style={{ fontSize: 13.5, color: "var(--muted)", marginTop: 12 }}>{copy.apply.doneSub}</p>
+          <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginTop: 12 }}>{copy.apply.doneSub}</p>
         </div>
         <StatusTimeline statuses={statuses} current="submitted" copy={copy} locale={locale} />
-        <p style={{ marginTop: 20 }}>
+        <p className="mt-5">
           <a href="/track" className="btn btn-primary">{copy.apply.trackNow}</a>
         </p>
       </div>
@@ -84,7 +84,7 @@ export default function ApplyForm({
       {state.phase === "error" && (
         <div className="alert alert-err" style={{ marginBottom: 16 }}>{state.error}</div>
       )}
-      <p style={{ fontSize: 13, color: "var(--muted)", marginBottom: 18 }}>
+      <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginBottom: 18 }}>
         Applying for: <strong style={{ color: "var(--text)" }}>{policyName}</strong>
       </p>
 
@@ -124,7 +124,7 @@ export default function ApplyForm({
       <button className="btn btn-primary btn-block" type="submit" disabled={busy}>
         {busy ? <span className="spinner" /> : copy.apply.submitCta}
       </button>
-      <p style={{ fontSize: 12.5, color: "var(--faint)", marginTop: 12 }}>
+      <p className="faint-text" style={{ marginTop: 12 }}>
         {copy.apply.privacyNote}
       </p>
     </form>

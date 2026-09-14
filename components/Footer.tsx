@@ -20,10 +20,10 @@ export default function Footer({
         <div className="footer-grid">
           <div>
             <PolicyAddaBrand variant="full" className="f-brand" />
-            <p className="f-note" style={{ marginTop: 10 }}>
+            <p className="f-note mt-2">
               {config.slogan[locale]} — {copy.footer.tagline}
             </p>
-            <p className="f-note" style={{ marginTop: 12 }}>
+            <p className="f-note mt-3">
               {config.contact.address ? pick(locale, config.contact.address) : ""} · {config.contact.phone.display}
             </p>
           </div>

@@ -9,15 +9,15 @@ import { pick } from "@/lib/i18n";
 export default function SupportSection({ copy, locale }: { copy: SiteCopy; locale: Locale }) {
   const c = siteConfig.contact;
   return (
-    <section className="pad" id="support" style={{ paddingTop: 0 }}>
+    <section className="pad section-pad-0" id="support">
       <div className="wrap">
         <div className="card support-home">
-          <div className="section-head" style={{ maxWidth: 600, marginBottom: 26 }}>
+          <div className="section-head section-mb-sm" style={{ maxWidth: 600 }}>
             <p className="eyebrow">{copy.support.eyebrow}</p>
             <h2>{copy.support.homeTitle}</h2>
             <p className="lead">{copy.support.homeLead}</p>
           </div>
-          <div className="support-grid" style={{ marginBottom: 0 }}>
+          <div className="support-grid section-mb-0">
             <a className="card support-card" href="tel:+917677888748">
               <div className="ico">☎</div>
               <h3>{copy.support.call}</h3>

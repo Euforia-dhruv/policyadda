@@ -51,7 +51,7 @@ export function ProfileForm({
       <button className="btn btn-primary" onClick={save} disabled={busy}>
         {busy ? "Saving…" : saveLabel}
       </button>
-      {msg && <p style={{ fontSize: 13, color: msg.ok ? "var(--ok)" : "var(--bad)", marginTop: 10 }}>{msg.text}</p>}
+      {msg && <p className="msg" style={{ fontSize: "var(--text-sm)", color: msg.ok ? "var(--ok)" : "var(--bad)" }}>{msg.text}</p>}
     </div>
   );
 }

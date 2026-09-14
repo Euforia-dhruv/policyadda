@@ -4,6 +4,7 @@ import { getServerSupabase } from "@/lib/supabase/client";
 import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { isStaff, isManager, isAdmin } from "@/lib/roles";
+import { statusPill, policyName, fmt } from "@/lib/utils";
 import { StatusUpdateForm } from "@/components/dashboard/StatusUpdateForm";
 import { NoteForm } from "@/components/dashboard/NoteForm";
 import { AssignForm } from "@/components/dashboard/AssignForm";
@@ -60,12 +61,12 @@ export default async function AppDetailPage({ params }: { params: Promise<{ id: 
   return (
     <>
       <div className="dash-head">
-        <Link href="/dashboard/applications" style={{ fontSize: 13, color: "var(--accent-strong)", textDecoration: "none", fontWeight: 600 }}>
+        <Link href="/dashboard/applications" className="dash-link">
           ← {copy.dashboard.Back}
         </Link>
-        <h1 style={{ marginTop: 8 }}>{app.application_no}</h1>
-        <p style={{ textTransform: "capitalize" }}>
-          {policyName(app)} · <span className={pill(app.status_code)}>{pick(locale, app.application_statuses?.label || { en: app.status_code, hi: app.status_code })}</span>
+        <h1 className="mt-2">{app.application_no}</h1>
+        <p className="capitalize">
+          {policyName(app)} · <span className={statusPill(app.status_code)}>{pick(locale, app.application_statuses?.label || { en: app.status_code, hi: app.status_code })}</span>
         </p>
       </div>
 
@@ -87,7 +88,7 @@ export default async function AppDetailPage({ params }: { params: Promise<{ id: 
           <div className="dash-panel">
             <h3>{copy.dashboard.statusHistory}</h3>
             {history.length === 0 ? (
-              <p style={{ color: "var(--muted)", fontSize: 14 }}>{app.status_code}</p>
+              <p className="muted-text" style={{ fontSize: "var(--text-sm)" }}>{app.status_code}</p>
             ) : (
               <div className="dash-timeline">
                 {history.map((h: any) => {
@@ -122,7 +123,7 @@ export default async function AppDetailPage({ params }: { params: Promise<{ id: 
           ) : null}
         </div>
 
-        <aside style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+        <aside className="flex flex-col gap-5">
           {isStaffUser ? (
             <div className="dash-panel">
               <h3>{copy.dashboard.updateStatus}</h3>
@@ -153,8 +154,8 @@ export default async function AppDetailPage({ params }: { params: Promise<{ id: 
           {isStaffUser ? (
             <div className="dash-panel">
               <h3>{copy.dashboard.assignedTo}</h3>
-              <p style={{ fontSize: 14, color: "var(--text)" }}>{assigneeRes?.fullName || copy.dashboard.unassigned}</p>
-              {app.assigned_at ? <p style={{ fontSize: 12, color: "var(--muted)", marginTop: 4 }}>{fmt(locale, app.assigned_at)}</p> : null}
+              <p style={{ fontSize: "var(--text-sm)", color: "var(--text)" }}>{assigneeRes?.fullName || copy.dashboard.unassigned}</p>
+              {app.assigned_at ? <p className="muted-text mt-1" style={{ fontSize: "var(--text-xs)" }}>{fmt(locale, app.assigned_at)}</p> : null}
             </div>
           ) : null}
         </aside>
@@ -176,29 +177,4 @@ function DetailField({ label, value, mono }: { label: string; value: string; mon
 
 function isManagerUnit(role: string): boolean {
   return isManager(role);
-}
-
-function policyName(a: any): string {
-  const l = Array.isArray(a.policies) ? a.policies[0] : a.policies;
-  return l?.name || "—";
-}
-
-function pill(code: string): string {
-  return (
-    {
-      completed: "pill pill-ok",
-      cancelled: "pill pill-cancel",
-      rejected: "pill pill-cancel",
-      submitted: "pill pill-gold",
-      under_review: "pill pill-gold",
-      assigned: "pill pill-info",
-      contacted: "pill pill-info",
-      processing: "pill pill-info",
-      on_hold: "pill pill-muted",
-    }[code] ?? "pill pill-info"
-  );
-}
-
-function fmt(locale: string, d: string): string {
-  return new Date(d).toLocaleDateString(locale === "hi" ? "hi-IN" : "en-IN", { day: "numeric", month: "short", year: "numeric" });
 }

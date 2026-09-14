@@ -26,7 +26,7 @@ export default async function ProfilePage() {
       </div>
 
       <div className="dash-detail">
-        <div className="dash-panel" style={{ maxWidth: 460 }}>
+        <div className="dash-panel" style={{ maxWidth: "var(--sp-16, 480px)" }}>
           <ProfileForm
             initial={{ fullName: profile?.full_name, phone: profile?.phone, city: profile?.city }}
             saveLabel={copy.dashboard.saveChanges}
@@ -34,18 +34,18 @@ export default async function ProfilePage() {
           />
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+        <div className="flex flex-col gap-4">
           <div className="dash-panel">
             <h3>{copy.dashboard.roleLabel}</h3>
-            <p style={{ fontSize: 14, textTransform: "capitalize" }}>{(profile?.role_code || "customer").replace("_", " ")}</p>
+            <p className="capitalize" style={{ fontSize: "var(--text-sm)" }}>{(profile?.role_code || "customer").replace("_", " ")}</p>
           </div>
           <div className="dash-panel">
             <h3>{copy.dashboard.roleLabel === "Role" ? "Email" : "ईमेल"}</h3>
-            <p style={{ fontSize: 14 }}>{profile?.email || user.email || "—"}</p>
+            <p style={{ fontSize: "var(--text-sm)" }}>{profile?.email || user.email || "—"}</p>
           </div>
           <div className="dash-panel">
             <h3>{copy.dashboard.joinedOn}</h3>
-            <p style={{ fontSize: 14 }}>
+            <p style={{ fontSize: "var(--text-sm)" }}>
               {profile?.created_at
                 ? new Date(profile.created_at).toLocaleDateString(locale === "hi" ? "hi-IN" : "en-IN", { day: "numeric", month: "short", year: "numeric" })
                 : "—"}

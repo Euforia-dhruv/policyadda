@@ -39,8 +39,8 @@ export function AssignForm({
 
   return (
     <div>
-      <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-        <select className="field-select" value={employeeId} onChange={(e) => setEmployeeId(e.target.value)} style={{ flex: 1, minWidth: 160 }}>
+      <div className="flex gap-2 flex-wrap">
+        <select className="field-select flex-1" value={employeeId} onChange={(e) => setEmployeeId(e.target.value)} style={{ minWidth: 160 }}>
           <option value="">{unassigned}</option>
           {staff.map((s) => (
             <option key={s.userId} value={s.userId}>
@@ -52,7 +52,7 @@ export function AssignForm({
           {busy ? "Saving…" : assignLabel}
         </button>
       </div>
-      {msg && <p style={{ fontSize: 12.5, color: msg.ok ? "var(--ok)" : "var(--bad)", marginTop: 8 }}>{msg.text}</p>}
+      {msg && <p className="msg" style={{ color: msg.ok ? "var(--ok)" : "var(--bad)" }}>{msg.text}</p>}
     </div>
   );
 }

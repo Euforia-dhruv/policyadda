@@ -3,6 +3,7 @@ import { getServerSupabase } from "@/lib/supabase/client";
 import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { isAdmin } from "@/lib/roles";
+import { fmt } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
@@ -33,7 +34,7 @@ export default async function AdminPoliciesPage() {
         <p>{copy.dashboard.admin}</p>
       </div>
 
-      <div className="dash-panel" style={{ padding: 0, overflow: "hidden" }}>
+      <div className="dash-panel panel-np">
         <div className="dash-table-scroll">
           <table className="dash-table">
             <thead>
@@ -51,14 +52,14 @@ export default async function AdminPoliciesPage() {
                 const catName: string = cat?.name ? String(pick(locale, cat.name) || "—") : "—";
                 return (
                   <tr key={p.id}>
-                    <td style={{ fontWeight: 600 }}>
+                    <td className="font-semibold">
                       {p.name}
-                      <div style={{ fontSize: 12, color: "var(--muted)" }}>/{p.slug}</div>
+                      <div className="muted-text" style={{ fontSize: "var(--text-xs)" }}>/{p.slug}</div>
                     </td>
                     <td>{catName}</td>
                     <td>{p.is_active ? <span className="pill pill-ok">Active</span> : <span className="pill pill-muted">Draft</span>}</td>
                     <td>{p.is_featured ? <span className="pill pill-info">Featured</span> : <span className="pill pill-muted">—</span>}</td>
-                    <td style={{ fontSize: 13, color: "var(--muted)", whiteSpace: "nowrap" }}>
+                    <td className="muted-text whitespace-nowrap" style={{ fontSize: "var(--text-sm)" }}>
                       {p.updated_at ? fmt(locale, p.updated_at) : "—"}
                     </td>
                   </tr>
@@ -70,7 +71,7 @@ export default async function AdminPoliciesPage() {
       </div>
 
       <div className="dash-panel">
-        <p style={{ fontSize: 13.5, color: "var(--muted)", lineHeight: 1.6 }}>
+        <p className="muted-text" style={{ fontSize: "var(--text-sm)", lineHeight: 1.6 }}>
           {copy.verif.note} Editing of policy descriptions is an admin-only action and is managed alongside
           verified insurer documentation.
         </p>
@@ -79,6 +80,3 @@ export default async function AdminPoliciesPage() {
   );
 }
 
-function fmt(locale: string, d: string) {
-  return new Date(d).toLocaleDateString(locale === "hi" ? "hi-IN" : "en-IN", { day: "numeric", month: "short", year: "numeric" });
-}
