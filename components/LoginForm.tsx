@@ -77,7 +77,7 @@ export default function LoginForm({ copy, locale }: { copy: SiteCopy; locale: Lo
   return (
     <form className="form-card" onSubmit={submit} style={{ width: "100%" }}>
       <div className="auth-brand">
-        <PolicyAddaBrand variant="full" />
+        <PolicyAddaBrand variant="icon" />
       </div>
       <h3 style={{ marginBottom: 6 }}>{mode === "signin" ? t.signInTitle : t.signUpTitle}</h3>
       <p style={{ fontSize: 13, color: "var(--muted)", marginBottom: 18 }}>
