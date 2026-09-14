@@ -4,35 +4,65 @@ import { useState } from "react";
 import type { Locale } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 
+type Mode = "signin" | "signup";
+
 export default function LoginForm({ copy, locale }: { copy: SiteCopy; locale: Locale }) {
+  const [mode, setMode] = useState<Mode>("signin");
+  const [fullName, setFullName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [city, setCity] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState<"idle" | "ok" | "error" | "notconfigured">("idle");
   const [msg, setMsg] = useState("");
 
+  async function signIn(email: string, password: string) {
+    const res = await fetch("/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+    const json = await res.json();
+    if (!res.ok) {
+      if (res.status === 503) {
+        setStatus("notconfigured");
+        setMsg(json.message ?? "Authentication not configured.");
+      } else {
+        setStatus("error");
+        setMsg(json.error ?? "Sign-in failed.");
+      }
+      return false;
+    }
+    return true;
+  }
+
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     setBusy(true);
     setStatus("idle");
     try {
-      const res = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-      const json = await res.json();
-      if (res.status === 503) {
-        setStatus("notconfigured");
-        setMsg(json.message ?? "Authentication not configured.");
-      } else if (res.ok) {
+      if (mode === "signup") {
+        const res = await fetch("/api/auth/signup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ fullName, phone, email, password, city }),
+        });
+        const json = await res.json();
+        if (!res.ok) {
+          setStatus("error");
+          setMsg(json.error ?? "Sign-up failed.");
+          return;
+        }
         setStatus("ok");
-        setMsg("Signed in. Redirecting to dashboard…");
+        setMsg(copy.auth.success);
+        await signIn(email.trim(), password);
         window.location.href = "/dashboard";
-      } else {
-        setStatus("error");
-        setMsg(json.error ?? "Sign-in failed.");
+        return;
       }
+
+      const ok = await signIn(email, password);
+      if (ok) window.location.href = "/dashboard";
     } catch {
       setStatus("error");
       setMsg("Network error. Please retry.");
@@ -41,38 +71,64 @@ export default function LoginForm({ copy, locale }: { copy: SiteCopy; locale: Lo
     }
   }
 
+  const t = copy.auth;
+
   return (
     <form className="form-card" onSubmit={submit} style={{ width: "100%" }}>
-      <h3 style={{ marginBottom: 6 }}>{copy.nav.login}</h3>
+      <h3 style={{ marginBottom: 6 }}>{mode === "signin" ? t.signInTitle : t.signUpTitle}</h3>
       <p style={{ fontSize: 13, color: "var(--muted)", marginBottom: 18 }}>
-        Secure sign-in for customers and PolicyAdda team members.
+        {mode === "signin" ? t.loginLead : t.signUpLead}
       </p>
 
-      {status === "notconfigured" && (
-        <div className="dev-note" style={{ marginBottom: 14 }}>ⓘ {msg}</div>
-      )}
-      {status === "error" && (
-        <div className="alert alert-err" style={{ marginBottom: 14 }}>{msg}</div>
-      )}
-      {status === "ok" && (
-        <div className="alert alert-ok" style={{ marginBottom: 14 }}>{msg}</div>
+      {mode === "signup" && (
+        <>
+          <div className="field">
+            <label>{t.name}</label>
+            <input value={fullName} onChange={(e) => setFullName(e.target.value)} required minLength={2} autoComplete="name" />
+          </div>
+          <div className="field">
+            <label>
+              {t.phone} <span className="opt">({t.phoneHint})</span>
+            </label>
+            <input value={phone} onChange={(e) => setPhone(e.target.value.replace(/\D/g, "").slice(0, 10))} inputMode="numeric" required pattern="[6-9][0-9]{9}" autoComplete="tel" />
+          </div>
+          <div className="field">
+            <label>{t.city} <span className="opt">({copy.common.optional})</span></label>
+            <input value={city} onChange={(e) => setCity(e.target.value)} autoComplete="address-level2" />
+          </div>
+        </>
       )}
 
       <div className="field">
-        <label htmlFor="liEmail">Email</label>
-        <input id="liEmail" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required autoComplete="email" />
+        <label>{t.email}</label>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required autoComplete="email" />
       </div>
       <div className="field">
-        <label htmlFor="liPass">Password</label>
-        <input id="liPass" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required autoComplete="current-password" />
+        <label>{t.password}</label>
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={8} autoComplete={mode === "signin" ? "current-password" : "new-password"} />
       </div>
 
-      <button className="btn btn-primary btn-block" type="submit" disabled={busy}>
-        {busy ? <span className="spinner" /> : copy.nav.login}
+      <button type="submit" className="btn btn-primary" style={{ width: "100%", marginTop: 4 }} disabled={busy}>
+        {busy ? copy.common.loading : mode === "signin" ? t.signInCta : t.signUpCta}
       </button>
 
-      <p style={{ fontSize: 12.5, color: "var(--faint)", marginTop: 14 }}>
-        Customer accounts activate once your application has been processed and Authentication is enabled.
+      {status === "notconfigured" && (
+        <div className="dev-note" style={{ marginTop: 16 }}>ⓘ {msg}</div>
+      )}
+      {status === "error" && (
+        <div className="form-err" style={{ marginTop: 16 }}>{msg}</div>
+      )}
+      {status === "ok" && (
+        <div className="form-ok" style={{ marginTop: 16 }}>{msg}</div>
+      )}
+
+      <p style={{ fontSize: 12.5, color: "var(--muted)", marginTop: 18 }}>
+        {mode === "signin" ? (
+          <button type="button" className="link-btn" onClick={() => { setMode("signup"); setStatus("idle"); }}>{t.switchToSignUp}</button>
+        ) : (
+          <button type="button" className="link-btn" onClick={() => { setMode("signin"); setStatus("idle"); }}>{t.switchToLogin}</button>
+        )}
+        <span style={{ display: "block", marginTop: 10 }}>{t.policyNote}</span>
       </p>
     </form>
   );

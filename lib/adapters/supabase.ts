@@ -38,6 +38,7 @@ export const supabaseBackend: StorageBackend = {
       .from("applications")
       .insert({
         policy_id: policyId,
+        customer_id: input.customerId || null,
         full_name: input.fullName.trim(),
         phone: input.phone,
         email: input.email?.trim() || null,

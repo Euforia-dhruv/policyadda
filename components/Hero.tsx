@@ -23,7 +23,7 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
           <p className="hero-sub">{copy.hero.sub}</p>
           <div className="hero-actions">
             <a href="/policies" className="btn btn-primary">{copy.hero.ctaPrimary}</a>
-            <a href="/support" className="btn btn-ghost">{copy.hero.ctaSecondary}</a>
+            <a href="/support" className="btn btn-accent">{copy.hero.ctaSecondary}</a>
           </div>
           <div className="hero-meta">
             <span className="chip">{c.phone.display}</span>

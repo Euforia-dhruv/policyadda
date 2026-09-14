@@ -20,7 +20,7 @@ export default function Nav({
       <header className="nav">
         <div className="wrap nav-inner">
           <a href="/" className="brand" aria-label="PolicyAdda home">
-            <div className="brand-mark">P</div>
+            <div className="brand-mark">PA</div>
             PolicyAdda
           </a>
 
@@ -37,7 +37,7 @@ export default function Nav({
             <a href="/login" className="nav-link-login" style={{ fontSize: 14.5, color: "var(--muted)", fontWeight: 550 }}>
               {copy.nav.login}
             </a>
-            <a href="/policies" className="btn btn-primary btn-sm nav-cta">
+            <a href="/policies" className="btn btn-accent btn-sm nav-cta">
               {copy.nav.cta}
             </a>
             <button className="menu-btn" onClick={() => setOpen(!open)} aria-label="Menu" aria-expanded={open}>

@@ -3,6 +3,7 @@ import { applicationSchema, parseWith } from "@/lib/validation";
 import { storage } from "@/lib/adapters";
 import { clientIp, rateLimit } from "@/lib/utils";
 import { getPolicyBySlug } from "@/content/policies";
+import { getServerSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
 
 export const runtime = "nodejs";
 
@@ -30,7 +31,15 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "policy_not_found" }, { status: 404 });
   }
 
-  const record = await storage.createApplication(parsed.data);
+  // Attach the signed-in customer (server-side cookie session — not client input).
+  let customerId: string | undefined;
+  if (isSupabaseConfigured()) {
+    const sb = await getServerSupabase();
+    const session = sb ? await sb.auth.getUser() : { data: null };
+    if (session.data?.user) customerId = session.data.user.id;
+  }
+
+  const record = await storage.createApplication({ ...parsed.data, customerId });
   return NextResponse.json(
     {
       ok: true,

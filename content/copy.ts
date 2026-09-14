@@ -33,6 +33,8 @@ export type SiteCopy = {
     eyebrow: string;
     title: string;
     lead: string;
+    homeTitle: string;
+    homeLead: string;
     call: string;
     callSub: string;
     hours: string;
@@ -109,6 +111,37 @@ export type SiteCopy = {
     nextTitle: string;
   };
   track: { title: string; sub: string; idInput: string; idPlaceholder: string; check: string; found: string; notFound: string; privacy: string; updated: string };
+  dashboard: {
+    title: string;
+    lead: string;
+    role: string;
+    applications: string;
+    noApps: string;
+    noAppsCta: string;
+    signOut: string;
+    status: string;
+    submitted: string;
+    policy: string;
+    idLabel: string;
+  };
+  auth: {
+    signInTitle: string;
+    signUpTitle: string;
+    loginLead: string;
+    signUpLead: string;
+    name: string;
+    email: string;
+    password: string;
+    phone: string;
+    phoneHint: string;
+    city: string;
+    signInCta: string;
+    signUpCta: string;
+    switchToSignUp: string;
+    switchToLogin: string;
+    success: string;
+    policyNote: string;
+  };
   verif: { note: string; pendingTitle: string; pendingBody: string };
   common: {
     close: string;
@@ -133,16 +166,16 @@ export const en: SiteCopy = {
     apply: "Apply",
   },
   hero: {
-    eyebrow: "Insurance assistance · Ranchi",
-    titleA: "Unexpected things happen.",
-    titleB: "Insurance shouldn't be confusing.",
-    sub: "PolicyAdda helps you understand insurance categories and policy options in plain language — then guides you through every step, from enquiry to policy access. Policy aapka, adda humara.",
-    ctaPrimary: "Explore policies",
-    ctaSecondary: "Talk to us",
+    eyebrow: "Policy Aapka · Adda Apna",
+    titleA: "Protection, made easier to understand.",
+    titleB: "Insurance clarity, when you need it.",
+    sub: "PolicyAdda helps you understand policies, explore coverage, and get assistance the moment you need it — in plain language, with a human on your side.",
+    ctaPrimary: "Explore Policies",
+    ctaSecondary: "Get Assistance",
   },
   trust: {
     eyebrow: "Why people choose PolicyAdda",
-    title: "Insurance you can understand.",
+    title: "Insurance should be understandable.",
     lead: "No hidden clauses, no pressure, no jargon walls. We take you from confusion to clarity — professionally, transparently, and at your pace.",
     items: [
       { t: "Transparent information", d: "Policies are explained in plain language with clear sections — benefits, coverage, exclusions, and required documents." },
@@ -162,18 +195,16 @@ export const en: SiteCopy = {
     title: "From confusion to clarity, step by step.",
     lead: "A simple, transparent journey — no surprises.",
     steps: [
-      { t: "Explore", d: "Browse insurance categories and understand your options in plain language." },
-      { t: "Understand", d: "Read clear, structured policy information — benefits, coverage, exclusions." },
-      { t: "Submit enquiry", d: "Fill a short form or use the provided application link. No commitment." },
-      { t: "Get contacted", d: "A PolicyAdda executive reaches out to assist you personally." },
-      { t: "Receive assistance", d: "Get helped through the policy process, from paperwork to answers." },
-      { t: "Access your policy", d: "Customers receive access to their policy information through our secure portal." },
+      { t: "Explore", d: "Understand policy categories and basic information in plain language." },
+      { t: "Connect", d: "Submit your requirements with a short, no-commitment form." },
+      { t: "Get Assistance", d: "A PolicyAdda executive contacts you and guides you personally." },
+      { t: "Stay Organized", d: "Access policy details and track progress from your dashboard." },
     ],
   },
   featured: {
-    eyebrow: "Featured policies",
-    title: "Popular policy concepts.",
-    lead: "A few concepts customers often ask about. Full clarity before any decision.",
+    eyebrow: "Education first",
+    title: "Know what you're covered for.",
+    lead: "Policies explained in clear terms — benefits, coverage, exclusions, and documents — before you decide anything.",
     viewAll: "View all policies",
     learnMore: "Learn more",
   },
@@ -199,6 +230,8 @@ export const en: SiteCopy = {
     eyebrow: "Support",
     title: "Talk to a real person.",
     lead: "Questions, applications, or anything else — reach us during working hours and we'll take it from there.",
+    homeTitle: "Questions don't need complicated answers.",
+    homeLead: "Whether it's coverage, documents, or a claim query — call us, write to us, or raise a ticket and a real person responds.",
     call: "Call us",
     callSub: "Monday–Saturday, 9:30 AM – 6:00 PM",
     email: "Email",
@@ -222,7 +255,7 @@ export const en: SiteCopy = {
     cats: ["General question", "Application status", "Policy question", "Claim support", "Other"],
   },
   footer: {
-    tagline: "Policy Aapka. Adda Humara.",
+    tagline: "Insurance assistance and policy discovery, made clear.",
     explore: "Explore",
     categoriesLabel: "Categories",
     company: "Company",
@@ -236,9 +269,9 @@ export const en: SiteCopy = {
     rights: "All rights reserved.",
   },
   cta: {
-    title: "Not sure where to start?",
-    sub: "Tell us what you're looking for and a PolicyAdda executive will guide you — free, with no obligation.",
-    primary: "Get assistance",
+    title: "Your policy. Your place for clarity.",
+    sub: "Whatever you're planning next — a policy to choose, a question to answer, or a renewal to review — PolicyAdda is here to guide you.",
+    primary: "Get Assistance",
     secondary: "Read the FAQ",
   },
   detail: {
@@ -285,6 +318,37 @@ export const en: SiteCopy = {
     privacy: "Only your application status is shown here — never personal details.",
     updated: "Last updated",
   },
+  dashboard: {
+    title: "Your dashboard",
+    lead: "Everything tracked for your account — applications and their current status, scoped to you.",
+    role: "Role",
+    applications: "Your applications",
+    noApps: "You haven't submitted an application yet. Explore policies and get assistance whenever you're ready.",
+    noAppsCta: "Explore policies",
+    signOut: "Sign out",
+    status: "Status",
+    submitted: "Submitted",
+    policy: "Policy",
+    idLabel: "Application ID",
+  },
+  auth: {
+    signInTitle: "Sign in",
+    signUpTitle: "Create your account",
+    loginLead: "Secure sign-in for customers and PolicyAdda team members.",
+    signUpLead: "Create a customer account to see applications you've submitted under your phone number.",
+    name: "Full name",
+    email: "Email",
+    password: "Password",
+    phone: "Phone number",
+    phoneHint: "Enter a valid 10-digit mobile number.",
+    city: "City",
+    signInCta: "Sign in",
+    signUpCta: "Create account",
+    switchToSignUp: "New here? Create an account",
+    switchToLogin: "Already have an account? Sign in",
+    success: "Account created. Signing you in…",
+    policyNote: "Account opening is immediate; you can log in right away.",
+  },
   verif: {
     note: "Submitting this form is an enquiry, not a purchase. Nothing is confirmed until you speak with a PolicyAdda executive.",
     pendingTitle: "Awaiting verified details",
@@ -313,16 +377,16 @@ export const hi: SiteCopy = {
     apply: "आवेदन करें",
   },
   hero: {
-    eyebrow: "बीमा सहायता · राँची",
-    titleA: "अप्रत्याशित घटनाएँ होती हैं।",
-    titleB: "बीमा को भ्रमित करने वाला नहीं होना चाहिए।",
-    sub: "PolicyAdda आपको बीमा श्रेणियों और पॉलिसी विकल्पों को सरल भाषा में समझने में मदद करता है — फिर पूछताछ से पॉलिसी तक हर कदम पर आपका मार्गदर्शन करता है। पॉलिसी आपकी, अड्डा हमारा।",
+    eyebrow: "पॉलिसी आपकी · अड्डा अपना",
+    titleA: "सुरक्षा, जो समझना आसान हो।",
+    titleB: "बीमे की स्पष्टता, जब आपको चाहिए।",
+    sub: "PolicyAdda आपको पॉलिसी समझने, कवरेज जानने और ज़रूरत के समय सहायता पाने में मदद करता है — सरल भाषा में, और आपके साथ हमेशा इंसान होता है।",
     ctaPrimary: "पॉलिसी देखें",
-    ctaSecondary: "हमसे बात करें",
+    ctaSecondary: "सहायता लें",
   },
   trust: {
     eyebrow: "PolicyAdda क्यों चुनें",
-    title: "बीमा जो आप समझ सकें।",
+    title: "बीमा समझना आसान होना चाहिए।",
     lead: "न छिपी शर्तें, न दबाव, न जटिल भाषा की दीवार। हम आपको भ्रम से स्पष्टता तक ले जाते हैं — पेशेवर, पारदर्शी और आपकी गति से।",
     items: [
       { t: "पारदर्शी जानकारी", d: "पॉलिसी को सरल भाषा में स्पष्ट खंडों के साथ समझाया जाता है — लाभ, कवरेज, बहिष्करण और आवश्यक दस्तावेज़।" },
@@ -342,18 +406,16 @@ export const hi: SiteCopy = {
     title: "भ्रम से स्पष्टता तक, चरण दर चरण।",
     lead: "एक सरल, पारदर्शी यात्रा — बिना किसी आश्चर्य के।",
     steps: [
-      { t: "एक्सप्लोर करें", d: "बीमा श्रेणियाँ देखें और अपने विकल्पों को सरल भाषा में समझें।" },
-      { t: "समझें", d: "स्पष्ट, संरचित पॉलिसी जानकारी पढ़ें — लाभ, कवरेज, बहिष्करण।" },
-      { t: "आवेदन जमा करें", d: "एक छोटा फ़ॉर्म भरें या दिए गए आवेदन लिंक का उपयोग करें। कोई प्रतिबद्धता नहीं।" },
-      { t: "संपर्क प्राप्त करें", d: "एक PolicyAdda कार्यकारी आपकी व्यक्तिगत सहायता के लिए पहुँचता है।" },
-      { t: "सहायता प्राप्त करें", d: "पॉलिसी प्रक्रिया में कागजी कार्रवाई से लेकर उत्तरों तक हर कदम पर सहायता।" },
-      { t: "अपनी पॉलिसी तक पहुँचें", d: "ग्राहकों को हमारे सुरक्षित पोर्टल के माध्यम से पॉलिसी जानकारी तक पहुँच मिलती है।" },
+      { t: "एक्सप्लोर करें", d: "बीमा श्रेणियाँ देखें और बुनियादी जानकारी सरल भाषा में समझें।" },
+      { t: "कनेक्ट हों", d: "छोटे, बिना किसी प्रतिबद्धता वाले फ़ॉर्म से अपनी आवश्यकताएँ जमा करें।" },
+      { t: "सहायता लें", d: "एक PolicyAdda कार्यकारी आपसे संपर्क कर आपका व्यक्तिगत मार्गदर्शन करता है।" },
+      { t: "व्यवस्थित रहें", d: "पॉलिसी विवरण और प्रगति को अपने डैशबोर्ड से एक्सेस करें।" },
     ],
   },
-  featured: {
-    eyebrow: "चुनिंदा पॉलिसी",
-    title: "लोकप्रिय पॉलिसी कॉन्सेप्ट।",
-    lead: "कुछ कॉन्सेप्ट जिनके बारे में ग्राहक अक्सर पूछते हैं। किसी भी निर्णय से पहले पूरी स्पष्टता।",
+featured: {
+    eyebrow: "पहले शिक्षा",
+    title: "जानें कि आप किस चीज़ के लिए कवर हैं।",
+    lead: "पॉलिसियाँ स्पष्ट शब्दों में — लाभ, कवरेज, बहिष्करण और दस्तावेज़ — किसी भी फैसले से पहले।",
     viewAll: "सभी पॉलिसी देखें",
     learnMore: "और जानें",
   },
@@ -379,6 +441,8 @@ export const hi: SiteCopy = {
     eyebrow: "सहायता",
     title: "वास्तविक व्यक्ति से बात करें।",
     lead: "प्रश्न, आवेदन या कुछ और — कार्य घंटों के दौरान हमसे संपर्क करें।",
+    homeTitle: "सवालों के लिए जटिल जवाबों की ज़रूरत नहीं।",
+    homeLead: "कवरेज, दस्तावेज़ या क्लेम से जुड़ा सवाल हो — हमें कॉल करें, लिखें या टिकट बनाएँ, एक वास्तविक व्यक्ति जवाब देगा।",
     call: "हमें कॉल करें",
     callSub: "सोमवार–शनिवार, 9:30 AM – 6:00 PM",
     email: "ईमेल",
@@ -402,7 +466,7 @@ export const hi: SiteCopy = {
     cats: ["सामान्य प्रश्न", "आवेदन की स्थिति", "पॉलिसी प्रश्न", "क्लेम सहायता", "अन्य"],
   },
   footer: {
-    tagline: "पॉलिसी आपकी। अड्डा हमारा।",
+    tagline: "बीमा सहायता और पॉलिसी की जानकारी, साफ़ और सरल तरीके से।",
     explore: "एक्सप्लोर",
     categoriesLabel: "श्रेणियाँ",
     company: "कंपनी",
@@ -416,8 +480,8 @@ export const hi: SiteCopy = {
     rights: "सर्वाधिकार सुरक्षित।",
   },
   cta: {
-    title: "कहाँ से शुरू करें, समझ नहीं आ रहा?",
-    sub: "हमें बताएं कि आप क्या खोज रहे हैं और एक PolicyAdda कार्यकारी आपका मार्गदर्शन करेगा — निःशुल्क, बिना किसी बाध्यता के।",
+    title: "आपकी पॉलिसी। आपका अड्डा, स्पष्टता के लिए।",
+    sub: "आगे जो भी हो — चुनने के लिए पॉलिसी, जवाब देने के लिए सवाल, या रिन्यूअल की समीक्षा — PolicyAdda मार्गदर्शन के लिए यहाँ है।",
     primary: "सहायता लें",
     secondary: "सामान्य प्रश्न पढ़ें",
   },
@@ -459,11 +523,42 @@ export const hi: SiteCopy = {
     sub: "आवेदन करने के बाद मिली आवेदन आईडी दर्ज करें — जैसे PA-260913-0001 — अपनी वर्तमान स्थिति देखने के लिए।",
     idInput: "आवेदन आईडी",
     idPlaceholder: "PA-260913-0001",
-    check: "स्थिति देखें",
-    found: "आवेदन मिला",
-    notFound: "उस आईडी से कोई आवेदन नहीं मिला। जाँच कर पुनः प्रयास करें, या हमें कॉल करें।",
-    privacy: "यहाँ केवल आपकी आवेदन स्थिति दिखाई जाती है — व्यक्तिगत विवरण कभी नहीं।",
+check: "स्थिति देखें",
+    found: "आवेदन मिल गया",
+    notFound: "इस आईडी के साथ कोई आवेदन नहीं मिला। दोबारा जाँचें और फिर प्रयास करें, या हमें कॉल करें।",
+    privacy: "यहाँ केवल आपका आवेदन स्थिति दिखाई जाती है — व्यक्तिगत विवरण कभी नहीं।",
     updated: "अंतिम अपडेट",
+  },
+  dashboard: {
+    title: "आपका डैशबोर्ड",
+    lead: "आपके खाते से जुड़ी सारी जानकारी — आवेदन और उनकी वर्तमान स्थिति, केवल आपके लिए।",
+    role: "भूमिका",
+    applications: "आपके आवेदन",
+    noApps: "आपने अभी तक कोई आवेदन नहीं भेजा है। जब चाहें पॉलिसी देखें और सहायता लें।",
+    noAppsCta: "पॉलिसी देखें",
+    signOut: "साइन आउट करें",
+    status: "स्थिति",
+    submitted: "सबमिट किया गया",
+    policy: "पॉलिसी",
+    idLabel: "आवेदन आईडी",
+  },
+  auth: {
+    signInTitle: "साइन इन करें",
+    signUpTitle: "खाता बनाएँ",
+    loginLead: "ग्राहकों और PolicyAdda टीम सदस्यों के लिए सुरक्षित साइन-इन।",
+    signUpLead: "ग्राहक खाता बनाएँ ताकि आप अपने मोबाइल नंबर से सबमिट किए गए आवेदन देख सकें।",
+    name: "पूरा नाम",
+    email: "ईमेल",
+    password: "पासवर्ड",
+    phone: "मोबाइल नंबर",
+    phoneHint: "10 अंकों का वैध मोबाइल नंबर दर्ज करें।",
+    city: "शहर",
+    signInCta: "साइन इन करें",
+    signUpCta: "खाता बनाएँ",
+    switchToSignUp: "नए हैं? खाता बनाएँ",
+    switchToLogin: "पहले से खाता है? साइन इन करें",
+    success: "खाता बन गया। आपको लॉग इन किया जा रहा है…",
+    policyNote: "खाता तुरंत खुल जाता है; आप तुरंत लॉग इन कर सकते हैं।",
   },
   verif: {
     note: "यह फ़ॉर्म जमा करना एक पूछताछ है, खरीद नहीं। PolicyAdda कार्यकारी से बात करने तक कुछ भी पक्का नहीं होता।",

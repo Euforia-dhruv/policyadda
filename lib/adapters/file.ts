@@ -47,6 +47,7 @@ export const fileBackend: StorageBackend = {
       id: randomUUID(),
       applicationNo: makeApplicationNo(db.seq),
       policyId: input.policyId,
+      customerId: input.customerId,
       fullName: input.fullName.trim(),
       phone: input.phone,
       email: input.email?.trim() || undefined,

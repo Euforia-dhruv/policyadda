@@ -1,6 +1,7 @@
 import { createBrowserClient, createServerClient } from "@supabase/ssr";
+import { createClient as createSupabaseClient, type SupabaseClient } from "@supabase/supabase-js";
 import { cookies } from "next/headers";
-import type { SupabaseClient } from "@supabase/supabase-js";
+import type { SupabaseClient as SupabaseJsClient } from "@supabase/supabase-js";
 
 /**
  * Supabase client factories (browser + server).
@@ -13,6 +14,16 @@ const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 export function isSupabaseConfigured(): boolean {
   return Boolean(url && anonKey);
+}
+
+/**
+ * Service-role client — server routes only. Bypasses RLS by design; use only
+ * where the request has already been authorized (signup, admin actions).
+ */
+export function getServiceSupabase(): SupabaseJsClient | null {
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !key) return null;
+  return createSupabaseClient(url, key);
 }
 
 export function getBrowserSupabase(): SupabaseClient | null {

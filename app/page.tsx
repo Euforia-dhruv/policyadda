@@ -8,6 +8,7 @@ import CategoriesSection from "@/components/CategoriesSection";
 import HowSection from "@/components/HowSection";
 import FeaturedSection from "@/components/FeaturedSection";
 import WhySection from "@/components/WhySection";
+import SupportSection from "@/components/SupportSection";
 import FaqSection from "@/components/FaqSection";
 import CtaBand from "@/components/CtaBand";
 
@@ -24,6 +25,7 @@ export default function HomePage() {
       <HowSection copy={copy} />
       <FeaturedSection policies={data.featuredPolicies()} copy={copy} locale={locale} />
       <WhySection copy={copy} />
+      <SupportSection copy={copy} locale={locale} />
       <FaqSection copy={copy} locale={locale} />
       <CtaBand copy={copy} />
     </>

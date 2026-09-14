@@ -82,6 +82,7 @@ export interface ApplicationCreateInput {
   city?: string;
   message?: string;
   source?: string;
+  customerId?: string;
 }
 
 export interface ApplicationRecord {
@@ -96,6 +97,7 @@ export interface ApplicationRecord {
   status: ApplicationStatus | string;
   createdAt: string;
   updatedAt: string;
+  customerId?: string;
 }
 
 /* ---------------- Support ---------------- */

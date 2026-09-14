@@ -429,6 +429,220 @@
       },
       "isActive": true,
       "isFeatured": true
+    },
+    {
+      "id": "pol-term-life",
+      "slug": "term-life-insurance-plan",
+      "categorySlug": "life",
+      "name": "Term Life Insurance Plan",
+      "providerNote": {
+        "en": "Available via structured life insurance providers; exact plan features depend on the insurer.",
+        "hi": "संरचित जीवन बीमा प्रदाताओं के माध्यम से उपलब्ध; सटीक प्लान सुविधाएँ बीमाकर्ता पर निर्भर करती हैं।"
+      },
+      "shortDescription": {
+        "en": "A life cover concept that provides a fixed sum assured to your nominee in the event of death during the policy term.",
+        "hi": "जीवन कवर कॉन्सेप्ट जो पॉलिसी अवधि के दौरान मृत्यु होने पर आपके नामांकित व्यक्ति को निश्चित बीमा राशि प्रदान करता है।"
+      },
+      "fullDescription": {
+        "en": "This policy concept is designed to secure your family's financial future with a high sum assured at an affordable premium. If something happens to you during the policy term, your nominee receives the sum assured. Optional riders such as critical illness or accidental death benefit may be available depending on the insurer.",
+        "hi": "यह पॉलिसी कॉन्सेप्ट कम प्रीमियम पर उच्च बीमा राशि के साथ आपके परिवार के वित्तीय भविष्य को सुरक्षित करने के लिए बनाया गया है। यदि पॉलिसी अवधि के दौरान कुछ होता है, तो आपके नामांकित व्यक्ति को बीमा राशि मिलती है। क्रिटिकल इलनेस या दुर्घटना लाभ जैसे वैकल्पिक राइडर बीमाकर्ता के अनुसार उपलब्ध हो सकते हैं।"
+      },
+      "keyBenefits": {
+        "en": [
+          "Fixed sum assured paid to the nominee on death during the term.",
+          "Affordable premiums, especially when taken at a younger age.",
+          "Optional riders for critical illness and accidental death where available.",
+          "Simple, transparent life cover — no maturity surprises."
+        ],
+        "hi": [
+          "अवधि के दौरान मृत्यु पर नामांकित व्यक्ति को निश्चित बीमा राशि का भुगतान।",
+          "कम उम्र में लेने पर किफायती प्रीमियम।",
+          "जहाँ उपलब्ध हो, क्रिटिकल इलनेस और दुर्घटना मृत्यु के लिए वैकल्पिक राइडर।",
+          "सरल, पारदर्शी जीवन कवर — कोई मैच्योरिटी झटका नहीं।"
+        ]
+      },
+      "eligibility": {
+        "en": [
+          "Resident Indian adults within the insurer's age limits.",
+          "Nominee designation as per Indian insurance norms.",
+          "Medical underwriting depends on the insurer and sum assured."
+        ],
+        "hi": [
+          "बीमाकर्ता की आयु सीमा के भीतर भारतीय निवासी वयस्क।",
+          "भारतीय बीमा मानदंडों के अनुसार नामांकन।",
+          "चिकित्सीय अंडरराइटिंग बीमाकर्ता और बीमा राशि पर निर्भर करती है।"
+        ]
+      },
+      "coverage": {
+        "en": [
+          "Death benefit (sum assured) to the nominee.",
+          "Critical illness and accidental death riders where selected.",
+          "Terminal illness benefit where offered by the insurer."
+        ],
+        "hi": [
+          "नामांकित व्यक्ति को मृत्यु लाभ (बीमा राशि)।",
+          "जहाँ चुने गए हों, क्रिटिकल इलनेस और दुर्घटना मृत्यु राइडर।",
+          "जहाँ बीमाकर्ता प्रदान करता है, टर्मिनल इलनेस लाभ।"
+        ]
+      },
+      "exclusions": {
+        "en": [
+          "Death resulting from specified excluded causes within the first years of the policy.",
+          "Misrepresentation or non-disclosure of material facts.",
+          "Suicide within the exclusion period as per policy terms."
+        ],
+        "hi": [
+          "पॉलिसी के शुरुआती वर्षों में निर्दिष्ट बहिष्कृत कारणों से हुई मृत्यु।",
+          "भौतिक तथ्यों की गलत प्रस्तुति या गैर-खुलासा।",
+          "पॉलिसी शर्तों के अनुसार बहिष्करण अवधि के भीतर आत्महत्या।"
+        ]
+      },
+      "documents": [
+        {
+          "label": {
+            "en": "Government photo ID",
+            "hi": "सरकारी फोटो पहचान"
+          }
+        },
+        {
+          "label": {
+            "en": "Address proof",
+            "hi": "पता प्रमाण"
+          }
+        },
+        {
+          "label": {
+            "en": "Nominee details",
+            "hi": "नामांकित व्यक्ति का विवरण"
+          }
+        }
+      ],
+      "faqs": [
+        {
+          "q": {
+            "en": "What happens at the end of the term?",
+            "hi": "अवधि के अंत में क्या होता है?"
+          },
+          "a": {
+            "en": "A pure term plan provides protection without maturity payout. Whether maturity benefits apply depends on the exact plan selected.",
+            "hi": "शुद्ध टर्म प्लान मैच्योरिटी भुगतान के बिना सुरक्षा प्रदान करता है। मैच्योरिटी लाभ चयनित प्लान पर निर्भर करता है।"
+          }
+        }
+      ],
+      "disclaimer": {
+        "en": "Life insurance features and riders vary by insurer and underwriting. This summary is not a policy document.",
+        "hi": "जीवन बीमा सुविधाएँ और राइडर बीमाकर्ता और अंडरराइटिंग के अनुसार भिन्न होती हैं। यह सारांश पॉलिसी दस्तावेज़ नहीं है।"
+      },
+      "isActive": true,
+      "isFeatured": true
+    },
+    {
+      "id": "pol-travel",
+      "slug": "international-travel-insurance",
+      "categorySlug": "travel",
+      "name": "International Travel Insurance",
+      "providerNote": {
+        "en": "Available via structured general insurance providers; coverage depends on the destination and selected plan.",
+        "hi": "संरचित जनरल इंश्योरेंस प्रदाताओं के माध्यम से उपलब्ध; कवरेज गंतव्य और चयनित प्लान पर निर्भर करता है।"
+      },
+      "shortDescription": {
+        "en": "Coverage while travelling abroad for medical emergencies, trip disruptions, and baggage-related losses.",
+        "hi": "विदेश यात्रा के दौरान चिकित्सा आपातकाल, यात्रा में व्यवधान और सामान से जुड़ी हानि के लिए कवरेज।"
+      },
+      "fullDescription": {
+        "en": "This policy concept helps cover emergency medical expenses, emergency evacuation, trip cancellation or interruption, lost baggage, delayed flights, and personal liability while you are outside India. Benefits are subject to the destination, plan chosen, and the insurer's terms.",
+        "hi": "यह पॉलिसी कॉन्सेप्ट भारत से बाहर यात्रा के दौरान आपातकालीन चिकित्सा खर्च, आपातकालीन निकासी, यात्रा रद्दीकरण या रुकावट, खोया सामान, विलंबित उड़ान और निजी देयता का कवरेज देने में मदद करता है। लाभ गंतव्य, चयनित प्लान और बीमाकर्ता की शर्तों पर निर्भर करते हैं।"
+      },
+      "keyBenefits": {
+        "en": [
+          "Emergency medical expenses and hospitalisation abroad.",
+          "Trip cancellation or interruption coverage where applicable.",
+          "Lost or delayed baggage support.",
+          "Emergency evacuation and personal liability cover where included."
+        ],
+        "hi": [
+          "विदेश में आपातकालीन चिकित्सा खर्च और अस्पताल में भर्ती।",
+          "जहाँ लागू हो, यात्रा रद्दीकरण या रुकावट कवरेज।",
+          "खोए या विलंबित सामान के लिए सहायता।",
+          "जहाँ शामिल हो, आपातकालीन निकासी और निजी देयता कवर।"
+        ]
+      },
+      "eligibility": {
+        "en": [
+          "Indian residents travelling internationally.",
+          "Coverage period tied to the trip itinerary.",
+          "Pre-existing medical conditions may require review."
+        ],
+        "hi": [
+          "अंतरराष्ट्रीय यात्रा करने वाले भारतीय निवासी।",
+          "कवरेज अवधि यात्रा कार्यक्रम से जुड़ी होती है।",
+          "पहले से मौजूद चिकित्सा स्थितियों की समीक्षा आवश्यक हो सकती है।"
+        ]
+      },
+      "coverage": {
+        "en": [
+          "Emergency medical expenses abroad.",
+          "Trip cancellation, interruption, and delay.",
+          "Baggage loss and personal liability.",
+          "Emergency evacuation where included."
+        ],
+        "hi": [
+          "विदेश में आपातकालीन चिकित्सा खर्च।",
+          "यात्रा रद्दीकरण, रुकावट और देरी।",
+          "सामान की हानि और निजी देयता।",
+          "जहाँ शामिल हो, आपातकालीन निकासी।"
+        ]
+      },
+      "exclusions": {
+        "en": [
+          "Adventurous activities unless an add-on is selected.",
+          "Non-disclosed pre-existing medical conditions.",
+          "Losses arising from prohibited or unlawful travel."
+        ],
+        "hi": [
+          "जब तक ऐड-ऑन न चुना जाए, साहसिक गतिविधियाँ।",
+          "गैर-खुलासा की गई पहले से मौजूद चिकित्सा स्थितियाँ।",
+          "प्रतिबंधित या अवैध यात्रा से उत्पन्न हानि।"
+        ]
+      },
+      "documents": [
+        {
+          "label": {
+            "en": "Valid passport",
+            "hi": "वैध पासपोर्ट"
+          }
+        },
+        {
+          "label": {
+            "en": "Travel itinerary / air tickets",
+            "hi": "यात्रा कार्यक्रम / हवाई टिकट"
+          }
+        },
+        {
+          "label": {
+            "en": "Visa details",
+            "hi": "वीज़ा विवरण"
+          }
+        }
+      ],
+      "faqs": [
+        {
+          "q": {
+            "en": "When should I buy travel insurance?",
+            "hi": "ट्रैवल इंश्योरेंस कब खरीदना चाहिए?"
+          },
+          "a": {
+            "en": "Ideally before your trip begins, so that trip-cancellation protection can apply. Timing rules depend on the insurer.",
+            "hi": "आदर्श रूप से यात्रा शुरू होने से पहले, ताकि यात्रा रद्दीकरण सुरक्षा लागू हो सके। समय नियम बीमाकर्ता पर निर्भर करते हैं।"
+          }
+        }
+      ],
+      "disclaimer": {
+        "en": "Travel coverage depends on the destination, plan, and insurer terms. This summary is not a policy document.",
+        "hi": "यात्रा कवरेज गंतव्य, प्लान और बीमाकर्ता की शर्तों पर निर्भर करता है। यह सारांश पॉलिसी दस्तावेज़ नहीं है।"
+      },
+      "isActive": true,
+      "isFeatured": true
     }
   ],
   "categories": [
@@ -474,7 +688,7 @@
       "id": "cat-business",
       "slug": "business",
       "icon": "🏢",
-      "sort": 3,
+      "sort": 5,
       "isActive": true,
       "name": {
         "en": "Business / SME Insurance",
@@ -488,6 +702,44 @@
         "en": "Customizable solutions that help businesses provide employee health coverage and relevant protection with the workforce planned in mind.",
         "hi": "अनुकूलन योग्य समाधान जो व्यवसायों को कर्मचारी स्वास्थ्य कवरेज प्रदान करने में मदद करते हैं।"
       }
+    },
+    {
+      "id": "cat-life",
+      "slug": "life",
+      "icon": "🛡️",
+      "sort": 3,
+      "isActive": true,
+      "name": {
+        "en": "Life Insurance",
+        "hi": "जीवन बीमा"
+      },
+      "short": {
+        "en": "Long-term financial protection for your family.",
+        "hi": "आपके परिवार के लिए दीर्घकालिक वित्तीय सुरक्षा।"
+      },
+      "description": {
+        "en": "Life cover concepts that help secure your family's financial future — with options for pure protection and, where applicable, savings-linked plans.",
+        "hi": "जीवन कवर कॉन्सेप्ट जो आपके परिवार के वित्तीय भविष्य को सुरक्षित करने में मदद करते हैं — शुद्ध सुरक्षा और, जहाँ लागू हो, बचत-आधारित प्लान के विकल्प सहित।"
+      }
+    },
+    {
+      "id": "cat-travel",
+      "slug": "travel",
+      "icon": "✈️",
+      "sort": 4,
+      "isActive": true,
+      "name": {
+        "en": "Travel Insurance",
+        "hi": "ट्रैवल इंश्योरेंस"
+      },
+      "short": {
+        "en": "Coverage for trips abroad — medical, trip disruption, and baggage.",
+        "hi": "विदेश यात्रा के लिए कवरेज — चिकित्सा, यात्रा व्यवधान और सामान।"
+      },
+      "description": {
+        "en": "Travel cover concepts that help you handle medical emergencies, trip disruptions, and baggage issues while travelling outside India.",
+        "hi": "ट्रैवल कवर कॉन्सेप्ट जो भारत के बाहर यात्रा के दौरान चिकित्सा आपातकाल, यात्रा व्यवधान और सामान से जुड़ी समस्याओं में मदद करते हैं।"
+      }
     }
   ],
   "siteConfig": {
@@ -497,8 +749,8 @@
       "hi": "बीमा सहायता और पॉलिसी की जानकारी, साफ़ और सरल तरीके से।"
     },
     "slogan": {
-      "en": "Policy Aapka. Adda Humara.",
-      "hi": "पॉलिसी आपकी। अड्डा हमारा।"
+      "en": "Policy Aapka, Adda Apna.",
+      "hi": "पॉलिसी आपकी, अड्डा अपना।"
     },
     "contact": {
       "phone": {

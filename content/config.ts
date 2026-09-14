@@ -13,8 +13,8 @@ export const siteConfig: SiteConfig = {
     hi: "बीमा सहायता और पॉलिसी की जानकारी, साफ़ और सरल तरीके से।",
   },
   slogan: {
-    en: "Policy Aapka. Adda Humara.",
-    hi: "पॉलिसी आपकी। अड्डा हमारा।",
+    en: "Policy Aapka, Adda Apna.",
+    hi: "पॉलिसी आपकी, अड्डा अपना।",
   },
   contact: {
     phone: { display: "+91 76778 88748", tel: "+917677888748" },
