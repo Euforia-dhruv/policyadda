@@ -18,16 +18,6 @@ export default function PoliciesPage() {
 
   return (
     <>
-      <section className="pad" style={{ paddingBottom: 0 }}>
-        <div className="wrap">
-          <div className="section-head">
-            <p className="eyebrow">{copy.categories.eyebrow}</p>
-            <h2>{copy.categories.title}</h2>
-            <p className="lead">{copy.categories.lead}</p>
-          </div>
-        </div>
-      </section>
-
       <CategoriesSection categories={categories} copy={copy} locale={locale} />
 
       <section className="pad" style={{ paddingTop: 0 }}>

@@ -20,14 +20,14 @@ export default function HomePage() {
     <>
       <Hero copy={copy} locale={locale} />
       <Ticker />
-      <TrustBand copy={copy} />
-      <CategoriesSection categories={data.categories()} copy={copy} locale={locale} />
-      <HowSection copy={copy} />
-      <FeaturedSection policies={data.featuredPolicies()} copy={copy} locale={locale} />
-      <WhySection copy={copy} />
-      <SupportSection copy={copy} locale={locale} />
-      <FaqSection copy={copy} locale={locale} />
-      <CtaBand copy={copy} />
+      <div className="reveal"><TrustBand copy={copy} /></div>
+      <div className="reveal"><CategoriesSection categories={data.categories()} copy={copy} locale={locale} /></div>
+      <div className="reveal"><HowSection copy={copy} /></div>
+      <div className="reveal"><FeaturedSection policies={data.featuredPolicies()} copy={copy} locale={locale} /></div>
+      <div className="reveal"><WhySection copy={copy} /></div>
+      <div className="reveal"><SupportSection copy={copy} locale={locale} /></div>
+      <div className="reveal"><FaqSection copy={copy} locale={locale} /></div>
+      <div className="reveal"><CtaBand copy={copy} /></div>
     </>
   );
 }

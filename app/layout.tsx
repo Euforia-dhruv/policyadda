@@ -33,6 +33,8 @@ export const metadata: Metadata = {
 
 const themeInit = `(function(){try{var t=localStorage.getItem('policyadda_theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`;
 
+const revealInit = `(function(){if(!('IntersectionObserver' in window)){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});return;}function init(){var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}else{init();}})();`;
+
 export default async function RootLayout({
   children,
 }: {
@@ -65,6 +67,7 @@ export default async function RootLayout({
           content="PolicyAdda explains insurance in plain language and guides you through every step."
         />
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
+        <script dangerouslySetInnerHTML={{ __html: revealInit }} />
       </head>
       <body className={`${inter.variable} ${serif.variable}`}>
         <div className="grain" aria-hidden="true" />
