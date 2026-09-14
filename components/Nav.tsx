@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import type { Locale } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import LanguageSwitch from "./LanguageSwitch";
@@ -16,8 +17,11 @@ export default function Nav({
   signedIn?: boolean;
 }) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
   const accountHref = signedIn ? "/dashboard" : "/login";
   const accountLabel = signedIn ? copy.nav.dashboard : copy.nav.login;
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname?.startsWith(href) ?? false;
 
   return (
     <>
@@ -29,10 +33,10 @@ export default function Nav({
           </a>
 
           <nav className="nav-links" aria-label="Primary">
-            <a href="/policies">{copy.nav.categories}</a>
-            <a href="/about">{copy.nav.about}</a>
-            <a href="/how-it-works">{copy.nav.how}</a>
-            <a href="/support">{copy.nav.support}</a>
+            <a href="/policies" aria-current={isActive("/policies") ? "page" : undefined}>{copy.nav.categories}</a>
+            <a href="/about" aria-current={isActive("/about") ? "page" : undefined}>{copy.nav.about}</a>
+            <a href="/how-it-works" aria-current={isActive("/how-it-works") ? "page" : undefined}>{copy.nav.how}</a>
+            <a href="/support" aria-current={isActive("/support") ? "page" : undefined}>{copy.nav.support}</a>
           </nav>
 
           <div className="nav-actions">
@@ -52,11 +56,11 @@ export default function Nav({
       </header>
 
       <div className={`mobile-panel wrap ${open ? "open" : ""}`}>
-        <a href="/" onClick={() => setOpen(false)}>{copy.nav.home}</a>
-        <a href="/policies" onClick={() => setOpen(false)}>{copy.nav.categories}</a>
-        <a href="/about" onClick={() => setOpen(false)}>{copy.nav.about}</a>
-        <a href="/how-it-works" onClick={() => setOpen(false)}>{copy.nav.how}</a>
-        <a href="/support" onClick={() => setOpen(false)}>{copy.nav.support}</a>
+        <a href="/" onClick={() => setOpen(false)} aria-current={isActive("/") ? "page" : undefined}>{copy.nav.home}</a>
+        <a href="/policies" onClick={() => setOpen(false)} aria-current={isActive("/policies") ? "page" : undefined}>{copy.nav.categories}</a>
+        <a href="/about" onClick={() => setOpen(false)} aria-current={isActive("/about") ? "page" : undefined}>{copy.nav.about}</a>
+        <a href="/how-it-works" onClick={() => setOpen(false)} aria-current={isActive("/how-it-works") ? "page" : undefined}>{copy.nav.how}</a>
+        <a href="/support" onClick={() => setOpen(false)} aria-current={isActive("/support") ? "page" : undefined}>{copy.nav.support}</a>
         <a href={accountHref} onClick={() => setOpen(false)}>{accountLabel}</a>
         <a href="/policies" className="btn btn-primary" style={{ marginTop: 10 }} onClick={() => setOpen(false)}>
           {copy.nav.cta}

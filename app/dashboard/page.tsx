@@ -111,6 +111,17 @@ export default async function DashboardPage() {
           <div className="acc-list">
             {apps.map((a) => {
               const label = a.application_statuses?.label ? pick(locale, a.application_statuses.label) : a.status_code;
+              const pillClass =
+                {
+                  completed: "pill pill-ok",
+                  cancelled: "pill pill-cancel",
+                  expired: "pill pill-muted",
+                  submitted: "pill pill-gold",
+                  under_review: "pill pill-gold",
+                  assigned: "pill pill-info",
+                  contacted: "pill pill-info",
+                  processing: "pill pill-info",
+                }[a.status_code ?? ""] ?? "pill pill-info";
               return (
                 <div className="card" key={a.application_no} style={{ padding: "18px 20px" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
@@ -124,7 +135,7 @@ export default async function DashboardPage() {
                         {new Date(a.created_at).toLocaleDateString(locale === "hi" ? "hi-IN" : "en-IN", { day: "numeric", month: "short", year: "numeric" })}
                       </p>
                     </div>
-                    <span className="pill pill-ok">{label}</span>
+                    <span className={pillClass}>{label}</span>
                   </div>
                 </div>
               );
