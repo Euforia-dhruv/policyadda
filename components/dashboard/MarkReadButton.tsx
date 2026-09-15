@@ -21,7 +21,7 @@ export function MarkReadButton({ notificationId, markReadLabel }: { notification
       .finally(() => setBusy(false));
   }
 
-  if (done) return <span className="muted-text" style={{ fontSize: "var(--text-xs)" }}>✓</span>;
+  if (done) return <span className="muted-xs">✓</span>;
   return (
     <button className="notif-action-btn" onClick={mark} disabled={busy}>
       {markReadLabel}

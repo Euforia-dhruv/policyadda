@@ -40,7 +40,7 @@ export default function Nav({
           <div className="nav-actions">
             <LanguageSwitch locale={locale} />
             <ThemeToggle />
-            <a href={accountHref} className="nav-link-login muted-text font-medium" style={{ fontSize: "var(--text-sm)" }}>
+            <a href={accountHref} className="nav-link-login muted-sm font-medium">
               {accountLabel}
             </a>
             <a href="/policies" className="btn btn-accent btn-sm nav-cta">

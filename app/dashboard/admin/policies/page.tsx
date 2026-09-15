@@ -54,12 +54,12 @@ export default async function AdminPoliciesPage() {
                   <tr key={p.id}>
                     <td className="font-semibold">
                       {p.name}
-                      <div className="muted-text" style={{ fontSize: "var(--text-xs)" }}>/{p.slug}</div>
+                      <div className="muted-xs">/{p.slug}</div>
                     </td>
                     <td>{catName}</td>
                     <td>{p.is_active ? <span className="pill pill-ok">Active</span> : <span className="pill pill-muted">Draft</span>}</td>
                     <td>{p.is_featured ? <span className="pill pill-info">Featured</span> : <span className="pill pill-muted">—</span>}</td>
-                    <td className="muted-text whitespace-nowrap" style={{ fontSize: "var(--text-sm)" }}>
+                    <td className="muted-sm whitespace-nowrap">
                       {p.updated_at ? fmt(locale, p.updated_at) : "—"}
                     </td>
                   </tr>

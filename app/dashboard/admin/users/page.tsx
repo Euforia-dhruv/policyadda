@@ -55,12 +55,12 @@ export default async function AdminUsersPage() {
               {users.map((u: any) => (
                 <tr key={u.user_id}>
                   <td className="font-semibold">{u.full_name || "—"}</td>
-                  <td style={{ fontSize: "var(--text-sm)" }}>{u.email || "—"}</td>
-                  <td style={{ fontSize: "var(--text-sm)" }}>{u.phone || "—"}</td>
+                  <td className="text-sm">{u.email || "—"}</td>
+                  <td className="text-sm">{u.phone || "—"}</td>
                   <td>
-                    <span className={rolePill(u.role_code)} style={{ fontSize: "var(--text-xs)" }}>{u.role_code?.replace("_", " ")}</span>
+                    <span className={`${rolePill(u.role_code)} text-xs`}>{u.role_code?.replace("_", " ")}</span>
                   </td>
-                  <td className="muted-text whitespace-nowrap" style={{ fontSize: "var(--text-sm)" }}>
+                  <td className="muted-sm whitespace-nowrap">
                     {u.created_at ? fmt(locale, u.created_at) : "—"}
                   </td>
                   <td>

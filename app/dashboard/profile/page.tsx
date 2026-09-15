@@ -37,15 +37,15 @@ export default async function ProfilePage() {
         <div className="flex flex-col gap-4">
           <div className="dash-panel">
             <h3>{copy.dashboard.roleLabel}</h3>
-            <p className="capitalize" style={{ fontSize: "var(--text-sm)" }}>{(profile?.role_code || "customer").replace("_", " ")}</p>
+            <p className="capitalize text-sm">{(profile?.role_code || "customer").replace("_", " ")}</p>
           </div>
           <div className="dash-panel">
             <h3>{copy.dashboard.roleLabel === "Role" ? "Email" : "ईमेल"}</h3>
-            <p style={{ fontSize: "var(--text-sm)" }}>{profile?.email || user.email || "—"}</p>
+            <p className="text-sm">{profile?.email || user.email || "—"}</p>
           </div>
           <div className="dash-panel">
             <h3>{copy.dashboard.joinedOn}</h3>
-            <p style={{ fontSize: "var(--text-sm)" }}>
+            <p className="text-sm">
               {profile?.created_at
                 ? new Date(profile.created_at).toLocaleDateString(locale === "hi" ? "hi-IN" : "en-IN", { day: "numeric", month: "short", year: "numeric" })
                 : "—"}

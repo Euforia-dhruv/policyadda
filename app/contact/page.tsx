@@ -48,14 +48,14 @@ export default function ContactPage() {
         <div className="card" style={{ padding: "24px 26px", marginTop: 10 }}>
           <h3 style={{ marginBottom: 10 }}>{copy.support.hours}</h3>
           {pick(locale, c.hours ?? { en: [], hi: [] }).map((h) => (
-            <p key={h} style={{ fontSize: "var(--text-sm)" }}>{h}</p>
+            <p key={h} className="text-sm">{h}</p>
           ))}
           <p className="faint-text" style={{ marginTop: 10 }}>
             {copy.support.email}: {copy.support.emailSub}
           </p>
         </div>
 
-        <p className="mt-5" style={{ fontSize: "var(--text-sm)" }}>
+        <p className="mt-5 text-sm">
           <a href="/support" className="cat-link">{copy.support.openTicket} →</a>
         </p>
       </div>

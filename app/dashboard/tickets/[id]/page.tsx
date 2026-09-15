@@ -63,14 +63,14 @@ export default async function TicketDetailPage({ params }: { params: Promise<{ i
         <div className="dash-panel">
           <h3>Messages</h3>
           {(messages || []).length === 0 ? (
-            <p className="muted-text" style={{ fontSize: "var(--text-sm)" }}>No messages yet.</p>
+            <p className="muted-sm">No messages yet.</p>
           ) : (
             <div className="msg-thread">
               {(messages || []).map((m: any) => {
                 const fromCustomer = m.sender_role === "customer";
                 return (
                   <div key={m.id} className={"msg-item " + (fromCustomer ? "msg-customer" : "msg-staff")}>
-                    <div style={{ fontSize: "var(--text-sm)" }}>{m.body}</div>
+                    <div className="text-sm">{m.body}</div>
                     <div className="msg-meta">
                       {m.profiles?.full_name || "User"} · {fmt(locale, m.created_at)}
                     </div>

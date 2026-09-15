@@ -26,19 +26,19 @@ export default function DisclaimerPage() {
         <div className="card card-pad">
           <div className="detail-block">
             <h2 className="tl-label text-base">Not a legal or financial document</h2>
-            <p className="muted-text" style={{ fontSize: "var(--text-sm)" }}>
+            <p className="muted-sm">
               All policy information on this website is a summary for informational purposes only and does not constitute a policy document, legal advice, financial advice, or a guarantee of coverage.
             </p>
           </div>
           <div className="detail-block">
             <h2 className="tl-label text-base">No unverified claims</h2>
-            <p className="muted-text" style={{ fontSize: "var(--text-sm)" }}>
+            <p className="muted-sm">
               PolicyAdda does not claim formal partnerships with any insurer, any regulatory registration (e.g. IRDAI), customer statistics, or testimonials unless such information has been explicitly verified and published.
             </p>
           </div>
           <div className="detail-block">
             <h2 className="tl-label text-base">Coverage is insurer-defined</h2>
-            <p className="muted-text" style={{ fontSize: "var(--text-sm)" }}>
+            <p className="muted-sm">
               Exclusions, waiting periods, and coverage boundaries are defined by the actual insurer&apos;s policy wording. Always read the policy document and confirm with the insurer before purchasing.
             </p>
           </div>

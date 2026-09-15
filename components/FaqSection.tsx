@@ -20,7 +20,7 @@ export default function FaqSection({ copy, locale }: { copy: SiteCopy; locale: L
           <p className="lead">{copy.faq.lead}</p>
         </div>
         <Accordion items={items} />
-        <p className="mt-6 faint-text" style={{ fontSize: "var(--text-sm)" }}>
+        <p className="mt-6 faint-sm">
           <a href="/support" className="cat-link">{copy.support.openTicket} →</a>
         </p>
       </div>

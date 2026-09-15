@@ -84,7 +84,7 @@ export default async function DashboardPage() {
           </Link>
         </h3>
         {apps.length === 0 ? (
-          <p className="muted-text" style={{ fontSize: "var(--text-sm)" }}>{copy.dashboard.noApps}</p>
+          <p className="muted-sm">{copy.dashboard.noApps}</p>
         ) : (
           <div className="dash-table-scroll">
             <table className="dash-table">
@@ -123,7 +123,7 @@ export default async function DashboardPage() {
           </Link>
         </h3>
         {tickets.length === 0 ? (
-          <p className="muted-text" style={{ fontSize: "var(--text-sm)" }}>{copy.dashboard.noTickets}</p>
+          <p className="muted-sm">{copy.dashboard.noTickets}</p>
         ) : (
           <div className="dash-table-scroll">
             <table className="dash-table">

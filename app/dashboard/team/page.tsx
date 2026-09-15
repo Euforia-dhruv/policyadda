@@ -82,7 +82,7 @@ export default async function TeamPage() {
           Unassigned applications ({unassigned.length})
         </h3>
         {unassigned.length === 0 ? (
-          <p className="muted-text" style={{ fontSize: "var(--text-sm)" }}>All applications are assigned.</p>
+          <p className="muted-sm">All applications are assigned.</p>
         ) : (
           <div className="dash-table-scroll">
             <table className="dash-table">
@@ -109,7 +109,7 @@ export default async function TeamPage() {
                     <td>
                       <span className={statusPill(a.status_code)}>{statusLabels.get(a.status_code) ? pick(locale, statusLabels.get(a.status_code)!) : a.status_code}</span>
                     </td>
-                    <td className="muted-text whitespace-nowrap" style={{ fontSize: "var(--text-sm)" }}>{fmt(locale, a.created_at)}</td>
+                    <td className="muted-sm whitespace-nowrap">{fmt(locale, a.created_at)}</td>
                     <td>
                       <Link href={`/dashboard/applications/${a.id}`} className="dash-link">
                         {copy.dashboard.assignTo} →

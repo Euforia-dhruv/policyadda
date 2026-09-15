@@ -77,7 +77,7 @@ export default async function TicketsPage() {
                     <td>
                       <span className={statusPill(t.priority_code)}>{t.priority_code}</span>
                     </td>
-                    <td className="muted-text" style={{ whiteSpace: "nowrap", fontSize: "var(--text-sm)" }}>
+                    <td className="muted-sm whitespace-nowrap">
                       {fmt(locale, t.created_at)}
                     </td>
                     <td className="td-actions">

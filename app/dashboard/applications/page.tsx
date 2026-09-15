@@ -83,7 +83,7 @@ export default async function ApplicationsPage() {
                       <span className={statusPill(a.status_code)}>{statusLabels.get(a.status_code) ? pick(locale, statusLabels.get(a.status_code)!) : a.status_code}</span>
                     </td>
                     {(isAdmin(role) || isManager(role)) && <td>{staff.get(a.assigned_to) || "—"}</td>}
-                    <td className="muted-text" style={{ whiteSpace: "nowrap", fontSize: "var(--text-sm)" }}>
+                    <td className="muted-sm whitespace-nowrap">
                       {fmt(locale, a.created_at)}
                     </td>
                     <td className="td-actions">

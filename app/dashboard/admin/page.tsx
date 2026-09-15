@@ -83,7 +83,7 @@ export default async function AdminOverviewPage() {
                   <td>
                     <span className={statusPill(a.status_code)}>{statusLabels.get(a.status_code) ? pick(locale, statusLabels.get(a.status_code)!) : a.status_code}</span>
                   </td>
-                  <td className="muted-text whitespace-nowrap" style={{ fontSize: "var(--text-sm)" }}>{fmt(locale, a.created_at)}</td>
+                  <td className="muted-sm whitespace-nowrap">{fmt(locale, a.created_at)}</td>
                   <td className="td-actions">
                     <Link href={`/dashboard/applications/${a.id}`}>{copy.dashboard.View}</Link>
                   </td>
@@ -117,7 +117,7 @@ export default async function AdminOverviewPage() {
                   <td>
                     <span className={statusPill(t.status_code)}>{t.status_code}</span>
                   </td>
-                  <td className="muted-text whitespace-nowrap" style={{ fontSize: "var(--text-sm)" }}>{fmt(locale, t.created_at)}</td>
+                  <td className="muted-sm whitespace-nowrap">{fmt(locale, t.created_at)}</td>
                   <td className="td-actions">
                     <Link href={`/dashboard/tickets/${t.id}`}>{copy.dashboard.View}</Link>
                   </td>

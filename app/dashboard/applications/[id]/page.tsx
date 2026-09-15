@@ -88,7 +88,7 @@ export default async function AppDetailPage({ params }: { params: Promise<{ id: 
           <div className="dash-panel">
             <h3>{copy.dashboard.statusHistory}</h3>
             {history.length === 0 ? (
-              <p className="muted-text" style={{ fontSize: "var(--text-sm)" }}>{app.status_code}</p>
+              <p className="muted-sm">{app.status_code}</p>
             ) : (
               <div className="dash-timeline">
                 {history.map((h: any) => {
@@ -155,7 +155,7 @@ export default async function AppDetailPage({ params }: { params: Promise<{ id: 
             <div className="dash-panel">
               <h3>{copy.dashboard.assignedTo}</h3>
               <p style={{ fontSize: "var(--text-sm)", color: "var(--text)" }}>{assigneeRes?.fullName || copy.dashboard.unassigned}</p>
-              {app.assigned_at ? <p className="muted-text mt-1" style={{ fontSize: "var(--text-xs)" }}>{fmt(locale, app.assigned_at)}</p> : null}
+              {app.assigned_at ? <p className="muted-xs mt-1">{fmt(locale, app.assigned_at)}</p> : null}
             </div>
           ) : null}
         </aside>
