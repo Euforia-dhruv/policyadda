@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 const ITEMS = [
   "Motor Insurance",
   "Health Insurance",
@@ -10,14 +14,18 @@ const ITEMS = [
 ];
 
 export default function Ticker() {
-  const row = [...ITEMS, ...ITEMS];
+  const row = [...ITEMS, ...ITEMS, ...ITEMS];
   return (
     <div className="ticker" aria-hidden="true">
-      <div className="ticker-track">
+      <motion.div
+        className="ticker-track"
+        animate={{ x: [0, "-33.333%"] }}
+        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+      >
         {row.map((t, i) => (
           <span key={i}>{t}</span>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

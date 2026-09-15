@@ -1,6 +1,9 @@
+"use client";
+
 import type { Locale, Policy } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import { pick } from "@/lib/i18n";
+import { motion } from "framer-motion";
 
 export default function PolicyCard({
   policy,
@@ -14,7 +17,11 @@ export default function PolicyCard({
   full?: boolean;
 }) {
   return (
-    <div className="card card-hover policy-card">
+    <motion.div
+      className="card card-hover policy-card"
+      whileHover={{ boxShadow: "0 0 30px rgba(23, 79, 134, 0.12)" }}
+      transition={{ duration: 0.3 }}
+    >
       <span className="pcat">{policy.categorySlug}</span>
       <h3>{policy.name}</h3>
       <p>{pick(locale, policy.shortDescription)}</p>
@@ -26,6 +33,6 @@ export default function PolicyCard({
           {copy.nav.apply}
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }
