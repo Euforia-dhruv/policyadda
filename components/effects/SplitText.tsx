@@ -55,7 +55,7 @@ export function SplitText({
             >
               {unit}
             </motion.span>
-            {splitBy === "words" && i < units.length - 1 ? " " : ""}
+            {splitBy === "words" && i < units.length - 1 ? <span style={{ display: "inline-block", width: "0.3em" }} /> : null}
           </span>
         ))}
       </span>
