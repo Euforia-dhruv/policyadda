@@ -1,7 +1,8 @@
-/** Small shared utilities. */
+import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
-export function cn(...parts: Array<string | false | null | undefined>): string {
-  return parts.filter(Boolean).join(" ");
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
 }
 
 /** Format an ISO date for display. Accepts app locale ("hi"|"en"). */

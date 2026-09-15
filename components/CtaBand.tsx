@@ -4,11 +4,13 @@ import type { SiteCopy } from "@/content/copy";
 import ShineBorder from "@/components/effects/ShineBorder";
 import MagneticButton from "@/components/effects/MagneticButton";
 import { FadeInUp } from "@/components/effects/ScrollReveal";
+import LumaDrift from "@/components/effects/LumaDrift";
 
 export default function CtaBand({ copy }: { copy: SiteCopy }) {
   return (
-    <section className="pad" id="cta">
-      <div className="wrap">
+    <section className="pad relative overflow-hidden" id="cta">
+      <LumaDrift speed={0.4} height="100%" className="absolute inset-0 opacity-15 dark:opacity-25" />
+      <div className="wrap relative z-10">
         <FadeInUp>
           <ShineBorder color="var(--accent)" duration={4}>
             <div className="cta-band">
