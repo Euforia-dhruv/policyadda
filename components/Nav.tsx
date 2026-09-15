@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import type { Locale } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
@@ -18,15 +18,25 @@ export default function Nav({
   signedIn?: boolean;
 }) {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const accountHref = signedIn ? "/dashboard" : "/login";
   const accountLabel = signedIn ? copy.nav.dashboard : copy.nav.login;
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname?.startsWith(href) ?? false;
 
+  const onScroll = useCallback(() => setScrolled(window.scrollY > 20), []);
+  useEffect(() => {
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [onScroll]);
+
+  const isHome = pathname === "/";
+
   return (
     <>
-      <header className="nav">
+      <header className={`nav ${isHome && !scrolled ? "nav--transparent" : ""} ${scrolled ? "nav--scrolled" : ""}`}>
         <div className="wrap nav-inner">
           <PolicyAddaBrand variant="full" />
 

@@ -3,19 +3,11 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Ambient, decorative hero background video.
+ * Hero background video — prefers highest quality available.
  *
- * SSR markup uses the preload="metadata" HD source as a safe fallback so the
- * poster appears instantly and no-JS/reduced-motion visitors never see a black
- * area. After hydration we pick the best resolution for the current viewport
- * and network conditions and upgrade the source before playback begins.
- *
- * When the chosen resolution is already the SSR default (HD) we leave the
- * <source> children alone — re-assigning an identical src would force a reload
- * and abort an in-flight play().
- *
- * The <video> is intentionally decorative: no UI, no controls, no misleading
- * accessibility label.
+ * SSR renders the 2K source as default (most desktops) with the poster as
+ * instant fallback. Client upgrades to 4K on large viewports.
+ * Mobile/tablet stays on HD to save bandwidth.
  */
 
 const SRCS = {
@@ -41,14 +33,14 @@ function chooseSource(): { src: string; res: Res } {
 
   let res: Res = "hd";
   if (!slow) {
-    if (width >= 1440 && width < 2560) res = "qhd";
-    else if (width >= 2560) res = "uhd";
-    // < 1440 (mobile + tablet): HD — fastest, and the source is native 720p.
+    if (width >= 1440) res = "uhd";
+    else if (width >= 768) res = "qhd";
   }
 
-  // Prefer WebM when the browser supports it (smaller, modern codec). HD MP4
-  // remains the compatibility fallback for every resolution tier.
-  return { src: res === "hd" && supportsVp9() ? SRCS.hd.webm : SRCS[res].mp4, res };
+  // Prefer WebM when the browser supports it (smaller, modern codec).
+  // For QHD/UHD we use MP4 since WebM only covers HD.
+  if (res === "hd" && supportsVp9()) return { src: SRCS.hd.webm, res };
+  return { src: SRCS[res].mp4, res };
 }
 
 export default function HeroVideo() {
@@ -63,8 +55,6 @@ export default function HeroVideo() {
       return;
     }
 
-    // Match what the SSR <source> children will auto-select, so HD needs no
-    // src reassignment (avoids a reload that aborts in-flight play()).
     const hdAuto = supportsVp9() ? SRCS.hd.webm : SRCS.hd.mp4;
     let current = chooseSource();
     let hideTimer: number | undefined;
@@ -73,7 +63,7 @@ export default function HeroVideo() {
       window.clearTimeout(hideTimer);
       hideTimer = window.setTimeout(() => {
         if (video.readyState === 0) video.style.display = "none";
-      }, 1500);
+      }, 2000);
     };
 
     const start = () => {
@@ -86,14 +76,19 @@ export default function HeroVideo() {
     };
 
     const onError = () => {
-      // WebM failed → step down to the universally supported H.264 MP4.
-      if (current.src.endsWith(".webm")) {
-        current = { ...current, src: SRCS.hd.mp4 };
+      // Higher res failed → step down
+      if (current.res === "uhd") {
+        current = { src: SRCS.qhd.mp4, res: "qhd" };
         start();
-        return;
+      } else if (current.res === "qhd") {
+        current = { src: SRCS.hd.mp4, res: "hd" };
+        start();
+      } else if (current.src.endsWith(".webm")) {
+        current = { src: SRCS.hd.mp4, res: "hd" };
+        start();
+      } else {
+        video.style.display = "none";
       }
-      // Compatibility MP4 failed too → clean poster fallback, never a black box.
-      video.style.display = "none";
     };
 
     video.addEventListener("error", onError);
@@ -121,8 +116,7 @@ export default function HeroVideo() {
       tabIndex={-1}
       aria-hidden="true"
     >
-      {/* HD compatibility source, preload="metadata" keeps it cheap.
-          The client upgrades this to 2K/4K on capable viewports. */}
+      <source src={SRCS.qhd.mp4} type="video/mp4" />
       <source src={SRCS.hd.webm} type='video/webm; codecs="vp9"' />
       <source src={SRCS.hd.mp4} type="video/mp4" />
     </video>
