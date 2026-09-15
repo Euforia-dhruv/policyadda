@@ -19,7 +19,7 @@ export type SiteCopy = {
     eyebrow: string;
     title: string;
     lead: string;
-    steps: { t: string; d: string }[];
+    steps: { t: string; d: string; extra?: string }[];
   };
   featured: { eyebrow: string; title: string; lead: string; viewAll: string; learnMore: string };
   why: {
@@ -236,12 +236,12 @@ export const en: SiteCopy = {
     title: "From confusion to clarity, step by step.",
     lead: "A simple, transparent journey — no surprises.",
     steps: [
-      { t: "Explore", d: "Browse insurance categories and understand your options in plain language." },
-      { t: "Understand", d: "Read clear, structured policy information — benefits, coverage, exclusions." },
-      { t: "Submit enquiry", d: "Fill a short form or use the provided application link. No commitment." },
-      { t: "Get contacted", d: "A PolicyAdda executive reaches out to assist you personally." },
-      { t: "Receive assistance", d: "Get helped through the policy process, from paperwork to answers." },
-      { t: "Access your policy", d: "Customers receive access to their policy information through our secure portal." },
+      { t: "Explore", d: "Browse insurance categories and understand your options in plain language.", extra: "Every category links to the policies available within it." },
+      { t: "Understand", d: "Read clear, structured policy information — benefits, coverage, exclusions.", extra: "Each policy page explains eligibility, coverage, exclusions, and required documents. Nothing hidden." },
+      { t: "Submit enquiry", d: "Fill a short form or use the provided application link. No commitment.", extra: "You receive an Application ID that lets you track your enquiry." },
+      { t: "Get contacted", d: "A PolicyAdda executive reaches out to assist you personally.", extra: "Your executive contacts you at the phone number you provided — during working hours." },
+      { t: "Receive assistance", d: "Get helped through the policy process, from paperwork to answers.", extra: "We help you with paperwork, questions, and understanding the process." },
+      { t: "Access your policy", d: "Customers receive access to their policy information through our secure portal.", extra: "Policy documents and your information are made accessible through a secure customer portal." },
     ],
   },
   featured: {
@@ -490,12 +490,12 @@ export const hi: SiteCopy = {
     title: "भ्रम से स्पष्टता तक, चरण दर चरण।",
     lead: "एक सरल, पारदर्शी यात्रा — बिना किसी आश्चर्य के।",
     steps: [
-      { t: "एक्सप्लोर करें", d: "बीमा श्रेणियाँ देखें और अपने विकल्पों को सरल भाषा में समझें।" },
-      { t: "समझें", d: "स्पष्ट, संरचित पॉलिसी जानकारी पढ़ें — लाभ, कवरेज, बहिष्करण।" },
-      { t: "आवेदन जमा करें", d: "एक छोटा फ़ॉर्म भरें या दिए गए आवेदन लिंक का उपयोग करें। कोई प्रतिबद्धता नहीं।" },
-      { t: "संपर्क प्राप्त करें", d: "एक PolicyAdda कार्यकारी आपकी व्यक्तिगत सहायता के लिए पहुँचता है।" },
-      { t: "सहायता प्राप्त करें", d: "पॉलिसी प्रक्रिया में कागजी कार्रवाई से लेकर उत्तरों तक हर कदम पर सहायता।" },
-      { t: "अपनी पॉलिसी तक पहुँचें", d: "ग्राहकों को हमारे सुरक्षित पोर्टल के माध्यम से पॉलिसी जानकारी तक पहुँच मिलती है।" },
+      { t: "एक्सप्लोर करें", d: "बीमा श्रेणियाँ देखें और अपने विकल्पों को सरल भाषा में समझें।", extra: "हर श्रेणी उसके भीतर उपलब्ध पॉलिसियों से जुड़ी होती है।" },
+      { t: "समझें", d: "स्पष्ट, संरचित पॉलिसी जानकारी पढ़ें — लाभ, कवरेज, बहिष्करण।", extra: "हर पॉलिसी पेज पात्रता, कवरेज, बहिष्करण और आवश्यक दस्तावेज़ समझाता है। कुछ भी छिपा नहीं है।" },
+      { t: "आवेदन जमा करें", d: "एक छोटा फ़ॉर्म भरें या दिए गए आवेदन लिंक का उपयोग करें। कोई प्रतिबद्धता नहीं।", extra: "आपको एक आवेदन आईडी मिलती है जिससे आप अपने आवेदन को ट्रैक कर सकते हैं।" },
+      { t: "संपर्क प्राप्त करें", d: "एक PolicyAdda कार्यकारी आपकी व्यक्तिगत सहायता के लिए पहुँचता है।", extra: "आपका कार्यकारी आपके द्वारा दिए गए फ़ोन नंबर पर — कार्य समय के दौरान संपर्क करता है।" },
+      { t: "सहायता प्राप्त करें", d: "पॉलिसी प्रक्रिया में कागजी कार्रवाई से लेकर उत्तरों तक हर कदम पर सहायता।", extra: "हम कागजी कार्रवाई, सवालों और प्रक्रिया को समझने में आपकी मदद करते हैं।" },
+      { t: "अपनी पॉलिसी तक पहुँचें", d: "ग्राहकों को हमारे सुरक्षित पोर्टल के माध्यम से पॉलिसी जानकारी तक पहुँच मिलती है।", extra: "पॉलिसी दस्तावेज़ और आपकी जानकारी एक सुरक्षित ग्राहक पोर्टल के माध्यम से सुलभ होती है।" },
     ],
   },
 featured: {

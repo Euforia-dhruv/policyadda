@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { siteConfig } from "@/content/config";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact — PolicyAdda",
@@ -18,11 +19,11 @@ export default function ContactPage() {
       <div className="wrap max-w-lg">
         <div className="section-head">
           <p className="eyebrow">{copy.footer.contact}</p>
-          <h2>Talk to PolicyAdda</h2>
+          <h2>{copy.support.title}</h2>
           <p className="lead">{copy.support.lead}</p>
         </div>
 
-        <div className="support-grid">
+        <div className="support-grid mb-8">
           <a href={`tel:${c.phone.tel}`} className="card support-card">
             <div className="ico">☎</div>
             <h3>{copy.support.call}</h3>
@@ -30,7 +31,7 @@ export default function ContactPage() {
           </a>
           <div className="card support-card">
             <div className="ico">📍</div>
-            <h3>Address</h3>
+            <h3>{locale === "hi" ? "पता" : "Address"}</h3>
             <p>{c.address ? pick(locale, c.address) : ""}</p>
           </div>
           <div className="card support-card">
@@ -45,7 +46,9 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="card px-[26px] py-6 mt-2.5">
+        <ContactForm copy={copy} />
+
+        <div className="card px-[26px] py-6 mt-6">
           <h3 className="mb-2.5">{copy.support.hours}</h3>
           {pick(locale, c.hours ?? { en: [], hi: [] }).map((h) => (
             <p key={h} className="text-sm">{h}</p>

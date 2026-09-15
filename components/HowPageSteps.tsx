@@ -4,17 +4,10 @@ import { StaggerContainer, StaggerItem, FadeInUp } from "@/components/effects/Sc
 import type { SiteCopy } from "@/content/copy";
 
 export default function HowPageSteps({ copy }: { copy: SiteCopy }) {
-  const steps = copy.how.steps.map((s, i) => ({
+  const steps = copy.how.steps.map((s) => ({
     t: s.t,
     d: s.d,
-    extra: [
-      "Browse /policies. Every category links to the policies available within it.",
-      "Each policy page explains benefits, eligibility, coverage, exclusions and required documents. Nothing hidden.",
-      "You receive an Application ID that lets you track your enquiry.",
-      "Your executive contacts you at the phone number you provided — during working hours.",
-      "We help you with paperwork, questions, and understanding the process.",
-      "Policy documents and your information are made accessible through a secure customer portal (activated once your account is created).",
-    ][i],
+    extra: s.extra || "",
   }));
 
   return (
@@ -27,7 +20,7 @@ export default function HowPageSteps({ copy }: { copy: SiteCopy }) {
               <div>
                 <h3>{s.t}</h3>
                 <p className="mb-1">{s.d}</p>
-                <p className="faint-sm">{s.extra}</p>
+                {s.extra && <p className="faint-sm">{s.extra}</p>}
               </div>
             </div>
           </StaggerItem>
@@ -35,7 +28,7 @@ export default function HowPageSteps({ copy }: { copy: SiteCopy }) {
       </StaggerContainer>
       <FadeInUp delay={0.3}>
         <p className="mt-8">
-          <a href="/policies" className="btn btn-primary">Start exploring</a>
+          <a href="/policies" className="btn btn-primary">{copy.cta.primary}</a>
         </p>
       </FadeInUp>
     </>
