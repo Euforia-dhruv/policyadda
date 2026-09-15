@@ -1,0 +1,122 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./content/**/*.{ts,tsx}", "./lib/**/*.{ts,tsx}"],
+  darkMode: ["class", '[data-theme="dark"]'],
+  theme: {
+    extend: {
+      colors: {
+        bg: "var(--bg)",
+        surface: "var(--surface)",
+        card: "var(--card)",
+        "surface-2": "var(--surface-2)",
+        "surface-3": "var(--surface-3)",
+        line: "var(--line)",
+        "line-strong": "var(--line-strong)",
+        DEFAULT: "var(--text)",
+        "text-soft": "var(--text-soft)",
+        muted: "var(--muted)",
+        faint: "var(--faint)",
+        accent: {
+          DEFAULT: "var(--accent)",
+          strong: "var(--accent-strong)",
+          bright: "var(--accent-bright)",
+          soft: "var(--accent-soft)",
+          line: "var(--accent-line)",
+        },
+        cta: {
+          DEFAULT: "var(--cta)",
+          strong: "var(--cta-strong)",
+          soft: "var(--cta-soft)",
+          line: "var(--cta-line)",
+          ink: "var(--cta-ink)",
+        },
+        maroon: {
+          DEFAULT: "var(--maroon)",
+          ink: "var(--maroon-ink)",
+        },
+        ok: "var(--ok)",
+        bad: "var(--bad)",
+      },
+      fontFamily: {
+        sans: ["var(--font-ui)", "var(--font)"],
+        display: ["var(--font-display)"],
+      },
+      fontSize: {
+        xs: "var(--text-xs)",
+        sm: "var(--text-sm)",
+        base: "var(--text-base)",
+        lg: "var(--text-lg)",
+        xl: "var(--text-xl)",
+        "2xl": "var(--text-2xl)",
+        "3xl": "var(--text-3xl)",
+        "4xl": "var(--text-4xl)",
+        display: "var(--text-display)",
+      },
+      fontWeight: {
+        normal: "var(--weight-normal)",
+        medium: "var(--weight-medium)",
+        semibold: "var(--weight-semibold)",
+        bold: "var(--weight-bold)",
+      },
+      lineHeight: {
+        tight: "var(--leading-tight)",
+        snug: "var(--leading-snug)",
+        normal: "var(--leading-normal)",
+      },
+      borderRadius: {
+        DEFAULT: "var(--radius)",
+        sm: "var(--radius-sm)",
+        pill: "var(--radius-pill)",
+      },
+      spacing: {
+        0.5: "2px",
+        1: "var(--sp-1)",
+        1.5: "6px",
+        2: "var(--sp-2)",
+        2.5: "10px",
+        3: "var(--sp-3)",
+        3.5: "14px",
+        4: "var(--sp-4)",
+        5: "var(--sp-5)",
+        6: "var(--sp-6)",
+        7: "var(--sp-7)",
+        8: "var(--sp-8)",
+        10: "var(--sp-10)",
+        12: "var(--sp-12)",
+        16: "var(--sp-16)",
+        20: "var(--sp-20)",
+        24: "var(--sp-24)",
+        nav: "var(--nav-h)",
+      },
+      boxShadow: {
+        sm: "var(--shadow-sm)",
+        DEFAULT: "var(--shadow)",
+        lg: "var(--shadow-lg)",
+      },
+      zIndex: {
+        base: "var(--z-base)",
+        dropdown: "var(--z-dropdown)",
+        sticky: "var(--z-sticky)",
+        drawer: "var(--z-drawer)",
+        nav: "var(--z-nav)",
+        overlay: "var(--z-overlay)",
+      },
+      transitionDuration: {
+        fast: "var(--dur-fast)",
+        normal: "var(--dur-normal)",
+        slow: "var(--dur-slow)",
+      },
+      transitionTimingFunction: {
+        out: "var(--ease-out)",
+        spring: "var(--ease-spring)",
+      },
+      maxWidth: {
+        content: "1240px",
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;
