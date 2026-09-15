@@ -635,6 +635,18 @@ section { position: relative; }
    ============================================================ */
 .spinner { width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--line-strong); border-top-color: var(--accent); animation: spin 0.7s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
+@keyframes shine-border {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(23, 79, 134, 0.15); }
+  50% { box-shadow: 0 0 40px rgba(23, 79, 134, 0.35); }
+}
+[data-theme="dark"] @keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(74, 158, 222, 0.15); }
+  50% { box-shadow: 0 0 40px rgba(74, 158, 222, 0.35); }
+}
 .notice-center { text-align: center; padding: var(--sp-16) 0; }
 .notice-center h2 { margin-bottom: var(--sp-2); }
 

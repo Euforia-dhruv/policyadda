@@ -1,6 +1,9 @@
+"use client";
+
 import type { Locale, PolicyCategory } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import { pick } from "@/lib/i18n";
+import { StaggerContainer, StaggerItem } from "@/components/effects/ScrollReveal";
 
 export function CategoryCard({ cat, locale, copy }: { cat: PolicyCategory; locale: Locale; copy: SiteCopy }) {
   return (
@@ -33,11 +36,13 @@ export default function CategoriesSection({
           <h2>{copy.categories.title}</h2>
           <p className="lead">{copy.categories.lead}</p>
         </div>
-        <div className="grid-categories">
+        <StaggerContainer className="grid-categories">
           {categories.map((cat) => (
-            <CategoryCard key={cat.id} cat={cat} locale={locale} copy={copy} />
+            <StaggerItem key={cat.id}>
+              <CategoryCard cat={cat} locale={locale} copy={copy} />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

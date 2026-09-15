@@ -1,5 +1,8 @@
+"use client";
+
 import type { SiteCopy } from "@/content/copy";
 import { Shield, User, Globe, Lock } from "@/lib/icons";
+import { StaggerContainer, StaggerItem } from "@/components/effects/ScrollReveal";
 
 const ICONS = [Shield, User, Globe, Lock];
 
@@ -12,18 +15,20 @@ export default function TrustBand({ copy }: { copy: SiteCopy }) {
           <h2>{copy.trust.title}</h2>
           <p className="lead">{copy.trust.lead}</p>
         </div>
-        <div className="trust-band">
+        <StaggerContainer className="trust-band">
           {copy.trust.items.map((it, i) => {
             const Icon = ICONS[i % ICONS.length];
             return (
-              <div className="trust-item" key={it.t}>
-                <div className="t-ico"><Icon size={28} /></div>
-                <h3>{it.t}</h3>
-                <p>{it.d}</p>
-              </div>
+              <StaggerItem key={it.t}>
+                <div className="trust-item">
+                  <div className="t-ico"><Icon size={28} /></div>
+                  <h3>{it.t}</h3>
+                  <p>{it.d}</p>
+                </div>
+              </StaggerItem>
             );
           })}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );
