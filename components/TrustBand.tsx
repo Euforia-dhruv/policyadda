@@ -3,6 +3,9 @@
 import type { SiteCopy } from "@/content/copy";
 import { Shield, User, Globe, Lock } from "@/lib/icons";
 import { StaggerContainer, StaggerItem } from "@/components/effects/ScrollReveal";
+import { GlowCard } from "@/components/effects/GlowCard";
+import { SplitText } from "@/components/effects/SplitText";
+import { ParallaxText } from "@/components/effects/Parallax";
 
 const ICONS = [Shield, User, Globe, Lock];
 
@@ -12,7 +15,7 @@ export default function TrustBand({ copy }: { copy: SiteCopy }) {
       <div className="wrap">
         <div className="section-head">
           <p className="eyebrow">{copy.trust.eyebrow}</p>
-          <h2>{copy.trust.title}</h2>
+          <SplitText text={copy.trust.title} as="h2" splitBy="words" staggerDelay={0.04} />
           <p className="lead">{copy.trust.lead}</p>
         </div>
         <StaggerContainer className="trust-band">
@@ -20,11 +23,13 @@ export default function TrustBand({ copy }: { copy: SiteCopy }) {
             const Icon = ICONS[i % ICONS.length];
             return (
               <StaggerItem key={it.t}>
-                <div className="trust-item">
-                  <div className="t-ico"><Icon size={28} /></div>
-                  <h3>{it.t}</h3>
-                  <p>{it.d}</p>
-                </div>
+                <GlowCard glowColor="rgba(23, 79, 134, 0.12)" className="trust-item">
+                  <div className="trust-item-inner">
+                    <div className="t-ico"><Icon size={28} /></div>
+                    <h3>{it.t}</h3>
+                    <p>{it.d}</p>
+                  </div>
+                </GlowCard>
               </StaggerItem>
             );
           })}

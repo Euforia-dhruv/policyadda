@@ -4,16 +4,22 @@ import type { Locale, PolicyCategory } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import { pick } from "@/lib/i18n";
 import { StaggerContainer, StaggerItem } from "@/components/effects/ScrollReveal";
+import { GlowCard } from "@/components/effects/GlowCard";
+import { SplitText } from "@/components/effects/SplitText";
 
 export function CategoryCard({ cat, locale, copy }: { cat: PolicyCategory; locale: Locale; copy: SiteCopy }) {
   return (
-    <a href={`/policies/${cat.slug}`} className="card card-hover cat-card">
-      <div className="cat-ico">{cat.icon}</div>
-      <h3>{pick(locale, cat.name)}</h3>
-      <p>{pick(locale, cat.short)}</p>
-      <span className="cat-link">
-        {copy.categories.view} <span aria-hidden="true">→</span>
-      </span>
+    <a href={`/policies/${cat.slug}`} className="block">
+      <GlowCard glowColor="rgba(23, 79, 134, 0.10)" className="cat-card">
+        <div className="cat-card-inner">
+          <div className="cat-ico">{cat.icon}</div>
+          <h3>{pick(locale, cat.name)}</h3>
+          <p>{pick(locale, cat.short)}</p>
+          <span className="cat-link">
+            {copy.categories.view} <span aria-hidden="true">→</span>
+          </span>
+        </div>
+      </GlowCard>
     </a>
   );
 }
@@ -33,7 +39,7 @@ export default function CategoriesSection({
       <div className="wrap">
         <div className="section-head">
           <p className="eyebrow">{copy.categories.eyebrow}</p>
-          <h2>{copy.categories.title}</h2>
+          <SplitText text={copy.categories.title} as="h2" splitBy="words" staggerDelay={0.04} />
           <p className="lead">{copy.categories.lead}</p>
         </div>
         <StaggerContainer className="grid-categories">

@@ -464,10 +464,9 @@ section { position: relative; }
 /* ============================================================
    Category card
    ============================================================ */
-.cat-card { padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-3); min-height: 190px; position: relative; overflow: hidden; }
-.cat-card::before { content: ""; position: absolute; inset: 0; opacity: 0; background: linear-gradient(135deg, rgba(23,79,134,0.04) 0%, transparent 60%); transition: opacity var(--dur-normal) ease; }
-.cat-card:hover { border-color: var(--accent-line); }
-.cat-card:hover::before { opacity: 1; }
+.cat-card { @apply p-0 border-0 bg-transparent; min-height: 190px; }
+.cat-card-inner { @apply p-6 flex flex-col gap-3 h-full; }
+.cat-card:hover { @apply -translate-y-0.5; }
 .cat-ico { width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center; font-size: 20px; background: var(--accent-soft); border: 1px solid var(--accent-line); transition: transform var(--dur-normal) var(--ease-spring); position: relative; z-index: 1; }
 .cat-card:hover .cat-ico { transform: scale(1.06) rotate(-2deg); }
 .cat-card h3 { color: var(--text); position: relative; z-index: 1; }
@@ -626,23 +625,19 @@ section { position: relative; }
 @layer components {
   .trust-band { @apply grid gap-4 grid-cols-[repeat(auto-fit,minmax(220px,1fr))]; }
   .trust-item {
-    @apply p-5 border border-[var(--line)] rounded-[var(--radius)] bg-[var(--card)] shadow-sm relative overflow-hidden;
-    transition: border-color var(--dur-normal) ease, transform var(--dur-normal) var(--ease-out), box-shadow var(--dur-normal) ease;
+    @apply p-0 border-0 bg-transparent shadow-none;
+    transition: transform var(--dur-normal) var(--ease-out);
   }
-  .trust-item::before {
-    content: ""; @apply absolute inset-0 opacity-0;
-    background: linear-gradient(135deg, rgba(23,79,134,0.04) 0%, transparent 60%);
-    transition: opacity var(--dur-normal) ease;
+  .trust-item:hover { @apply -translate-y-0.5; }
+  .trust-item-inner {
+    @apply p-5 relative;
   }
-  .trust-item:hover { @apply border-[var(--accent-line)] -translate-y-0.5 shadow; }
-  .trust-item:hover::before { @apply opacity-100; }
   .trust-item .t-ico {
     @apply w-11 h-11 rounded-xl grid place-items-center mb-3 text-[var(--accent-strong)] bg-[var(--accent-soft)] border border-[var(--accent-line)] relative z-10;
     transition: transform var(--dur-normal) var(--ease-spring);
   }
   .trust-item:hover .t-ico { @apply scale-110; }
   [data-theme="dark"] .trust-item .t-ico { @apply text-[var(--accent)]; }
-  [data-theme="dark"] .trust-item { background: var(--surface); }
   .trust-item h3 { @apply text-[var(--text-base)] mb-1 relative z-10; }
   .trust-item p { @apply text-[var(--text-sm)] relative z-10; }
 }

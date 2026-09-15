@@ -5,33 +5,70 @@ import type { SiteCopy } from "@/content/copy";
 import { pick } from "@/lib/i18n";
 import { siteConfig } from "@/content/config";
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import HeroVideo from "@/components/HeroVideo";
 import HeroParticles from "@/components/effects/HeroParticles";
 import MagneticButton from "@/components/effects/MagneticButton";
 
+function HeroSplitText({
+  text,
+  className,
+  delay = 0,
+}: {
+  text: string;
+  className?: string;
+  delay?: number;
+}) {
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setInView(true), delay);
+    return () => clearTimeout(t);
+  }, [delay]);
+
+  return (
+    <span className={className} aria-label={text}>
+      {text.split("").map((char, i) => (
+        <motion.span
+          key={`${char}-${i}`}
+          style={{ display: "inline-block", willChange: "transform, opacity, filter" }}
+          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+          animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+          transition={{
+            duration: 0.6,
+            delay: i * 0.025,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </motion.span>
+      ))}
+    </span>
+  );
+}
+
 export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale }) {
   const c = siteConfig.contact;
   const [inView, setInView] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+  const heroScale = useTransform(scrollYProgress, [0, 0.15], [1, 1.05]);
+  const heroY = useTransform(scrollYProgress, [0, 0.2], [0, -80]);
 
   useEffect(() => {
     const t = setTimeout(() => setInView(true), 100);
     return () => clearTimeout(t);
   }, []);
 
-  const titleA = copy.hero.titleA;
-  const titleB = copy.hero.titleB;
-
   return (
     <section className="hero hero--video">
-      <div className="hero-video" aria-hidden="true">
+      <motion.div className="hero-video" aria-hidden="true" style={{ scale: heroScale }}>
         <div className="hero-video-poster" />
         <HeroVideo />
-      </div>
+      </motion.div>
       <HeroParticles quantity={50} color="255,255,255" className="z-[1]" />
       <div className="hero-tint hero-tint-light" aria-hidden="true" />
       <div className="hero-tint hero-tint-dark" aria-hidden="true" />
-      <div className="wrap">
+      <motion.div className="wrap" style={{ opacity: heroOpacity, y: heroY }}>
         <div className="hero-inner">
           <motion.p
             className="hero-eyebrow"
@@ -44,29 +81,19 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
           </motion.p>
 
           <h1 className="hero-h1">
-            <motion.span
-              className="block hero-title-line"
-              initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
-              animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-              transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            >
-              {titleA}
-            </motion.span>
-            <motion.span
-              className="block hero-title-line hero-title-accent"
-              initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
-              animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            >
-              {titleB}
-            </motion.span>
+            <span className="block hero-title-line">
+              <HeroSplitText text={copy.hero.titleA} delay={200} />
+            </span>
+            <span className="block hero-title-line hero-title-accent">
+              <HeroSplitText text={copy.hero.titleB} delay={500} />
+            </span>
           </h1>
 
           <motion.p
             className="hero-sub"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
           >
             {copy.hero.sub}
           </motion.p>
@@ -75,7 +102,7 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
             className="hero-actions"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.6, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
           >
             <MagneticButton>
               <a href="/policies" className="btn btn-primary">{copy.hero.ctaPrimary}</a>
@@ -89,14 +116,14 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
             className="hero-meta"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.85 }}
+            transition={{ duration: 0.8, delay: 1.3 }}
           >
             <span className="chip">{c.phone.display}</span>
             <span className="chip">{c.address ? pick(locale, c.address) : ""}</span>
             <span className="chip">{pick(locale, c.hours ?? { en: [""], hi: [""] })[0]}</span>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
