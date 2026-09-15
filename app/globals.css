@@ -1,3 +1,108 @@
+/* ============================================================
+   Custom fonts — Panchang (UI), Array (Display), Britney (Accent), Stardom (Hero)
+   ============================================================ */
+@font-face {
+  font-family: 'Panchang';
+  src: url('/fonts/panchang/Panchang-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Panchang';
+  src: url('/fonts/panchang/Panchang-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Panchang';
+  src: url('/fonts/panchang/Panchang-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Panchang';
+  src: url('/fonts/panchang/Panchang-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Panchang';
+  src: url('/fonts/panchang/Panchang-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Panchang';
+  src: url('/fonts/panchang/Panchang-Extrabold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Array';
+  src: url('/fonts/array/Array-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Array';
+  src: url('/fonts/array/Array-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Array';
+  src: url('/fonts/array/Array-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Britney';
+  src: url('/fonts/britney/Britney-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Britney';
+  src: url('/fonts/britney/Britney-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Britney';
+  src: url('/fonts/britney/Britney-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Britney';
+  src: url('/fonts/britney/Britney-Ultra.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Stardom';
+  src: url('/fonts/stardom/Stardom-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -123,10 +228,11 @@
   --glass-bg: color-mix(in srgb, var(--bg) 74%, transparent);
   --glass-bg-heavy: color-mix(in srgb, var(--bg) 88%, transparent);
   --glass-blur: blur(14px);
-  --font: "Outfit", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Noto Sans Devanagari", "Helvetica Neue", Arial, sans-serif;
-  --font-display: "Source Sans 3", "Georgia", Georgia, serif;
+  --font: "Panchang", "Noto Sans Devanagari", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Array", "Georgia", Georgia, serif;
   --font-ui: var(--font);
+  --font-accent: "Britney", cursive;
+  --font-hero: "Stardom", "Georgia", serif;
 }
 
 /* ── Token: Theme — Dark ── */
@@ -165,16 +271,18 @@
   --glass-bg: color-mix(in srgb, var(--bg) 74%, transparent);
   --glass-bg-heavy: color-mix(in srgb, var(--bg) 88%, transparent);
   --glass-blur: blur(14px);
-  --font: "Outfit", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Noto Sans Devanagari", "Helvetica Neue", Arial, sans-serif;
-  --font-display: "Source Sans 3", "Georgia", Georgia, serif;
+  --font: "Panchang", "Noto Sans Devanagari", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Array", "Georgia", Georgia, serif;
   --font-ui: var(--font);
+  --font-accent: "Britney", cursive;
+  --font-hero: "Stardom", "Georgia", serif;
 }
 
 /* ============================================================
    Base overrides (on top of Tailwind preflight)
    ============================================================ */
 body {
+  font-family: var(--font-ui);
   background: var(--bg);
   background-image: var(--bg-gradient);
   background-attachment: fixed;
@@ -184,7 +292,8 @@ body {
 img, video { max-width: 100%; height: auto; display: block; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: var(--radius-sm); }
 
-h1, h2 { font-family: var(--font-display); font-weight: var(--weight-normal); letter-spacing: -0.005em; line-height: var(--leading-tight); }
+h1, h2 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; line-height: var(--leading-tight); }
+h3 { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.01em; }
 h1 { font-size: var(--text-4xl); }
 h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
 h3 { letter-spacing: -0.01em; line-height: var(--leading-snug); font-weight: var(--weight-bold); font-size: var(--text-lg); }
@@ -203,7 +312,8 @@ section { position: relative; }
    ============================================================ */
 .eyebrow {
   display: inline-flex; align-items: center; gap: 12px;
-  font-size: var(--text-xs); letter-spacing: 0.22em; text-transform: uppercase;
+  font-family: var(--font-accent);
+  font-size: var(--text-xs); letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--accent-strong); font-weight: 700; margin-bottom: var(--sp-5);
 }
 [data-theme="dark"] .eyebrow { color: var(--accent); }
@@ -266,13 +376,14 @@ section { position: relative; }
    ============================================================ */
 @layer components {
   .nav {
-    @apply sticky top-0 z-nav border-b border-transparent;
+    @apply sticky top-0 z-nav;
     background: transparent;
+    border-bottom: none;
     backdrop-filter: none; -webkit-backdrop-filter: none;
     transition: background 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease, -webkit-backdrop-filter 0.35s ease;
   }
   .nav--scrolled, .nav:not(.nav--transparent) {
-    @apply border-[var(--line)];
+    border-bottom: 1px solid var(--line);
     background: var(--glass-bg-heavy);
     backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
   }
@@ -367,12 +478,14 @@ section { position: relative; }
 .hero-tint-light {
   opacity: 1;
   background:
+    linear-gradient(180deg, rgba(13, 20, 35, 0.70) 0%, rgba(13, 20, 35, 0.15) 8%, transparent 18%),
     linear-gradient(90deg, rgba(13, 20, 35, 0.82) 0%, rgba(13, 20, 35, 0.55) 30%, rgba(13, 20, 35, 0.20) 50%, transparent 65%),
     linear-gradient(180deg, rgba(13, 20, 35, 0.25) 0%, transparent 25%, transparent 75%, rgba(13, 20, 35, 0.25) 100%);
 }
 .hero-tint-dark {
   opacity: 0;
   background:
+    linear-gradient(180deg, rgba(6, 11, 20, 0.75) 0%, rgba(6, 11, 20, 0.20) 10%, transparent 20%),
     radial-gradient(ellipse 65% 55% at 22% 45%, rgba(6, 11, 20, 0.40) 0%, transparent 100%),
     linear-gradient(180deg, rgba(6, 11, 20, 0.55) 0%, rgba(9, 14, 26, 0.25) 35%, rgba(5, 9, 17, 0.25) 65%, rgba(6, 11, 20, 0.55) 100%),
     radial-gradient(120% 90% at 22% 12%, rgba(23, 79, 134, 0.22) 0%, transparent 55%);
@@ -382,11 +495,13 @@ section { position: relative; }
 @media (max-width: 767px) {
   .hero-tint-light {
     background:
+      linear-gradient(180deg, rgba(13, 20, 35, 0.75) 0%, rgba(13, 20, 35, 0.20) 10%, transparent 22%),
       linear-gradient(90deg, rgba(13, 20, 35, 0.88) 0%, rgba(13, 20, 35, 0.60) 35%, rgba(13, 20, 35, 0.20) 60%, transparent 80%),
       linear-gradient(180deg, rgba(13, 20, 35, 0.28) 0%, transparent 25%, transparent 75%, rgba(13, 20, 35, 0.28) 100%);
   }
   .hero-tint-dark {
     background:
+      linear-gradient(180deg, rgba(6, 11, 20, 0.80) 0%, rgba(6, 11, 20, 0.25) 12%, transparent 25%),
       radial-gradient(ellipse 70% 50% at 30% 40%, rgba(6, 11, 20, 0.45) 0%, transparent 100%),
       linear-gradient(180deg, rgba(6, 11, 20, 0.55) 0%, rgba(9, 14, 26, 0.30) 42%, rgba(5, 9, 17, 0.55) 100%);
   }
@@ -401,16 +516,17 @@ section { position: relative; }
 .hero h1, .hero-sub { color: #fff; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 10px;
-  font-size: var(--text-xs); letter-spacing: 0.25em; text-transform: uppercase;
-  color: rgba(255,255,255,0.75); font-weight: 600; margin-bottom: var(--sp-5);
+  font-family: var(--font-accent);
+  font-size: var(--text-xs); letter-spacing: 0.20em; text-transform: uppercase;
+  color: rgba(255,255,255,0.75); font-weight: 700; margin-bottom: var(--sp-5);
   text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 .hero-eyebrow-line {
   display: inline-block; width: 32px; height: 1px; background: rgba(255,255,255,0.4);
 }
 .hero-h1 {
-  font-family: var(--font-display); font-size: clamp(3rem, 7.5vw, 5.5rem);
-  font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; color: #fff;
+  font-family: var(--font-hero); font-size: clamp(3rem, 7.5vw, 5.5rem);
+  font-weight: 400; line-height: 1.05; letter-spacing: -0.01em; color: #fff;
   text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 .hero-title-accent {
@@ -828,8 +944,58 @@ section { position: relative; }
 .legal-page li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
 
 /* ============================================================
-   Reduced motion
+   Scroll-driven effects
    ============================================================ */
+@keyframes fx-slide-up { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fx-slide-left { from { opacity: 0; transform: translateX(60px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes fx-slide-right { from { opacity: 0; transform: translateX(-60px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes fx-scale-in { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
+@keyframes fx-rotate-in { from { opacity: 0; transform: rotate(-3deg) scale(0.9); } to { opacity: 1; transform: rotate(0deg) scale(1); } }
+@keyframes fx-blur-in { from { opacity: 0; filter: blur(12px); transform: translateY(20px); } to { opacity: 1; filter: blur(0); transform: translateY(0); } }
+@keyframes fx-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes fx-glow-pulse { 0%, 100% { box-shadow: 0 0 20px rgba(var(--accent-rgb, 232,181,0), 0.15); } 50% { box-shadow: 0 0 40px rgba(var(--accent-rgb, 232,181,0), 0.35); } }
+@keyframes fx-shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+@keyframes fx-typewriter { from { width: 0; } to { width: 100%; } }
+
+.fx-slide-up { animation: fx-slide-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.fx-slide-left { animation: fx-slide-left 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.fx-slide-right { animation: fx-slide-right 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.fx-scale-in { animation: fx-scale-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.fx-rotate-in { animation: fx-rotate-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.fx-blur-in { animation: fx-blur-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.fx-float { animation: fx-float 3s ease-in-out infinite; }
+.fx-glow-pulse { animation: fx-glow-pulse 3s ease-in-out infinite; }
+.fx-shimmer {
+  background: linear-gradient(90deg, transparent 30%, rgba(255,255,255,0.08) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: fx-shimmer 3s linear infinite;
+}
+.fx-delay-1 { animation-delay: 0.1s; }
+.fx-delay-2 { animation-delay: 0.2s; }
+.fx-delay-3 { animation-delay: 0.3s; }
+.fx-delay-4 { animation-delay: 0.4s; }
+.fx-delay-5 { animation-delay: 0.5s; }
+.fx-delay-6 { animation-delay: 0.6s; }
+
+/* Card hover micro-interactions */
+.card-fx { transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease; }
+.card-fx:hover { transform: translateY(-6px) scale(1.015); box-shadow: 0 20px 50px rgba(0,0,0,0.12); }
+.card-fx:nth-child(even):hover { transform: translateY(-4px) rotate(0.5deg) scale(1.01); }
+.card-fx:nth-child(3n):hover { transform: translateY(-8px) scale(1.02); }
+
+/* Section stagger for child elements */
+.stagger-children > * { opacity: 0; transform: translateY(30px); }
+.stagger-children.in-view > *:nth-child(1) { animation: fx-slide-up 0.6s 0s cubic-bezier(0.16,1,0.3,1) forwards; }
+.stagger-children.in-view > *:nth-child(2) { animation: fx-slide-up 0.6s 0.08s cubic-bezier(0.16,1,0.3,1) forwards; }
+.stagger-children.in-view > *:nth-child(3) { animation: fx-slide-up 0.6s 0.16s cubic-bezier(0.16,1,0.3,1) forwards; }
+.stagger-children.in-view > *:nth-child(4) { animation: fx-slide-up 0.6s 0.24s cubic-bezier(0.16,1,0.3,1) forwards; }
+.stagger-children.in-view > *:nth-child(5) { animation: fx-slide-up 0.6s 0.32s cubic-bezier(0.16,1,0.3,1) forwards; }
+.stagger-children.in-view > *:nth-child(6) { animation: fx-slide-up 0.6s 0.40s cubic-bezier(0.16,1,0.3,1) forwards; }
+.stagger-children.in-view > *:nth-child(7) { animation: fx-slide-up 0.6s 0.48s cubic-bezier(0.16,1,0.3,1) forwards; }
+.stagger-children.in-view > *:nth-child(8) { animation: fx-slide-up 0.6s 0.56s cubic-bezier(0.16,1,0.3,1) forwards; }
+.stagger-children.in-view > *:nth-child(9) { animation: fx-slide-up 0.6s 0.64s cubic-bezier(0.16,1,0.3,1) forwards; }
+.stagger-children.in-view > *:nth-child(10) { animation: fx-slide-up 0.6s 0.72s cubic-bezier(0.16,1,0.3,1) forwards; }
+
 @media (prefers-reduced-motion: reduce) {
   .grain { display: none; }
   *, *::before, *::after { animation-duration: 0.001s !important; transition-duration: 0.05s !important; }

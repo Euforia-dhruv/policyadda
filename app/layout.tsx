@@ -1,6 +1,5 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Outfit, Source_Sans_3 } from "next/font/google";
 import { getCopy } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { getServerSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
@@ -8,19 +7,6 @@ import { siteConfig } from "@/content/config";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { ScrollProgress } from "@/components/effects/ScrollProgress";
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-ui",
-  display: "swap",
-});
-
-const sourceSans = Source_Sans_3({
-  subsets: ["latin"],
-  weight: ["400", "600"],
-  variable: "--font-display",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "PolicyAdda — Insurance assistance & policy discovery",
@@ -67,7 +53,7 @@ export default async function RootLayout({
         />
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
-      <body className={`${outfit.variable} ${sourceSans.variable}`}>
+      <body className="">
         <ScrollProgress />
         <div className="grain" aria-hidden="true" />
         <Nav copy={copy} locale={locale} signedIn={signedIn} />

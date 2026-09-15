@@ -22,7 +22,7 @@ export default function WhySection({ copy }: { copy: SiteCopy }) {
             const Icon = ICONS[i % ICONS.length];
             return (
               <StaggerItem key={it.t}>
-                <GlowCard glowColor="rgba(23, 79, 134, 0.08)" className="trust-item min-h-150">
+                <GlowCard glowColor="rgba(23, 79, 134, 0.08)" className="trust-item min-h-150 card-fx">
                   <div className="trust-item-inner">
                     <div className="t-ico"><Icon size={28} /></div>
                     <h3>{it.t}</h3>

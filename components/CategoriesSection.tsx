@@ -10,7 +10,7 @@ import { SplitText } from "@/components/effects/SplitText";
 export function CategoryCard({ cat, locale, copy }: { cat: PolicyCategory; locale: Locale; copy: SiteCopy }) {
   return (
     <a href={`/policies/${cat.slug}`} className="block">
-      <GlowCard glowColor="rgba(23, 79, 134, 0.10)" className="cat-card">
+      <GlowCard glowColor="rgba(23, 79, 134, 0.10)" className="cat-card card-fx">
         <div className="cat-card-inner">
           <div className="cat-ico">{cat.icon}</div>
           <h3>{pick(locale, cat.name)}</h3>
