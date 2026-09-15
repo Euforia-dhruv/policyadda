@@ -50,34 +50,36 @@ export default function ContactForm({ copy }: { copy: SiteCopy }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="card px-[26px] py-7">
-      <div className="form-grid">
-        <div className="form-field">
+    <form onSubmit={handleSubmit} className="form-card">
+      <div className="form-row">
+        <div className="field">
           <label htmlFor="c-name">{copy.support.tName}</label>
-          <input id="c-name" name="name" required placeholder={copy.support.tName} />
+          <input id="c-name" name="name" required placeholder={copy.support.tName} className="field-input" />
         </div>
-        <div className="form-field">
+        <div className="field">
           <label htmlFor="c-email">{copy.support.tEmail}</label>
-          <input id="c-email" name="email" type="email" required placeholder={copy.support.tEmail} />
+          <input id="c-email" name="email" type="email" required placeholder={copy.support.tEmail} className="field-input" />
         </div>
-        <div className="form-field">
+      </div>
+      <div className="form-row">
+        <div className="field">
           <label htmlFor="c-phone">{copy.support.tPhone}</label>
-          <input id="c-phone" name="phone" type="tel" placeholder="98XXXXXXXX" pattern="[6-9][0-9]{9}" />
+          <input id="c-phone" name="phone" type="tel" placeholder="98XXXXXXXX" pattern="[6-9][0-9]{9}" className="field-input" />
         </div>
-        <div className="form-field">
+        <div className="field">
           <label htmlFor="c-category">{copy.support.tSubject}</label>
-          <select id="c-category" name="category" defaultValue={copy.support.cats[0]}>
+          <select id="c-category" name="category" defaultValue={copy.support.cats[0]} className="field-select">
             {copy.support.cats.map((cat) => (
               <option key={cat} value={cat}>{cat}</option>
             ))}
           </select>
         </div>
-        <div className="form-field form-field-full">
-          <label htmlFor="c-message">{copy.support.tDescription}</label>
-          <textarea id="c-message" name="message" rows={4} required placeholder={copy.support.tDescription} />
-        </div>
       </div>
-      {error && <p className="text-sm text-red-500 mt-2">{error}</p>}
+      <div className="field">
+        <label htmlFor="c-message">{copy.support.tDescription}</label>
+        <textarea id="c-message" name="message" rows={4} required placeholder={copy.support.tDescription} className="field-textarea" />
+      </div>
+      {error && <p className="form-err mt-2">{error}</p>}
       <button type="submit" className="btn btn-primary mt-4" disabled={saving}>
         {saving ? "…" : copy.support.tSubmit}
       </button>
