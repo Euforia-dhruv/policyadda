@@ -9,7 +9,6 @@ import { motion, useScroll, useTransform } from "motion/react";
 import HeroVideo from "@/components/HeroVideo";
 import HeroParticles from "@/components/effects/HeroParticles";
 import MagneticButton from "@/components/effects/MagneticButton";
-import LumaDrift from "@/components/effects/LumaDrift";
 
 function HeroSplitText({
   text,
@@ -62,7 +61,6 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
 
   return (
     <section className="hero hero--video">
-      <LumaDrift speed={0.6} height="100%" className="absolute inset-0 z-0 opacity-30" />
       <motion.div className="hero-video" aria-hidden="true" style={{ scale: heroScale }}>
         <div className="hero-video-poster" />
         <HeroVideo />

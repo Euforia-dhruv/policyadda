@@ -6,6 +6,7 @@ import { pick } from "@/lib/i18n";
 import { StaggerContainer, StaggerItem } from "@/components/effects/ScrollReveal";
 import { GlowCard } from "@/components/effects/GlowCard";
 import { SplitText } from "@/components/effects/SplitText";
+import LumaDrift from "@/components/effects/LumaDrift";
 
 export function CategoryCard({ cat, locale, copy }: { cat: PolicyCategory; locale: Locale; copy: SiteCopy }) {
   return (
@@ -35,8 +36,9 @@ export default function CategoriesSection({
 }) {
   if (categories.length === 0) return null;
   return (
-    <section className="pad section-pad-0" id="categories">
-      <div className="wrap">
+    <section className="pad section-pad-0 relative overflow-hidden" id="categories">
+      <LumaDrift speed={0.3} height="100%" className="absolute inset-0 opacity-[0.07] dark:opacity-[0.12]" />
+      <div className="wrap relative z-10">
         <div className="section-head">
           <p className="eyebrow">{copy.categories.eyebrow}</p>
           <SplitText text={copy.categories.title} as="h2" splitBy="words" staggerDelay={0.04} />

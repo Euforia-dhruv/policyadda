@@ -6,6 +6,7 @@ import { pick } from "@/lib/i18n";
 import { data } from "@/lib/data";
 import Accordion from "./Accordion";
 import { FadeInUp } from "@/components/effects/ScrollReveal";
+import LumaDrift from "@/components/effects/LumaDrift";
 
 export default function FaqSection({ copy, locale }: { copy: SiteCopy; locale: Locale }) {
   const items = data.faqs().map((f) => ({
@@ -15,8 +16,9 @@ export default function FaqSection({ copy, locale }: { copy: SiteCopy; locale: L
   }));
 
   return (
-    <section className="pad" id="faq">
-      <div className="wrap">
+    <section className="pad relative overflow-hidden" id="faq">
+      <LumaDrift speed={0.25} height="100%" className="absolute inset-0 opacity-[0.05] dark:opacity-[0.09]" />
+      <div className="wrap relative z-10">
         <FadeInUp>
           <div className="section-head">
             <p className="eyebrow">{copy.faq.eyebrow}</p>

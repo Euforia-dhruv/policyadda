@@ -5,13 +5,15 @@ import { Search, User, Globe, Phone, Shield, ArrowRight } from "@/lib/icons";
 import { StaggerContainer, StaggerItem } from "@/components/effects/ScrollReveal";
 import { GlowCard } from "@/components/effects/GlowCard";
 import { SplitText } from "@/components/effects/SplitText";
+import LumaDrift from "@/components/effects/LumaDrift";
 
 const ICONS = [Search, User, Globe, Phone, Shield, ArrowRight];
 
 export default function WhySection({ copy }: { copy: SiteCopy }) {
   return (
-    <section className="pad" id="why">
-      <div className="wrap">
+    <section className="pad relative overflow-hidden" id="why">
+      <LumaDrift speed={0.35} height="100%" className="absolute inset-0 opacity-[0.06] dark:opacity-[0.10]" />
+      <div className="wrap relative z-10">
         <div className="section-head">
           <p className="eyebrow">{copy.why.eyebrow}</p>
           <SplitText text={copy.why.title} as="h2" splitBy="words" staggerDelay={0.04} />
