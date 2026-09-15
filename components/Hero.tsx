@@ -53,7 +53,7 @@ function HeroSplitText({
         </span>
       )).reduce<ReactNode[]>((acc, wordEl, i) => {
         if (i === 0) return [wordEl];
-        return [...acc, <span key={`sp-${i}`} style={{ display: "inline-block" }}> </span>, wordEl];
+        return [...acc, <span key={`sp-${i}`} style={{ display: "inline-block", width: "0.3em" }} />, wordEl];
       }, [])}
     </span>
   );
