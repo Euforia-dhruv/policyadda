@@ -1,31 +1,29 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { InfiniteSlider } from "@/components/effects/InfiniteSlider";
 
 const ITEMS = [
-  "Motor Insurance",
-  "Health Insurance",
-  "Business / SME Insurance",
-  "Explain me my policy",
-  "What am I covered for?",
-  "Claim support",
-  "Plain-language, always",
-  "Transparent & supportive",
+  { text: "Motor Insurance", icon: "◈" },
+  { text: "Health Insurance", icon: "◈" },
+  { text: "Business / SME Insurance", icon: "◈" },
+  { text: "Explain me my policy", icon: "•" },
+  { text: "What am I covered for?", icon: "•" },
+  { text: "Claim support", icon: "•" },
+  { text: "Plain-language, always", icon: "✦" },
+  { text: "Transparent & supportive", icon: "✦" },
 ];
 
 export default function Ticker() {
-  const row = [...ITEMS, ...ITEMS, ...ITEMS];
   return (
     <div className="ticker" aria-hidden="true">
-      <motion.div
-        className="ticker-track"
-        animate={{ x: [0, "-33.333%"] }}
-        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-      >
-        {row.map((t, i) => (
-          <span key={i}>{t}</span>
+      <InfiniteSlider speed={80} speedOnHover={30} gap={48} className="py-3.5">
+        {ITEMS.map((item, i) => (
+          <span key={i} className="ticker-item">
+            <span className="ticker-dot">{item.icon}</span>
+            {item.text}
+          </span>
         ))}
-      </motion.div>
+      </InfiniteSlider>
     </div>
   );
 }

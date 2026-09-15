@@ -1,22 +1,23 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter, DM_Serif_Display } from "next/font/google";
+import { Outfit, Source_Sans_3 } from "next/font/google";
 import { getCopy } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { getServerSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
 import { siteConfig } from "@/content/config";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { ScrollProgress } from "@/components/effects/ScrollProgress";
 
-const inter = Inter({
+const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-ui",
   display: "swap",
 });
 
-const serif = DM_Serif_Display({
+const sourceSans = Source_Sans_3({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "600"],
   variable: "--font-display",
   display: "swap",
 });
@@ -32,8 +33,6 @@ export const metadata: Metadata = {
 };
 
 const themeInit = `(function(){try{var t=localStorage.getItem('policyadda_theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`;
-
-const revealInit = `(function(){if(!('IntersectionObserver' in window)){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});return;}function init(){var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}else{init();}})();`;
 
 export default async function RootLayout({
   children,
@@ -67,9 +66,9 @@ export default async function RootLayout({
           content="PolicyAdda explains insurance in plain language and guides you through every step."
         />
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
-        <script dangerouslySetInnerHTML={{ __html: revealInit }} />
       </head>
-      <body className={`${inter.variable} ${serif.variable}`}>
+      <body className={`${outfit.variable} ${sourceSans.variable}`}>
+        <ScrollProgress />
         <div className="grain" aria-hidden="true" />
         <Nav copy={copy} locale={locale} signedIn={signedIn} />
         <main>{children}</main>
