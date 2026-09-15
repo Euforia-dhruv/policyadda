@@ -181,12 +181,13 @@
 /* ============================================================
    Base overrides (on top of Tailwind preflight)
    ============================================================ */
-body {
+html, body {
   font-family: var(--font-ui);
   background: var(--bg);
   background-image: var(--bg-gradient);
   background-attachment: fixed;
   transition: background var(--dur-normal) ease, color var(--dur-normal) ease;
+  margin: 0; padding: 0;
 }
 ::selection { background: var(--accent); color: #fff; }
 img, video { max-width: 100%; height: auto; display: block; }
@@ -361,7 +362,7 @@ section { position: relative; }
 /* ============================================================
    Hero
    ============================================================ */
-.hero { position: relative; overflow: hidden; margin-top: calc(-1 * var(--nav-h)); padding-top: var(--nav-h); }
+.hero { position: relative; overflow: hidden; margin-top: calc(-1 * var(--nav-h)); padding-top: var(--nav-h); background: #0d1423; }
 .hero--video > .wrap { position: relative; z-index: 3; }
 .hero-video { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
 .hero-video-poster {

@@ -4,7 +4,7 @@ import type { Locale } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import { pick } from "@/lib/i18n";
 import { siteConfig } from "@/content/config";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import HeroVideo from "@/components/HeroVideo";
 import HeroParticles from "@/components/effects/HeroParticles";
@@ -25,23 +25,36 @@ function HeroSplitText({
     return () => clearTimeout(t);
   }, [delay]);
 
+  const words = text.split(" ");
+  let globalIdx = 0;
+
   return (
     <span className={className} aria-label={text}>
-      {text.split("").map((char, i) => (
-        <motion.span
-          key={`${char}-${i}`}
-          style={{ display: "inline-block", willChange: "transform, opacity, filter" }}
-          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
-          animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-          transition={{
-            duration: 0.6,
-            delay: i * 0.025,
-            ease: [0.16, 1, 0.3, 1],
-          }}
-        >
-          {char === " " ? "\u00A0" : char}
-        </motion.span>
-      ))}
+      {words.map((word, wi) => (
+        <span key={wi} style={{ display: "inline-block", whiteSpace: "nowrap" }}>
+          {word.split("").map((char) => {
+            const idx = globalIdx++;
+            return (
+              <motion.span
+                key={`${char}-${idx}`}
+                style={{ display: "inline-block", willChange: "transform, opacity, filter" }}
+                initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+                animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+                transition={{
+                  duration: 0.6,
+                  delay: idx * 0.025,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+              >
+                {char}
+              </motion.span>
+            );
+          })}
+        </span>
+      )).reduce<ReactNode[]>((acc, wordEl, i) => {
+        if (i === 0) return [wordEl];
+        return [...acc, <span key={`sp-${i}`} style={{ display: "inline-block" }}> </span>, wordEl];
+      }, [])}
     </span>
   );
 }

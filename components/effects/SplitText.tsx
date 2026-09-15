@@ -35,26 +35,28 @@ export function SplitText({
     <Tag className={cn("inline", className)} aria-label={text}>
       <span ref={ref} style={{ display: "inline" }}>
         {units.map((unit, i) => (
-          <motion.span
-            key={`${unit}-${i}`}
-            style={{
-              display: "inline-block",
-              willChange: "transform, opacity, filter",
-            }}
-            initial={{ opacity: 0, y: 20, filter: `blur(${blurAmount}px)` }}
-            animate={
-              inView
-                ? { opacity: 1, y: 0, filter: "blur(0px)" }
-                : { opacity: 0, y: 20, filter: `blur(${blurAmount}px)` }
-            }
-            transition={{
-              duration,
-              delay: i * staggerDelay,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-          >
-            {unit}
-          </motion.span>
+          <span key={`${unit}-${i}`} style={{ display: "inline-block" }}>
+            <motion.span
+              style={{
+                display: "inline-block",
+                willChange: "transform, opacity, filter",
+              }}
+              initial={{ opacity: 0, y: 20, filter: `blur(${blurAmount}px)` }}
+              animate={
+                inView
+                  ? { opacity: 1, y: 0, filter: "blur(0px)" }
+                  : { opacity: 0, y: 20, filter: `blur(${blurAmount}px)` }
+              }
+              transition={{
+                duration,
+                delay: i * staggerDelay,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+            >
+              {unit}
+            </motion.span>
+            {splitBy === "words" && i < units.length - 1 ? " " : ""}
+          </span>
         ))}
       </span>
     </Tag>
