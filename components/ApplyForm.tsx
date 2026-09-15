@@ -61,15 +61,15 @@ export default function ApplyForm({
   if (state.phase === "done") {
     return (
       <div>
-        <div className="alert alert-ok" style={{ marginBottom: 18 }}>
+        <div className="alert alert-ok mb-5">
           <strong>✓ {copy.apply.doneTitle}</strong>
         </div>
-        <div className="form-card" style={{ marginBottom: 18 }}>
-          <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginBottom: 4 }}>{copy.apply.yourId}</p>
-          <p style={{ fontSize: "var(--text-3xl)", fontWeight: 800, letterSpacing: "0.04em", color: "var(--text)" }}>
+        <div className="form-card mb-5">
+          <p className="muted-sm" style={{ marginBottom: 4 }}>{copy.apply.yourId}</p>
+          <p className="font-bold" style={{ fontSize: "var(--text-3xl)", letterSpacing: "0.04em" }}>
             {state.applicationNo}
           </p>
-          <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginTop: 12 }}>{copy.apply.doneSub}</p>
+          <p className="muted-sm mt-3">{copy.apply.doneSub}</p>
         </div>
         <StatusTimeline statuses={statuses} current="submitted" copy={copy} locale={locale} />
         <p className="mt-5">
@@ -82,10 +82,10 @@ export default function ApplyForm({
   return (
     <form className="form-card" onSubmit={submit} noValidate>
       {state.phase === "error" && (
-        <div className="alert alert-err" style={{ marginBottom: 16 }}>{state.error}</div>
+        <div className="alert alert-err mb-4">{state.error}</div>
       )}
-      <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginBottom: 18 }}>
-        Applying for: <strong style={{ color: "var(--text)" }}>{policyName}</strong>
+      <p className="muted-sm mb-5">
+        Applying for: <strong className="text-default">{policyName}</strong>
       </p>
 
       <div className="field">

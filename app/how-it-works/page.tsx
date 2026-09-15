@@ -47,7 +47,7 @@ export default function HowPage() {
 
   return (
     <section className="pad">
-      <div className="wrap" style={{ maxWidth: 920 }}>
+      <div className="wrap max-w-lg">
         <div className="section-head">
           <p className="eyebrow">{copy.how.eyebrow}</p>
           <h2>{copy.how.title}</h2>
@@ -61,13 +61,13 @@ export default function HowPage() {
               <div>
                 <h3>{s.title}</h3>
                 <p style={{ marginBottom: 4 }}>{s.body}</p>
-                <p style={{ fontSize: 13, color: "var(--faint)" }}>{s.extra}</p>
+                <p className="faint-sm">{s.extra}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <p style={{ marginTop: 30 }}>
+        <p className="mt-8">
           <a href="/policies" className="btn btn-primary">Start exploring</a>
         </p>
       </div>

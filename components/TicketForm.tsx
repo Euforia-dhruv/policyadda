@@ -47,12 +47,12 @@ export default function TicketForm({ locale, copy }: { locale: Locale; copy: Sit
   if (sent) {
     return (
       <div className="form-card">
-        <div className="alert alert-ok" style={{ marginBottom: 14 }}>
+        <div className="alert alert-ok mb-3">
           <strong>✓ {copy.support.tSuccess}</strong>
         </div>
-        <p style={{ fontSize: "var(--text-base)", color: "var(--text)", fontWeight: 700 }}>{sent}</p>
-        <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginTop: 8 }}>{copy.support.tSuccessSub}</p>
-        <p className="faint-text" style={{ marginTop: 8 }}>{copy.support.tNote}</p>
+        <p className="text-base font-bold">{sent}</p>
+        <p className="muted-sm mt-2">{copy.support.tSuccessSub}</p>
+        <p className="faint-text mt-2">{copy.support.tNote}</p>
       </div>
     );
   }
@@ -60,9 +60,9 @@ export default function TicketForm({ locale, copy }: { locale: Locale; copy: Sit
   return (
     <form className="form-card" onSubmit={submit}>
       <h3 style={{ marginBottom: "var(--sp-1)" }}>{copy.support.openTicket}</h3>
-      <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginBottom: 18 }}>{copy.support.ticketSub}</p>
+      <p className="muted-sm mb-5">{copy.support.ticketSub}</p>
 
-      {err && <div className="alert alert-err" style={{ marginBottom: 14 }}>{err}</div>}
+      {err && <div className="alert alert-err mb-3">{err}</div>}
 
       <div className="form-row">
         <div className="field">

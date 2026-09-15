@@ -807,12 +807,24 @@ section { position: relative; }
 .section-mb-sm { margin-bottom: var(--sp-6); }
 .faint-text { color: var(--faint); font-size: var(--text-xs); }
 .muted-text { color: var(--muted); }
+.muted-sm { color: var(--muted); font-size: var(--text-sm); }
+.muted-xs { color: var(--muted); font-size: var(--text-xs); }
+.faint-sm { color: var(--faint); font-size: var(--text-sm); }
 .text-base { font-size: var(--text-base); }
 .card-pad { padding: var(--sp-6); }
+.card-pad-lg { padding: var(--sp-7); }
 .panel-np { padding: 0; overflow: hidden; }
 .stat-label-cap { text-transform: none; font-weight: var(--weight-semibold); }
 .min-h-150 { min-height: 150px; }
 .notif-dim { opacity: 0.25; }
+.line-height-relaxed { line-height: 1.6; }
+.font-semibold { font-weight: var(--weight-semibold); }
+.font-bold { font-weight: var(--weight-bold); }
+.text-default { color: var(--text); }
+.mb-4 { margin-bottom: var(--sp-4); }
+.mb-5 { margin-bottom: var(--sp-5); }
+.mb-3 { margin-bottom: var(--sp-3); }
+.mb-8 { margin-bottom: var(--sp-8); }
 
 /* ============================================================
    Reduced motion
