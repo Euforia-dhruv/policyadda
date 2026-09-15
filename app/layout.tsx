@@ -49,6 +49,16 @@ const britney = localFont({
   display: "swap",
 });
 
+const zodiak = localFont({
+  src: [
+    { path: "../public/fonts/zodiak/Zodiak-Light.woff2", weight: "300", style: "normal" },
+    { path: "../public/fonts/zodiak/Zodiak-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/zodiak/Zodiak-Bold.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-zodiak",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "PolicyAdda — Insurance assistance & policy discovery",
   description:
@@ -94,7 +104,7 @@ export default async function RootLayout({
         />
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
-      <body className={`${panchang.variable} ${array.variable} ${stardom.variable} ${britney.variable}`}>
+      <body className={`${panchang.variable} ${array.variable} ${stardom.variable} ${britney.variable} ${zodiak.variable}`}>
         <ScrollProgress />
         <div className="grain" aria-hidden="true" />
         <Nav copy={copy} locale={locale} signedIn={signedIn} />
