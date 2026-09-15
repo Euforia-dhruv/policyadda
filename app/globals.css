@@ -1,107 +1,7 @@
 /* ============================================================
-   Custom fonts — Panchang (UI), Array (Display), Britney (Accent), Stardom (Hero)
+   Custom fonts loaded via next/font/local in layout.tsx
+   CSS vars: --font-panchang, --font-array, --font-stardom, --font-britney
    ============================================================ */
-@font-face {
-  font-family: 'Panchang';
-  src: url('/fonts/panchang/Panchang-Light.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Panchang';
-  src: url('/fonts/panchang/Panchang-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Panchang';
-  src: url('/fonts/panchang/Panchang-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Panchang';
-  src: url('/fonts/panchang/Panchang-Semibold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Panchang';
-  src: url('/fonts/panchang/Panchang-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Panchang';
-  src: url('/fonts/panchang/Panchang-Extrabold.woff2') format('woff2');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Array';
-  src: url('/fonts/array/Array-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Array';
-  src: url('/fonts/array/Array-Semibold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Array';
-  src: url('/fonts/array/Array-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Britney';
-  src: url('/fonts/britney/Britney-Light.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Britney';
-  src: url('/fonts/britney/Britney-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Britney';
-  src: url('/fonts/britney/Britney-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Britney';
-  src: url('/fonts/britney/Britney-Ultra.woff2') format('woff2');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Stardom';
-  src: url('/fonts/stardom/Stardom-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 
 @tailwind base;
 @tailwind components;
@@ -228,11 +128,11 @@
   --glass-bg: color-mix(in srgb, var(--bg) 74%, transparent);
   --glass-bg-heavy: color-mix(in srgb, var(--bg) 88%, transparent);
   --glass-blur: blur(14px);
-  --font: "Panchang", "Noto Sans Devanagari", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display: "Array", "Georgia", Georgia, serif;
+  --font: var(--font-panchang), "Noto Sans Devanagari", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-array), "Georgia", Georgia, serif;
   --font-ui: var(--font);
-  --font-accent: "Britney", cursive;
-  --font-hero: "Stardom", "Georgia", serif;
+  --font-accent: var(--font-britney), cursive;
+  --font-hero: var(--font-stardom), "Georgia", serif;
 }
 
 /* ── Token: Theme — Dark ── */
@@ -271,11 +171,11 @@
   --glass-bg: color-mix(in srgb, var(--bg) 74%, transparent);
   --glass-bg-heavy: color-mix(in srgb, var(--bg) 88%, transparent);
   --glass-blur: blur(14px);
-  --font: "Panchang", "Noto Sans Devanagari", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display: "Array", "Georgia", Georgia, serif;
+  --font: var(--font-panchang), "Noto Sans Devanagari", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-array), "Georgia", Georgia, serif;
   --font-ui: var(--font);
-  --font-accent: "Britney", cursive;
-  --font-hero: "Stardom", "Georgia", serif;
+  --font-accent: var(--font-britney), cursive;
+  --font-hero: var(--font-stardom), "Georgia", serif;
 }
 
 /* ============================================================
@@ -312,7 +212,7 @@ section { position: relative; }
    ============================================================ */
 .eyebrow {
   display: inline-flex; align-items: center; gap: 12px;
-  font-family: var(--font-accent);
+  font-family: var(--font-ui);
   font-size: var(--text-xs); letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--accent-strong); font-weight: 700; margin-bottom: var(--sp-5);
 }
@@ -461,7 +361,7 @@ section { position: relative; }
 /* ============================================================
    Hero
    ============================================================ */
-.hero { position: relative; overflow: hidden; }
+.hero { position: relative; overflow: hidden; margin-top: calc(-1 * var(--nav-h)); padding-top: var(--nav-h); }
 .hero--video > .wrap { position: relative; z-index: 3; }
 .hero-video { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
 .hero-video-poster {
@@ -478,32 +378,32 @@ section { position: relative; }
 .hero-tint-light {
   opacity: 1;
   background:
-    linear-gradient(180deg, rgba(13, 20, 35, 0.70) 0%, rgba(13, 20, 35, 0.15) 8%, transparent 18%),
-    linear-gradient(90deg, rgba(13, 20, 35, 0.82) 0%, rgba(13, 20, 35, 0.55) 30%, rgba(13, 20, 35, 0.20) 50%, transparent 65%),
-    linear-gradient(180deg, rgba(13, 20, 35, 0.25) 0%, transparent 25%, transparent 75%, rgba(13, 20, 35, 0.25) 100%);
+    linear-gradient(180deg, rgba(7, 10, 17, 0.92) 0%, rgba(13, 20, 35, 0.50) 6%, rgba(13, 20, 35, 0.15) 14%, transparent 25%),
+    linear-gradient(90deg, rgba(13, 20, 35, 0.85) 0%, rgba(13, 20, 35, 0.60) 30%, rgba(13, 20, 35, 0.25) 55%, transparent 70%),
+    linear-gradient(180deg, rgba(13, 20, 35, 0.30) 0%, transparent 20%, transparent 80%, rgba(13, 20, 35, 0.30) 100%);
 }
 .hero-tint-dark {
   opacity: 0;
   background:
-    linear-gradient(180deg, rgba(6, 11, 20, 0.75) 0%, rgba(6, 11, 20, 0.20) 10%, transparent 20%),
-    radial-gradient(ellipse 65% 55% at 22% 45%, rgba(6, 11, 20, 0.40) 0%, transparent 100%),
-    linear-gradient(180deg, rgba(6, 11, 20, 0.55) 0%, rgba(9, 14, 26, 0.25) 35%, rgba(5, 9, 17, 0.25) 65%, rgba(6, 11, 20, 0.55) 100%),
-    radial-gradient(120% 90% at 22% 12%, rgba(23, 79, 134, 0.22) 0%, transparent 55%);
+    linear-gradient(180deg, rgba(6, 11, 20, 0.95) 0%, rgba(6, 11, 20, 0.55) 8%, rgba(6, 11, 20, 0.18) 18%, transparent 30%),
+    radial-gradient(ellipse 65% 55% at 22% 45%, rgba(6, 11, 20, 0.45) 0%, transparent 100%),
+    linear-gradient(180deg, rgba(6, 11, 20, 0.60) 0%, rgba(9, 14, 26, 0.30) 30%, rgba(5, 9, 17, 0.30) 70%, rgba(6, 11, 20, 0.60) 100%),
+    radial-gradient(120% 90% at 22% 12%, rgba(23, 79, 134, 0.25) 0%, transparent 55%);
 }
 [data-theme="dark"] .hero-tint-light { opacity: 0; }
 [data-theme="dark"] .hero-tint-dark { opacity: 1; }
 @media (max-width: 767px) {
   .hero-tint-light {
     background:
-      linear-gradient(180deg, rgba(13, 20, 35, 0.75) 0%, rgba(13, 20, 35, 0.20) 10%, transparent 22%),
-      linear-gradient(90deg, rgba(13, 20, 35, 0.88) 0%, rgba(13, 20, 35, 0.60) 35%, rgba(13, 20, 35, 0.20) 60%, transparent 80%),
-      linear-gradient(180deg, rgba(13, 20, 35, 0.28) 0%, transparent 25%, transparent 75%, rgba(13, 20, 35, 0.28) 100%);
+      linear-gradient(180deg, rgba(7, 10, 17, 0.95) 0%, rgba(13, 20, 35, 0.55) 8%, rgba(13, 20, 35, 0.18) 20%, transparent 35%),
+      linear-gradient(90deg, rgba(13, 20, 35, 0.90) 0%, rgba(13, 20, 35, 0.65) 35%, rgba(13, 20, 35, 0.22) 60%, transparent 80%),
+      linear-gradient(180deg, rgba(13, 20, 35, 0.32) 0%, transparent 20%, transparent 80%, rgba(13, 20, 35, 0.32) 100%);
   }
   .hero-tint-dark {
     background:
-      linear-gradient(180deg, rgba(6, 11, 20, 0.80) 0%, rgba(6, 11, 20, 0.25) 12%, transparent 25%),
-      radial-gradient(ellipse 70% 50% at 30% 40%, rgba(6, 11, 20, 0.45) 0%, transparent 100%),
-      linear-gradient(180deg, rgba(6, 11, 20, 0.55) 0%, rgba(9, 14, 26, 0.30) 42%, rgba(5, 9, 17, 0.55) 100%);
+      linear-gradient(180deg, rgba(6, 11, 20, 0.95) 0%, rgba(6, 11, 20, 0.60) 10%, rgba(6, 11, 20, 0.22) 22%, transparent 35%),
+      radial-gradient(ellipse 70% 50% at 30% 40%, rgba(6, 11, 20, 0.50) 0%, transparent 100%),
+      linear-gradient(180deg, rgba(6, 11, 20, 0.60) 0%, rgba(9, 14, 26, 0.35) 42%, rgba(5, 9, 17, 0.60) 100%);
   }
 }
 .hero-inner {
@@ -786,7 +686,7 @@ section { position: relative; }
 .footer-grid { display: grid; gap: var(--sp-8); grid-template-columns: 2fr 1fr 1fr 1fr; }
 @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
-.footer h4 { font-size: var(--text-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin-bottom: var(--sp-4); }
+.footer h4 { font-family: var(--font-accent); font-size: var(--text-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin-bottom: var(--sp-4); }
 .footer ul { list-style: none; display: grid; gap: 9px; }
 .footer li a { color: var(--muted); font-size: var(--text-base); transition: color var(--dur-fast) ease; }
 .footer li a:hover { color: var(--accent-strong); }

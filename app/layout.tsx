@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { getCopy } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { getServerSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
@@ -7,6 +8,46 @@ import { siteConfig } from "@/content/config";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { ScrollProgress } from "@/components/effects/ScrollProgress";
+
+const panchang = localFont({
+  src: [
+    { path: "../public/fonts/panchang/Panchang-Light.woff2", weight: "300", style: "normal" },
+    { path: "../public/fonts/panchang/Panchang-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/panchang/Panchang-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../public/fonts/panchang/Panchang-Semibold.woff2", weight: "600", style: "normal" },
+    { path: "../public/fonts/panchang/Panchang-Bold.woff2", weight: "700", style: "normal" },
+    { path: "../public/fonts/panchang/Panchang-Extrabold.woff2", weight: "800", style: "normal" },
+  ],
+  variable: "--font-panchang",
+  display: "swap",
+});
+
+const array = localFont({
+  src: [
+    { path: "../public/fonts/array/Array-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/array/Array-Semibold.woff2", weight: "600", style: "normal" },
+    { path: "../public/fonts/array/Array-Bold.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-array",
+  display: "swap",
+});
+
+const stardom = localFont({
+  src: "../public/fonts/stardom/Stardom-Regular.woff2",
+  variable: "--font-stardom",
+  display: "swap",
+});
+
+const britney = localFont({
+  src: [
+    { path: "../public/fonts/britney/Britney-Light.woff2", weight: "300", style: "normal" },
+    { path: "../public/fonts/britney/Britney-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/britney/Britney-Bold.woff2", weight: "700", style: "normal" },
+    { path: "../public/fonts/britney/Britney-Ultra.woff2", weight: "900", style: "normal" },
+  ],
+  variable: "--font-britney",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "PolicyAdda — Insurance assistance & policy discovery",
@@ -53,7 +94,7 @@ export default async function RootLayout({
         />
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
-      <body className="">
+      <body className={`${panchang.variable} ${array.variable} ${stardom.variable} ${britney.variable}`}>
         <ScrollProgress />
         <div className="grain" aria-hidden="true" />
         <Nav copy={copy} locale={locale} signedIn={signedIn} />
