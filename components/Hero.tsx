@@ -19,11 +19,6 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
       </div>
       <div className="hero-tint hero-tint-light" aria-hidden="true" />
       <div className="hero-tint hero-tint-dark" aria-hidden="true" />
-      <div className="hero-bg" aria-hidden="true">
-        <div className="hero-grid" />
-        <div className="hero-glow" />
-        <div className="hero-glow right" />
-      </div>
       <div className="wrap">
         <div className="hero-inner">
           <FadeInUp>
