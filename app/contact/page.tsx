@@ -45,12 +45,12 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="card" style={{ padding: "24px 26px", marginTop: 10 }}>
-          <h3 style={{ marginBottom: 10 }}>{copy.support.hours}</h3>
+        <div className="card px-[26px] py-6 mt-2.5">
+          <h3 className="mb-2.5">{copy.support.hours}</h3>
           {pick(locale, c.hours ?? { en: [], hi: [] }).map((h) => (
             <p key={h} className="text-sm">{h}</p>
           ))}
-          <p className="faint-text" style={{ marginTop: 10 }}>
+          <p className="faint-text mt-2.5">
             {copy.support.email}: {copy.support.emailSub}
           </p>
         </div>

@@ -24,8 +24,8 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className="card" style={{ padding: "28px 30px", marginBottom: 24 }}>
-          <p style={{ fontSize: "var(--text-base)", color: "var(--text)", marginBottom: 12 }}>
+        <div className="card px-[30px] py-7 mb-6">
+          <p className="text-base text-default mb-3">
             Insurance is often explained in complicated legal terms. Most customers are left confused — or worse, misled. PolicyAdda was created to change that experience.
           </p>
           <p className="muted-sm">

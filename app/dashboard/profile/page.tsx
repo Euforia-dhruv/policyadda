@@ -26,7 +26,7 @@ export default async function ProfilePage() {
       </div>
 
       <div className="dash-detail">
-        <div className="dash-panel" style={{ maxWidth: "var(--sp-16, 480px)" }}>
+        <div className="dash-panel max-w-[480px]">
           <ProfileForm
             initial={{ fullName: profile?.full_name, phone: profile?.phone, city: profile?.city }}
             saveLabel={copy.dashboard.saveChanges}

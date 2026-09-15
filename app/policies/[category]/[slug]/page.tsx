@@ -68,7 +68,7 @@ export default async function PolicyDetailPage({ params }: { params: Promise<Par
           <p className="lead">{pick(locale, policy.shortDescription)}</p>
         </div>
 
-        <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginBottom: 6 }}>
+        <p className="muted-text text-sm mb-1.5">
           {pick(locale, policy.providerNote)}
         </p>
         <p className="faint-text">
@@ -76,7 +76,7 @@ export default async function PolicyDetailPage({ params }: { params: Promise<Par
         </p>
       </section>
 
-      <section className="wrap" style={{ paddingBottom: "var(--sp-12, 90px)" }}>
+      <section className="wrap pb-12">
         <div className="detail-card">
           <div>
             <div className="card card-pad">
@@ -129,8 +129,8 @@ export default async function PolicyDetailPage({ params }: { params: Promise<Par
 
           <aside className="side-card">
             <div className="card card-pad">
-              <h3 style={{ marginBottom: 6 }}>{copy.detail.ready}</h3>
-              <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginBottom: 16 }}>
+              <h3 className="mb-1.5">{copy.detail.ready}</h3>
+              <p className="muted-text text-sm mb-4">
                 {copy.detail.readySub}
               </p>
               <a

@@ -12,7 +12,7 @@ export default function SupportSection({ copy, locale }: { copy: SiteCopy; local
     <section className="pad section-pad-0" id="support">
       <div className="wrap">
         <div className="card support-home">
-          <div className="section-head section-mb-sm" style={{ maxWidth: 600 }}>
+          <div className="section-head section-mb-sm max-w-[600px]">
             <p className="eyebrow">{copy.support.eyebrow}</p>
             <h2>{copy.support.homeTitle}</h2>
             <p className="lead">{copy.support.homeLead}</p>

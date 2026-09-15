@@ -54,10 +54,10 @@ export default async function TicketDetailPage({ params }: { params: Promise<{ i
 
       <div className="dash-detail dash-detail-full">
         <div className="dash-panel">
-          <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginBottom: 4 }}>
+          <p className="muted-text text-sm mb-1">
             {fmt(locale, ticket.created_at)} · {ticket.category || "General"} · Priority: {ticket.priority_code}
           </p>
-          <p style={{ fontSize: "var(--text-base)", color: "var(--text)", whiteSpace: "pre-wrap" }}>{ticket.description}</p>
+          <p className="text-base text-default whitespace-pre-wrap">{ticket.description}</p>
         </div>
 
         <div className="dash-panel">

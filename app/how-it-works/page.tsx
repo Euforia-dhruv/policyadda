@@ -54,13 +54,13 @@ export default function HowPage() {
           <p className="lead">{copy.how.lead}</p>
         </div>
 
-        <div className="grid-steps" style={{ gridTemplateColumns: "1fr" }}>
+        <div className="grid-steps grid-cols-1">
           {steps.map((s, i) => (
             <div className="step" key={i}>
               <div className="step-no">{i + 1}</div>
               <div>
                 <h3>{s.title}</h3>
-                <p style={{ marginBottom: 4 }}>{s.body}</p>
+                <p className="mb-1">{s.body}</p>
                 <p className="faint-sm">{s.extra}</p>
               </div>
             </div>

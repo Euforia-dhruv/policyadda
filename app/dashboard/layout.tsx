@@ -59,7 +59,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
               </Link>
             ))}
         </nav>
-        <div className="border-t-line" style={{ paddingTop: 14, marginTop: 14 }}>
+        <div className="border-t-line pt-3.5 mt-3.5">
           <SignOutButton label={copy.dashboard.signOut} busyLabel={copy.common.loading} />
         </div>
       </aside>

@@ -154,7 +154,7 @@ export default async function AppDetailPage({ params }: { params: Promise<{ id: 
           {isStaffUser ? (
             <div className="dash-panel">
               <h3>{copy.dashboard.assignedTo}</h3>
-              <p style={{ fontSize: "var(--text-sm)", color: "var(--text)" }}>{assigneeRes?.fullName || copy.dashboard.unassigned}</p>
+              <p className="text-sm text-default">{assigneeRes?.fullName || copy.dashboard.unassigned}</p>
               {app.assigned_at ? <p className="muted-xs mt-1">{fmt(locale, app.assigned_at)}</p> : null}
             </div>
           ) : null}

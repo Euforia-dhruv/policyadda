@@ -65,8 +65,8 @@ export default function ApplyForm({
           <strong>✓ {copy.apply.doneTitle}</strong>
         </div>
         <div className="form-card mb-5">
-          <p className="muted-sm" style={{ marginBottom: 4 }}>{copy.apply.yourId}</p>
-          <p className="font-bold" style={{ fontSize: "var(--text-3xl)", letterSpacing: "0.04em" }}>
+          <p className="muted-sm mb-1">{copy.apply.yourId}</p>
+          <p className="font-bold text-3xl tracking-wider">
             {state.applicationNo}
           </p>
           <p className="muted-sm mt-3">{copy.apply.doneSub}</p>
@@ -124,7 +124,7 @@ export default function ApplyForm({
       <button className="btn btn-primary btn-block" type="submit" disabled={busy}>
         {busy ? <span className="spinner" /> : copy.apply.submitCta}
       </button>
-      <p className="faint-text" style={{ marginTop: 12 }}>
+      <p className="faint-text mt-3">
         {copy.apply.privacyNote}
       </p>
     </form>

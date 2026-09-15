@@ -19,7 +19,7 @@ export default function SupportPage() {
 
   return (
     <>
-      <section className="pad" style={{ paddingBottom: 10 }}>
+      <section className="pad pb-2.5">
         <div className="wrap">
           <div className="section-head">
             <p className="eyebrow">{copy.support.eyebrow}</p>
@@ -64,11 +64,11 @@ export default function SupportPage() {
             <aside className="side-card">
               <div className="card card-pad">
                 <h3>{copy.support.ticket}</h3>
-                <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginTop: 8 }}>
+                <p className="muted-text text-sm mt-2">
                   {copy.support.tNote}
                 </p>
               </div>
-              <div className="dev-note" style={{ marginTop: 14 }}>
+              <div className="dev-note mt-3.5">
                 ⓘ {copy.verif.note}
               </div>
             </aside>

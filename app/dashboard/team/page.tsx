@@ -66,7 +66,7 @@ export default async function TeamPage() {
                 <div className="stat-label stat-label-cap">
                   {s.full_name || s.user_id}
                 </div>
-                <div className="muted-text" style={{ fontSize: "var(--text-xs)", marginTop: "var(--sp-0)" }}>{s.role_code}</div>
+                <div className="muted-text text-xs mt-0">{s.role_code}</div>
                 <div className="stat-value">{w.assigned}</div>
                 <div className="stat-sub">
                   {w.pending} pending · {w.assigned - w.pending} progressing

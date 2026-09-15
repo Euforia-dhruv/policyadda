@@ -79,8 +79,8 @@ export default function LoginForm({ copy, locale }: { copy: SiteCopy; locale: Lo
       <div className="auth-brand">
         <PolicyAddaBrand variant="icon" />
       </div>
-      <h3 style={{ marginBottom: "var(--sp-1)" }}>{mode === "signin" ? t.signInTitle : t.signUpTitle}</h3>
-      <p className="muted-text" style={{ fontSize: "var(--text-sm)", marginBottom: 18 }}>
+      <h3 className="mb-1">{mode === "signin" ? t.signInTitle : t.signUpTitle}</h3>
+      <p className="muted-text text-sm mb-[18px]">
         {mode === "signin" ? t.loginLead : t.signUpLead}
       </p>
 
@@ -126,13 +126,13 @@ export default function LoginForm({ copy, locale }: { copy: SiteCopy; locale: Lo
         <div className="form-ok mt-4">{msg}</div>
       )}
 
-      <p className="muted-text" style={{ fontSize: "var(--text-xs)", marginTop: 18 }}>
+      <p className="muted-text text-xs mt-[18px]">
         {mode === "signin" ? (
           <button type="button" className="link-btn" onClick={() => { setMode("signup"); setStatus("idle"); }}>{t.switchToSignUp}</button>
         ) : (
           <button type="button" className="link-btn" onClick={() => { setMode("signin"); setStatus("idle"); }}>{t.switchToLogin}</button>
         )}
-        <span className="mt-2" style={{ display: "block" }}>{t.policyNote}</span>
+        <span className="mt-2 block">{t.policyNote}</span>
       </p>
     </form>
   );

@@ -71,7 +71,7 @@ export default async function AdminPoliciesPage() {
       </div>
 
       <div className="dash-panel">
-        <p className="muted-text" style={{ fontSize: "var(--text-sm)", lineHeight: 1.6 }}>
+        <p className="muted-text text-sm leading-normal">
           {copy.verif.note} Editing of policy descriptions is an admin-only action and is managed alongside
           verified insurer documentation.
         </p>

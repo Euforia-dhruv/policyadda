@@ -32,7 +32,7 @@ export default async function CategoryPage({ params }: { params: Promise<Params>
 
   return (
     <>
-      <section className="pad" style={{ paddingBottom: "var(--sp-7, 28px)" }}>
+      <section className="pad pb-7">
         <div className="wrap">
           <nav className="breadcrumb" aria-label="Breadcrumb">
             <a href="/">Home</a>
@@ -49,7 +49,7 @@ export default async function CategoryPage({ params }: { params: Promise<Params>
         </div>
       </section>
 
-      <section className="pad" style={{ paddingTop: "var(--sp-2, 10px)" }}>
+      <section className="pad pt-2.5">
         <div className="wrap">
           {policies.length === 0 ? (
             <div className="notice-center">

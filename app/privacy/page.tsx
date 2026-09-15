@@ -29,7 +29,7 @@ export default function PrivacyPage() {
           <p className="muted-sm">
             Until the PolicyAdda team provides a formally approved Privacy Policy, the practices below describe the current default behaviour of this website. They will be replaced by the approved policy.
           </p>
-          <ul className="tl-list mt-3" style={{ fontSize: "var(--text-sm)", color: "var(--muted)" }}>
+          <ul className="tl-list mt-3 text-sm text-muted">
             <li>• Information submitted through enquiry, application, and support forms is used solely to respond to and process your request.</li>
             <li>• Contact details you provide may be used by a PolicyAdda executive to reach you about your enquiry.</li>
             <li>• Application status pages never display your personal details publicly.</li>

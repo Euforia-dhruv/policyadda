@@ -59,7 +59,7 @@ export default function TicketForm({ locale, copy }: { locale: Locale; copy: Sit
 
   return (
     <form className="form-card" onSubmit={submit}>
-      <h3 style={{ marginBottom: "var(--sp-1)" }}>{copy.support.openTicket}</h3>
+      <h3 className="mb-1">{copy.support.openTicket}</h3>
       <p className="muted-sm mb-5">{copy.support.ticketSub}</p>
 
       {err && <div className="alert alert-err mb-3">{err}</div>}

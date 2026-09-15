@@ -26,7 +26,7 @@ export function TicketStatusForm({ ticketId, currentStatus, statuses }: { ticket
 
   return (
     <div className="flex items-center gap-2 flex-wrap mt-4">
-      <select className="field-select" value={statusCode} onChange={(e) => setStatusCode(e.target.value)} style={{ minWidth: 150 }}>
+      <select className="field-select min-w-[150px]" value={statusCode} onChange={(e) => setStatusCode(e.target.value)}>
         {statuses.map((s) => (
           <option key={s.code} value={s.code}>
             {s.label}
@@ -36,7 +36,7 @@ export function TicketStatusForm({ ticketId, currentStatus, statuses }: { ticket
       <button className="btn btn-primary btn-sm" onClick={save} disabled={busy || statusCode === currentStatus}>
         {busy ? "Saving…" : "Update"}
       </button>
-      {msg && <span className="msg" style={{ color: msg.ok ? "var(--ok)" : "var(--bad)" }}>{msg.text}</span>}
+      {msg && <span className={`msg ${msg.ok ? "text-ok" : "text-bad"}`}>{msg.text}</span>}
     </div>
   );
 }

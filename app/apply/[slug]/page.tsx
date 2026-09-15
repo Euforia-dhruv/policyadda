@@ -63,14 +63,14 @@ export default async function ApplyPage({ params }: { params: Promise<Params> })
 
           <aside className="side-card">
             <div className="card card-pad">
-              <h3 style={{ marginBottom: 10 }}>Prefer to talk first?</h3>
-              <p className="muted-sm" style={{ marginBottom: 12 }}>
+              <h3 className="mb-2.5">Prefer to talk first?</h3>
+              <p className="muted-sm mb-3">
                 Call us during working hours and speak to a person directly.
               </p>
               <a href={`tel:${siteConfig.contact.phone.tel}`} className="btn btn-ghost btn-block">
                 ☎ {siteConfig.contact.phone.display}
               </a>
-              <p className="faint-sm" style={{ marginTop: 12 }}>
+              <p className="faint-sm mt-3">
                 {copy.support.hoursSub}
               </p>
             </div>

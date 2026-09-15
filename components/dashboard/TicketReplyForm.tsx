@@ -40,7 +40,7 @@ export function TicketReplyForm({
       <button className="btn btn-primary btn-sm" onClick={send} disabled={busy || !body.trim()}>
         {busy ? "Sending…" : replyLabel}
       </button>
-      {msg && <p className="msg" style={{ color: msg.ok ? "var(--ok)" : "var(--bad)" }}>{msg.text}</p>}
+      {msg && <p className={`msg ${msg.ok ? "text-ok" : "text-bad"}`}>{msg.text}</p>}
     </div>
   );
 }
