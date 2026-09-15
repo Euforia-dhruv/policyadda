@@ -18,7 +18,7 @@ export default function AboutPage() {
       <div className="wrap max-w-lg">
         <div className="section-head">
           <p className="eyebrow">{copy.nav.about}</p>
-          <h2>{locale === "hi" ? "पॉलिसीअड्डा के बारे में" : "About PolicyAdda"}</h2>
+          <h2>{locale === "hi" ? "पॉलिसी अड्डा के बारे में" : "About PolicyAdda"}</h2>
           <p className="lead">
             {locale === "hi"
               ? "हम लोगों को बीमा समझने में मदद करते हैं — खरीदने से पहले। स्पष्ट जानकारी, असली सहायता, और एक पहुंचने वाली टीम।"

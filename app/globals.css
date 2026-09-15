@@ -128,11 +128,6 @@
   --glass-bg: color-mix(in srgb, var(--bg) 74%, transparent);
   --glass-bg-heavy: color-mix(in srgb, var(--bg) 88%, transparent);
   --glass-blur: blur(14px);
-  --font: var(--font-zodiak), var(--font-panchang), "Noto Sans Devanagari", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display: var(--font-array), "Georgia", Georgia, serif;
-  --font-ui: var(--font);
-  --font-accent: var(--font-britney), cursive;
-  --font-hero: var(--font-stardom), "Georgia", serif;
 }
 
 /* ── Token: Theme — Dark ── */
@@ -171,6 +166,12 @@
   --glass-bg: color-mix(in srgb, var(--bg) 74%, transparent);
   --glass-bg-heavy: color-mix(in srgb, var(--bg) 88%, transparent);
   --glass-blur: blur(14px);
+}
+
+/* ============================================================
+   Font aliases — must live on <body> so next/font CSS vars resolve
+   ============================================================ */
+body {
   --font: var(--font-zodiak), var(--font-panchang), "Noto Sans Devanagari", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-display: var(--font-array), "Georgia", Georgia, serif;
   --font-ui: var(--font);
