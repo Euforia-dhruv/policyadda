@@ -60,9 +60,25 @@ const zodiak = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "PolicyAdda — Insurance assistance & policy discovery",
+  metadataBase: new URL("https://www.policyadda.co.in"),
+  title: {
+    default: "PolicyAdda — Insurance assistance & policy discovery",
+    template: "%s",
+  },
   description:
     "PolicyAdda helps you understand insurance categories and policy options in plain language — then guides you from enquiry to policy access. Based in Ranchi.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "PolicyAdda — Insurance assistance & policy discovery",
+    description:
+      "PolicyAdda explains insurance in plain language and guides you through every step.",
+    url: "https://www.policyadda.co.in/",
+    siteName: "PolicyAdda",
+    locale: "en_IN",
+    type: "website",
+  },
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
@@ -98,10 +114,6 @@ export default async function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="theme-color" content="#F8FAFC" />
-        <meta
-          property="og:description"
-          content="PolicyAdda explains insurance in plain language and guides you through every step."
-        />
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
       <body className={`${panchang.variable} ${array.variable} ${stardom.variable} ${britney.variable} ${zodiak.variable}`}>

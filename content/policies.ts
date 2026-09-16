@@ -2,322 +2,3126 @@ import type { Policy } from "@/lib/types";
 
 export const policies: Policy[] = [
   {
-    id: "pol-two-wheeler",
-    slug: "comprehensive-two-wheeler-insurance",
-    categorySlug: "motor",
-    name: "Comprehensive Two-Wheeler Insurance",
-    providerNote: {
-      en: "Aggregated via top general insurers (e.g., Liberty General Insurance, TATA AIG).",
-      hi: "शीर्ष जनरल इंश्योरेंस कंपनियों के माध्यम से (जैसे लिबर्टी जनरल, टाटा एआईजी)।",
+    "id": "pol-motor",
+    "slug": "motor-insurance",
+    "categorySlug": "motor",
+    "name": "Motor Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
     },
-    shortDescription: {
-      en: "Total financial protection for your bike or scooter against accidents, theft, and third-party liabilities.",
-      hi: "दोपहिया वाहन के लिए दुर्घटना, चोरी और थर्ड-पार्टी देयता से पूर्ण वित्तीय सुरक्षा।",
+    "shortDescription": {
+      "en": "Protect your vehicle against accidental damage, theft, fire, and third-party liabilities.",
+      "hi": "अपने वाहन को दुर्घटना, चोरी, आग और थर्ड-पार्टी देयता से सुरक्षित करें।"
     },
-    fullDescription: {
-      en: "This plan covers physical damage to your two-wheeler resulting from road accidents, natural disasters (floods, earthquakes), fires, and malicious acts. It satisfies all legal mandates under the Indian Motor Vehicles Act by bundling mandatory Third-Party Liability with Own Damage (OD) security.",
-      hi: "यह योजना सड़क दुर्घटनाओं, प्राकृतिक आपदाओं (बाढ़, भूकंप), आग और दुर्भावनापूर्ण कृत्यों से आपके दोपहिया वाहन को हुई भौतिक क्षति को कवर करती है। यह अनिवार्य थर्ड-पार्टी देयता को ओन डैमेज (OD) सुरक्षा के साथ जोड़कर भारतीय मोटर वाहन अधिनियम के सभी कानूनी अनुपालनों को पूरा करती है।",
+    "fullDescription": {
+      "en": "Motor insurance provides financial protection for your vehicle and covers third-party liabilities. In India, Third-Party Liability insurance is mandatory for vehicles on public roads. You can choose Comprehensive, Own Damage, or Third-Party policies.",
+      "hi": "मोटर बीमा आपके वाहन के लिए वित्तीय सुरक्षा प्रदान करता है। भारत में, सार्वजनिक सड़कों पर वाहनों के लिए थर्ड-पार्टी देयता बीमा अनिवार्य है।"
     },
-    keyBenefits: {
-      en: [
-        "Cashless repairs across network garages in Patna, Ranchi, and Noida.",
-        "Quick digital claim settlement with self-inspection capabilities.",
-        "No Claim Bonus (NCB) transfers from previous insurance providers.",
+    "keyBenefits": {
+      "en": [
+        "Third-Party Liability cover (mandatory)",
+        "Own Damage cover (optional)",
+        "Personal Accident cover for owner-driver",
+        "Cashless repair facilities",
+        "Add-on covers available"
       ],
-      hi: [
-        "पटना, रांची और नोएडा में नेटवर्क गैराज में कैशलेस मरम्मत।",
-        "स्व-निरीक्षण क्षमताओं के साथ त्वरित डिजिटल दावा निपटान।",
-        "पिछले बीमा प्रदाताओं से नो क्लेम बोनस (NCB) ट्रांसफर।",
-      ],
+      "hi": [
+        "थर्ड-पार्टी देयता कवर (अनिवार्य)",
+        "ओन डैमेज कवर (वैकल्पिक)",
+        "ओनर-ड्राइवर के लिए व्यक्तिगत दुर्घटना कवर",
+        "कैशलेस मरम्मत सुविधाएँ",
+        "ऐड-ऑन उपलब्ध"
+      ]
     },
-    eligibility: {
-      en: [
-        "Any registered two-wheeler owner with a valid Indian driving license and active vehicle registration.",
+    "eligibility": {
+      "en": [
+        "Registered vehicle owner with valid driving license"
       ],
-      hi: [
-        "मान्य भारतीय ड्राइविंग लाइसेंस और सक्रिय वाहन पंजीकरण वाला कोई भी पंजीकृत दोपहिया मालिक।",
-      ],
+      "hi": [
+        "पंजीकृत वाहन मालिक जिसके पास मान्य ड्राइविंग लाइसेंस है"
+      ]
     },
-    coverage: {
-      en: [
-        "Own Damage protection up to the fixed Insured Declared Value (IDV).",
-        "Third-Party personal injury and property damage coverage up to ₹1 Lakh.",
+    "coverage": {
+      "en": [
+        "Third-Party Liability",
+        "Own Damage",
+        "Personal Accident cover",
+        "Natural and man-made calamities"
       ],
-      hi: [
-        "निश्चित इंश्योर्ड डिक्लेयर्ड वैल्यू (IDV) तक ओन डैमेज सुरक्षा।",
-        "₹1 लाख तक थर्ड-पार्टी व्यक्तिगत चोट और संपत्ति क्षति कवरेज।",
-      ],
+      "hi": [
+        "थर्ड-पार्टी देयता",
+        "ओन डैमेज",
+        "व्यक्तिगत दुर्घटना कवर",
+        "प्राकृतिक और मानव-निर्मित आपदाएँ"
+      ]
     },
-    exclusions: {
-      en: [
-        "Damage incurred while driving under the influence of alcohol/drugs.",
-        "Driving without a valid license.",
-        "Routine wear-and-tear or mechanical breakdowns.",
+    "exclusions": {
+      "en": [
+        "Driving under influence",
+        "Driving without valid license",
+        "Normal wear and tear"
       ],
-      hi: [
-        "शराब/नशीली दवाओं के प्रभाव में वाहन चलाने से हुई क्षति।",
-        "मान्य लाइसेंस के बिना वाहन चलाना।",
-        "सामान्य टूट-फूट या मैकेनिकल खराबी।",
-      ],
+      "hi": [
+        "शराब/नशीली दवाओं के प्रभाव में वाहन चलाना",
+        "मान्य लाइसेंस के बिना वाहन चलाना",
+        "सामान्य टूट-फूट"
+      ]
     },
-    documents: [
-      { label: { en: "Previous policy copy", hi: "पिछली पॉलिसी की कॉपी" } },
-      { label: { en: "Registration Certificate (RC)", hi: "पंजीकरण प्रमाणपत्र (RC)" } },
-      { label: { en: "Owner's valid KYC details (Aadhaar/PAN)", hi: "स्वामी की मान्य केवाईसी जानकारी (आधार/पैन)" } },
-    ],
-    faqs: [
+    "documents": [
       {
-        q: { en: "Is third-party liability cover included?", hi: "क्या थर्ड-पार्टी देयता कवर शामिल है?" },
-        a: { en: "The comprehensive plan bundles Own Damage protection with mandatory Third-Party Liability cover. Exact terms depend on the insurer and policy wording.", hi: "कॉम्प्रिहेंसिव योजना ओन डैमेज सुरक्षा को अनिवार्य थर्ड-पार्टी देयता कवर के साथ जोड़ती है। सटीक शर्तें बीमाकर्ता और पॉलिसी की भाषा पर निर्भर करती हैं।" },
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
       },
       {
-        q: { en: "Can I transfer my No Claim Bonus?", hi: "क्या मैं नो क्लेम बोनस ट्रांसफर कर सकता हूँ?" },
-        a: { en: "Yes, No Claim Bonus (NCB) transfers from previous insurance providers are supported. Eligibility depends on the insurer and policy conditions.", hi: "हाँ, पिछले बीमा प्रदाताओं से नो क्लेम बोनस (NCB) ट्रांसफर समर्थित है। पात्रता बीमाकर्ता और पॉलिसी की शर्तों पर निर्भर करती है।" },
-      },
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
     ],
-    disclaimer: {
-      en: "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary — not a policy document. Please contact PolicyAdda for assistance before purchasing.",
-      hi: "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं। यह एक सूचनात्मक सारांश है — पॉलिसी दस्तावेज़ नहीं। कृपया खरीदने से पहले सहायता के लिए PolicyAdda से संपर्क करें।",
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    isActive: true,
-    isFeatured: true,
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": true
   },
   {
-    id: "pol-private-car",
-    slug: "comprehensive-private-car-insurance",
-    categorySlug: "motor",
-    name: "Comprehensive Private Car Insurance",
-    providerNote: {
-      en: "Aggregated partners may include Bajaj Allianz, HDFC ERGO, Liberty General.",
-      hi: "एग्रीगेटेड पार्टनर्स में बजाज अलियांज़, एचडीएफसी एर्गो, लिबर्टी जनरल शामिल हो सकते हैं।",
+    "id": "pol-car",
+    "slug": "car-insurance",
+    "categorySlug": "motor",
+    "name": "Car Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
     },
-    shortDescription: {
-      en: "Premium end-to-end coverage for your private vehicle against accidental damages, theft, and third-party liabilities.",
-      hi: "दुर्घटना क्षति, चोरी और थर्ड-पार्टी देयता से आपके निजी वाहन के लिए प्रीमियम एंड-टू-एंड कवरेज।",
+    "shortDescription": {
+      "en": "Protect your car against accidents, theft, fire, natural calamities and third-party liabilities.",
+      "hi": "दुर्घटना, चोरी, आग, प्राकृतिक आपदाओं और थर्ड-पार्टी देयता से अपनी कार की रक्षा करें।"
     },
-    fullDescription: {
-      en: "A complete motor policy designed to safeguard private cars against unexpected losses. This policy balances mandatory legal requirements with deep financial cushions, shielding owners from severe out-of-pocket repair costs while providing customizable add-on covers like Zero Depreciation or Engine Protection.",
-      hi: "निजी कारों को अप्रत्याशित नुकसान से बचाने के लिए डिज़ाइन की गई एक पूर्ण मोटर पॉलिसी। यह पॉलिसी अनिवार्य कानूनी आवश्यकताओं को गहरे वित्तीय कुशन के साथ संतुलित करती है, मालिकों को भारी जेब खर्च मरम्मत लागत से बचाती है और ज़ीरो डिप्रेशिएशन या इंजन प्रोटेक्शन जैसे कस्टमाइज़ेबल ऐड-ऑन कवर प्रदान करती है।",
+    "fullDescription": {
+      "en": "Car insurance provides financial protection for your private car. Third-party insurance is mandatory. A comprehensive policy combines Third-Party Liability with Own Damage cover. Add-ons like Zero Depreciation, Engine Protection, and Roadside Assistance enhance coverage.",
+      "hi": "कार बीमा आपकी निजी कार के लिए वित्तीय सुरक्षा प्रदान करता है। थर्ड-पार्टी बीमा अनिवार्य है। कॉम्प्रिहेंसिव पॉलिसी थर्ड-पार्टी देयता और ओन डैमेज कवर को जोड़ती है।"
     },
-    keyBenefits: {
-      en: [
-        "Zero Depreciation add-on options to secure full cost replacement on parts.",
-        "24/7 Roadside Assistance (RSA) across major state highways in Bihar and Jharkhand.",
-        "Hassle-free third-party liability management.",
+    "keyBenefits": {
+      "en": [
+        "Third-Party Liability",
+        "Own Damage cover",
+        "Theft protection",
+        "Personal Accident cover",
+        "Add-ons: Zero Dep, Engine Protection, RSA, Return to Invoice, Consumables Cover, Key Replacement"
       ],
-      hi: [
-        "पार्ट्स पर पूर्ण लागत प्रतिस्थापन सुरक्षित करने के लिए ज़ीरो डिप्रेशिएशन ऐड-ऑन विकल्प।",
-        "बिहार और झारखंड में प्रमुख राज्य राजमार्गों पर 24/7 रोडसाइड असिस्टेंस (RSA)।",
-        "हैसल-फ्री थर्ड-पार्टी देयता प्रबंधन।",
-      ],
+      "hi": [
+        "थर्ड-पार्टी देयता",
+        "ओन डैमेज कवर",
+        "चोरी सुरक्षा",
+        "व्यक्तिगत दुर्घटना कवर",
+        "ऐड-ऑन: ज़ीरो डिप्रेशिएशन, इंजन प्रोटेक्शन, RSA, रिटर्न टू इनवॉइस"
+      ]
     },
-    eligibility: {
-      en: [
-        "Individual or corporate owners of private passenger vehicles registered in India.",
+    "eligibility": {
+      "en": [
+        "Private car owner with valid driving license and RC"
       ],
-      hi: [
-        "भारत में पंजीकृत निजी यात्री वाहनों के व्यक्तिगत या कॉर्पोरेट मालिक।",
-      ],
+      "hi": [
+        "मान्य ड्राइविंग लाइसेंस और RC वाला निजी कार मालिक"
+      ]
     },
-    coverage: {
-      en: [
-        "Damage to the vehicle body.",
-        "Mandatory Personal Accident cover for the owner-driver (₹15 Lakhs).",
-        "Unlimited third-party bodily injury liabilities.",
+    "coverage": {
+      "en": [
+        "Vehicle body damage",
+        "PA cover for owner-driver (₹15 Lakhs)",
+        "Third-party injury liabilities",
+        "Fire, theft, natural calamities"
       ],
-      hi: [
-        "वाहन बॉडी को क्षति।",
-        "ओनर-ड्राइवर के लिए अनिवार्य व्यक्तिगत दुर्घटना कवर (₹15 लाख)।",
-        "असीमित थर्ड-पार्टी शारीरिक चोट देयता।",
-      ],
+      "hi": [
+        "वाहन बॉडी क्षति",
+        "ओनर-ड्राइवर PA कवर (₹15 लाख)",
+        "थर्ड-पार्टी चोट देयताएँ",
+        "आग, चोरी, प्राकृतिक आपदाएँ"
+      ]
     },
-    exclusions: {
-      en: [
-        "Depreciation on parts if standard policy is selected.",
-        "Damage out of geographical boundaries.",
-        "Driving outside usage guidelines (e.g., using a private car for commercial delivery).",
+    "exclusions": {
+      "en": [
+        "Depreciation on parts (standard policy)",
+        "Driving outside usage guidelines",
+        "Unauthorised modifications"
       ],
-      hi: [
-        "मानक पॉलिसी चुनने पर पार्ट्स पर डिप्रेशिएशन।",
-        "भौगोलिक सीमा के बाहर क्षति।",
-        "उपयोग दिशानिर्देशों के बाहर वाहन चलाना (जैसे व्यावसायिक डिलीवरी के लिए निजी कार का उपयोग)।",
-      ],
+      "hi": [
+        "मानक पॉलिसी में पार्ट्स पर डिप्रेशिएशन",
+        "उपयोग दिशानिर्देशों के बाहर चलाना",
+        "अनधिकृत संशोधन"
+      ]
     },
-    documents: [
-      { label: { en: "Car Registration Certificate (RC)", hi: "कार पंजीकरण प्रमाणपत्र (RC)" } },
-      { label: { en: "Previous year policy document", hi: "पिछले वर्ष का पॉलिसी दस्तावेज़" } },
-      { label: { en: "Owner's identification proof", hi: "स्वामी की पहचान प्रमाण" } },
-    ],
-    faqs: [
+    "documents": [
       {
-        q: { en: "What add-ons are available?", hi: "कौन से ऐड-ऑन उपलब्ध हैं?" },
-        a: { en: "Potential add-ons include Zero Depreciation, Engine Protection, and Roadside Assistance, subject to the actual insurer and policy selection.", hi: "संभावित ऐड-ऑन में ज़ीरो डिप्रेशिएशन, इंजन प्रोटेक्शन और रोडसाइड असिस्टेंस शामिल हैं, जो वास्तविक बीमाकर्ता और पॉलिसी चयन पर निर्भर करते हैं।" },
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
       },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
     ],
-    disclaimer: {
-      en: "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary — not a policy document. Please contact PolicyAdda for assistance before purchasing.",
-      hi: "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं। यह एक सूचनात्मक सारांश है — पॉलिसी दस्तावेज़ नहीं। कृपया खरीदने से पहले सहायता के लिए PolicyAdda से संपर्क करें।",
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    isActive: true,
-    isFeatured: true,
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": true
   },
   {
-    id: "pol-health-family-floater",
-    slug: "health-secure-family-floater-plan",
-    categorySlug: "health",
-    name: "Health Secure Family Floater Plan",
-    providerNote: {
-      en: "Multiple leading standalone health insurers.",
-      hi: "अग्रणी स्वतंत्र हेल्थ इंश्योरेंस प्रदाताओं में से कई।",
+    "id": "pol-bike",
+    "slug": "bike-insurance",
+    "categorySlug": "motor",
+    "name": "Bike Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
     },
-    shortDescription: {
-      en: "A single comprehensive health policy covering medical and hospitalization expenses for your entire family.",
-      hi: "आपके पूरे परिवार के लिए चिकित्सा और अस्पताल में भर्ती खर्चों को कवर करने वाली एक व्यापक हेल्थ पॉलिसी।",
+    "shortDescription": {
+      "en": "Compare and protect your bike or scooter with the right two-wheeler insurance.",
+      "hi": "सही दोपहिया बीमा के साथ अपनी बाइक या स्कूटर की तुलना और सुरक्षा करें।"
     },
-    fullDescription: {
-      en: "This plan utilizes a floating sum insured layout, letting any designated family member tap into the collective coverage pool during medical emergencies. It provides extensive financial relief against medical inflation by taking care of inpatient costs, day-care treatments, and pre/post-hospitalization fees.",
-      hi: "यह योजना एक फ्लोटिंग सूम इंश्योर्ड लेआउट का उपयोग करती है, जिससे किसी भी नामित परिवार के सदस्य को चिकित्सा आपातकाल में सामूहिक कवरेज पूल का उपयोग करने की अनुमति मिलती है। यह इनपेशेंट लागत, डे-केयर उपचार और प्री/पोस्ट-हॉस्पिटलाइज़ेशन शुल्क का ध्यान रखकर चिकित्सा मुद्रास्फीति के खिलाफ व्यापक वित्तीय राहत प्रदान करती है।",
+    "fullDescription": {
+      "en": "Two-wheeler insurance provides financial protection for your bike or scooter. Third-party liability insurance is mandatory under the Motor Vehicles Act, 1988. Comprehensive policies combine Third-Party with Own Damage cover.",
+      "hi": "दोपहिया बीमा आपकी बाइक या स्कूटर के लिए वित्तीय सुरक्षा प्रदान करता है। मोटर वाहन अधिनियम, 1988 के तहत थर्ड-पार्टी देयता बीमा अनिवार्य है।"
     },
-    keyBenefits: {
-      en: [
-        "Cashless hospitalization across thousands of networked hospitals nationwide.",
-        "Tax exemptions under Section 80D of the Income Tax Act.",
-        "Coverage for modern treatments, day-care procedures, and ambulance charges.",
+    "keyBenefits": {
+      "en": [
+        "Third-Party Liability",
+        "Own Damage Cover",
+        "Theft Protection",
+        "PA cover for owner-driver",
+        "No Claim Bonus (NCB)"
       ],
-      hi: [
-        "देश भर के हजारों नेटवर्क अस्पतालों में कैशलेस अस्पताल में भर्ती।",
-        "आयकर अधिनियम की धारा 80D के तहत कर छूट।",
-        "आधुनिक उपचार, डे-केयर प्रक्रियाओं और एम्बुलेंस शुल्क के लिए कवरेज।",
-      ],
+      "hi": [
+        "थर्ड-पार्टी देयता",
+        "ओन डैमेज कवर",
+        "चोरी सुरक्षा",
+        "ओनर-ड्राइवर PA कवर",
+        "नो क्लेम बोनस (NCB)"
+      ]
     },
-    eligibility: {
-      en: [
-        "Proposer age between 18 to 65 years.",
-        "Dependent children covered from 91 days up to 25 years.",
+    "eligibility": {
+      "en": [
+        "Registered two-wheeler owner with valid driving license"
       ],
-      hi: [
-        "प्रस्तावक की आयु 18 से 65 वर्ष के बीच।",
-        "91 दिन से 25 वर्ष तक के आश्रित बच्चे कवर्ड।",
-      ],
+      "hi": [
+        "मान्य ड्राइविंग लाइसेंस वाला पंजीकृत दोपहिया मालिक"
+      ]
     },
-    coverage: {
-      en: [
-        "Sum Insured ranges from ₹3 Lakhs to ₹1 Crore.",
-        "Includes room rent, ICU charges, surgeon fees, and pre-hospitalization care (up to 60 days).",
+    "coverage": {
+      "en": [
+        "Third-Party Liability",
+        "Own Damage",
+        "Theft protection",
+        "Natural calamities",
+        "PA cover for owner-driver"
       ],
-      hi: [
-        "सूम इंश्योर्ड ₹3 लाख से ₹1 करोड़ तक।",
-        "कमरे का किराया, ICU शुल्क, सर्जन शुल्क और प्री-हॉस्पिटलाइज़ेशन देखभाल (60 दिनों तक) शामिल।",
-      ],
+      "hi": [
+        "थर्ड-पार्टी देयता",
+        "ओन डैमेज",
+        "चोरी सुरक्षा",
+        "प्राकृतिक आपदाएँ",
+        "ओनर-ड्राइवर PA कवर"
+      ]
     },
-    exclusions: {
-      en: [
-        "Pre-existing diseases (PED) subject to a standard 2 to 4-year waiting period.",
-        "Cosmetic surgery.",
-        "Self-inflicted injuries.",
+    "exclusions": {
+      "en": [
+        "Driving under influence",
+        "Driving without valid license",
+        "Normal wear and tear"
       ],
-      hi: [
-        "पहले से मौजूद बीमारियाँ (PED) मानक 2 से 4 वर्ष की प्रतीक्षा अवधि के अधीन।",
-        "कॉस्मेटिक सर्जरी।",
-        "स्वयं को पहुँचाई गई चोटें।",
-      ],
+      "hi": [
+        "शराब/नशीली दवाओं के प्रभाव में चलाना",
+        "मान्य लाइसेंस के बिना चलाना",
+        "सामान्य टूट-फूट"
+      ]
     },
-    documents: [
-      { label: { en: "Age proof of all members", hi: "सभी सदस्यों का आयु प्रमाण" } },
-      { label: { en: "Pre-policy medical check-up reports (if age > 45 or based on sum insured)", hi: "प्री-पॉलिसी मेडिकल चेक-अप रिपोर्ट (यदि आयु > 45 या सूम इंश्योर्ड के आधार पर)" } },
-      { label: { en: "PAN/Aadhaar of the primary applicant", hi: "प्राथमिक आवेदक का पैन/आधार" } },
-    ],
-    faqs: [
+    "documents": [
       {
-        q: { en: "Is tax benefit available on this cover?", hi: "क्या इस कवर पर कर लाभ उपलब्ध है?" },
-        a: { en: "Yes, tax exemptions are available under Section 80D of the Income Tax Act. Consult your financial advisor for specifics.", hi: "हाँ, आयकर अधिनियम की धारा 80D के तहत कर छूट उपलब्ध है। विशिष्ट जानकारी के लिए अपने वित्तीय सलाहकार से परामर्श करें।" },
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
       },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
     ],
-    disclaimer: {
-      en: "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary — not a policy document. Please contact PolicyAdda for assistance before purchasing.",
-      hi: "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं। यह एक सूचनात्मक सारांश है — पॉलिसी दस्तावेज़ नहीं। कृपया खरीदने से पहले सहायता के लिए PolicyAdda से संपर्क करें।",
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    isActive: true,
-    isFeatured: true,
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": true
   },
   {
-    id: "pol-group-health",
-    slug: "group-health-and-liability-cover",
-    categorySlug: "business",
-    name: "Group Health & Liability Cover",
-    providerNote: {
-      en: "Custom B2B underwriting via major corporate insurers.",
-      hi: "प्रमुख कॉर्पोरेट बीमाकर्ताओं के माध्यम से कस्टम B2B अंडरराइटिंग।",
+    "id": "pol-goods-vehicle",
+    "slug": "goods-carrying-vehicle-insurance",
+    "categorySlug": "motor",
+    "name": "Goods Carrying Vehicle Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
     },
-    shortDescription: {
-      en: "Tailor-made employee health and liability benefits designed specifically for corporate houses and SMEs.",
-      hi: "कॉर्पोरेट हाउस और एसएमई के लिए विशेष रूप से डिज़ाइन किए गए कस्टम-मेड कर्मचारी स्वास्थ्य और देयता लाभ।",
+    "shortDescription": {
+      "en": "Protect your commercial goods-carrying vehicles against accidents and third-party liabilities.",
+      "hi": "दुर्घटनाओं और थर्ड-पार्टी देयता से अपने वाणिज्यिक माल ढोने वाले वाहनों की रक्षा करें।"
     },
-    fullDescription: {
-      en: "Built to assist evolving businesses in Noida, Ranchi, and regional hubs, this policy offers group medical protection to employees alongside business liability covers. It helps businesses protect their workforce, lower attrition rates, and comply with employer liability guidelines easily.",
-      hi: "नोएडा, रांची और क्षेत्रीय केंद्रों में विकसित होते व्यवसायों की सहायता के लिए बनाया गया, यह पॉलिसी कर्मचारियों को समूह चिकित्सा सुरक्षा प्रदान करती है और साथ ही व्यावसायिक देयता कवर भी देती है। यह व्यवसायों को अपने कार्यबल की रक्षा करने, कर्मचारी पलायन दर कम करने और नियोक्ता देयता दिशानिर्देशों का पालन करने में आसानी से मदद करती है।",
+    "fullDescription": {
+      "en": "Goods Carrying Vehicle Insurance covers commercial vehicles used for transporting goods against accidental damage, theft, fire, and third-party liabilities.",
+      "hi": "माल ढोने वाले वाहन बीमा माल परिवहन के लिए उपयोग किए जाने वाले वाणिज्यिक वाहनों को कवर करता है।"
     },
-    keyBenefits: {
-      en: [
-        "Waiver on waiting periods for pre-existing medical conditions from day one.",
-        "Maternity benefits and newborn cover options included seamlessly.",
-        "Boosts employee retention and satisfies corporate wellness initiatives.",
+    "keyBenefits": {
+      "en": [
+        "Third-Party Liability",
+        "Own Damage cover",
+        "Goods in transit cover",
+        "Protection against calamities"
       ],
-      hi: [
-        "पहले दिन से पहले से मौजूद चिकित्सा स्थितियों के लिए प्रतीक्षा अवधि में छूट।",
-        "मातृत्व लाभ और नवजात शिशु कवर विकल्प सहज रूप से शामिल।",
-        "कर्मचारी प्रतिधारण बढ़ाता है और कॉर्पोरेट वेलनेस पहल को पूरा करता है।",
-      ],
+      "hi": [
+        "थर्ड-पार्टी देयता",
+        "ओन डैमेज कवर",
+        "ट्रांजिट में माल कवर",
+        "आपदाओं से सुरक्षा"
+      ]
     },
-    eligibility: {
-      en: [
-        "Registered commercial business or SME with a minimum corporate workforce of 7 to 10 employees.",
+    "eligibility": {
+      "en": [
+        "Commercial goods-carrying vehicle owner in India"
       ],
-      hi: [
-        "7 से 10 कर्मचारियों के न्यूनतम कॉर्पोरेट कार्यबल वाला पंजीकृत व्यावसायिक व्यवसाय या एसएमई।",
-      ],
+      "hi": [
+        "भारत में वाणिज्यिक माल ढोने वाले वाहन मालिक"
+      ]
     },
-    coverage: {
-      en: [
-        "Customizable sum insured options per employee tier.",
-        "Corporate buffer capabilities.",
-        "Worldwide or nationwide coverage footprints.",
+    "coverage": {
+      "en": [
+        "Third-Party Liability",
+        "Own Damage",
+        "PA cover for driver",
+        "Fire, theft, calamities"
       ],
-      hi: [
-        "प्रति कर्मचारी स्तर अनुकूलन योग्य सूम इंश्योर्ड विकल्प।",
-        "कॉर्पोरेट बफर क्षमताएँ।",
-        "विश्वव्यापी या देशव्यापी कवरेज फुटप्रिंट।",
-      ],
+      "hi": [
+        "थर्ड-पार्टी देयता",
+        "ओन डैमेज",
+        "ड्राइवर PA कवर",
+        "आग, चोरी, आपदाएँ"
+      ]
     },
-    exclusions: {
-      en: [
-        "Non-medical hospital expenses.",
-        "Experimental or unproven therapies.",
-        "Intentional non-compliance with standard workplace safety norms.",
+    "exclusions": {
+      "en": [
+        "Driving under influence",
+        "Driving without valid license",
+        "Normal wear and tear"
       ],
-      hi: [
-        "गैर-चिकित्सीय अस्पताल खर्च।",
-        "प्रयोगात्मक या अप्रमाणित चिकित्सा।",
-        "मानक कार्यस्थल सुरक्षा मानदंडों के जानबूझकर गैर-अनुपालन।",
-      ],
+      "hi": [
+        "शराब/नशीली दवाओं के प्रभाव में चलाना",
+        "मान्य लाइसेंस के बिना चलाना",
+        "सामान्य टूट-फूट"
+      ]
     },
-    documents: [
-      { label: { en: "Company PAN card", hi: "कंपनी पैन कार्ड" } },
-      { label: { en: "GST registration certificate", hi: "जीएसटी पंजीकरण प्रमाणपत्र" } },
-      { label: { en: "Finalized Excel roster with employee details (Names, Ages, Relationships, Nominees)", hi: "कर्मचारी विवरण (नाम, आयु, संबंध, नामांकित) वाला अंतिम एक्सेल रोस्टर" } },
-    ],
-    faqs: [
+    "documents": [
       {
-        q: { en: "Can an employee add their parents to the group plan?", hi: "क्या कोई कर्मचारी ग्रुप प्लान में अपने माता-पिता जोड़ सकता है?" },
-        a: { en: "Yes, if the specific corporate plan structure has parent-inclusion features activated during corporate onboarding.", hi: "हाँ, यदि विशिष्ट कॉर्पोरेट प्लान संरचना में कॉर्पोरेट ऑनबोर्डिंग के दौरान माता-पिता-समावेश सुविधाएँ सक्रिय हैं।" },
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
       },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
     ],
-    disclaimer: {
-      en: "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary — not a policy document. Please contact PolicyAdda for assistance before purchasing.",
-      hi: "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं। यह एक सूचनात्मक सारांश है — पॉलिसी दस्तावेज़ नहीं। कृपया खरीदने से पहले सहायता के लिए PolicyAdda से संपर्क करें।",
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    isActive: true,
-    isFeatured: true,
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-passenger-vehicle",
+    "slug": "passenger-carrying-vehicle-insurance",
+    "categorySlug": "motor",
+    "name": "Passenger Carrying Vehicle Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Coverage for taxis, buses, auto-rickshaws and other passenger-carrying commercial vehicles.",
+      "hi": "टैक्सी, बस, ऑटो-रिक्शा और अन्य यात्री ढोने वाले वाणिज्यिक वाहनों के लिए कवरेज।"
+    },
+    "fullDescription": {
+      "en": "Passenger Carrying Vehicle Insurance covers commercial vehicles used to transport passengers including taxis, buses, and auto-rickshaws with third-party liability and passenger liability.",
+      "hi": "यात्री ढोने वाले वाहन बीमा टैक्सी, बस और ऑटो-रिक्शा सहित यात्रियों के परिवहन के लिए उपयोग किए जाने वाले वाणिज्यिक वाहनों को कवर करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Third-Party Liability",
+        "Own Damage cover",
+        "Passenger liability cover",
+        "Driver and conductor PA cover"
+      ],
+      "hi": [
+        "थर्ड-पार्टी देयता",
+        "ओन डैमेज कवर",
+        "यात्री देयता कवर",
+        "ड्राइवर और कंडक्टर PA कवर"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Commercial passenger-carrying vehicle owner in India"
+      ],
+      "hi": [
+        "भारत में वाणिज्यिक यात्री ढोने वाले वाहन मालिक"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Third-Party Liability",
+        "Own Damage",
+        "Passenger liability",
+        "Driver PA cover"
+      ],
+      "hi": [
+        "थर्ड-पार्टी देयता",
+        "ओन डैमेज",
+        "यात्री देयता",
+        "ड्राइवर PA कवर"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Driving under influence",
+        "Driving without valid license",
+        "Normal wear and tear"
+      ],
+      "hi": [
+        "शराब/नशीली दवाओं के प्रभाव में चलाना",
+        "मान्य लाइसेंस के बिना चलाना",
+        "सामान्य टूट-फूट"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-misc-vehicle",
+    "slug": "miscellaneous-special-vehicle-insurance",
+    "categorySlug": "motor",
+    "name": "Miscellaneous & Special Vehicle Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Insurance for construction equipment, agricultural machinery, and other specialised vehicles.",
+      "hi": "निर्माण उपकरण, कृषि मशीनरी और अन्य विशेष वाहनों के लिए बीमा।"
+    },
+    "fullDescription": {
+      "en": "Miscellaneous and Special Vehicle Insurance covers non-standard vehicles such as construction equipment, agricultural machinery, fork-lifts, and cranes with customised coverage.",
+      "hi": "विविध और विशेष वाहन बीमा निर्माण उपकरण, कृषि मशीनरी, फोर्क-लिफ्ट और क्रेन जैसे गैर-मानक वाहनों को कवर करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Third-Party Liability",
+        "Own Damage cover",
+        "Transit cover",
+        "Machinery breakdown (where applicable)"
+      ],
+      "hi": [
+        "थर्ड-पार्टी देयता",
+        "ओन डैमेज कवर",
+        "ट्रांजिट कवर",
+        "मशीनरी ब्रेकडाउन"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Owner of specialised commercial vehicle in India"
+      ],
+      "hi": [
+        "भारत में विशेष वाणिज्यिक वाहन मालिक"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Third-Party Liability",
+        "Own Damage",
+        "Transit cover",
+        "Machinery breakdown"
+      ],
+      "hi": [
+        "थर्ड-पार्टी देयता",
+        "ओन डैमेज",
+        "ट्रांजिट कवर",
+        "मशीनरी ब्रेकडाउन"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Driving under influence",
+        "Driving without valid license",
+        "Normal wear and tear"
+      ],
+      "hi": [
+        "शराब/नशीली दवाओं के प्रभाव में चलाना",
+        "मान्य लाइसेंस के बिना चलाना",
+        "सामान्य टूट-फूट"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-health",
+    "slug": "health-insurance",
+    "categorySlug": "health",
+    "name": "Health Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Protect your health and savings with comprehensive medical coverage.",
+      "hi": "अपने स्वास्थ्य और बचत की रक्षा करें — व्यापक चिकित्सा कवरेज।"
+    },
+    "fullDescription": {
+      "en": "Health insurance provides financial protection against eligible medical and hospitalisation expenses arising from illness, injury or accidents. Healthcare costs are increasing, and even a single hospitalisation can put pressure on your finances.",
+      "hi": "हेल्थ इंश्योरेंस बीमारी, चोट या दुर्घटना से उत्पन्न चिकित्सा और अस्पताल खर्चों के खिलाफ वित्तीय सुरक्षा प्रदान करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Manage medical expenses",
+        "Cashless treatment at network hospitals",
+        "Pre- and post-hospitalisation cover",
+        "Tax benefits under Section 80D",
+        "Day-care procedures"
+      ],
+      "hi": [
+        "चिकित्सा खर्चों का प्रबंधन",
+        "नेटवर्क अस्पतालों में कैशलेस उपचार",
+        "प्री- और पोस्ट-हॉस्पिटलाइज़ेशन कवर",
+        "धारा 80D के तहत कर लाभ",
+        "डे-केयर प्रक्रियाएँ"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Individuals aged 18-65 years",
+        "Dependent children from 91 days to 25 years"
+      ],
+      "hi": [
+        "18-65 वर्ष की आयु के व्यक्ति",
+        "91 दिन से 25 वर्ष तक के आश्रित बच्चे"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "In-patient hospitalisation",
+        "Pre/post hospitalisation",
+        "Day-care",
+        "Ambulance charges",
+        "Modern treatments",
+        "Pre-existing diseases (after waiting period)"
+      ],
+      "hi": [
+        "इनपेशेंट अस्पताल",
+        "प्री/पोस्ट हॉस्पिटलाइज़ेशन",
+        "डे-केयर",
+        "एम्बुलेंस",
+        "आधुनिक उपचार",
+        "पहले से मौजूद बीमारियाँ (प्रतीक्षा के बाद)"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Treatment during waiting periods",
+        "Cosmetic procedures",
+        "Self-inflicted injuries"
+      ],
+      "hi": [
+        "प्रतीक्षा अवधि में उपचार",
+        "कॉस्मेटिक प्रक्रियाएँ",
+        "स्वयं को पहुँचाई गई चोटें"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": true
+  },
+  {
+    "id": "pol-health-family",
+    "slug": "health-insurance-plans-for-family",
+    "categorySlug": "health",
+    "name": "Health Insurance Plans for Family",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Protect your family under one health policy with a shared sum insured.",
+      "hi": "एक स्वास्थ्य पॉलिसी के तहत अपने परिवार की रक्षा करें।"
+    },
+    "fullDescription": {
+      "en": "A family health insurance policy provides medical coverage for multiple family members under a single policy with one Sum Insured shared by all covered members.",
+      "hi": "एक परिवार स्वास्थ्य बीमा पॉलिसी एक ही पॉलिसी के तहत कई परिवार के सदस्यों के लिए चिकित्सा कवरेज प्रदान करती है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Multiple members under one policy",
+        "Cashless treatment",
+        "Single renewal management",
+        "Tax benefits"
+      ],
+      "hi": [
+        "एक पॉलिसी में कई सदस्य",
+        "कैशलेस उपचार",
+        "एक ही नवीनीकरण प्रबंधन",
+        "कर लाभ"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Self, spouse, dependent children, parents, parents-in-law"
+      ],
+      "hi": [
+        "स्वयं, जीवनसाथी, आश्रित बच्चे, माता-पिता, ससुराल वाले"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "In-patient hospitalisation",
+        "Day-care",
+        "Pre/post hospitalisation",
+        "Ambulance",
+        "Modern treatments"
+      ],
+      "hi": [
+        "इनपेशेंट अस्पताल",
+        "डे-केयर",
+        "प्री/पोस्ट हॉस्पिटलाइज़ेशन",
+        "एम्बुलेंस",
+        "आधुनिक उपचार"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Treatment during waiting periods",
+        "Cosmetic procedures",
+        "Self-inflicted injuries"
+      ],
+      "hi": [
+        "प्रतीक्षा अवधि में उपचार",
+        "कॉस्मेटिक प्रक्रियाएँ",
+        "स्वयं को पहुँचाई गई चोटें"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": true
+  },
+  {
+    "id": "pol-health-senior",
+    "slug": "health-insurance-plans-for-senior-citizens",
+    "categorySlug": "health",
+    "name": "Health Insurance Plans for Senior Citizens",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Health insurance designed for individuals aged 60 years and above.",
+      "hi": "60 वर्ष और उससे अधिक आयु के व्यक्तियों के लिए स्वास्थ्य बीमा।"
+    },
+    "fullDescription": {
+      "en": "Senior Citizen Health Insurance provides financial protection against medical expenses for individuals aged 60+. With rising healthcare costs, it helps manage unexpected medical expenses.",
+      "hi": "वरिष्ठ नागरिक स्वास्थ्य बीमा 60+ आयु के व्यक्तियों के लिए चिकित्सा खर्चों के खिलाफ वित्तीय सुरक्षा प्रदान करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Hospitalisation expenses",
+        "Day-care treatments",
+        "Pre/post hospitalisation",
+        "Pre-existing diseases (after waiting period)",
+        "Cashless treatment",
+        "Lifelong renewability"
+      ],
+      "hi": [
+        "अस्पताल खर्च",
+        "डे-केयर उपचार",
+        "प्री/पोस्ट हॉस्पिटलाइज़ेशन",
+        "पहले से मौजूद बीमारियाँ (प्रतीक्षा के बाद)",
+        "कैशलेस उपचार",
+        "आजीवन नवीनीकरण"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Individuals aged 60 years and above"
+      ],
+      "hi": [
+        "60 वर्ष और उससे अधिक आयु के व्यक्ति"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "In-patient hospitalisation",
+        "ICU and room charges",
+        "Doctor fees",
+        "Day-care",
+        "Pre/post hospitalisation",
+        "Ambulance"
+      ],
+      "hi": [
+        "इनपेशेंट अस्पताल",
+        "ICU और कमरे का शुल्क",
+        "डॉक्टर शुल्क",
+        "डे-केयर",
+        "प्री/पोस्ट हॉस्पिटलाइज़ेशन",
+        "एम्बुलेंस"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Pre-existing diseases during waiting period",
+        "Cosmetic treatments",
+        "Self-inflicted injuries"
+      ],
+      "hi": [
+        "प्रतीक्षा में पहले से मौजूद बीमारियाँ",
+        "कॉस्मेटिक उपचार",
+        "स्वयं को पहुँचाई गई चोटें"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-maternity",
+    "slug": "maternity-insurance-plans",
+    "categorySlug": "health",
+    "name": "Maternity Insurance Plans",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Cover pregnancy, childbirth, pre-natal and post-natal care expenses.",
+      "hi": "गर्भावस्था, प्रसव, प्री-नेटल और पोस्ट-नेटल देखभाल खर्चों का कवरेज।"
+    },
+    "fullDescription": {
+      "en": "Maternity health insurance helps cover eligible medical expenses related to pregnancy and childbirth including normal/C-section delivery, pre-natal and post-natal care, and newborn baby expenses.",
+      "hi": "मातृत्व स्वास्थ्य बीमा गर्भावस्था और प्रसव से संबंधित पात्र चिकित्सा खर्चों को कवर करने में मदद करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Normal delivery expenses",
+        "C-section delivery expenses",
+        "Pre/post-natal care",
+        "Newborn baby cover",
+        "Pregnancy complications cover"
+      ],
+      "hi": [
+        "सामान्य प्रसव खर्च",
+        "सी-सेक्शन प्रसव खर्च",
+        "प्री/पोस्ट-नेटल देखभाल",
+        "नवजात शिशु कवर",
+        "गर्भावस्था जटिलताओं का कवर"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Women planning pregnancy (buy before conception due to waiting period)"
+      ],
+      "hi": [
+        "गर्भावस्था की योजना बनाने वाली महिलाएँ"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Normal delivery",
+        "C-section delivery",
+        "Pre/post-natal care",
+        "Newborn cover",
+        "Pregnancy complications"
+      ],
+      "hi": [
+        "सामान्य प्रसव",
+        "सी-सेक्शन प्रसव",
+        "प्री/पोस्ट-नेटल देखभाल",
+        "नवजात कवर",
+        "गर्भावस्था जटिलताएँ"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Expenses during waiting period",
+        "Fertility treatments",
+        "Expenses exceeding limit"
+      ],
+      "hi": [
+        "प्रतीक्षा में खर्च",
+        "प्रजनन उपचार",
+        "सीमा से अधिक खर्च"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-mediclaim",
+    "slug": "mediclaim-policy",
+    "categorySlug": "health",
+    "name": "Mediclaim Policy",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Health insurance covering hospitalisation expenses from illness or accidental injury.",
+      "hi": "बीमारी या आकस्मिक चोट से अस्पताल खर्चों को कवर करने वाला स्वास्थ्य बीमा।"
+    },
+    "fullDescription": {
+      "en": "A Mediclaim Policy covers eligible medical expenses from hospitalisation due to illness or accident. Coverage includes hospital room, ICU, doctor fees, medicines, and diagnostic tests.",
+      "hi": "मेडिक्लेम पॉलिसी बीमारी या दुर्घटना से अस्पताल में भर्ती से पात्र चिकित्सा खर्चों को कवर करती है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Manage hospitalisation expenses",
+        "Protect savings",
+        "Cashless treatment",
+        "Emergency financial support"
+      ],
+      "hi": [
+        "अस्पताल खर्चों का प्रबंधन",
+        "बचत की रक्षा",
+        "कैशलेस उपचार",
+        "आपातकालीन वित्तीय सहायता"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Individuals and families seeking health coverage"
+      ],
+      "hi": [
+        "स्वास्थ्य कवरेज की तलाश में व्यक्ति और परिवार"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "In-patient hospitalisation",
+        "Day-care",
+        "Pre/post hospitalisation",
+        "Ambulance",
+        "Modern treatments",
+        "ICU and room charges"
+      ],
+      "hi": [
+        "इनपेशेंट अस्पताल",
+        "डे-केयर",
+        "प्री/पोस्ट हॉस्पिटलाइज़ेशन",
+        "एम्बुलेंस",
+        "आधुनिक उपचार",
+        "ICU और कमरे का शुल्क"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Pre-existing diseases during waiting period",
+        "Cosmetic treatments",
+        "Non-medical expenses"
+      ],
+      "hi": [
+        "प्रतीक्षा में पहले से मौजूद बीमारियाँ",
+        "कॉस्मेटिक उपचार",
+        "गैर-चिकित्सीय खर्च"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-life",
+    "slug": "life-insurance",
+    "categorySlug": "life",
+    "name": "Life Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Secure your family's financial future with life insurance plans.",
+      "hi": "लाइफ इंश्योरेंस के साथ अपने परिवार के वित्तीय भविष्य को सुरक्षित करें।"
+    },
+    "fullDescription": {
+      "en": "Life insurance provides financial protection to your family in case of your unfortunate demise during the policy term. It can also serve as a savings and investment tool through various plan types.",
+      "hi": "लाइफ इंश्योरेंस आपके परिवार को वित्तीय सुरक्षा प्रदान करता है। यह बचत और निवेश उपकरण के रूप में भी काम कर सकता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Financial protection for family",
+        "Tax benefits under Section 80C and 10(10D)",
+        "Savings and investment options",
+        "Loan facility against policy",
+        "Guaranteed returns (select plans)"
+      ],
+      "hi": [
+        "परिवार के लिए वित्तीय सुरक्षा",
+        "धारा 80C और 10(10D) के तहत कर लाभ",
+        "बचत और निवेश विकल्प",
+        "पॉलिसी के खिलाफ ऋण सुविधा",
+        "गारंटीड रिटर्न"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Individuals aged 18 to 65 years"
+      ],
+      "hi": [
+        "18 से 65 वर्ष की आयु के व्यक्ति"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Death benefit",
+        "Maturity benefit (savings plans)",
+        "Accidental death benefit",
+        "Critical illness cover (optional)"
+      ],
+      "hi": [
+        "मृत्यु लाभ",
+        "परिपक्वता लाभ (बचत प्लान)",
+        "दुर्घटनाजन्य मृत्यु लाभ",
+        "गंभीर बीमारी कवर (वैकल्पिक)"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Suicide within first year",
+        "Claims from misrepresentation",
+        "Exclusions in policy terms"
+      ],
+      "hi": [
+        "पहले वर्ष में आत्महत्या",
+        "गलत प्रतिनिधित्व से दावे",
+        "पॉलिसी शर्तों में बहिष्करण"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": true
+  },
+  {
+    "id": "pol-term",
+    "slug": "term-insurance-plans",
+    "categorySlug": "life",
+    "name": "Term Insurance Plans",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Pure protection plans with high sum assured at affordable premiums.",
+      "hi": "किफायती प्रीमियम पर उच्च सूम एश्योर्ड वाले शुद्ध सुरक्षा प्लान।"
+    },
+    "fullDescription": {
+      "en": "Term insurance is the simplest and most affordable form of life insurance. It provides a high sum assured to your family in case of your unfortunate demise during the policy term.",
+      "hi": "टर्म इंश्योरेंस लाइफ इंश्योरेंस का सबसे सरल और किफायती रूप है। यह पॉलिसी अवधि में निधन पर उच्च सूम एश्योर्ड प्रदान करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "High sum assured at low premium",
+        "Pure protection",
+        "Tax benefits under 80C and 10(10D)",
+        "Riders for accidental death, critical illness"
+      ],
+      "hi": [
+        "कम प्रीमियम पर उच्च सूम एश्योर्ड",
+        "शुद्ध सुरक्षा",
+        "80C और 10(10D) के तहत कर लाभ",
+        "दुर्घटनाजन्य मृत्यु, गंभीर बीमारी के लिए राइडर"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Individuals aged 18 to 65 years"
+      ],
+      "hi": [
+        "18 से 65 वर्ष की आयु के व्यक्ति"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Death benefit during policy term",
+        "Accidental death benefit (rider)",
+        "Terminal illness benefit",
+        "Premium waiver (rider)"
+      ],
+      "hi": [
+        "पॉलिसी अवधि में मृत्यु लाभ",
+        "दुर्घटनाजन्य मृत्यु लाभ (राइडर)",
+        "टर्मिनल बीमारी लाभ",
+        "प्रीमियम छूट (राइडर)"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Suicide within first year",
+        "Claims from misrepresentation"
+      ],
+      "hi": [
+        "पहले वर्ष में आत्महत्या",
+        "गलत प्रतिनिधित्व से दावे"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": true
+  },
+  {
+    "id": "pol-term-rop",
+    "slug": "term-plans-with-return-of-premiums",
+    "categorySlug": "life",
+    "name": "Term Plans with Return of Premiums",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Term insurance that returns all premiums if you survive the policy term.",
+      "hi": "टर्म इंश्योरेंस जो जीवित रहने पर सभी प्रीमियम वापस करता है।"
+    },
+    "fullDescription": {
+      "en": "Term plans with Return of Premium provide term insurance benefits along with a maturity benefit. If you survive the policy term, all premiums paid are returned.",
+      "hi": "रिटर्न ऑफ प्रीमियम के साथ टर्म प्लान टर्म इंश्योरेंस के साथ परिपक्वता लाभ प्रदान करते हैं। जीवित रहने पर सभी प्रीमियम वापस मिलते हैं।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Death benefit protection",
+        "Return of premiums on survival",
+        "Tax benefits under 80C and 10(10D)",
+        "Higher sum assured options"
+      ],
+      "hi": [
+        "मृत्यु लाभ सुरक्षा",
+        "जीवित रहने पर प्रीमियम की वापसी",
+        "80C और 10(10D) के तहत कर लाभ",
+        "उच्च सूम एश्योर्ड विकल्प"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Individuals aged 18 to 65 years"
+      ],
+      "hi": [
+        "18 से 65 वर्ष की आयु के व्यक्ति"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Death benefit",
+        "Return of premiums",
+        "Accidental death benefit (rider)"
+      ],
+      "hi": [
+        "मृत्यु लाभ",
+        "प्रीमियम की वापसी",
+        "दुर्घटनाजन्य मृत्यु लाभ (राइडर)"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Suicide within first year",
+        "Claims from misrepresentation"
+      ],
+      "hi": [
+        "पहले वर्ष में आत्महत्या",
+        "गलत प्रतिनिधित्व से दावे"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-child",
+    "slug": "child-savings-plans",
+    "categorySlug": "life",
+    "name": "Child Savings Plans",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Build a corpus for your child's education, marriage, or career goals.",
+      "hi": "बच्चे की शिक्षा, विवाह या करियर लक्ष्यों के लिए कोष बनाएँ।"
+    },
+    "fullDescription": {
+      "en": "Child savings plans build a financial corpus for your child's future needs. These plans combine savings with protection, ensuring your child's goals are met even in your absence.",
+      "hi": "बच्चे की बचत योजनाएँ आपके बच्चे की भविष्य की जरूरतों के लिए वित्तीय कोष बनाती हैं।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Build corpus for education",
+        "Tax benefits under 80C",
+        "Protection against parent's untimely death",
+        "Flexible premium options"
+      ],
+      "hi": [
+        "शिक्षा के लिए कोष बनाना",
+        "80C के तहत कर लाभ",
+        "माता-पिता की असमय मृत्यु के खिलाफ सुरक्षा",
+        "लचीले प्रीमियम विकल्प"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Parents or guardians aged 18 to 60 years"
+      ],
+      "hi": [
+        "18 से 60 वर्ष की आयु के माता-पिता या संरक्षक"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Guaranteed maturity benefit",
+        "Death benefit",
+        "Flexible payout options"
+      ],
+      "hi": [
+        "गारंटीड परिपक्वता लाभ",
+        "मृत्यु लाभ",
+        "लचीले भुगतान विकल्प"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Claims during initial lock-in period",
+        "Suicide within first year"
+      ],
+      "hi": [
+        "प्रारंभिक लॉक-इन में दावे",
+        "पहले वर्ष में आत्महत्या"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-guaranteed",
+    "slug": "guaranteed-return-plans",
+    "categorySlug": "life",
+    "name": "Guaranteed Return Plans",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Plans offering guaranteed returns along with life insurance protection.",
+      "hi": "जीवन बीमा सुरक्षा के साथ गारंटीड रिटर्न प्रदान करने वाले प्लान।"
+    },
+    "fullDescription": {
+      "en": "Guaranteed return plans are savings-cum-protection plans that offer guaranteed payouts during the policy term, suitable for conservative investors.",
+      "hi": "गारंटीड रिटर्न प्लान बचत-सह-सुरक्षा प्लान हैं जो पॉलिसी अवधि में गारंटीड भुगतान प्रदान करते हैं।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Guaranteed maturity benefit",
+        "Guaranteed periodic payouts",
+        "Life insurance coverage",
+        "Tax benefits"
+      ],
+      "hi": [
+        "गारंटीड परिपक्वता लाभ",
+        "गारंटीड आवधिक भुगतान",
+        "जीवन बीमा कवरेज",
+        "कर लाभ"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Individuals aged 18 to 60 years"
+      ],
+      "hi": [
+        "18 से 60 वर्ष की आयु के व्यक्ति"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Guaranteed maturity benefit",
+        "Death benefit",
+        "Flexible payout options"
+      ],
+      "hi": [
+        "गारंटीड परिपक्वता लाभ",
+        "मृत्यु लाभ",
+        "लचीले भुगतान विकल्प"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Claims during lock-in period",
+        "Suicide within first year"
+      ],
+      "hi": [
+        "लॉक-इन में दावे",
+        "पहले वर्ष में आत्महत्या"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-investment",
+    "slug": "investment-plans-with-high-returns",
+    "categorySlug": "life",
+    "name": "Investment Plans with High Returns",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Combine insurance protection with market-linked investment growth.",
+      "hi": "बीमा सुरक्षा को बाजार-लिंक्ड निवेश वृद्धि के साथ जोड़ें।"
+    },
+    "fullDescription": {
+      "en": "Investment plans with high returns are insurance-linked investment products allowing you to participate in market growth while maintaining life insurance protection.",
+      "hi": "उच्च रिटर्न के साथ निवेश योजनाएँ बीमा-लिंक्ड निवेश उत्पाद हैं जो बाजार वृद्धि में भाग लेने देते हैं।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Market-linked returns",
+        "Life insurance protection",
+        "Tax benefits under 80C and 10(10D)",
+        "Fund switching flexibility"
+      ],
+      "hi": [
+        "बाजार-लिंक्ड रिटर्न",
+        "जीवन बीमा सुरक्षा",
+        "80C और 10(10D) के तहत कर लाभ",
+        "फंड स्विचिंग लचीलापन"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Individuals aged 18 to 65 years"
+      ],
+      "hi": [
+        "18 से 65 वर्ष की आयु के व्यक्ति"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Market-linked maturity benefit",
+        "Death benefit",
+        "Fund value at maturity"
+      ],
+      "hi": [
+        "बाजार-लिंक्ड परिपक्वता लाभ",
+        "मृत्यु लाभ",
+        "परिपक्वता पर फंड मूल्य"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Market risk (not guaranteed returns)",
+        "Lock-in period restrictions",
+        "Suicide within first year"
+      ],
+      "hi": [
+        "बाजार जोखिम",
+        "लॉक-इन अवधि प्रतिबंध",
+        "पहले वर्ष में आत्महत्या"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-ulip",
+    "slug": "ulip-plans",
+    "categorySlug": "life",
+    "name": "ULIP Plans",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Unit Linked Insurance Plans with market-linked growth and life coverage.",
+      "hi": "यूनिट लिंक्ड इंश्योरेंस प्लान — बाजार-लिंक्ड वृद्धि और जीवन कवरेज।"
+    },
+    "fullDescription": {
+      "en": "ULIPs provide both investment growth and life insurance protection. A portion of your premium is invested in equity and debt funds based on your choice.",
+      "hi": "यूलिप्स निवेश वृद्धि और जीवन बीमा सुरक्षा दोनों प्रदान करते हैं। प्रीमियम का एक हिस्सा आपकी पसंद के अनुसार इक्विटी और डेट फंड में निवेश किया जाता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Market-linked growth",
+        "Life insurance coverage",
+        "Fund switching flexibility",
+        "Tax benefits",
+        "Top-up facility"
+      ],
+      "hi": [
+        "बाजार-लिंक्ड वृद्धि",
+        "जीवन बीमा कवरेज",
+        "फंड स्विचिंग लचीलापन",
+        "कर लाभ",
+        "टॉप-अप सुविधा"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Individuals aged 18 to 65 years"
+      ],
+      "hi": [
+        "18 से 65 वर्ष की आयु के व्यक्ति"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Fund value at maturity",
+        "Death benefit (higher of sum assured or fund value)",
+        "Equity and debt fund switching"
+      ],
+      "hi": [
+        "परिपक्वता पर फंड मूल्य",
+        "मृत्यु लाभ (सूम एश्योर्ड या फंड मूल्य में से अधिक)",
+        "इक्विटी और डेट फंड स्विचिंग"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Market risk",
+        "Lock-in period (5 years)",
+        "Suicide within first year"
+      ],
+      "hi": [
+        "बाजार जोखिम",
+        "लॉक-इन अवधि (5 वर्ष)",
+        "पहले वर्ष में आत्महत्या"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-pension",
+    "slug": "pension-plans",
+    "categorySlug": "life",
+    "name": "Pension Plans",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Plan for a comfortable retirement with guaranteed pension income.",
+      "hi": "गारंटीड पेंशन आय के साथ आरामदायक सेवानिवृत्ति की योजना बनाएँ।"
+    },
+    "fullDescription": {
+      "en": "Pension plans help you build a retirement corpus providing regular income after retirement, ensuring financial independence in your golden years.",
+      "hi": "पेंशन प्लान आपको सेवानिवृत्ति कोष बनाने में मदद करते हैं जो सेवानिवृत्ति के बाद नियमित आय प्रदान करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Guaranteed pension income after retirement",
+        "Tax benefits under 80C and 80CCC",
+        "Flexible premium options",
+        "Lump sum or annuity options"
+      ],
+      "hi": [
+        "सेवानिवृत्ति के बाद गारंटीड पेंशन आय",
+        "80C और 80CCC के तहत कर लाभ",
+        "लचीले प्रीमियम विकल्प",
+        "लम्प सम या एन्यूटी विकल्प"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Individuals aged 18 to 65 years"
+      ],
+      "hi": [
+        "18 से 65 वर्ष की आयु के व्यक्ति"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Guaranteed pension income",
+        "Death benefit to nominee",
+        "Lump sum or annuity options"
+      ],
+      "hi": [
+        "गारंटीड पेंशन आय",
+        "नामांकित व्यक्ति को मृत्यु लाभ",
+        "लम्प सम या एन्यूटी विकल्प"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Withdrawal before lock-in period",
+        "Suicide within first year"
+      ],
+      "hi": [
+        "लॉक-इन से पहले निकासी",
+        "पहले वर्ष में आत्महत्या"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-annuity",
+    "slug": "annuity-plans",
+    "categorySlug": "life",
+    "name": "Annuity Plans",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Receive guaranteed regular income for life with an annuity plan.",
+      "hi": "एन्यूटी प्लान के साथ जीवन भर गारंटीड नियमित आय प्राप्त करें।"
+    },
+    "fullDescription": {
+      "en": "Annuity plans provide a guaranteed stream of income for life. You pay a lump sum and receive regular payouts, ideal for retirees wanting steady income.",
+      "hi": "एन्यूटी प्लान जीवन भर के लिए गारंटीड आय की धारा प्रदान करते हैं। आप एकमुश्त राशि का भुगतान करते हैं और नियमित भुगतान प्राप्त करते हैं।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Guaranteed income for life",
+        "Flexible payout frequency",
+        "Multiple annuity options",
+        "Joint life annuity available"
+      ],
+      "hi": [
+        "जीवन भर गारंटीड आय",
+        "लचीली भुगतान आवृत्ति",
+        "एकाधिक एन्यूटी विकल्प",
+        "संयुक्त जीवन एन्यूटी उपलब्ध"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Individuals aged 18 to 80 years"
+      ],
+      "hi": [
+        "18 से 80 वर्ष की आयु के व्यक्ति"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Guaranteed annuity income",
+        "Return of purchase price (select plans)",
+        "Death benefit (select plans)"
+      ],
+      "hi": [
+        "गारंटीड एन्यूटी आय",
+        "खरीद मूल्य की वापसी (चयनित प्लान)",
+        "मृत्यु लाभ (चयनित प्लान)"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "No surrender value in some plans",
+        "Lock-in period restrictions"
+      ],
+      "hi": [
+        "कुछ प्लान में कोई सरेंडर मूल्य नहीं",
+        "लॉक-इन अवधि प्रतिबंध"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-group-health",
+    "slug": "group-health-insurance",
+    "categorySlug": "business",
+    "name": "Group Health Insurance Plans",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Protect your employees with comprehensive group health coverage.",
+      "hi": "व्यापक समूह स्वास्थ्य कवरेज के साथ अपने कर्मचारियों की रक्षा करें।"
+    },
+    "fullDescription": {
+      "en": "Group Health Insurance provides medical coverage to employees under a single policy. Employers can extend coverage to eligible family members.",
+      "hi": "समूह स्वास्थ्य बीमा एक ही पॉलिसी के तहत कर्मचारियों को चिकित्सा कवरेज प्रदान करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Coverage under one policy",
+        "Family member coverage",
+        "Cashless treatment",
+        "Pre/post hospitalisation",
+        "Maternity benefits",
+        "OPD and wellness benefits"
+      ],
+      "hi": [
+        "एक पॉलिसी में कवरेज",
+        "परिवार के सदस्यों का कवरेज",
+        "कैशलेस उपचार",
+        "प्री/पोस्ट हॉस्पिटलाइज़ेशन",
+        "मातृत्व लाभ",
+        "OPD और वेलनेस लाभ"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Registered organisation or SME with employees"
+      ],
+      "hi": [
+        "कर्मचारियों वाला पंजीकृत संगठन या एसएमई"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "In-patient hospitalisation",
+        "Pre/post hospitalisation",
+        "Day-care",
+        "Ambulance",
+        "Maternity",
+        "Pre-existing diseases"
+      ],
+      "hi": [
+        "इनपेशेंट अस्पताल",
+        "प्री/पोस्ट हॉस्पिटलाइज़ेशन",
+        "डे-केयर",
+        "एम्बुलेंस",
+        "मातृत्व",
+        "पहले से मौजूद बीमारियाँ"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Non-medical expenses",
+        "Experimental treatments",
+        "Specific exclusions"
+      ],
+      "hi": [
+        "गैर-चिकित्सीय खर्च",
+        "प्रयोगात्मक उपचार",
+        "विशिष्ट बहिष्करण"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": true
+  },
+  {
+    "id": "pol-gpa",
+    "slug": "group-personal-accident-insurance",
+    "categorySlug": "business",
+    "name": "Group Personal Accident Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Financial protection for employees against accidental risks.",
+      "hi": "दुर्घटना जोखिमों के खिलाफ कर्मचारियों के लिए वित्तीय सुरक्षा।"
+    },
+    "fullDescription": {
+      "en": "Group Personal Accident Insurance provides accident-related financial protection to a group under a single policy, commonly purchased by employers.",
+      "hi": "समूह व्यक्तिगत दुर्घटना बीमा एक समूह को एक पॉलिसी के तहत दुर्घटना-संबंधित वित्तीय सुरक्षा प्रदान करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Accidental death benefit",
+        "Permanent total/partial disability",
+        "Temporary total disability",
+        "Medical expenses from accidents",
+        "Ambulance expenses"
+      ],
+      "hi": [
+        "दुर्घटनाजन्य मृत्यु लाभ",
+        "स्थायी कुल/आंशिक विकलांगता",
+        "अस्थायी कुल विकलांगता",
+        "दुर्घटना से चिकित्सा खर्च",
+        "एम्बुलेंस खर्च"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Employers with groups of employees"
+      ],
+      "hi": [
+        "कर्मचारियों के समूह वाले नियोक्ता"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Accidental death benefit",
+        "Permanent total/partial disability",
+        "Temporary total disability",
+        "Medical expenses"
+      ],
+      "hi": [
+        "दुर्घटनाजन्य मृत्यु लाभ",
+        "स्थायी कुल/आंशिक विकलांगता",
+        "अस्थायी कुल विकलांगता",
+        "चिकित्सा खर्च"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Pre-existing conditions",
+        "Self-inflicted injuries",
+        "War and nuclear risks"
+      ],
+      "hi": [
+        "पहले से मौजूद स्थितियाँ",
+        "स्वयं को पहुँचाई गई चोटें",
+        "युद्ध और परमाणु जोखिम"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-business-liability",
+    "slug": "business-liability-insurance",
+    "categorySlug": "business",
+    "name": "Business Liability Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Protect your business against third-party liability claims.",
+      "hi": "तृतीय पक्ष देयता दावों के खिलाफ अपने व्यवसाय की रक्षा करें।"
+    },
+    "fullDescription": {
+      "en": "Business Liability Insurance protects against claims arising from third-party bodily injury, property damage, or other liabilities, covering legal defence costs and compensation.",
+      "hi": "व्यवसाय देयता बीमा तृतीय पक्ष शारीरिक चोट, संपत्ति क्षति या अन्य देयताओं से उत्पन्न दावों के खिलाफ रक्षा करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Third-party bodily injury cover",
+        "Property damage liability",
+        "Legal defence costs",
+        "Product liability (where applicable)"
+      ],
+      "hi": [
+        "तृतीय पक्ष शारीरिक चोट कवर",
+        "संपत्ति क्षति देयता",
+        "कानूनी रक्षा लागत",
+        "उत्पाद देयता"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Businesses with third-party liability exposure"
+      ],
+      "hi": [
+        "तृतीय पक्ष देयता जोखिम वाले व्यवसाय"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Third-party bodily injury",
+        "Property damage",
+        "Legal defence costs",
+        "Personal and advertising injury"
+      ],
+      "hi": [
+        "तृतीय पक्ष शारीरिक चोट",
+        "संपत्ति क्षति",
+        "कानूनी रक्षा लागत",
+        "व्यक्तिगत और विज्ञापन चोट"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Intentional acts",
+        "Professional negligence (covered under PI)",
+        "Employee injuries (covered under WC)"
+      ],
+      "hi": [
+        "जानबूझकर किए गए कार्य",
+        "पेशेवर लापरवाही",
+        "कर्मचारी चोटें"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-general-liability",
+    "slug": "comprehensive-general-liability",
+    "categorySlug": "business",
+    "name": "Comprehensive General Liability",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Broad-spectrum liability protection against various third-party claims.",
+      "hi": "विभिन्न तृतीय पक्ष दावों के खिलाफ व्यापक देयता सुरक्षा।"
+    },
+    "fullDescription": {
+      "en": "Comprehensive General Liability provides broad protection against third-party claims for bodily injury, property damage, and personal/advertising injury.",
+      "hi": "व्यापक सामान्य देयता बीमा शारीरिक चोट, संपत्ति क्षति और व्यक्तिगत/विज्ञापन चोट के लिए तृतीय पक्ष दावों के खिलाफ व्यापक सुरक्षा प्रदान करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Broad third-party liability protection",
+        "Covers legal defence costs",
+        "Bodily injury and property damage",
+        "Personal and advertising injury"
+      ],
+      "hi": [
+        "व्यापक तृतीय पक्ष देयता सुरक्षा",
+        "कानूनी रक्षा लागत कवर",
+        "शारीरिक चोट और संपत्ति क्षति",
+        "व्यक्तिगत और विज्ञापन चोट"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "All businesses with third-party liability exposure"
+      ],
+      "hi": [
+        "सभी व्यवसाय जिनमें तृतीय पक्ष देयता जोखिम है"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Bodily injury liability",
+        "Property damage liability",
+        "Personal and advertising injury",
+        "Legal defence costs"
+      ],
+      "hi": [
+        "शारीरिक चोट देयता",
+        "संपत्ति क्षति देयता",
+        "व्यक्तिगत और विज्ञापन चोट",
+        "कानूनी रक्षा लागत"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Intentional acts",
+        "Professional errors (covered under PI)",
+        "Employer's liability (covered under WC)"
+      ],
+      "hi": [
+        "जानबूझकर किए गए कार्य",
+        "पेशेवर त्रुटियाँ",
+        "नियोक्ता देयता"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-fire-burglary",
+    "slug": "fire-and-burglary-insurance",
+    "categorySlug": "business",
+    "name": "Fire and Burglary Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Protect business property against fire, natural calamities, burglary, and theft.",
+      "hi": "आग, प्राकृतिक आपदाओं, चोरी और डकैती से व्यवसायिक संपत्ति की रक्षा करें।"
+    },
+    "fullDescription": {
+      "en": "Fire and Burglary Insurance provides protection against fire, lightning, explosion, storm, flood, riot, strike, burglary, housebreaking and theft.",
+      "hi": "आग और चोरी बीमा आग, बिजली, विस्फोट, तूफान, बाढ़, दंगे, चोरी, डकैती और घरेलू चोरी से सुरक्षा प्रदान करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Protection against fire and allied perils",
+        "Protection against burglary and theft",
+        "Cover for business assets",
+        "Customised coverage"
+      ],
+      "hi": [
+        "आग और संबद्ध आपदाओं से सुरक्षा",
+        "चोरी और डकैती से सुरक्षा",
+        "व्यवसायिक संपत्ति के लिए कवर",
+        "अनुकूलित कवरेज"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Businesses with valuable physical assets or stock"
+      ],
+      "hi": [
+        "बहुमूल्य भौतिक संपत्ति या स्टॉक वाले व्यवसाय"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Fire and allied perils",
+        "Burglary, housebreaking, theft",
+        "Buildings, stock, machinery, furniture",
+        "Electronics and equipment"
+      ],
+      "hi": [
+        "आग और संबद्ध आपदाएँ",
+        "चोरी, डकैती, घरेलू चोरी",
+        "भवन, स्टॉक, मशीनरी, फर्नीचर",
+        "इलेक्ट्रॉनिक्स और उपकरण"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "War and nuclear risks",
+        "Wear and tear",
+        "Consequential losses"
+      ],
+      "hi": [
+        "युद्ध और परमाणु जोखिम",
+        "टूट-फूट",
+        "परिणामी हानियाँ"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-car-insurance",
+    "slug": "contractors-all-risk-insurance",
+    "categorySlug": "business",
+    "name": "Contractors All Risk Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Comprehensive protection for construction projects.",
+      "hi": "निर्माण परियोजनाओं के लिए व्यापक सुरक्षा।"
+    },
+    "fullDescription": {
+      "en": "Contractors All Risk (CAR) is project-specific insurance for accidental and unforeseen physical loss or damage during construction works.",
+      "hi": "ठेकेदार ऑल रिस्क (CAR) निर्माण कार्यों के दौरान दुर्घटनापूर्ण भौतिक हानि या क्षति के लिए परियोजना-विशिष्ट बीमा है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Project asset protection",
+        "Protection during construction",
+        "Third-party liability (where included)",
+        "Flexible project-based coverage"
+      ],
+      "hi": [
+        "परियोजना संपत्ति सुरक्षा",
+        "निर्माण अवधि में सुरक्षा",
+        "तृतीय पक्ष देयता",
+        "लचीली परियोजना-आधारित कवरेज"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Contractors, builders, developers, project owners"
+      ],
+      "hi": [
+        "ठेकेदार, बिल्डर, डेवलपर, परियोजना मालिक"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Construction works",
+        "Plant and machinery",
+        "Third-party liability (where included)"
+      ],
+      "hi": [
+        "निर्माण कार्य",
+        "प्लांट और मशीनरी",
+        "तृतीय पक्ष देयता"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Defects in design",
+        "Wilful misconduct",
+        "Normal wear and tear"
+      ],
+      "hi": [
+        "डिज़ाइन में दोष",
+        "जानबूझकर कदाचार",
+        "सामान्य टूट-फूट"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-cyber",
+    "slug": "cyber-insurance",
+    "categorySlug": "business",
+    "name": "Cyber Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Protect your business from the financial impact of cyber risks.",
+      "hi": "साइबर जोखिमों के वित्तीय प्रभाव से अपने व्यवसाय की रक्षा करें।"
+    },
+    "fullDescription": {
+      "en": "Cyber Insurance helps businesses manage eligible financial losses from covered cyber incidents including data breaches, ransomware, and business interruption.",
+      "hi": "साइबर इंश्योरेंस कवर्ड साइबर घटनाओं से पात्र वित्तीय नुकसान के प्रबंधन में मदद करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Data breach response costs",
+        "Business interruption loss",
+        "Cyber extortion and ransomware",
+        "Legal and regulatory expenses",
+        "Third-party liability"
+      ],
+      "hi": [
+        "डेटा उल्लंघन प्रतिक्रिया लागत",
+        "व्यवसाय व्यवधान हानि",
+        "साइबर जबरन वसूली और रैंसमवेयर",
+        "कानूनी और नियामक खर्च",
+        "तृतीय पक्ष देयता"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Any organisation using digital systems or handling electronic information"
+      ],
+      "hi": [
+        "कोई भी संगठन जो डिजिटल सिस्टम का उपयोग करता है"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "First-party losses",
+        "Third-party liabilities",
+        "Data breach costs",
+        "Business interruption",
+        "Cyber extortion"
+      ],
+      "hi": [
+        "प्रथम-पक्ष हानियाँ",
+        "तृतीय पक्ष देयताएँ",
+        "डेटा उल्लंघन लागत",
+        "व्यवसाय व्यवधान",
+        "साइबर जबरन वसूली"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Known vulnerabilities not patched",
+        "Intentional acts",
+        "Prior incidents"
+      ],
+      "hi": [
+        "अनपेक्षित कमजोरियाँ",
+        "जानबूझकर किए गए कार्य",
+        "पूर्व घटनाएँ"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-marine",
+    "slug": "marine-and-cargo-insurance",
+    "categorySlug": "business",
+    "name": "Marine and Cargo Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Protect transported goods against loss or damage during transit.",
+      "hi": "ट्रांजिट के दौरान हानि या क्षति से परिवहन माल की रक्षा करें।"
+    },
+    "fullDescription": {
+      "en": "Marine and Cargo Insurance protects goods during transit by road, rail, sea, air, or multimodal transportation.",
+      "hi": "समुद्री और कार्गो बीमा सड़क, रेल, समुद्र, हवा या बहु-मोडल परिवहन के दौरान माल की रक्षा करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Coverage for goods during transit",
+        "Multiple modes of transport covered",
+        "Protection against fire, theft, accidents",
+        "Flexible coverage based on cargo value"
+      ],
+      "hi": [
+        "ट्रांजिट में माल के लिए कवरेज",
+        "विभिन्न परिवहन मोड कवर",
+        "आग, चोरी, दुर्घटनाओं से सुरक्षा",
+        "माल मूल्य के अनुसार लचीली कवरेज"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Manufacturers, importers, exporters, traders, logistics companies"
+      ],
+      "hi": [
+        "निर्माता, आयातक, निर्यातक, व्यापारी, लॉजिस्टिक्स कंपनियाँ"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Transit risk coverage",
+        "Fire, theft, accidents",
+        "Natural calamities",
+        "Handling damage"
+      ],
+      "hi": [
+        "ट्रांजिट जोखिम कवरेज",
+        "आग, चोरी, दुर्घटनाएँ",
+        "प्राकृतिक आपदाएँ",
+        "हैंडलिंग क्षति"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Inherent vice of goods",
+        "War and strikes",
+        "Delay losses"
+      ],
+      "hi": [
+        "माल की अंतर्निहित खराबी",
+        "युद्ध और हड़तालें",
+        "देरी हानियाँ"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-surety",
+    "slug": "surety-bond-insurance",
+    "categorySlug": "business",
+    "name": "Surety Bond Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Strengthen business commitments with surety bond solutions.",
+      "hi": "सुरिटी बॉन्ड समाधानों के साथ व्यवसायिक प्रतिबद्धताओं को मजबूत करें।"
+    },
+    "fullDescription": {
+      "en": "A Surety Bond is a contractual guarantee involving Principal, Obligee, and Surety for meeting contractual obligations.",
+      "hi": "सुरिटी बॉन्ड अनुबंधित दायित्वों को पूरा करने के लिए प्रिंसिपल, ऑब्लिगी और सुरिटी के बीच एक अनुबंधित गारंटी है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Meet contractual security requirements",
+        "Improve working capital efficiency",
+        "Reduce dependence on bank guarantees",
+        "Support infrastructure contracts"
+      ],
+      "hi": [
+        "अनुबंधित सुरक्षा आवश्यकताएँ पूरी करें",
+        "वर्किंग कैपिटल दक्षता में सुधार",
+        "बैंक गारंटी पर निर्भरता कम करें",
+        "अवसंरचना अनुबंधों का समर्थन"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Construction, infrastructure, government contractors"
+      ],
+      "hi": [
+        "निर्माण, अवसंरचना, सरकारी ठेकेदार"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Contractual guarantee",
+        "Performance guarantee",
+        "Bid bond guarantee"
+      ],
+      "hi": [
+        "अनुबंधित गारंटी",
+        "प्रदर्शन गारंटी",
+        "बिड बॉन्ड गारंटी"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Fraud or dishonesty",
+        "Known defects",
+        "Force majeure"
+      ],
+      "hi": [
+        "धोखाधड़ी या बेईमानी",
+        "ज्ञात दोष",
+        "बल मैज्योर"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-workmen",
+    "slug": "workmens-compensation-insurance",
+    "categorySlug": "business",
+    "name": "Workmen's Compensation Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Protect your workforce and business from workplace accident liabilities.",
+      "hi": "कार्यस्थल दुर्घटना देयताओं से अपने कार्यबल और व्यवसाय की रक्षा करें।"
+    },
+    "fullDescription": {
+      "en": "Workmen's Compensation Insurance covers an employer's legal liability from work-related injuries, occupational accidents, disabilities or death of employees.",
+      "hi": "श्रमिक मुआवजा बीमा कार्य-संबंधित चोटों, व्यावसायिक दुर्घटनाओं, विकलांगता या कर्मचारियों की मृत्यु से नियोक्ता की कानूनी देयता को कवर करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Employer's liability coverage",
+        "Accidental death benefit",
+        "Permanent disability benefit",
+        "Medical and rehabilitation expenses",
+        "Legal defence costs"
+      ],
+      "hi": [
+        "नियोक्ता देयता कवरेज",
+        "दुर्घटनाजन्य मृत्यु लाभ",
+        "स्थायी विकलांगता लाभ",
+        "चिकित्सा और पुनर्वास खर्च",
+        "कानूनी रक्षा लागत"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Businesses with employees exposed to workplace hazards"
+      ],
+      "hi": [
+        "कार्यस्थल खतरों से जुड़े कर्मचारियों वाले व्यवसाय"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Work-related injuries",
+        "Occupational diseases",
+        "Accidental death",
+        "Permanent disability"
+      ],
+      "hi": [
+        "कार्य-संबंधित चोटें",
+        "व्यावसायिक बीमारियाँ",
+        "दुर्घटनाजन्य मृत्यु",
+        "स्थायी विकलांगता"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Self-inflicted injuries",
+        "Intoxication-related incidents",
+        "Non-occupational injuries"
+      ],
+      "hi": [
+        "स्वयं को पहुँचाई गई चोटें",
+        "नशे से संबंधित घटनाएँ",
+        "गैर-व्यावसायिक चोटें"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-professional-indemnity",
+    "slug": "professional-indemnity-insurance",
+    "categorySlug": "business",
+    "name": "Professional Indemnity Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Protect your professional reputation and financial interests against client claims.",
+      "hi": "ग्राहक दावों के खिलाफ अपनी पेशेवर प्रतिष्ठा और वित्तीय हितों की रक्षा करें।"
+    },
+    "fullDescription": {
+      "en": "Professional Indemnity Insurance protects professionals against claims from alleged negligence, errors or omissions, covering legal defence costs and damages.",
+      "hi": "पेशेवर क्षतिपूर्ति बीमा पेशेवरों को कथित लापरवाही, त्रुटियों या चूकों से दावों के खिलाफ रक्षा करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Legal defence costs coverage",
+        "Compensation and damages",
+        "Claims from alleged negligence",
+        "Errors and omissions protection"
+      ],
+      "hi": [
+        "कानूनी रक्षा लागत कवरेज",
+        "क्षतिपूर्ति और हर्जाना",
+        "कथित लापरवाही से दावे",
+        "त्रुटियों और चूकों की सुरक्षा"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Professionals providing advisory, design, consulting, or technical services"
+      ],
+      "hi": [
+        "सलाह, डिज़ाइन, परामर्श या तकनीकी सेवाएँ प्रदान करने वाले पेशेवर"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Professional negligence claims",
+        "Errors and omissions",
+        "Legal defence costs",
+        "Compensation and damages"
+      ],
+      "hi": [
+        "पेशेवर लापरवाही दावे",
+        "त्रुटियाँ और चूकें",
+        "कानूनी रक्षा लागत",
+        "क्षतिपूर्ति और हर्जाना"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Intentional misconduct",
+        "Bodily injury (covered under GL)",
+        "Known claims before policy start"
+      ],
+      "hi": [
+        "जानबूझकर कदाचार",
+        "शारीरिक चोट",
+        "पॉलिसी शुरू होने से पहले ज्ञात दावे"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-property",
+    "slug": "property-and-home-insurance",
+    "categorySlug": "property",
+    "name": "Property and Home Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Protect your home and property against fire, natural calamities, burglary, and accidental damage.",
+      "hi": "आग, प्राकृतिक आपदाओं, चोरी और आकस्मिक क्षति से अपने घर और संपत्ति की रक्षा करें।"
+    },
+    "fullDescription": {
+      "en": "Property and Home Insurance provides financial protection for your residential property and contents against fire, natural calamities, burglary, and accidental damage.",
+      "hi": "संपत्ति और घर बीमा आग, प्राकृतिक आपदाओं, चोरी और आकस्मिक क्षति से आपकी आवासीय संपत्ति और सामग्री के लिए वित्तीय सुरक्षा प्रदान करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Protection for residential building",
+        "Household contents coverage",
+        "Protection against fire, flood, earthquake",
+        "Burglary and theft protection",
+        "Temporary accommodation expenses"
+      ],
+      "hi": [
+        "आवासीय भवन के लिए सुरक्षा",
+        "घरेलू सामग्री कवरेज",
+        "आग, बाढ़, भूकंप से सुरक्षा",
+        "चोरी और डकैती से सुरक्षा",
+        "अस्थायी आवास खर्च"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Homeowners, apartment owners, landlords, tenants, housing societies"
+      ],
+      "hi": [
+        "घर मालिक, अपार्टमेंट मालिक, मकान मालिक, किरायेदार, हाउसिंग सोसाइटी"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Building structure",
+        "Household contents",
+        "Furniture, appliances, electronics",
+        "Fire and natural calamities",
+        "Burglary and theft"
+      ],
+      "hi": [
+        "भवन संरचना",
+        "घरेलू सामग्री",
+        "फर्नीचर, उपकरण, इलेक्ट्रॉनिक्स",
+        "आग और प्राकृतिक आपदाएँ",
+        "चोरी और डकैती"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Wear and tear",
+        "War and nuclear risks",
+        "Intentional damage"
+      ],
+      "hi": [
+        "टूट-फूट",
+        "युद्ध और परमाणु जोखिम",
+        "जानबूझकर क्षति"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": true
+  },
+  {
+    "id": "pol-home-loan",
+    "slug": "home-and-property-loan-insurance",
+    "categorySlug": "property",
+    "name": "Home and Property Loan Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Protect your home loan repayment and property against unforeseen events.",
+      "hi": "अप्रत्याशित घटनाओं से अपने होम लोन पुनर्भुगतान और संपत्ति की रक्षा करें।"
+    },
+    "fullDescription": {
+      "en": "Home Loan and Property Loan Insurance covers loan repayment liability and property against fire and natural calamities.",
+      "hi": "होम लोन और संपत्ति ऋण बीमा ऋण पुनर्भुगतान देयता और आग/प्राकृतिक आपदाओं से संपत्ति को कवर करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Protects loan repayment obligations",
+        "Property insurance against fire and natural calamities",
+        "Covers borrower's liability",
+        "Peace of mind for long-term commitments"
+      ],
+      "hi": [
+        "ऋण पुनर्भुगतान दायित्वों की रक्षा",
+        "आग और प्राकृतिक आपदाओं से संपत्ति बीमा",
+        "उधारकर्ता देयता कवर",
+        "दीर्घकालिक प्रतिबद्धताओं के लिए मन की शांति"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Home loan and property loan borrowers"
+      ],
+      "hi": [
+        "होम लोन और संपत्ति ऋण उधारकर्ता"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Loan repayment protection",
+        "Property building insurance",
+        "Contents insurance",
+        "Fire and natural calamities"
+      ],
+      "hi": [
+        "ऋण पुनर्भुगतान सुरक्षा",
+        "संपत्ति भवन बीमा",
+        "सामग्री बीमा",
+        "आग और प्राकृतिक आपदाएँ"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Pre-existing conditions (for loan protection)",
+        "Wear and tear",
+        "Consequential losses"
+      ],
+      "hi": [
+        "पहले से मौजूद स्थितियाँ",
+        "टूट-फूट",
+        "परिणामी हानियाँ"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-pet",
+    "slug": "pet-insurance",
+    "categorySlug": "property",
+    "name": "Pet Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Protect your pet with insurance covering veterinary expenses, accidents, and illnesses.",
+      "hi": "पशु चिकित्सा खर्च, दुर्घटनाओं और बीमारियों को कवर करने वाले बीमा के साथ अपने पालतू जानवर की रक्षा करें।"
+    },
+    "fullDescription": {
+      "en": "Pet Insurance helps pet owners manage eligible veterinary expenses for their insured pets, covering accidents, illnesses, surgery, and hospitalisation.",
+      "hi": "पालतू बीमा पालतू मालिकों को उनके बीमित पालतू जानवरों के लिए पात्र पशु चिकित्सा खर्चों के प्रबंधन में मदद करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Accidental injuries",
+        "Specified illnesses",
+        "Veterinary treatment",
+        "Surgery and hospitalisation",
+        "Third-party liability (where included)"
+      ],
+      "hi": [
+        "दुर्घटनाजन्य चोटें",
+        "निर्दिष्ट बीमारियाँ",
+        "पशु चिकित्सा उपचार",
+        "सर्जरी और अस्पताल में भर्ती",
+        "तृतीय पक्ष देयता"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Dog owners, cat owners, first-time pet parents, families with pets"
+      ],
+      "hi": [
+        "कुत्ते के मालिक, बिल्ली के मालिक, पहली बार पालतू मालिक, पालतू जानवरों वाले परिवार"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Accidental injuries",
+        "Specified illnesses",
+        "Veterinary treatment",
+        "Surgery",
+        "Hospitalisation",
+        "Diagnostic expenses"
+      ],
+      "hi": [
+        "दुर्घटनाजन्य चोटें",
+        "निर्दिष्ट बीमारियाँ",
+        "पशु चिकित्सा उपचार",
+        "सर्जरी",
+        "अस्पताल में भर्ती",
+        "निदान खर्च"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Pre-existing conditions",
+        "Routine wellness visits",
+        "Cosmetic procedures"
+      ],
+      "hi": [
+        "पहले से मौजूद स्थितियाँ",
+        "नियमित वेलनेस विज़िट",
+        "कॉस्मेटिक प्रक्रियाएँ"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "pol-travel",
+    "slug": "travel-insurance",
+    "categorySlug": "travel",
+    "name": "Travel Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Travel with confidence — protect against medical emergencies, delays, and disruptions.",
+      "hi": "आत्मविश्वास के साथ यात्रा करें — चिकित्सा आपातकाल, देरी और व्यवधानों से सुरक्षा।"
+    },
+    "fullDescription": {
+      "en": "Travel insurance protects against unexpected expenses during your journey including emergency medical treatment, baggage loss, flight delays, and trip cancellation.",
+      "hi": "ट्रैवल इंश्योरेंस आपकी यात्रा के दौरान अप्रत्याशित खर्चों से रक्षा करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Emergency medical treatment",
+        "Baggage loss or delay",
+        "Flight delays or missed connections",
+        "Trip cancellation or interruption",
+        "Personal accident cover",
+        "Emergency medical evacuation"
+      ],
+      "hi": [
+        "आपातकालीन चिकित्सा उपचार",
+        "सामान हानि या देरी",
+        "उड़ान में देरी या गलत कनेक्शन",
+        "यात्रा रद्दीकरण या व्यवधान",
+        "व्यक्तिगत दुर्घटना कवर",
+        "आपातकालीन चिकित्सा निकासी"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Travellers going abroad or within India"
+      ],
+      "hi": [
+        "विदेश या भारत के भीतर यात्रा करने वाले"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Medical emergencies",
+        "Baggage issues",
+        "Flight disruptions",
+        "Trip cancellation",
+        "Personal accident",
+        "Personal liability"
+      ],
+      "hi": [
+        "चिकित्सा आपातकाल",
+        "सामान समस्याएँ",
+        "उड़ान व्यवधान",
+        "यात्रा रद्दीकरण",
+        "व्यक्तिगत दुर्घटना",
+        "व्यक्तिगत देयता"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Pre-existing medical conditions",
+        "Self-inflicted injuries",
+        "War and terrorism (unless covered)"
+      ],
+      "hi": [
+        "पहले से मौजूद चिकित्सीय स्थितियाँ",
+        "स्वयं को पहुँचाई गई चोटें",
+        "युद्ध और आतंकवाद"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Previous policy copy",
+          "hi": "पिछली पॉलिसी की कॉपी"
+        }
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "",
+    "isActive": true,
+    "isFeatured": true
   },
 ];
 

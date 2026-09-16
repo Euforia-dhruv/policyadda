@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getServerSupabase, getServiceSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
 import { isAdmin } from "@/lib/roles";
+import { sameOrigin } from "@/lib/security";
 
 export const runtime = "nodejs";
 
@@ -8,6 +9,9 @@ export async function PUT(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  if (!sameOrigin(request)) {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
   if (!isSupabaseConfigured()) {
     return NextResponse.json({ error: "service_unavailable" }, { status: 503 });
   }
@@ -49,6 +53,17 @@ export async function PUT(
   // Prevent self-demotion to a non-admin role (would lock the account out of admin).
   if (id === user.id && roleCode !== "admin" && roleCode !== "super_admin") {
     return NextResponse.json({ error: "cannot_demote_self" }, { status: 400 });
+  }
+
+  // Only a super_admin may modify another super_admin's profile.
+  const { data: targetProfile } = await sb
+    .from("profiles")
+    .select("role_code")
+    .eq("user_id", id)
+    .maybeSingle();
+  if (!targetProfile) return NextResponse.json({ error: "not_found" }, { status: 404 });
+  if (targetProfile.role_code === "super_admin" && profile.role_code !== "super_admin") {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
   try {

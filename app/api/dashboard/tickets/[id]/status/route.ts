@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getServerSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
+import { isMutationStaff, sameOrigin } from "@/lib/security";
 
 export const runtime = "nodejs";
 
@@ -7,6 +8,9 @@ export async function PUT(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  if (!sameOrigin(request)) {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
   if (!isSupabaseConfigured()) {
     return NextResponse.json({ error: "service_unavailable" }, { status: 503 });
   }
@@ -22,8 +26,24 @@ export async function PUT(
     .select("role_code")
     .eq("user_id", user.id)
     .single();
-  if (!profile || !["sales", "support", "manager", "admin"].includes(profile.role_code)) {
+  if (!profile || !isMutationStaff(profile.role_code)) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
+  const { id } = await params;
+
+  // Staff (non manager/admin) may only act on tickets assigned to them.
+  const managerLevel = ["manager", "admin", "super_admin"].includes(profile.role_code);
+  if (!managerLevel) {
+    const { data: ticket } = await sb
+      .from("support_tickets")
+      .select("assigned_to")
+      .eq("id", id)
+      .single();
+    if (!ticket) return NextResponse.json({ error: "not_found" }, { status: 404 });
+    if (ticket.assigned_to !== user.id) {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
   }
 
   let body: unknown;
@@ -34,11 +54,19 @@ export async function PUT(
   }
 
   const { statusCode } = body as { statusCode?: string };
-  if (!statusCode) {
+  if (typeof statusCode !== "string" || !statusCode) {
     return NextResponse.json({ error: "statusCode_required" }, { status: 400 });
   }
 
-  const { id } = await params;
+  // Validate the status code is a known ticket status before writing.
+  const { data: known } = await sb
+    .from("ticket_statuses")
+    .select("code")
+    .eq("code", statusCode)
+    .maybeSingle();
+  if (!known) {
+    return NextResponse.json({ error: "invalid_status" }, { status: 422 });
+  }
 
   try {
     const { data: updated, error: updateErr } = await sb

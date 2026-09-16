@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getServerSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
+import { isStaff } from "@/lib/roles";
 
 export const runtime = "nodejs";
 
@@ -26,7 +27,7 @@ export async function GET(
       .eq("user_id", user.id)
       .single();
 
-    const isStaff = profile && ["sales", "support", "manager", "admin"].includes(profile.role_code);
+    const isStaffUser = isStaff(profile?.role_code || "customer");
 
     // Fetch ticket
     const { data: ticket, error: ticketErr } = await sb
@@ -39,7 +40,7 @@ export async function GET(
     }
 
     // Access check: customer owns ticket or is staff
-    if (!isStaff && ticket.customer_id !== user.id) {
+    if (!isStaffUser && ticket.customer_id !== user.id) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 

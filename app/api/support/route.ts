@@ -2,11 +2,15 @@ import { NextResponse } from "next/server";
 import { ticketSchema, parseWith } from "@/lib/validation";
 import { storage } from "@/lib/adapters";
 import { clientIp, rateLimit } from "@/lib/utils";
+import { sameOrigin } from "@/lib/security";
 
 export const runtime = "nodejs";
 
 /** Open a support ticket. */
 export async function POST(req: Request) {
+  if (!sameOrigin(req)) {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
   const ip = clientIp(req);
   if (!rateLimit(`ticket:${ip}`, 5, 60_000)) {
     return NextResponse.json({ error: "rate_limited" }, { status: 429 });

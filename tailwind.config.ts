@@ -37,6 +37,12 @@ const config: Config = {
         },
         ok: "var(--ok)",
         bad: "var(--bad)",
+        "cat-motor": "#1e40af",
+        "cat-health": "#059669",
+        "cat-life": "#be123c",
+        "cat-business": "#7c3aed",
+        "cat-property": "#d97706",
+        "cat-travel": "#0891b2",
       },
       fontFamily: {
         sans: ["var(--font-ui)", "var(--font)"],

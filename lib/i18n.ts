@@ -29,5 +29,6 @@ export function localized(locale: Locale, audio: { en: string; hi: string }) {
 }
 
 export function setLocaleCookie(locale: Locale): string {
-  return `policyadda_locale=${locale}; Path=/; Max-Age=${60 * 60 * 24 * 365}; SameSite=Lax`;
+  const secure = process.env.NODE_ENV === "production" ? "; Secure" : "";
+  return `policyadda_locale=${locale}; Path=/; Max-Age=${60 * 60 * 24 * 365}; SameSite=Lax${secure}`;
 }

@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
-import { getServerSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
+import { getServerSupabase, getServiceSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
+import { isManager } from "@/lib/roles";
+import { sameOrigin } from "@/lib/security";
 
 export const runtime = "nodejs";
 
@@ -41,6 +43,9 @@ export async function PUT(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  if (!sameOrigin(request)) {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
   if (!isSupabaseConfigured()) {
     return NextResponse.json({ error: "service_unavailable" }, { status: 503 });
   }
@@ -56,7 +61,7 @@ export async function PUT(
     .select("role_code")
     .eq("user_id", user.id)
     .single();
-  if (!profile || !["manager", "admin"].includes(profile.role_code)) {
+  if (!profile || !isManager(profile.role_code)) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
@@ -68,16 +73,38 @@ export async function PUT(
   }
 
   const { assignToUserId } = body as { assignToUserId?: string };
-  if (!assignToUserId) {
+  if (typeof assignToUserId !== "string" || !assignToUserId) {
     return NextResponse.json({ error: "assignToUserId_required" }, { status: 400 });
   }
 
   const { id } = await params;
 
+  const svc = getServiceSupabase();
+  if (!svc) return NextResponse.json({ error: "service_unavailable" }, { status: 503 });
+
   try {
     const now = new Date().toISOString();
 
-    const { data: updated, error: updateErr } = await sb
+    // The application must exist before we assign anyone to it.
+    const { data: app } = await svc
+      .from("applications")
+      .select("id")
+      .eq("id", id)
+      .maybeSingle();
+    if (!app) return NextResponse.json({ error: "not_found" }, { status: 404 });
+
+    // The assignee must be an existing staff member (sales/support/manager).
+    const { data: assignee } = await svc
+      .from("profiles")
+      .select("user_id, role_code")
+      .eq("user_id", assignToUserId)
+      .in("role_code", ["sales", "support", "manager"])
+      .maybeSingle();
+    if (!assignee) {
+      return NextResponse.json({ error: "invalid_assignee" }, { status: 422 });
+    }
+
+    const { data: updated, error: updateErr } = await svc
       .from("applications")
       .update({ assigned_to: assignToUserId, assigned_at: now, updated_at: now })
       .eq("id", id)
@@ -86,14 +113,14 @@ export async function PUT(
     if (updateErr) return NextResponse.json({ error: updateErr.message }, { status: 500 });
 
     // Deactivate previous active assignments
-    await sb
+    await svc
       .from("customer_assignments")
       .update({ active: false })
       .eq("application_id", id)
       .eq("active", true);
 
     // Create new assignment record
-    const { error: assignErr } = await sb
+    const { error: assignErr } = await svc
       .from("customer_assignments")
       .insert({
         application_id: id,
@@ -103,6 +130,15 @@ export async function PUT(
         assigned_at: now,
       });
     if (assignErr) return NextResponse.json({ error: assignErr.message }, { status: 500 });
+
+    // Audit: record the reassignment
+    await svc.from("audit_logs").insert({
+      actor_id: user.id,
+      action: "app:assign",
+      entity_type: "application",
+      entity_id: id,
+      meta: { assigned_to: assignToUserId },
+    });
 
     return NextResponse.json(updated);
   } catch (err) {

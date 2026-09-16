@@ -4,6 +4,7 @@ import {
   getServiceSupabase,
   isSupabaseConfigured,
 } from "@/lib/supabase/client";
+import { isMutationStaff, sameOrigin } from "@/lib/security";
 
 export const runtime = "nodejs";
 
@@ -11,6 +12,9 @@ export async function PUT(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  if (!sameOrigin(request)) {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
   if (!isSupabaseConfigured()) {
     return NextResponse.json({ error: "service_unavailable" }, { status: 503 });
   }
@@ -26,7 +30,7 @@ export async function PUT(
     .select("role_code")
     .eq("user_id", user.id)
     .single();
-  if (!profile || !["sales", "support", "manager", "admin", "super_admin"].includes(profile.role_code)) {
+  if (!profile || !isMutationStaff(profile.role_code)) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
@@ -45,8 +49,6 @@ export async function PUT(
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
   }
-  const svc = getServiceSupabase();
-  if (!svc) return NextResponse.json({ error: "service_unavailable" }, { status: 503 });
 
   let body: unknown;
   try {
@@ -56,9 +58,28 @@ export async function PUT(
   }
 
   const { statusCode, note } = body as { statusCode?: string; note?: string };
-  if (!statusCode) {
+  if (typeof statusCode !== "string" || !statusCode) {
     return NextResponse.json({ error: "statusCode_required" }, { status: 400 });
   }
+  if (note !== undefined && typeof note !== "string") {
+    return NextResponse.json({ error: "note_invalid" }, { status: 422 });
+  }
+  if (note && note.length > 2000) {
+    return NextResponse.json({ error: "note_too_long" }, { status: 422 });
+  }
+
+  // Validate the status code is a known application status before writing.
+  const { data: known } = await sb
+    .from("application_statuses")
+    .select("code")
+    .eq("code", statusCode)
+    .maybeSingle();
+  if (!known) {
+    return NextResponse.json({ error: "invalid_status" }, { status: 422 });
+  }
+
+  const svc = getServiceSupabase();
+  if (!svc) return NextResponse.json({ error: "service_unavailable" }, { status: 503 });
 
   try {
     // Update status via service role (fires the trigger that records history)

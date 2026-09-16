@@ -78,14 +78,23 @@ on conflict (code) do update set sort = excluded.sort;
 
 insert into policy_categories (slug, name, short, description, icon, sort, is_active) values
   ('motor',    '{"en":"Motor Insurance","hi":"मोटर बीमा"}',
-   '{"en":"Protection for two-wheelers and private cars.","hi":"दोपहिया और निजी कार के लिए सुरक्षा।"}',
-   '{"en":"Cover options for your bike, scooter, or private car.","hi":"आपकी बाइक, स्कूटर या निजी कार के लिए कवर विकल्प।"}','🛞',1,true),
+   '{"en":"Protect your vehicle against accidental damage, theft, fire, and third-party liabilities.","hi":"दुर्घटना, चोरी, आग और थर्ड-पार्टी देयता से अपने वाहन की सुरक्षा करें।"}',
+   '{"en":"Motor insurance provides financial protection for your vehicle and covers third-party liabilities. In India, Third-Party Liability insurance is mandatory.","hi":"मोटर बीमा आपके वाहन के लिए वित्तीय सुरक्षा प्रदान करता है। भारत में, थर्ड-पार्टी देयता बीमा अनिवार्य है।"}','🚗',1,true),
   ('health',   '{"en":"Health Insurance","hi":"हेल्थ इंश्योरेंस"}',
-   '{"en":"Hospitalization and medical coverage.","hi":"अस्पताल व चिकित्सा कवरेज।"}',
-   '{"en":"Health plans that help cover hospitalization and medical expenses.","hi":"हेल्थ प्लान जो अस्पताल और चिकित्सा खर्चों को कवर करने में मदद करते हैं।"}','🏥',2,true),
-  ('business', '{"en":"Business / SME Insurance","hi":"व्यवसाय / एसएमई बीमा"}',
-   '{"en":"Employee benefits & protection for organizations.","hi":"संगठनों के लिए कर्मचारी लाभ व सुरक्षा।"}',
-   '{"en":"Customizable solutions for businesses and SMEs.","hi":"व्यवसायों और एसएमई के लिए अनुकूलन योग्य समाधान।"}','🏢',3,true)
+   '{"en":"Protect your health and savings with comprehensive medical coverage.","hi":"व्यापक चिकित्सा कवरेज के साथ अपने स्वास्थ्य और बचत की रक्षा करें।"}',
+   '{"en":"Health insurance provides financial protection against eligible medical and hospitalisation expenses.","hi":"हेल्थ इंश्योरेंस पात्र चिकित्सा और अस्पताल खर्चों के खिलाफ वित्तीय सुरक्षा प्रदान करता है।"}','🏥',2,true),
+  ('life',     '{"en":"Life Insurance","hi":"लाइफ इंश्योरेंस"}',
+   '{"en":"Secure your family financial future with term plans, savings plans, and investment-linked coverage.","hi":"टर्म प्लान, बचत प्लान और निवेश-लिंक्ड कवरेज के साथ अपने परिवार के वित्तीय भविष्य को सुरक्षित करें।"}',
+   '{"en":"Life insurance provides financial protection to your family in case of your unfortunate demise during the policy term.","hi":"लाइफ इंश्योरेंस पॉलिसी अवधि के दौरान आपके दुर्भाग्यपूर्ण निधन की स्थिति में आपके परिवार को वित्तीय सुरक्षा प्रदान करता है।"}','❤️',3,true),
+  ('business', '{"en":"Business & Commercial Insurance","hi":"व्यवसाय और वाणिज्यिक बीमा"}',
+   '{"en":"Protect your business, employees, and commercial assets.","hi":"अपने व्यवसाय, कर्मचारियों और वाणिज्यिक संपत्ति की रक्षा करें।"}',
+   '{"en":"Business and commercial insurance helps protect organizations against various risks.","hi":"व्यवसाय और वाणिज्यिक बीमा संगठनों को विभिन्न जोखिमों से बचाने में मदद करता है।"}','🏢',4,true),
+  ('property', '{"en":"Property & Home Insurance","hi":"संपत्ति और घर बीमा"}',
+   '{"en":"Protect your home, property, and valuable assets.","hi":"अपने घर, संपत्ति और बहुमूल्य संपत्ति की रक्षा करें।"}',
+   '{"en":"Property insurance provides financial protection for your property against fire, natural calamities, burglary, and accidental damage.","hi":"संपत्ति बीमा आग, प्राकृतिक आपदाओं, चोरी और आकस्मिक क्षति से आपकी संपत्ति के लिए वित्तीय सुरक्षा प्रदान करता है।"}','🏠',5,true),
+  ('travel',   '{"en":"Travel Insurance","hi":"ट्रैवल इंश्योरेंस"}',
+   '{"en":"Travel with confidence — protect against medical emergencies, delays, and disruptions.","hi":"आत्मविश्वास के साथ यात्रा करें — चिकित्सा आपातकाल, देरी और व्यवधानों से सुरक्षा।"}',
+   '{"en":"Travel insurance protects against unexpected expenses during your journey.","hi":"ट्रैवल इंश्योरेंस आपकी यात्रा के दौरान अप्रत्याशित खर्चों से रक्षा करता है।"}','✈️',6,true)
 on conflict (slug) do update set name = excluded.name, sort = excluded.sort;
 
 -- Policies are seeded via scripts/seed-supabase.mjs (reads content/*) to keep

@@ -4,11 +4,15 @@ import { storage } from "@/lib/adapters";
 import { clientIp, rateLimit } from "@/lib/utils";
 import { getPolicyBySlug } from "@/content/policies";
 import { getServerSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
+import { sameOrigin } from "@/lib/security";
 
 export const runtime = "nodejs";
 
 /** Create an application/enquiry. */
 export async function POST(req: Request) {
+  if (!sameOrigin(req)) {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
   const ip = clientIp(req);
   if (!rateLimit(`app:${ip}`, 8, 60_000)) {
     return NextResponse.json({ error: "rate_limited" }, { status: 429 });

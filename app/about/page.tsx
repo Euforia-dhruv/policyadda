@@ -4,8 +4,8 @@ import { getLocale } from "@/lib/locale";
 import { siteConfig } from "@/content/config";
 
 export const metadata: Metadata = {
-  title: "About — PolicyAdda",
-  description: "PolicyAdda helps customers understand insurance categories and policy options in Ranchi, India.",
+  title: "About — Policy Adda",
+  description: "Policy Adda makes insurance accessible, understandable, and beneficial for everyone. Based in Ranchi, Jharkhand. Insurance intermediary/broker facilitating products from authorised insurers.",
 };
 
 export default function AboutPage() {
@@ -29,13 +29,13 @@ export default function AboutPage() {
         <div className="card px-[30px] py-7 mb-6">
           <p className="text-base text-default mb-3">
             {locale === "hi"
-              ? "बीमा अक्सर जटिल कानूनी शब्दों में समझाया जाता है। अधिकांश ग्राहक भ्रमित रह जाते हैं — या बदतर, गुमराह हो जाते हैं। पॉलिसीअड्डा इस अनुभव को बदलने के लिए बनाया गया था।"
-              : "Insurance is often explained in complicated legal terms. Most customers are left confused — or worse, misled. PolicyAdda was created to change that experience."}
+              ? "पॉलिसी अड्डा का मिशन बीमा को सभी के लिए सुलभ, समझने योग्य और लाभदायक बनाना है। हम लाइफ, हेल्थ, मोटर, ट्रैवल और बिजनेस कवरेज सहित प्रमुख श्रेणियों में व्यक्तिगत बीमा समाधान प्रदान करते हैं।"
+              : "At Policy Adda, our mission is to make insurance accessible, understandable, and beneficial for everyone. We provide personalised insurance solutions across key categories including life, health, motor, travel and business coverages, backed by real-time underwriting insights and expert advice."}
           </p>
           <p className="muted-sm">
             {locale === "hi"
-              ? "हम सीधे पॉलिसी नहीं बेचते। इसके बजाय, हम आपको किसी श्रेणी के लिए उपलब्ध पॉलिसी विकल्पों को समझने में मदद करते हैं, यह बताते हैं कि आमतौर पर क्या कवर होता है और क्या नहीं, और फिर आपकी आवेदन प्रक्रिया में हमारी टीम के एक वास्तव व्यक्ति के साथ सहायता करते हैं।"
-              : "We don't sell policies directly. Instead, we help you understand the available policy options for a given category, explain what is typically covered and excluded, and then assist you through the application process with a real person from our team."}
+              ? "अखंडता, टीम वर्क और सेवा उत्कृष्टता पर निर्मित, हम अपने ग्राहकों को वह सुरक्षित करने में मदद करते हैं जो सबसे अधिक मायने रखता है — उनकी बीमा यात्रा को सरल बनाते हुए।"
+              : "Built on integrity, teamwork and service excellence, we help our clients protect what matters most — while simplifying their insurance journey."}
           </p>
         </div>
 

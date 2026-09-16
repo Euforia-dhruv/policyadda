@@ -29,9 +29,12 @@ export default function LoginForm({ copy, locale }: { copy: SiteCopy; locale: Lo
       if (res.status === 503) {
         setStatus("notconfigured");
         setMsg(json.message ?? "Authentication not configured.");
+      } else if (res.status === 429) {
+        setStatus("error");
+        setMsg("Too many attempts. Please wait a minute and try again.");
       } else {
         setStatus("error");
-        setMsg(json.error ?? "Sign-in failed.");
+        setMsg(json.error === "invalid_credentials" ? "Email or password is incorrect." : "Sign-in failed. Please try again.");
       }
       return false;
     }

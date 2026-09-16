@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getServerSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
+import { isMutationStaff, sameOrigin } from "@/lib/security";
 
 export const runtime = "nodejs";
 
@@ -7,6 +8,9 @@ export async function POST(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  if (!sameOrigin(request)) {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
   if (!isSupabaseConfigured()) {
     return NextResponse.json({ error: "service_unavailable" }, { status: 503 });
   }
@@ -21,7 +25,7 @@ export async function POST(
   // Verify access: customer owns ticket or is staff
   const { data: ticket } = await sb
     .from("support_tickets")
-    .select("customer_id")
+    .select("customer_id, assigned_to")
     .eq("id", id)
     .single();
   if (!ticket) return NextResponse.json({ error: "not_found" }, { status: 404 });
@@ -32,9 +36,16 @@ export async function POST(
     .eq("user_id", user.id)
     .single();
 
-  const isStaff = profile && ["sales", "support", "manager", "admin"].includes(profile.role_code);
+  const isStaff = isMutationStaff(profile?.role_code || "customer");
   if (!isStaff && ticket.customer_id !== user.id) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
+  // Staff (non manager/admin) may only reply on tickets assigned to them.
+  if (isStaff && !["manager", "admin", "super_admin"].includes(profile?.role_code || "")) {
+    if (ticket.assigned_to !== user.id) {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
   }
 
   let body: unknown;
@@ -45,8 +56,11 @@ export async function POST(
   }
 
   const { body: msgBody } = body as { body?: string };
-  if (!msgBody || !msgBody.trim()) {
+  if (typeof msgBody !== "string" || !msgBody.trim()) {
     return NextResponse.json({ error: "body_required" }, { status: 400 });
+  }
+  if (msgBody.trim().length > 4000) {
+    return NextResponse.json({ error: "body_too_long" }, { status: 422 });
   }
 
   try {

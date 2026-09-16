@@ -17,8 +17,17 @@ export default function ContactForm({ copy }: { copy: SiteCopy }) {
     setSaving(true);
     setError("");
     const fd = new FormData(e.currentTarget);
-    const body = Object.fromEntries(fd.entries());
-    body.type = "contact";
+    const raw = Object.fromEntries(fd.entries());
+    // The subject select holds the enquiry type; the textarea holds the full
+    // description. Map to the ticket schema expected by /api/support.
+    const body = {
+      name: String(raw.name || ""),
+      email: String(raw.email || ""),
+      phone: String(raw.phone || ""),
+      category: String(raw.category || ""),
+      subject: String(raw.category || ""),
+      description: String(raw.message || ""),
+    };
     try {
       const res = await fetch("/api/support", {
         method: "POST",

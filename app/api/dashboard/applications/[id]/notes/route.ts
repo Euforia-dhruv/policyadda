@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getServerSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
+import { isMutationStaff, sameOrigin } from "@/lib/security";
 
 export const runtime = "nodejs";
 
@@ -22,7 +23,7 @@ export async function GET(
     .select("role_code")
     .eq("user_id", user.id)
     .single();
-  if (!profile || !["sales", "support", "manager", "admin", "super_admin"].includes(profile.role_code)) {
+  if (!profile || !isMutationStaff(profile.role_code)) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
@@ -71,6 +72,9 @@ export async function POST(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  if (!sameOrigin(request)) {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
   if (!isSupabaseConfigured()) {
     return NextResponse.json({ error: "service_unavailable" }, { status: 503 });
   }
@@ -86,7 +90,7 @@ export async function POST(
     .select("role_code")
     .eq("user_id", user.id)
     .single();
-  if (!profile || !["sales", "support", "manager", "admin", "super_admin"].includes(profile.role_code)) {
+  if (!profile || !isMutationStaff(profile.role_code)) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
@@ -98,8 +102,11 @@ export async function POST(
   }
 
   const { note } = body as { note?: string };
-  if (!note || !note.trim()) {
+  if (typeof note !== "string" || !note.trim()) {
     return NextResponse.json({ error: "note_required" }, { status: 400 });
+  }
+  if (note.trim().length > 2000) {
+    return NextResponse.json({ error: "note_too_long" }, { status: 422 });
   }
 
   const { id } = await params;

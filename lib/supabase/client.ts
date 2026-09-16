@@ -37,9 +37,9 @@ export async function getServerSupabase(): Promise<SupabaseClient | null> {
   return createServerClient(url, anonKey, {
     cookies: {
       getAll: () => cookieStore.getAll(),
-      setAll: (toSet) => {
+      setAll: (toSet: { name: string; value: string; options?: { [k: string]: unknown } }[]) => {
         try {
-          toSet.forEach(({ name, value, options }) => cookieStore.set(name, value, options));
+          toSet.forEach(({ name, value, options }) => cookieStore.set(name, value, options as never));
         } catch {
           // middleware-less call path (server component prerender) — safe to ignore
         }

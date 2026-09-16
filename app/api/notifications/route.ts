@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getServerSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
+import { sameOrigin } from "@/lib/security";
 
 export const runtime = "nodejs";
 
@@ -30,6 +31,9 @@ export async function GET() {
 }
 
 export async function PUT(request: Request) {
+  if (!sameOrigin(request)) {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
   if (!isSupabaseConfigured()) {
     return NextResponse.json({ error: "service_unavailable" }, { status: 503 });
   }

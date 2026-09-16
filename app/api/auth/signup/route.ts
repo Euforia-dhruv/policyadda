@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getServiceSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
 import { clientIp, rateLimit } from "@/lib/utils";
+import { sameOrigin } from "@/lib/security";
 
 export const runtime = "nodejs";
 
@@ -14,6 +15,9 @@ const PHONE_RE = /^[6-9]\d{9}$/;
  * user via auth.uid(phone) matching.
  */
 export async function POST(req: Request) {
+  if (!sameOrigin(req)) {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
   const ip = clientIp(req);
   if (!rateLimit(`signup:${ip}`, 6, 60_000)) {
     return NextResponse.json({ error: "rate_limited" }, { status: 429 });

@@ -5,19 +5,19 @@ export interface FaqItem {
 }
 
 /**
- * APPROVED / CLIENT-PROVIDED FAQs.
- * These must be reviewed by the client before display as the final set.
+ * REAL client FAQs from the PolicyAdda website documentation.
+ * Sourced from the client-provided Website.zip support page.
  */
 export const faqs: FaqItem[] = [
   {
     id: "fq-how",
     q: {
-      en: "How does PolicyAdda help me choose a policy?",
-      hi: "PolicyAdda पॉलिसी चुनने में मेरी मदद कैसे करता है?",
+      en: "How does Policy Adda help me choose a policy?",
+      hi: "Policy Adda पॉलिसी चुनने में मेरी मदद कैसे करता है?",
     },
     a: {
-      en: "PolicyAdda explains insurance categories and available policy concepts in plain language. A representative can then help you understand options, eligibility, and the application process — step by step.",
-      hi: "PolicyAdda बीमा श्रेणियों और उपलब्ध पॉलिसी कॉन्सेप्ट को सरल भाषा में समझाता है। एक प्रतिनिधि आपको विकल्प, पात्रता और आवेदन प्रक्रिया को चरण-दर-चरण समझने में मदद कर सकता है।",
+      en: "Policy Adda helps you understand insurance categories and compare policy options in plain language. Our knowledgeable advisors match policies to your budget and requirements, so you only pay for features you actually want.",
+      hi: "Policy Adda आपको बीमा श्रेणियों को समझने और पॉलिसी विकल्पों की तुलना करने में मदद करता है। हमारे ज्ञानवान सलाहकार आपके बजट और आवश्यकताओं के अनुसार पॉलिसी का मिलान करते हैं।",
     },
   },
   {
@@ -38,8 +38,8 @@ export const faqs: FaqItem[] = [
       hi: "क्या मेरी जानकारी सुरक्षित रूप से संभाली जाती है?",
     },
     a: {
-      en: "Your details are used only to process your enquiry and are handled by our team in line with our privacy commitments. A formal Privacy Policy will be published here once verified.",
-      hi: "आपकी जानकारी केवल आपकी पूछताछ को संसाधित करने के लिए उपयोग की जाती है और हमारी टीम द्वारा गोपनीयता प्रतिबद्धताओं के अनुसार संभाली जाती है। सत्यापन के बाद औपचारिक गोपनीयता नीति यहाँ प्रकाशित की जाएगी।",
+      en: "Yes. Your details are used only to process your enquiry and are handled by our team in line with our privacy commitments. We use cookies and similar technologies when you visit our website to enable essential functions and improve your experience.",
+      hi: "हाँ। आपकी जानकारी केवल आपकी पूछताछ को संसाधित करने के लिए उपयोग की जाती है और हमारी गोपनीयता प्रतिबद्धताओं के अनुसार संभाली जाती है।",
     },
   },
   {
@@ -49,30 +49,63 @@ export const faqs: FaqItem[] = [
       hi: "आवेदन जमा करने के बाद क्या होता है?",
     },
     a: {
-      en: "You receive an application ID. Our team reviews it, an executive is assigned, and you are contacted — typically through the phone number you provide. You can track your status anytime using the Track page.",
-      hi: "आपको एक आवेदन आईडी मिलता है। हमारी टीम इसकी समीक्षा करती है, एक कार्यकारी नियुक्त किया जाता है, और आपसे संपर्क किया जाता है — आमतौर पर आपके द्वारा दिए गए फ़ोन नंबर के माध्यम से। आप ट्रैक पेज का उपयोग करके कभी भी अपनी स्थिति देख सकते हैं।",
-    },
-  },
-  {
-    id: "fq-insurer",
-    q: {
-      en: "Are you partnered with the insurance companies listed?",
-      hi: "क्या आप सूचीबद्ध बीमा कंपनियों के साथ साझेदार हैं?",
-    },
-    a: {
-      en: "Policy options may be aggregated through multiple insurers. The exact relationship with each insurer is being confirmed and will be disclosed transparently once verified.",
-      hi: "पॉलिसी विकल्प कई बीमाकर्ताओं के माध्यम से एकत्रित हो सकते हैं। प्रत्येक बीमाकर्ता के साथ सटीक संबंध की पुष्टि की जा रही है और सत्यापन के बाद पारदर्शी रूप से बताया जाएगा।",
+      en: "You receive an Application ID. Our team reviews it, an executive is assigned, and you are contacted — typically through the phone number you provide. You can track your status anytime using the Track page.",
+      hi: "आपको एक आवेदन आईडी मिलती है। हमारी टीम इसकी समीक्षा करती है, एक कार्यकारी नियुक्त किया जाता है, और आपसे संपर्क किया जाता है। आप ट्रैक पेज का उपयोग करके कभी भी अपनी स्थिति देख सकते हैं।",
     },
   },
   {
     id: "fq-claim",
     q: {
-      en: "Will PolicyAdda help me during claims?",
-      hi: "क्या PolicyAdda क्लेम के दौरान मेरी मदद करेगा?",
+      en: "Will Policy Adda help me fight my case if the insurer wrongfully rejects my claim?",
+      hi: "क्या Policy Adda मेरे दावे को गलत तरीके से अस्वीकार करने पर मेरा केस लड़ने में मदद करेगा?",
     },
     a: {
-      en: "PolicyAdda assists customers through the policy process, including guidance on what to do when you need to claim. Claims are ultimately settled by the insurer according to policy terms.",
-      hi: "PolicyAdda ग्राहकों को पॉलिसी प्रक्रिया में सहायता करता है, जिसमें क्लेम के समय क्या करना है, इस पर मार्गदर्शन शामिल है। क्लेम अंततः बीमाकर्ता द्वारा पॉलिसी की शर्तों के अनुसार निपटाए जाते हैं।",
+      en: "Absolutely. As your insurance broker, Policy Adda acts as your advocate. Our dedicated Claims Expert reviews every rejection. If your claim is valid but unfairly rejected, our legal and technical experts will represent your case directly to the insurance company's grievance officer or the Insurance Ombudsman.",
+      hi: "बिल्कुल। आपके बीमा दलाल के रूप में, Policy Adda आपका प्रतिनिधित्व करता है। हमारा समर्पित क्लेम विशेषज्ञ हर अस्वीकरण की समीक्षा करता है।",
+    },
+  },
+  {
+    id: "fq-cashless",
+    q: {
+      en: "What is the difference between Cashless and Reimbursement claims?",
+      hi: "कैशलेस और रीइम्बर्समेंट दावों में क्या अंतर है?",
+    },
+    a: {
+      en: "Cashless: Available at Network Hospitals or Authorized Garages. The insurer settles the eligible bills directly. You only pay for non-payable items or deductibles. Reimbursement: You pay the entire bill out of your pocket, collect all original documents and invoices, and submit them to get your money refunded.",
+      hi: "कैशलेस: नेटवर्क अस्पतालों या अधिकृत गैराज में उपलब्ध। बीमाकर्ता पात्र बिलों का भुगतान सीधे करता है। रीइम्बर्समेंट: आप पूरा बिल अपनी जेब से भुगतान करते हैं, फिर दस्तावेज़ जमा करके रिफंड प्राप्त करते हैं।",
+    },
+  },
+  {
+    id: "fq-fir",
+    q: {
+      en: "Is an FIR mandatory for motor claims?",
+      hi: "क्या मोटर दावों के लिए FIR अनिवार्य है?",
+    },
+    a: {
+      en: "An FIR is mandatory if: there is injury or death of a person, property damage is caused to a Third Party, or the vehicle is stolen. For minor self-damage (e.g., scraping against a pillar), an FIR is generally not required.",
+      hi: "FIR अनिवार्य है यदि: किसी व्यक्ति को चोट या मृत्यु होती है, थर्ड-पार्टी को संपत्ति क्षति होती है, या वाहन चोरी हो जाता है। छोटी आत्म-क्षति के लिए FIR आमतौर पर आवश्यक नहीं है।",
+    },
+  },
+  {
+    id: "fq-irrdai",
+    q: {
+      en: "What is IRDAI and how does it protect me?",
+      hi: "IRDAI क्या है और यह मेरी रक्षा कैसे करता है?",
+    },
+    a: {
+      en: "IRDAI (Insurance Regulatory and Development Authority of India) regulates the insurance sector in India. Its guidelines and regulations help ensure fair practices, transparency, and protection of policyholders' interests. As per IRDAI regulations, insurers generally settle straightforward death claims within 15 to 30 days.",
+      hi: "IRDAI (भारतीय बीमा नियामक और विकास प्राधिकरण) भारत में बीमा क्षेत्र को नियंत्रित करता है। इसके दिशानिर्देश पॉलिसीधारकों के हितों की सुरक्षा सुनिश्चित करते हैं।",
+    },
+  },
+  {
+    id: "fq-renewal",
+    q: {
+      en: "How do I renew my existing policy?",
+      hi: "मैं अपनी मौजूदा पॉलिसी को कैसे नवीनीकृत करूँ?",
+    },
+    a: {
+      en: "You can renew your policy through our online platform in just a few minutes. For complex commercial policies like Property, Business, or Workmen Compensation, we provide personalized paperless renewal assistance.",
+      hi: "आप हमारे ऑनलाइन प्लेटफॉर्म के माध्यम से कुछ ही मिनटों में अपनी पॉलिसी नवीनीकृत कर सकते हैं। जटिल वाणिज्यिक पॉलिसियों के लिए हम पेपरलेस नवीनीकरण सहायता प्रदान करते हैं।",
     },
   },
 ];
