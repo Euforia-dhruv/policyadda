@@ -3,6 +3,7 @@
 import type { Locale, PolicyCategory } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import { pick } from "@/lib/i18n";
+import { CategoryIcon } from "@/lib/icons";
 import { StaggerContainer, StaggerItem } from "@/components/effects/ScrollReveal";
 import { GlowCard } from "@/components/effects/GlowCard";
 import { SplitText } from "@/components/effects/SplitText";
@@ -13,7 +14,7 @@ export function CategoryCard({ cat, locale, copy }: { cat: PolicyCategory; local
     <a href={`/policies/${cat.slug}`} className="block">
       <GlowCard glowColor="rgba(23, 79, 134, 0.10)" className="cat-card card-fx">
         <div className="cat-card-inner">
-          <div className="cat-ico">{cat.icon}</div>
+          <div className="cat-ico"><CategoryIcon icon={cat.icon} size={22} /></div>
           <h3>{pick(locale, cat.name)}</h3>
           <p>{pick(locale, cat.short)}</p>
           <span className="cat-link">

@@ -132,6 +132,11 @@ export interface SiteConfig {
   slogan: { en: string; hi: string };
   contact: BusinessContact;
   partners?: string[];
+  forms?: {
+    renew?: string;
+    claim?: string;
+    partner?: string;
+  };
   /** Legal status of displayed info — for the disclaimer footer line. */
   verificationNote: string;
 }

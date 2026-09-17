@@ -1,16 +1,17 @@
 "use client";
 
 import { InfiniteSlider } from "@/components/effects/InfiniteSlider";
+import { Diamond, Sparkle } from "@/lib/icons";
 
 const ITEMS = [
-  { text: "Motor Insurance", icon: "◈" },
-  { text: "Health Insurance", icon: "◈" },
-  { text: "Business / SME Insurance", icon: "◈" },
-  { text: "Explain me my policy", icon: "•" },
-  { text: "What am I covered for?", icon: "•" },
-  { text: "Claim support", icon: "•" },
-  { text: "Plain-language, always", icon: "✦" },
-  { text: "Transparent & supportive", icon: "✦" },
+  { text: "Motor Insurance", icon: <Diamond size={12} className="ticker-svg" /> },
+  { text: "Health Insurance", icon: <Diamond size={12} className="ticker-svg" /> },
+  { text: "Business / SME Insurance", icon: <Diamond size={12} className="ticker-svg" /> },
+  { text: "Explain me my policy", icon: <Diamond size={12} className="ticker-svg" /> },
+  { text: "What am I covered for?", icon: <Diamond size={12} className="ticker-svg" /> },
+  { text: "Claim support", icon: <Diamond size={12} className="ticker-svg" /> },
+  { text: "Plain-language, always", icon: <Sparkle size={12} className="ticker-svg" /> },
+  { text: "Transparent & supportive", icon: <Sparkle size={12} className="ticker-svg" /> },
 ];
 
 export default function Ticker() {

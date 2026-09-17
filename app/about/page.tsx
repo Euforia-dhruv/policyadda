@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { siteConfig } from "@/content/config";
+import { ExternalLink } from "@/lib/icons";
 
 export const metadata: Metadata = {
   title: "About — Policy Adda",
@@ -69,6 +70,27 @@ export default function AboutPage() {
         <div className="detail-block">
           <h2>{locale === "hi" ? "कार्य समय" : "Working Hours"}</h2>
           {pick(locale, c.hours ?? { en: [], hi: [] }).map((h) => <p key={h}>{h}</p>)}
+        </div>
+
+        <div className="detail-block">
+          <h2>{locale === "hi" ? "हमसे जुड़ें" : "Connect With Us"}</h2>
+          <div className="flex flex-wrap gap-3 mt-2">
+            {c.facebook && (
+              <a href={c.facebook} target="_blank" rel="noreferrer" className="btn btn-ghost">
+                Facebook <ExternalLink size={14} className="inline-block align-[-2px] ml-1" />
+              </a>
+            )}
+            {c.instagram && (
+              <a href={c.instagram} target="_blank" rel="noreferrer" className="btn btn-ghost">
+                Instagram <ExternalLink size={14} className="inline-block align-[-2px] ml-1" />
+              </a>
+            )}
+            {c.linkedin && (
+              <a href={c.linkedin} target="_blank" rel="noreferrer" className="btn btn-ghost">
+                LinkedIn <ExternalLink size={14} className="inline-block align-[-2px] ml-1" />
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </section>

@@ -60,6 +60,11 @@ export const siteConfig: SiteConfig = {
     "Navi General Insurance",
     "Raheja QBE General Insurance",
   ],
+  forms: {
+    renew: "https://forms.gle/hN7TAi7iNkcSJgs8",
+    claim: "https://forms.gle/CDxhydkBHkettfsR6",
+    partner: "https://forms.gle/AvV683kiDjLdyHBv6",
+  },
   verificationNote:
     "Policy Adda acts as an insurance intermediary/broker and facilitates insurance products offered by insurance companies. Policy Adda does not underwrite or issue insurance policies. All product information is based on information received from the respective insurers. IRDAI regulates the insurance sector in India.",
 };

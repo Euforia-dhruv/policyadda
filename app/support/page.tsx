@@ -3,6 +3,7 @@ import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { siteConfig } from "@/content/config";
 import { data } from "@/lib/data";
+import { Phone, Clock, Mail, Message, Info } from "@/lib/icons";
 import Accordion from "@/components/Accordion";
 import TicketForm from "@/components/TicketForm";
 import FaqSection from "@/components/FaqSection";
@@ -33,23 +34,23 @@ export default function SupportPage() {
         <div className="wrap">
           <div className="support-grid">
             <a href={`tel:${c.phone.tel}`} className="card support-card">
-              <div className="ico">☎</div>
+              <div className="ico"><Phone size={22} /></div>
               <h3>{copy.support.call}</h3>
               <p className="big">{c.phone.display}</p>
               <p>{copy.support.callSub}</p>
             </a>
             <div className="card support-card">
-              <div className="ico">🕘</div>
+              <div className="ico"><Clock size={22} /></div>
               <h3>{copy.support.hours}</h3>
               {pick(locale, c.hours ?? { en: [], hi: [] }).map((h) => <p key={h}>{h}</p>)}
             </div>
             <div className="card support-card">
-              <div className="ico">✉</div>
+              <div className="ico"><Mail size={22} /></div>
               <h3>{copy.support.email}</h3>
               <p>{copy.support.emailSub}</p>
             </div>
             <div className="card support-card">
-              <div className="ico">💬</div>
+              <div className="ico"><Message size={22} /></div>
               <h3>{copy.support.whatsapp}</h3>
               <p>{copy.support.whatsappSub}</p>
             </div>
@@ -69,7 +70,7 @@ export default function SupportPage() {
                 </p>
               </div>
               <div className="dev-note mt-3.5">
-                ⓘ {copy.verif.note}
+                <Info size={16} className="inline-block align-[-3px] mr-1.5" /> {copy.verif.note}
               </div>
             </aside>
           </div>

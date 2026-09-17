@@ -5,6 +5,7 @@ import type { Locale } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import type { WorkflowStatus } from "@/lib/types";
 import { getStatusByCode } from "@/content/statuses";
+import { Lock, Check } from "@/lib/icons";
 import StatusTimeline from "./StatusTimeline";
 
 export default function TrackForm({
@@ -63,7 +64,7 @@ export default function TrackForm({
       {result && result.found && result.data ? (
         <div className="card card-pad">
           <div className="alert alert-ok mb-4">
-            <strong>✓ {copy.track.found}</strong>
+            <strong><Check size={16} className="inline-block align-[-3px] mr-1" /> {copy.track.found}</strong>
             <span className="ml-2.5 tracking-wider font-extrabold">{result.data.applicationNo}</span>
           </div>
           <div className="flex items-center gap-3 flex-wrap mb-[18px]">
@@ -78,7 +79,7 @@ export default function TrackForm({
         <div className="alert alert-err">{copy.track.notFound}</div>
       ) : null}
 
-      <p className="faint-text mt-3">🔒 {copy.track.privacy}</p>
+      <p className="faint-text mt-3"><Lock size={14} className="inline-block align-[-2px] mr-1" /> {copy.track.privacy}</p>
     </div>
   );
 }

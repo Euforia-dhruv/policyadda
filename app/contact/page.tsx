@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { siteConfig } from "@/content/config";
+import { Phone, MapPin, Message, Camera } from "@/lib/icons";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
@@ -25,22 +26,22 @@ export default function ContactPage() {
 
         <div className="support-grid mb-8">
           <a href={`tel:${c.phone.tel}`} className="card support-card">
-            <div className="ico">☎</div>
+            <div className="ico"><Phone size={22} /></div>
             <h3>{copy.support.call}</h3>
             <p className="big">{c.phone.display}</p>
           </a>
           <div className="card support-card">
-            <div className="ico">📍</div>
+            <div className="ico"><MapPin size={22} /></div>
             <h3>{locale === "hi" ? "पता" : "Address"}</h3>
             <p>{c.address ? pick(locale, c.address) : ""}</p>
           </div>
           <div className="card support-card">
-            <div className="ico">💬</div>
+            <div className="ico"><Message size={22} /></div>
             <h3>{copy.support.whatsapp}</h3>
             <p>{copy.support.whatsappSub}</p>
           </div>
           <div className="card support-card">
-            <div className="ico">📷</div>
+            <div className="ico"><Camera size={22} /></div>
             <h3>Instagram</h3>
             <a className="big" href="https://www.instagram.com/policy_adda" target="_blank" rel="noreferrer">{c.instagram}</a>
           </div>

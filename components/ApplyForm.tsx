@@ -5,6 +5,7 @@ import type { Locale } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import type { WorkflowStatus } from "@/lib/types";
 import { pick } from "@/lib/i18n";
+import { Check } from "@/lib/icons";
 import StatusTimeline from "./StatusTimeline";
 
 type State = { phase: "form" | "done" | "error"; applicationNo?: string; error?: string };
@@ -62,7 +63,7 @@ export default function ApplyForm({
     return (
       <div>
         <div className="alert alert-ok mb-5">
-          <strong>✓ {copy.apply.doneTitle}</strong>
+          <strong><Check size={16} className="inline-block align-[-3px] mr-1" /> {copy.apply.doneTitle}</strong>
         </div>
         <div className="form-card mb-5">
           <p className="muted-sm mb-1">{copy.apply.yourId}</p>

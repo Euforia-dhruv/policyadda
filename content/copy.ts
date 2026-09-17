@@ -183,6 +183,17 @@ export type SiteCopy = {
     policyNote: string;
   };
   verif: { note: string; pendingTitle: string; pendingBody: string };
+  quickActions: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    renew: string;
+    renewSub: string;
+    claim: string;
+    claimSub: string;
+    partner: string;
+    partnerSub: string;
+  };
   common: {
     close: string;
     open: string;
@@ -437,6 +448,17 @@ export const en: SiteCopy = {
     pendingTitle: "Awaiting verified details",
     pendingBody: "This section will be completed once the PolicyAdda team provides verified information.",
   },
+  quickActions: {
+    eyebrow: "Quick Actions",
+    title: "Need help with your policy?",
+    lead: "Renew an existing policy, file a claim, or partner with us — all in a few clicks.",
+    renew: "Renew Your Policy",
+    renewSub: "Keep your coverage active. Quick renewal assistance.",
+    claim: "File a Claim",
+    claimSub: "Need to make a claim? We'll guide you through it.",
+    partner: "Become a Partner",
+    partnerSub: "Join our network of insurance professionals.",
+  },
   common: {
     close: "Close",
     open: "Open",
@@ -690,6 +712,17 @@ check: "स्थिति देखें",
     note: "यह फ़ॉर्म जमा करना एक पूछताछ है, खरीद नहीं। PolicyAdda कार्यकारी से बात करने तक कुछ भी पक्का नहीं होता।",
     pendingTitle: "सत्यापित विवरण की प्रतीक्षा",
     pendingBody: "PolicyAdda टीम द्वारा सत्यापित जानकारी मिलने पर यह अनुभाग पूरा किया जाएगा।",
+  },
+  quickActions: {
+    eyebrow: "त्वरित कार्य",
+    title: "अपनी पॉलिसी में सहायता चाहिए?",
+    lead: "मौजूदा पॉलिसी का नवीनीकरण करें, दावा दायर करें, या हमसे जुड़ें — बस कुछ क्लिक में।",
+    renew: "अपनी पॉलिसी नवीनीकृत करें",
+    renewSub: "अपना कवरेज सक्रिय रखें। त्वरित नवीनीकरण सहायता।",
+    claim: "दावा दायर करें",
+    claimSub: "दावा करना है? हम आपका मार्गदर्शन करेंगे।",
+    partner: "पार्टनर बनें",
+    partnerSub: "हमारे बीमा पेशेवरों के नेटवर्क से जुड़ें।",
   },
   common: {
     close: "बंद करें",

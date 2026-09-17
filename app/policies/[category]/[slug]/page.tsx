@@ -4,6 +4,7 @@ import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { data } from "@/lib/data";
 import { siteConfig } from "@/content/config";
+import { Phone, Clock } from "@/lib/icons";
 import Accordion from "@/components/Accordion";
 
 type Params = { category: string; slug: string };
@@ -146,8 +147,8 @@ export default async function PolicyDetailPage({ params }: { params: Promise<Par
               </a>
 
               <div className="hero-meta mt-5 flex-col gap-2">
-                <span className="chip">☎ {siteConfig.contact.phone.display}</span>
-                <span className="chip">🕘 {pick(locale, siteConfig.contact.hours ?? { en: [""], hi: [""] })[0]}</span>
+                <span className="chip"><Phone size={14} className="inline-block align-[-2px] mr-1" /> {siteConfig.contact.phone.display}</span>
+                <span className="chip"><Clock size={14} className="inline-block align-[-2px] mr-1" /> {pick(locale, siteConfig.contact.hours ?? { en: [""], hi: [""] })[0]}</span>
               </div>
             </div>
           </aside>

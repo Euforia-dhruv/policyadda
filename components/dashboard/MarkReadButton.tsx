@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Check } from "@/lib/icons";
 
 export function MarkReadButton({ notificationId, markReadLabel }: { notificationId: string; markReadLabel: string }) {
   const [done, setDone] = useState(false);
@@ -21,7 +22,7 @@ export function MarkReadButton({ notificationId, markReadLabel }: { notification
       .finally(() => setBusy(false));
   }
 
-  if (done) return <span className="muted-xs">✓</span>;
+  if (done) return <span className="muted-xs"><Check size={14} /></span>;
   return (
     <button className="notif-action-btn" onClick={mark} disabled={busy}>
       {markReadLabel}

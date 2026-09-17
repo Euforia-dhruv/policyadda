@@ -4,7 +4,7 @@ export const categories: PolicyCategory[] = [
   {
     id: "cat-motor",
     slug: "motor",
-    icon: "🚗",
+    icon: "car",
     sort: 1,
     isActive: true,
     name: { en: "Motor Insurance", hi: "मोटर बीमा" },
@@ -20,7 +20,7 @@ export const categories: PolicyCategory[] = [
   {
     id: "cat-health",
     slug: "health",
-    icon: "🏥",
+    icon: "cross",
     sort: 2,
     isActive: true,
     name: { en: "Health Insurance", hi: "हेल्थ इंश्योरेंस" },
@@ -36,7 +36,7 @@ export const categories: PolicyCategory[] = [
   {
     id: "cat-life",
     slug: "life",
-    icon: "❤️",
+    icon: "heart",
     sort: 3,
     isActive: true,
     name: { en: "Life Insurance", hi: "लाइफ इंश्योरेंस" },
@@ -52,7 +52,7 @@ export const categories: PolicyCategory[] = [
   {
     id: "cat-business",
     slug: "business",
-    icon: "🏢",
+    icon: "briefcase",
     sort: 4,
     isActive: true,
     name: { en: "Business & Commercial Insurance", hi: "व्यवसाय और वाणिज्यिक बीमा" },
@@ -68,7 +68,7 @@ export const categories: PolicyCategory[] = [
   {
     id: "cat-property",
     slug: "property",
-    icon: "🏠",
+    icon: "home",
     sort: 5,
     isActive: true,
     name: { en: "Property & Home Insurance", hi: "संपत्ति और घर बीमा" },
@@ -84,7 +84,7 @@ export const categories: PolicyCategory[] = [
   {
     id: "cat-travel",
     slug: "travel",
-    icon: "✈️",
+    icon: "plane",
     sort: 6,
     isActive: true,
     name: { en: "Travel Insurance", hi: "ट्रैवल इंश्योरेंस" },

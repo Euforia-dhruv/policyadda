@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Locale } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
+import { Check } from "@/lib/icons";
 
 export default function TicketForm({ locale, copy }: { locale: Locale; copy: SiteCopy }) {
   const [fields, setFields] = useState({
@@ -48,7 +49,7 @@ export default function TicketForm({ locale, copy }: { locale: Locale; copy: Sit
     return (
       <div className="form-card">
         <div className="alert alert-ok mb-3">
-          <strong>✓ {copy.support.tSuccess}</strong>
+          <strong><Check size={16} className="inline-block align-[-3px] mr-1" /> {copy.support.tSuccess}</strong>
         </div>
         <p className="text-base font-bold">{sent}</p>
         <p className="muted-sm mt-2">{copy.support.tSuccessSub}</p>

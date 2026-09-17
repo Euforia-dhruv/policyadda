@@ -4,6 +4,7 @@ import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { data } from "@/lib/data";
 import { siteConfig } from "@/content/config";
+import { Phone, Info } from "@/lib/icons";
 import ApplyForm from "@/components/ApplyForm";
 
 type Params = { slug: string };
@@ -68,7 +69,7 @@ export default async function ApplyPage({ params }: { params: Promise<Params> })
                 Call us during working hours and speak to a person directly.
               </p>
               <a href={`tel:${siteConfig.contact.phone.tel}`} className="btn btn-ghost btn-block">
-                ☎ {siteConfig.contact.phone.display}
+                <Phone size={16} className="inline-block align-[-3px] mr-1.5" /> {siteConfig.contact.phone.display}
               </a>
               <p className="faint-sm mt-3">
                 {copy.support.hoursSub}
@@ -76,7 +77,7 @@ export default async function ApplyPage({ params }: { params: Promise<Params> })
             </div>
 
             <div className="dev-note mt-3">
-              ⓘ {copy.verif.note}
+              <Info size={16} className="inline-block align-[-3px] mr-1.5" /> {copy.verif.note}
             </div>
           </aside>
         </div>

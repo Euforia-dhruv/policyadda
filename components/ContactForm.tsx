@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { SiteCopy } from "@/content/copy";
+import { Check } from "@/lib/icons";
 import { FadeInUp } from "@/components/effects/ScrollReveal";
 
 type Phase = "form" | "done" | "error";
@@ -49,7 +50,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy }) {
   if (phase === "done") {
     return (
       <div className="card px-[26px] py-7 text-center">
-        <div className="text-3xl mb-3">✓</div>
+        <div className="text-3xl mb-3"><Check size={32} /></div>
         <h3 className="mb-2">{copy.support.tSuccess}</h3>
         <p className="muted-sm mb-3">{copy.support.tSuccessSub}</p>
         <p className="text-sm font-mono text-[var(--accent-strong)]">{ticketNo}</p>

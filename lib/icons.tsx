@@ -84,3 +84,51 @@ export function MapPin({ size = 20, className }: IconProps) {
 export function ExternalLink({ size = 20, className }: IconProps) {
   return <svg {...S(size, className)}><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>;
 }
+export function Home({ size = 20, className }: IconProps) {
+  return <svg {...S(size, className)}><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>;
+}
+export function Plane({ size = 20, className }: IconProps) {
+  return <svg {...S(size, className)}><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.4-.1.9.3 1.1l5.5 3-2.8 2.8-1.8-.4c-.4-.1-.8.1-1 .3l-.2.2c-.3.3-.2.7.1.9l2.5 1.5 1.5 2.5c.2.3.6.4.9.1l.2-.2c.2-.2.4-.6.3-1l-.4-1.8 2.8-2.8 3 5.5c.2.4.7.5 1.1.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg>;
+}
+export function Camera({ size = 20, className }: IconProps) {
+  return <svg {...S(size, className)}><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>;
+}
+export function Sun({ size = 20, className }: IconProps) {
+  return <svg {...S(size, className)}><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>;
+}
+export function Moon({ size = 20, className }: IconProps) {
+  return <svg {...S(size, className)}><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>;
+}
+export function Menu({ size = 20, className }: IconProps) {
+  return <svg {...S(size, className)}><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>;
+}
+export function Edit({ size = 20, className }: IconProps) {
+  return <svg {...S(size, className)}><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>;
+}
+export function Send({ size = 20, className }: IconProps) {
+  return <svg {...S(size, className)}><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>;
+}
+export function Diamond({ size = 20, className }: IconProps) {
+  return <svg {...S(size, className)}><rect x="4.5" y="4.5" width="15" height="15" rx="1" transform="rotate(45 12 12)"/></svg>;
+}
+export function Sparkle({ size = 20, className }: IconProps) {
+  return <svg {...S(size, className)}><path d="M12 2l1.09 3.41L16.5 6.5l-3.41 1.09L12 11l-1.09-3.41L7.5 6.5l3.41-1.09L12 2z"/><path d="M19 14l.68 2.12 2.12.68-2.12.68L19 19.6l-.68-2.12L16.2 16.8l2.12-.68L19 14z" opacity=".6"/></svg>;
+}
+export function Cross({ size = 20, className }: IconProps) {
+  return <svg {...S(size, className)}><path d="M12 4v16M4 12h16"/></svg>;
+}
+
+/** Map category icon keys to SVG components. */
+const categoryIconMap: Record<string, React.ComponentType<IconProps>> = {
+  car: Car,
+  cross: Cross,
+  heart: Heart,
+  briefcase: Briefcase,
+  home: Home,
+  plane: Plane,
+};
+
+export function CategoryIcon({ icon, size = 22, className }: { icon: string; size?: number; className?: string }) {
+  const Icon = categoryIconMap[icon];
+  return Icon ? <Icon size={size} className={className} /> : <span>{icon}</span>;
+}
