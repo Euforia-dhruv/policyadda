@@ -108,4 +108,59 @@ export const faqs: FaqItem[] = [
       hi: "आप हमारे ऑनलाइन प्लेटफॉर्म के माध्यम से कुछ ही मिनटों में अपनी पॉलिसी नवीनीकृत कर सकते हैं। जटिल वाणिज्यिक पॉलिसियों के लिए हम पेपरलेस नवीनीकरण सहायता प्रदान करते हैं।",
     },
   },
+  {
+    id: "fq-claim-intimation",
+    q: {
+      en: "How soon should I intimate about an incident or claim?",
+      hi: "मुझे किसी घटना या दावे की सूचना कितनी जल्दी देनी चाहिए?",
+    },
+    a: {
+      en: "Health Claims: For planned hospitalisation, notify us 48 hours before admission. For emergency admissions, intimate us within 24 hours of hospitalisation. Motor Claims: Intimate the claim within 24 to 72 hours of the accident or theft. Delaying notification without a valid reason can risk claim repudiation by the insurance company.",
+      hi: "हेल्थ दावे: योजनाबद्ध अस्पताल में भर्ती के लिए, भर्ती से 48 घंटे पहले सूचित करें। आपातकालीन भर्ती के लिए, अस्पताल में भर्ती होने के 24 घंटे के भीतर सूचित करें। मोटर दावे: दुर्घटना या चोरी के 24 से 72 घंटे के भीतर दावे की सूचना दें।",
+    },
+  },
+  {
+    id: "fq-documents",
+    q: {
+      en: "Can I submit my claim online if I don't have all the medical documents yet?",
+      hi: "क्या मैं अभी सभी चिकित्सा दस्तावेज़ न होने पर भी अपना दावा ऑनलाइन जमा कर सकता हूँ?",
+    },
+    a: {
+      en: "Yes. You can use this portal to intimate a claim instantly using just your basic admission slip or a brief incident description. This logs your request in our system and initiates a claim ID. You can return later to upload your final discharge summary, invoices, and diagnostic tests once they are issued.",
+      hi: "हाँ। आप इस पोर्टल का उपयोग करके केवल अपनी बेसिक एडमिशन स्लिप या संक्षिप्त घटना विवरण का उपयोग करके तुरंत दावे की सूचना दे सकते हैं। यह आपके अनुरोध को हमारे सिस्टम में लॉग करता है और एक दावा आईडी शुरू करता है।",
+    },
+  },
+  {
+    id: "fq-life-claim",
+    q: {
+      en: "Who is legally allowed to file a Life Insurance claim?",
+      hi: "लाइफ इंश्योरेंस दावा दायर करने के लिए कानूनी रूप से कौन अधिकृत है?",
+    },
+    a: {
+      en: "The claim must be initiated by the Nominee registered in the policy document. If a nominee was not registered or is no longer alive, the legal heir can file the claim by submitting a legal succession certificate.",
+      hi: "दावा पॉलिसी दस्तावेज़ में दर्ज नामांकित व्यक्ति द्वारा शुरू किया जाना चाहिए। यदि नामांकित व्यक्ति दर्ज नहीं है या अब जीवित नहीं है, तो कानूनी उत्तराधिकारी कानूनी उत्तराधिकार प्रमाण पत्र जमा करके दावा दायर कर सकता है।",
+    },
+  },
+  {
+    id: "fq-life-documents",
+    q: {
+      en: "What documents are mandatory to process a death claim?",
+      hi: "मृत्यु दावे को संसाधित करने के लिए कौन से दस्तावेज़ अनिवार्य हैं?",
+    },
+    a: {
+      en: "You will need: Original Death Certificate, Original Policy Bond (if missing, an indemnity bond may be requested), Beneficiary's KYC Documents (PAN Card, Aadhaar Card, Passport-size photograph), Cancelled Cheque of the nominee's bank account for NEFT payout. For Accidental/Unnatural Death: FIR, Post-Mortem Report, and Final Police Investigation Report.",
+      hi: "आपको आवश्यकता होगी: मूल मृत्यु प्रमाण पत्र, मूल पॉलिसी बॉन्ड, लाभार्थी के KYC दस्तावेज़ (PAN कार्ड, आधार कार्ड, पासपोर्ट आकार का फ़ोटो), NEFT भुगतान के लिए नामांकित व्यक्ति के बैंक खाते का रद्द चेक। दुर्घटना/अप्राकृतिक मृत्यु के लिए: FIR, पोस्ट-मॉर्टम रिपोर्ट, और अंतिम पुलिस जांच रिपोर्ट।",
+    },
+  },
+  {
+    id: "fq-life-settlement",
+    q: {
+      en: "How long does it take for a Life Insurance claim to be settled?",
+      hi: "लाइफ इंश्योरेंस दावे के निपटान में कितना समय लगता है?",
+    },
+    a: {
+      en: "As per IRDAI regulations, once all the required documents are submitted and verified, insurers generally settle straightforward death claims within 15 to 30 days. However, if the policy has been active for less than 3 years, a mandatory investigation may be carried out, which can legally take up to 90 days.",
+      hi: "IRDAI नियमों के अनुसार, एक बार सभी आवश्यक दस्तावेज़ जमा और सत्यापित हो जाने के बाद, बीमाकर्ता आम तौर पर 15 से 30 दिनों के भीतर सीधी मृत्यु दावों का निपटान करते हैं। हालांकि, यदि पॉलिसी 3 वर्ष से कम समय के लिए सक्रिय रही है, तो एक अनिवार्य जांच की जा सकती है, जिसमें कानूनी रूप से 90 दिन तक का समय लग सकता है।",
+    },
+  },
 ];

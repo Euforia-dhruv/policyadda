@@ -42,7 +42,7 @@ export default function ContactPage() {
           <div className="card support-card">
             <div className="ico">📷</div>
             <h3>Instagram</h3>
-            <a className="big" href="https://instagram.com/policyadda.co.in" target="_blank" rel="noreferrer">{c.instagram}</a>
+            <a className="big" href="https://www.instagram.com/policy_adda" target="_blank" rel="noreferrer">{c.instagram}</a>
           </div>
         </div>
 

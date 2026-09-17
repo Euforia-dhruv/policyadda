@@ -115,9 +115,13 @@ export interface TicketCreateInput {
 
 export interface BusinessContact {
   phone: { display: string; tel: string };
+  phoneSecondary?: { display: string; tel: string };
   whatsapp?: string;
   email?: string;
+  salesEmail?: string;
+  facebook?: string;
   instagram?: string;
+  linkedin?: string;
   address?: { en: string; hi: string };
   hours?: { en: string[]; hi: string[] };
 }
@@ -127,6 +131,7 @@ export interface SiteConfig {
   tagline: { en: string; hi: string };
   slogan: { en: string; hi: string };
   contact: BusinessContact;
+  partners?: string[];
   /** Legal status of displayed info — for the disclaimer footer line. */
   verificationNote: string;
 }
