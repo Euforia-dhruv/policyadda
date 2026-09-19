@@ -24,8 +24,8 @@ export default function AboutPage() {
 
   return (
     <section className="pad">
-      <div className="wrap max-w-lg">
-        <div className="section-head">
+      <div className="wrap max-w-4xl">
+        <div className="section-head section-head-compact">
           <p className="eyebrow">{copy.nav.about}</p>
           <h2><T value={company.tagline} locale={l} /></h2>
           <p className="lead"><T value={company.intro} locale={l} /></p>

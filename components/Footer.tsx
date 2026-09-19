@@ -42,6 +42,11 @@ export default function Footer({
                   <Phone size={16} /> <span>{config.contact.phone.display}</span>
                 </li>
               )}
+              {config.contact.phoneSecondary && (
+                <li>
+                  <Phone size={16} /> <span>{config.contact.phoneSecondary.display}</span>
+                </li>
+              )}
               {config.contact.email && (
                 <li>
                   <Mail size={16} /> <span>{config.contact.email}</span>
@@ -83,7 +88,6 @@ export default function Footer({
           <p>{copy.footer.registered}</p>
           <p>{copy.footer.infoSharing}</p>
           <p>{copy.footer.irdai}</p>
-          <p className="f-beware">{config.verificationNote}</p>
         </div>
 
         <div className="footer-bottom">

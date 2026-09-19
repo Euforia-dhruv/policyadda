@@ -14,8 +14,8 @@ export default function HowPage() {
 
   return (
     <section className="pad">
-      <div className="wrap max-w-lg">
-        <div className="section-head">
+      <div className="wrap max-w-4xl">
+        <div className="section-head section-head-compact">
           <p className="eyebrow">{copy.how.eyebrow}</p>
           <h2>{copy.how.title}</h2>
           <p className="lead">{copy.how.lead}</p>
