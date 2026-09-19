@@ -222,6 +222,7 @@ section { position: relative; }
 [data-theme="dark"] .eyebrow { color: var(--accent); }
 .eyebrow::before { content: ""; width: 32px; height: 1.5px; background: currentColor; flex-shrink: 0; }
 .section-head { max-width: 800px; margin-bottom: clamp(var(--sp-10), 6vw, var(--sp-16)); }
+.section-head h1, .section-head h2, .section-head h3, .section-head h4, .section-head .lead, .section-head .eyebrow { display: block !important; }
 .section-head.section-head-compact { margin-bottom: var(--sp-8); }
 .section-head .lead { margin-top: var(--sp-4); }
 .lead { color: var(--muted); font-size: clamp(var(--text-base), 1.5vw, var(--text-lg)); }
