@@ -7,6 +7,7 @@ import { getServerSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
 import { siteConfig } from "@/content/config";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Chatbot from "@/components/Chatbot";
 import { ScrollProgress } from "@/components/effects/ScrollProgress";
 
 const panchang = localFont({
@@ -122,6 +123,7 @@ export default async function RootLayout({
         <Nav copy={copy} locale={locale} signedIn={signedIn} />
         <main>{children}</main>
         <Footer copy={copy} locale={locale} config={siteConfig} />
+        <Chatbot locale={locale} />
       </body>
     </html>
   );

@@ -133,9 +133,11 @@ export interface SiteConfig {
   contact: BusinessContact;
   partners?: string[];
   forms?: {
+    enquiry?: string;
     renew?: string;
     claim?: string;
     partner?: string;
+    careers?: string;
   };
   /** Legal status of displayed info — for the disclaimer footer line. */
   verificationNote: string;

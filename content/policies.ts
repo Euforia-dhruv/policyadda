@@ -87,7 +87,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": true
   },
@@ -177,7 +177,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": true
   },
@@ -269,7 +269,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": true
   },
@@ -357,7 +357,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -445,7 +445,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -533,7 +533,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -629,7 +629,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": true
   },
@@ -719,7 +719,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": true
   },
@@ -815,7 +815,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -907,7 +907,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -999,7 +999,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -1089,7 +1089,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": true
   },
@@ -1175,7 +1175,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": true
   },
@@ -1259,7 +1259,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -1343,7 +1343,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -1427,7 +1427,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -1513,7 +1513,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -1601,7 +1601,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -1685,7 +1685,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -1769,7 +1769,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -1865,7 +1865,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": true
   },
@@ -1955,7 +1955,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -2043,7 +2043,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -2131,7 +2131,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -2219,7 +2219,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -2305,7 +2305,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -2397,7 +2397,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -2485,7 +2485,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -2571,7 +2571,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -2661,7 +2661,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -2749,7 +2749,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -2841,7 +2841,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": true
   },
@@ -2929,7 +2929,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -3023,7 +3023,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": false
   },
@@ -3119,7 +3119,7 @@ export const policies: Policy[] = [
       "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
       "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
     },
-    "googleFormUrl": "",
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
     "isActive": true,
     "isFeatured": true
   },

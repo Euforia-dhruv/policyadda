@@ -29,6 +29,19 @@ export type SiteCopy = {
     items: { t: string; d: string }[];
   };
   faq: { eyebrow: string; title: string; lead: string };
+  home: {
+    partnersEyebrow: string;
+    partnersTitle: string;
+    partnersLead: string;
+    testimonialsEyebrow: string;
+    testimonialsTitle: string;
+    testimonialsLead: string;
+    enquiryEyebrow: string;
+    enquiryTitle: string;
+    enquiryLead: string;
+    enquiryCta: string;
+    enquiryNote: string;
+  };
   support: {
     eyebrow: string;
     title: string;
@@ -57,6 +70,28 @@ export type SiteCopy = {
     tNote: string;
     cats: string[];
   };
+  claim: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    formCta: string;
+    formNote: string;
+    thanks: string;
+    helpline: string;
+    helplineSub: string;
+    phoneCta: string;
+    whatsappCta: string;
+    lifecycleTitle: string;
+    lifecycleLead: string;
+    steps: { t: string; d: string }[];
+  };
+  renew: {
+    title: string;
+    lead: string;
+    formCta: string;
+    note: string;
+    thanks: string;
+  };
   footer: {
     tagline: string;
     explore: string;
@@ -70,6 +105,9 @@ export type SiteCopy = {
     contact: string;
     verifiedNote: string;
     rights: string;
+    registered: string;
+    infoSharing: string;
+    irdai: string;
   };
   cta: {
     title: string;
@@ -226,14 +264,16 @@ export const en: SiteCopy = {
     ctaSecondary: "Talk to an Expert",
   },
   trust: {
-    eyebrow: "Why people choose Policy Adda",
-    title: "Insurance should be understandable.",
-    lead: "No hidden clauses, no pressure, no jargon walls. We take you from confusion to clarity — professionally, transparently, and at your pace.",
+    eyebrow: "Why Policy Adda",
+    title: "Why Policy Adda is different.",
+    lead: "We do the heavy lifting, so you don't have to.",
     items: [
-      { t: "Hassle-Free Claims", d: "Focused support during claim settlements. Our dedicated Claims Expert reviews every rejection and represents your case to the insurer's grievance officer or the Insurance Ombudsman." },
-      { t: "Competitive Pricing", d: "Access to optimal premium rates from leading insurers. We help you compare plans side-by-side to find the best value." },
-      { t: "Expert Guidance", d: "Knowledgeable advisors who match policies to your budget and requirements. Get help understanding coverage, benefits, and policy terms." },
-      { t: "One-Stop Comparison", d: "Instead of reaching out to individual insurance companies, Policy Adda acts as a centralized marketplace. Compare Car Insurance, Health Insurance, Term Life Insurance, and more — side by side." },
+      { t: "Hassle-Free Claims", d: "When you need help the most, we've got your back. Our dedicated Claims Expert reviews every rejection and handles the case for you." },
+      { t: "Competitive Pricing", d: "We source the best premium from the best insurers and bring the savings to you." },
+      { t: "Quick Turnaround", d: "With a real-time online dashboard and instant digital renewal, we're your one-stop destination for all insurance needs." },
+      { t: "Expert Guidance", d: "Our advisors help you understand policies deeply and match you to the best available policy for your budget." },
+      { t: "Customer Friendly", d: "We speak plain language — no jargon walls, no fine-print confusion." },
+      { t: "Diverse Portfolio", d: "All insurance products, investments and wealth management solutions under one roof." },
     ],
   },
   categories: {
@@ -263,22 +303,34 @@ export const en: SiteCopy = {
     learnMore: "Learn more",
   },
   why: {
-    eyebrow: "Why Policy Adda",
-    title: "Built on trust, not pressure.",
-    lead: "We behave like the advisor you wanted — someone who explains, supports, and stays reachable.",
+    eyebrow: "Benefits with Policy Adda",
+    title: "What you get with Policy Adda.",
+    lead: "Every policy, every renewal and every claim comes with these benefits.",
     items: [
-      { t: "Expert Guidance", d: "Knowledgeable advisors matching policies to your budgets. We help you understand coverage so you only pay for features you actually want." },
-      { t: "Hassle-Free Claims", d: "Dedicated assistance with the claim settlement process. For vehicle accidents, medical or life emergencies, we provide personalized follow-ups." },
-      { t: "Instant Renewals", d: "Renewing existing coverage takes only a few minutes online. For complex commercial policies, we provide paperless renewal solutions." },
-      { t: "Secure by Design", d: "Customer data is protected with role-based access and secure storage. Your information is handled in line with our privacy commitments." },
-      { t: "Transparent Relationship", d: "Partnerships and regulatory details are disclosed transparently. Policy Adda acts as an insurance intermediary — we don't underwrite policies." },
-      { t: "Diverse Portfolio", d: "From Car Insurance to Term Life, Group Health to Cyber Insurance — we offer all insurance products, investments and wealth management solutions." },
+      { t: "One-Stop Comparison & Access", d: "With multiple insurance tie-ups to choose from, we help you compare options and make an informed choice. Transparent, detailed information about policies is available." },
+      { t: "Hassle-Free & Fast Claims Support", d: "Get your claims settled quickly and efficiently with our professional and dedicated claims team. You don't have to run from pillar to post — we do the legwork for you." },
+      { t: "Instant Digital & Offline Renewals", d: "Renew your policies instantly, online or offline." },
+      { t: "Budget-Optimized & Tailored Guidance", d: "Choose coverage that fits your budget and lifestyle." },
+      { t: "Bundled Insurance & Financial Support", d: "In addition to insurance, our advisors provide financial planning guidance so you can manage risks and grow your savings simultaneously." },
     ],
   },
   faq: {
     eyebrow: "FAQ",
     title: "Questions customers ask.",
     lead: "Straight answers, before you even ask.",
+  },
+  home: {
+    partnersEyebrow: "Our Partners",
+    partnersTitle: "Insurers we work with.",
+    partnersLead: "Top insurers for your financial security",
+    testimonialsEyebrow: "Our Customers Said",
+    testimonialsTitle: "What customers say about us.",
+    testimonialsLead: "",
+    enquiryEyebrow: "Get Free Quote",
+    enquiryTitle: "Start with a free quote.",
+    enquiryLead: "Fill in a short enquiry form and a PolicyAdda expert will contact you with the best options. No obligation, no commitment.",
+    enquiryCta: "Open the enquiry form",
+    enquiryNote: "The enquiry Google Form opens in a new tab. Submit button: Get Free Quote.",
   },
   support: {
     eyebrow: "Support",
@@ -321,6 +373,37 @@ export const en: SiteCopy = {
     contact: "Contact Us",
     verifiedNote: "Policy Adda acts as an insurance intermediary/broker and facilitates insurance products offered by insurance companies. Policy Adda does not underwrite or issue insurance policies. All product information is based on information received from the respective insurers. IRDAI regulates the insurance sector in India. BEWARE OF SPURIOUS PHONE CALLS AND FRAUDULENT OFFERS: IRDAI and its officials do not engage in activities such as selling insurance policies, announcing bonuses, or soliciting investments of insurance premiums. Members of the public are advised not to share any personal or financial information or make any payments in response to such calls or offers. If you receive any such fraudulent or suspicious phone call, message, or offer, please report the matter to the police immediately.",
     rights: "All rights reserved.",
+    registered: "Policy Adda. Registered Office: Z Complex, 1st Floor, Plaza Chowk, Ranchi, Jharkhand- 834001. Telephone no.: +91-7677888748. Email Id: info@policyadda.co.in",
+    infoSharing: "Visitors are informed that the information submitted on this website may be shared with insurers for quotation, proposal, policy, claims and complaints. All product information provided on this website is authentic and is based solely on the information received from the respective insurers.",
+    irdai: "IRDAI (Insurance Regulatory and Development Authority of India) regulates the insurance sector in India. Its guidelines and regulations help ensure fair practices, transparency, and protection of policyholders' interests.",
+  },
+  claim: {
+    eyebrow: "File New Claim",
+    title: "We're here to help when you need it most.",
+    lead: "File your claim intimation quickly — our dedicated Claim expert team will contact you and manage the rest.",
+    formCta: "Open the claim intimation form",
+    formNote: "The claim intimation Google Form opens in a new tab.",
+    thanks: "Your Claim intimation has been received! Your dedicated Claim expert will contact you soon.",
+    helpline: "Dedicated Claim Helpline",
+    helplineSub: "Need instant help? Call our Claim expert now.",
+    phoneCta: "Call the Claim expert",
+    whatsappCta: "WhatsApp us",
+    lifecycleTitle: "The Claim Lifecycle",
+    lifecycleLead: "Here's how a claim moves from intimation to settlement — with Policy Adda by your side.",
+    steps: [
+      { t: "Claim Intimation", d: "Intimate your claim online, by phone or on WhatsApp. Your request is logged instantly with a claim reference." },
+      { t: "Surveyor / TPA / Claim Team Assignment", d: "We coordinate with the insurer, surveyor or TPA so your claim is assigned to the right team without delay." },
+      { t: "Document Verification", d: "We help you collect and submit the required documents, and follow up to avoid avoidable delays." },
+      { t: "Final Approval", d: "The insurer reviews and approves the eligible claim amount in line with the policy terms." },
+      { t: "Settlement", d: "Once approved, the payment is processed to your registered account — we stay with you until the end." },
+    ],
+  },
+  renew: {
+    title: "Renew Your Policy",
+    lead: "Keep your coverage active. Fill in your details — your dedicated expert will contact you to complete the renewal.",
+    formCta: "Open the renewal form",
+    note: "The renewal form opens in a new tab — without leaving or redirecting this page.",
+    thanks: "Thanks for submitting your request. Your dedicated expert will contact you soon.",
   },
   cta: {
     title: "Your policy. Your place for clarity.",
@@ -491,14 +574,16 @@ export const hi: SiteCopy = {
     ctaSecondary: "सहायता लें",
   },
   trust: {
-    eyebrow: "PolicyAdda क्यों चुनें",
-    title: "बीमा समझना आसान होना चाहिए।",
-    lead: "न छिपी शर्तें, न दबाव, न जटिल भाषा की दीवार। हम आपको भ्रम से स्पष्टता तक ले जाते हैं — पेशेवर, पारदर्शी और आपकी गति से।",
+    eyebrow: "Policy Adda क्यों",
+    title: "Policy Adda क्यों अलग है।",
+    lead: "हम भारी काम खुद करते हैं, ताकि आपको न करना पड़े।",
     items: [
-      { t: "पारदर्शी जानकारी", d: "पॉलिसी को सरल भाषा में स्पष्ट खंडों के साथ समझाया जाता है — लाभ, कवरेज, बहिष्करण और आवश्यक दस्तावेज़।" },
-      { t: "वास्तविक मानव सहायता", d: "जब आप आवेदन जमा करते हैं, एक PolicyAdda कार्यकारी आपसे संपर्क करता है और पूरी प्रक्रिया में आपके साथ रहता है।" },
-      { t: "स्पष्ट प्रक्रिया", d: "आप हमेशा जानते हैं कि आपका आवेदन कहाँ है, एक ऐसी स्थिति के साथ जिसे आप कभी भी ट्रैक कर सकते हैं।" },
-      { t: "सुरक्षित संभाल", d: "आपकी जानकारी केवल आपकी सेवा के लिए उपयोग होती है। आपकी जानकारी तक पहुँच अनुमति-आधारित और सर्वर-सुरक्षित है।" },
+      { t: "आसान और तेज़ क्लेम", d: "जब आपको सबसे ज़्यादा ज़रूरत हो, हम आपके साथ हैं। हमारा समर्पित क्लेम एक्सपर्ट हर अस्वीकृति की समीक्षा करता है और आपकी ओर से मामला संभालता है।" },
+      { t: "प्रतिस्पर्धी मूल्य", d: "हम सर्वश्रेष्ठ बीमाकर्ताओं से बेहतरीन प्रीमियम प्राप्त करते हैं और बचत आप तक पहुँचाते हैं।" },
+      { t: "त्वरित प्रतिक्रिया", d: "रियल-टाइम ऑनलाइन डैशबोर्ड और तुरंत डिजिटल नवीनीकरण के साथ, हम आपके सभी बीमा की ज़रूरतों के लिए एक ही स्थान हैं।" },
+      { t: "विशेषज्ञ मार्गदर्शन", d: "हमारे सलाहकार पॉलिसियों को गहराई से समझने में मदद करते हैं और आपके बजट के लिए सबसे उपयुक्त पॉलिसी सुझाते हैं।" },
+      { t: "ग्राहक-अनुकूल", d: "हम सरल भाषा बोलते हैं — न जटिल शब्दों की दीवार, न बारीक अक्षरों का भ्रम।" },
+      { t: "विविध पोर्टफोलियो", d: "सभी बीमा उत्पाद, निवेश और धन प्रबंधन समाधान — सब एक ही छत के नीचे।" },
     ],
   },
   categories: {
@@ -528,22 +613,34 @@ export const hi: SiteCopy = {
     learnMore: "और जानें",
   },
   why: {
-    eyebrow: "PolicyAdda क्यों",
-    title: "भरोसे पर आधारित, दबाव पर नहीं।",
-    lead: "हम उस सलाहकार की तरह व्यवहार करते हैं जिसकी आपको ज़रूरत थी — जो समझाता है, सहायता करता है और पहुँच में रहता है।",
+    eyebrow: "Policy Adda के साथ लाभ",
+    title: "Policy Adda से क्या मिलता है।",
+    lead: "हर पॉलिसी, हर नवीनीकरण और हर क्लेम के साथ ये लाभ जुड़े हैं।",
     items: [
-      { t: "पहले स्पष्टता", d: "हर पॉलिसी स्पष्ट खंडों में समझाई जाती है। कानूनी जटिल भाषा की दीवारें नहीं।" },
-      { t: "व्यक्तिगत सहायता", d: "हर आवेदन के बाद एक वास्तविक कार्यकारी आपसे संपर्क करता है और आपकी सहायता करता है।" },
-      { t: "ट्रैक होने वाली प्रगति", d: "अपने आवेदन आईडी से कभी भी अपनी आवेदन स्थिति जाँचें।" },
-      { t: "सहायता जो जवाब देती है", d: "कॉल करें, संदेश भेजें या टिकट दर्ज करें — सहायता समय स्पष्ट रूप से प्रकाशित है।" },
-      { t: "सुरक्षा से डिज़ाइन", d: "ग्राहक डेटा भूमिका-आधारित पहुँच और सुरक्षित भंडारण से सुरक्षित है।" },
-      { t: "पारदर्शी संबंध", d: "साझेदारी और नियामक विवरण सत्यापित होते ही प्रकट किए जाते हैं।" },
+      { t: "एक-स्टॉप तुलना और पहुँच", d: "कई बीमा साझेदारियों के विकल्पों के साथ, हम विकल्पों की तुलना करने और सही चुनाव में मदद करते हैं। पॉलिसियों की पारदर्शी, विस्तृत जानकारी उपलब्ध है।" },
+      { t: "आसान और तेज़ क्लेम सपोर्ट", d: "हमारी पेशेवर और समर्पित क्लेम टीम के साथ आपका क्लेम जल्दी और कुशलता से निपटाया जाता है। भाग-दौड़ आपको नहीं करनी पड़ती — हम करते हैं।" },
+      { t: "तुरंत डिजिटल और ऑफ़लाइन नवीनीकरण", d: "अपनी पॉलिसियाँ ऑनलाइन या ऑफ़लाइन, तुरंत नवीनीकृत करें।" },
+      { t: "बजट-अनुकूल और अनुकूलित मार्गदर्शन", d: "अपने बजट और जीवनशैली के अनुकूल कवरेज चुनें।" },
+      { t: "संयुक्त बीमा और वित्तीय सहायता", d: "बीमा के अलावा, हमारे सलाहकार वित्तीय नियोजन मार्गदर्शन देते हैं ताकि आप जोखिम प्रबंधन और बचत दोनों कर सकें।" },
     ],
   },
   faq: {
     eyebrow: "सामान्य प्रश्न",
     title: "ग्राहकों के सवाल।",
     lead: "पूछने से पहले ही सीधे उत्तर।",
+  },
+  home: {
+    partnersEyebrow: "हमारे साझेदार",
+    partnersTitle: "जिन बीमाकर्ताओं के साथ हम काम करते हैं।",
+    partnersLead: "आपकी वित्तीय सुरक्षा के लिए शीर्ष बीमाकर्ता",
+    testimonialsEyebrow: "हमारे ग्राहकों ने कहा",
+    testimonialsTitle: "ग्राहक हमारे बारे में क्या कहते हैं।",
+    testimonialsLead: "",
+    enquiryEyebrow: "मुफ़्त कोटेशन",
+    enquiryTitle: "मुफ़्त कोटेशन से शुरुआत करें।",
+    enquiryLead: "एक छोटा आवेदन फ़ॉर्म भरें और एक PolicyAdda एक्सपर्ट सर्वोत्तम विकल्पों के साथ संपर्क करेगा। कोई बाध्यता नहीं।",
+    enquiryCta: "आवेदन फ़ॉर्म खोलें",
+    enquiryNote: "आवेदन Google फ़ॉर्म नए टैब में खुलेगा। सबमिट बटन: Get Free Quote।",
   },
   support: {
     eyebrow: "सहायता",
@@ -586,6 +683,37 @@ export const hi: SiteCopy = {
     contact: "संपर्क",
     verifiedNote: "Policy Adda एक बीमा मध्यस्थ/दलाल के रूप में कार्य करता है और बीमा कंपनियों द्वारा पेश किए गए बीमा उत्पादों की सुविधा प्रदान करता है। Policy Adda बीमा पॉलिसियों को अंडरराइट या जारी नहीं करता है। सभी उत्पाद जानकारी संबंधित बीमा कंपनियों से प्राप्त जानकारी पर आधारित है। IRDAI भारत में बीमा क्षेत्र को नियंत्रित करता है। झूठे फ़ोन कॉल और धोखाधड़ी वाले प्रस्तावों से सावधान रहें: IRDAI और उसके अधिकारी बीमा पॉलिसियां बेचने, बोनस की घोषणा करने या बीमा प्रीमियम के निवेश के प्रस्ताव जैसी गतिविधियों में शामिल नहीं हैं। ऐसे कॉल या प्रस्तावों के जवाब में कोई व्यक्तिगत या वित्तीय जानकारी साझा न करें या भुगतान न करें। ऐसे किसी भी धोखाधड़ी या संदिग्ध फ़ोन कॉल, संदेश या प्रस्ताव प्राप्त होने पर, तुरंत पुलिस में शिकायत दर्ज करें।",
     rights: "सर्वाधिकार सुरक्षित।",
+    registered: "Policy Adda. पंजीकृत कार्यालय: Z कॉम्प्लेक्स, पहली मंज़िल, प्लाज़ा चौक, राँची, झारखंड – 834001. टेलीफोन: +91-7677888748. ईमेल: info@policyadda.co.in",
+    infoSharing: "आगंतुकों को सूचित किया जाता है कि इस वेबसाइट पर दी गई जानकारी कोटेशन, प्रस्ताव, पॉलिसी, क्लेम और शिकायतों के लिए बीमाकर्ताओं के साथ साझा की जा सकती है। इस वेबसाइट पर दी गई सभी उत्पाद जानकारी प्रामाणिक है और विशेष रूप से संबंधित बीमाकर्ताओं से प्राप्त जानकारी पर आधारित है।",
+    irdai: "IRDAI (भारतीय बीमा विनियामक और विकास प्राधिकरण) भारत में बीमा क्षेत्र को विनियमित करता है। इसके दिशानिर्देश और विनियम निष्पक्ष व्यवहार, पारदर्शिता और पॉलिसीधारकों के हितों की सुरक्षा सुनिश्चित करने में मदद करते हैं।",
+  },
+  claim: {
+    eyebrow: "नया क्लेम दायर करें",
+    title: "जब आपको सबसे ज़्यादा ज़रूरत हो, हम मदद के लिए यहाँ हैं।",
+    lead: "अपनी क्लेम सूचना जल्दी दर्ज करें — हमारी समर्पित क्लेम एक्सपर्ट टीम संपर्क करेगी और आगे की प्रक्रिया संभाल लेगी।",
+    formCta: "क्लेम सूचना फ़ॉर्म खोलें",
+    formNote: "क्लेम सूचना Google फ़ॉर्म नए टैब में खुलेगा।",
+    thanks: "आपकी क्लेम सूचना प्राप्त हो गई है! आपका समर्पित क्लेम एक्सपर्ट जल्द ही संपर्क करेगा।",
+    helpline: "समर्पित क्लेम हेल्पलाइन",
+    helplineSub: "तुरंत मदद चाहिए? अभी हमारे क्लेम एक्सपर्ट को कॉल करें।",
+    phoneCta: "क्लेम एक्सपर्ट को कॉल करें",
+    whatsappCta: "व्हाट्सऐप करें",
+    lifecycleTitle: "क्लेम प्रक्रिया",
+    lifecycleLead: "पॉलिसी अड्डा के साथ क्लेम सूचना से निपटारे तक कैसे आगे बढ़ता है।",
+    steps: [
+      { t: "क्लेम सूचना", d: "अपना क्लेम ऑनलाइन, फ़ोन या व्हाट्सऐप से सूचित करें। आपका अनुरोध क्लेम संदर्भ के साथ तुरंत दर्ज हो जाता है।" },
+      { t: "सर्वेयर / टीपीए / क्लेम टीम असाइनमेंट", d: "हम बीमाकर्ता, सर्वेयर या टीपीए के साथ समन्वय करते हैं ताकि आपका क्लेम सही टीम को बिना देरी सौंपा जाए।" },
+      { t: "दस्तावेज़ सत्यापन", d: "हम आवश्यक दस्तावेज़ एकत्र करने और जमा करने में मदद करते हैं, और टाली जा सकने वाली देरी को रोकने के लिए अनुवर्ती करते हैं।" },
+      { t: "अंतिम अनुमोदन", d: "बीमाकर्ता पॉलिसी की शर्तों के अनुसार पात्र क्लेम राशि की समीक्षा और अनुमोदन करता है।" },
+      { t: "निपटान", d: "अनुमोदित होने के बाद भुगतान आपके पंजीकृत खाते में किया जाता है — हम अंत तक आपके साथ रहते हैं।" },
+    ],
+  },
+  renew: {
+    title: "अपनी पॉलिसी नवीनीकृत करें",
+    lead: "अपना कवरेज सक्रिय रखें। अपना विवरण भरें — आपका समर्पित एक्सपर्ट नवीनीकरण पूरा करने के लिए संपर्क करेगा।",
+    formCta: "नवीनीकरण फ़ॉर्म खोलें",
+    note: "नवीनीकरण फ़ॉर्म नए टैब में खुलेगा — इस पृष्ठ को छोड़े या रीडायरेक्ट किए बिना।",
+    thanks: "आपके अनुरोध के लिए धन्यवाद। आपका समर्पित एक्सपर्ट जल्द ही संपर्क करेगा।",
   },
   cta: {
     title: "आपकी पॉलिसी। आपका अड्डा, स्पष्टता के लिए।",

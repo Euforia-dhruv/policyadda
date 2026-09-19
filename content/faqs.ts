@@ -164,3 +164,17 @@ export const faqs: FaqItem[] = [
     },
   },
 ];
+
+/** Claim-specific FAQs surfaced on the File New Claim page. */
+export const claimFaqs: FaqItem[] = faqs.filter((f) =>
+  [
+    "fq-claim",
+    "fq-cashless",
+    "fq-fir",
+    "fq-claim-intimation",
+    "fq-documents",
+    "fq-life-claim",
+    "fq-life-documents",
+    "fq-life-settlement",
+  ].includes(f.id)
+);

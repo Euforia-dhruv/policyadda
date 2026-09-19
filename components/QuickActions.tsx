@@ -5,19 +5,11 @@ import type { SiteCopy } from "@/content/copy";
 import { siteConfig } from "@/content/config";
 import { StaggerContainer, StaggerItem, FadeInUp } from "@/components/effects/ScrollReveal";
 import ShineBorder from "@/components/effects/ShineBorder";
-import { ExternalLink } from "@/lib/icons";
+import { ExternalLink, FileText } from "@/lib/icons";
+import RenewPopout from "@/components/RenewPopout";
 
 export default function QuickActions({ copy, locale }: { copy: SiteCopy; locale: Locale }) {
-  const forms = siteConfig.forms;
-  if (!forms) return null;
-
-  const actions = [
-    { url: forms.renew, title: copy.quickActions.renew, sub: copy.quickActions.renewSub },
-    { url: forms.claim, title: copy.quickActions.claim, sub: copy.quickActions.claimSub },
-    { url: forms.partner, title: copy.quickActions.partner, sub: copy.quickActions.partnerSub },
-  ].filter((a) => a.url);
-
-  if (actions.length === 0) return null;
+  const partnerUrl = siteConfig.forms?.partner;
 
   return (
     <section className="pad section-pad-0" id="quick-actions">
@@ -30,17 +22,31 @@ export default function QuickActions({ copy, locale }: { copy: SiteCopy; locale:
           </div>
         </FadeInUp>
         <StaggerContainer className="support-grid">
-          {actions.map((a) => (
-            <StaggerItem key={a.url}>
+          <StaggerItem>
+            <ShineBorder color="var(--cta)" duration={5}>
+              <RenewPopout copy={copy} locale={locale} variant="card" />
+            </ShineBorder>
+          </StaggerItem>
+          <StaggerItem>
+            <ShineBorder color="var(--cta)" duration={5}>
+              <a className="card support-card" href="/claim">
+                <div className="ico"><FileText size={22} /></div>
+                <h3>{copy.quickActions.claim}</h3>
+                <p>{copy.quickActions.claimSub}</p>
+              </a>
+            </ShineBorder>
+          </StaggerItem>
+          {partnerUrl && (
+            <StaggerItem>
               <ShineBorder color="var(--cta)" duration={5}>
-                <a className="card support-card" href={a.url} target="_blank" rel="noreferrer">
+                <a className="card support-card" href={partnerUrl} target="_blank" rel="noreferrer">
                   <div className="ico"><ExternalLink size={22} /></div>
-                  <h3>{a.title}</h3>
-                  <p>{a.sub}</p>
+                  <h3>{copy.quickActions.partner}</h3>
+                  <p>{copy.quickActions.partnerSub}</p>
                 </a>
               </ShineBorder>
             </StaggerItem>
-          ))}
+          )}
         </StaggerContainer>
       </div>
     </section>
