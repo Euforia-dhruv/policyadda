@@ -4,7 +4,7 @@ import { getLocale } from "@/lib/locale";
 import { siteConfig } from "@/content/config";
 import { company, pickLocale, careersFormUrl } from "@/content/company";
 import type { Bilingual } from "@/content/company";
-import StatCard from "@/components/dashboard/StatCard";
+import StatCard from "@/components/StatCard";
 import { ExternalLink } from "@/lib/icons";
 
 export const metadata: Metadata = {

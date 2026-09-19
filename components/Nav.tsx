@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import type { Locale } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
+import { siteConfig } from "@/content/config";
 import LanguageSwitch from "./LanguageSwitch";
 import ThemeToggle from "./ThemeToggle";
 import PolicyAddaBrand from "./brand/PolicyAddaBrand";
@@ -11,17 +12,13 @@ import PolicyAddaBrand from "./brand/PolicyAddaBrand";
 export default function Nav({
   copy,
   locale,
-  signedIn,
 }: {
   copy: SiteCopy;
   locale: Locale;
-  signedIn?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const accountHref = signedIn ? "/dashboard" : "/login";
-  const accountLabel = signedIn ? copy.nav.dashboard : copy.nav.login;
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname?.startsWith(href) ?? false;
 
@@ -50,10 +47,7 @@ export default function Nav({
           <div className="nav-actions">
             <LanguageSwitch locale={locale} />
             <ThemeToggle />
-            <a href={accountHref} className="nav-link-login muted-sm font-medium">
-              {accountLabel}
-            </a>
-            <a href="/policies" className="btn btn-accent btn-sm nav-cta">
+            <a href={siteConfig.forms?.enquiry ?? "/support"} target="_blank" rel="noreferrer" className="btn btn-accent btn-sm nav-cta">
               {copy.nav.cta}
             </a>
             <button className="menu-btn" onClick={() => setOpen(!open)} aria-label="Menu" aria-expanded={open}>
@@ -69,8 +63,7 @@ export default function Nav({
         <a href="/about" onClick={() => setOpen(false)} aria-current={isActive("/about") ? "page" : undefined}>{copy.nav.about}</a>
         <a href="/how-it-works" onClick={() => setOpen(false)} aria-current={isActive("/how-it-works") ? "page" : undefined}>{copy.nav.how}</a>
         <a href="/support" onClick={() => setOpen(false)} aria-current={isActive("/support") ? "page" : undefined}>{copy.nav.support}</a>
-        <a href={accountHref} onClick={() => setOpen(false)}>{accountLabel}</a>
-        <a href="/policies" className="btn btn-primary mt-2" onClick={() => setOpen(false)}>
+        <a href={siteConfig.forms?.enquiry ?? "/support"} target="_blank" rel="noreferrer" className="btn btn-primary mt-2" onClick={() => setOpen(false)}>
           {copy.nav.cta}
         </a>
       </div>

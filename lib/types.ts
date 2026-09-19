@@ -1,11 +1,8 @@
 /**
  * Shared domain types for PolicyAdda.
- * These mirror the PostgreSQL/Supabase schema (see supabase/migrations).
  */
 
 export type Locale = "en" | "hi";
-
-export type EntityStatus = "active" | "inactive";
 
 /* ---------------- Categories & Policies ---------------- */
 
@@ -50,65 +47,6 @@ export interface Policy {
   googleFormUrl?: string;
   isActive: boolean;
   isFeatured: boolean;
-}
-
-/* ---------------- Application workflow ---------------- */
-
-export type ApplicationStatus =
-  | "submitted"
-  | "under_review"
-  | "assigned"
-  | "contacted"
-  | "processing"
-  | "completed"
-  | "rejected"
-  | "cancelled"
-  | "on_hold";
-
-/** Configurable workflow statuses — administrators can extend this in the DB. */
-export interface WorkflowStatus {
-  code: ApplicationStatus | string;
-  label: { en: string; hi: string };
-  description: { en: string; hi: string };
-  order: number;
-  terminal?: boolean;
-}
-
-export interface ApplicationCreateInput {
-  policyId: string;
-  fullName: string;
-  phone: string;
-  email?: string;
-  city?: string;
-  message?: string;
-  source?: string;
-  customerId?: string;
-}
-
-export interface ApplicationRecord {
-  id: string;
-  applicationNo: string;
-  policyId: string;
-  fullName: string;
-  phone: string;
-  email?: string;
-  city?: string;
-  message?: string;
-  status: ApplicationStatus | string;
-  createdAt: string;
-  updatedAt: string;
-  customerId?: string;
-}
-
-/* ---------------- Support ---------------- */
-
-export interface TicketCreateInput {
-  name: string;
-  phone?: string;
-  email: string;
-  category: string;
-  subject: string;
-  description: string;
 }
 
 /* ---------------- Verified business identity ---------------- */

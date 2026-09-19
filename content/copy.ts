@@ -1,5 +1,5 @@
 export type SiteCopy = {
-  nav: { home: string; categories: string; about: string; how: string; support: string; login: string; dashboard: string; cta: string; apply: string };
+  nav: { home: string; categories: string; about: string; how: string; support: string; cta: string; apply: string };
   hero: {
     eyebrow: string;
     titleA: string;
@@ -130,97 +130,6 @@ export type SiteCopy = {
     trustSupport: string;
     openSignup: string;
   };
-  apply: {
-    title: string;
-    sub: string;
-    fullName: string;
-    phone: string;
-    phoneHint: string;
-    email: string;
-    city: string;
-    message: string;
-    msgPlaceholder: string;
-    submitCta: string;
-    privacyNote: string;
-    doneTitle: string;
-    doneSub: string;
-    yourId: string;
-    trackNow: string;
-    nextTitle: string;
-  };
-  track: { title: string; sub: string; idInput: string; idPlaceholder: string; check: string; found: string; notFound: string; privacy: string; updated: string };
-  dashboard: {
-    title: string;
-    lead: string;
-    role: string;
-    applications: string;
-    noApps: string;
-    noAppsCta: string;
-    signOut: string;
-    status: string;
-    submitted: string;
-    policy: string;
-    idLabel: string;
-    profile: string;
-    profileEdit: string;
-    saveChanges: string;
-    saved: string;
-    tickets: string;
-    noTickets: string;
-    newTicket: string;
-    notifications: string;
-    noNotifications: string;
-    markRead: string;
-    overview: string;
-    admin: string;
-    users: string;
-    policies: string;
-    allApplications: string;
-    allTickets: string;
-    team: string;
-    assignedTo: string;
-    unassigned: string;
-    internalNote: string;
-    addNote: string;
-    notes: string;
-    statusHistory: string;
-    updateStatus: string;
-    assignTo: string;
-    requestDocuments: string;
-    customerInfo: string;
-    workload: string;
-    totalApplications: string;
-    totalUsers: string;
-    totalTickets: string;
-    recentActivity: string;
-    pendingActions: string;
-    joinedOn: string;
-    lastActive: string;
-    roleLabel: string;
-    Actions: string;
-    View: string;
-    Edit: string;
-    Back: string;
-  };
-  auth: {
-    signInTitle: string;
-    signUpTitle: string;
-    loginLead: string;
-    signUpLead: string;
-    name: string;
-    email: string;
-    password: string;
-    phone: string;
-    phoneHint: string;
-    city: string;
-    signInCta: string;
-    signUpCta: string;
-    switchToSignUp: string;
-    switchToLogin: string;
-    success: string;
-    policyNote: string;
-  };
-  verif: { note: string; pendingTitle: string; pendingBody: string };
   quickActions: {
     eyebrow: string;
     title: string;
@@ -250,8 +159,6 @@ export const en: SiteCopy = {
     about: "About",
     how: "How It Works",
     support: "Support",
-    login: "Login",
-    dashboard: "Dashboard",
     cta: "Get Assistance",
     apply: "Apply",
   },
@@ -426,111 +333,6 @@ export const en: SiteCopy = {
     trustSupport: "Talk to support",
     openSignup: "Open application form",
   },
-  apply: {
-    title: "Get assistance",
-    sub: "Tell us about yourself — a PolicyAdda executive will contact you. No commitment, no obligation.",
-    fullName: "Your full name",
-    phone: "Phone number",
-    phoneHint: "Enter a valid 10-digit mobile number.",
-    email: "Email",
-    city: "City",
-    message: "Anything you'd like us to know",
-    msgPlaceholder: "e.g. I drive a 2021 Activa and want to understand my renewal options.",
-    submitCta: "Submit enquiry",
-    privacyNote: "Your details are used only to respond to this enquiry, and are handled in line with our privacy commitments. A formal Privacy Policy will be published once verified.",
-    doneTitle: "Application submitted",
-    doneSub: "Note this Application ID — you can check your status anytime on the Track page. A PolicyAdda executive will contact you shortly.",
-    yourId: "Your Application ID",
-    trackNow: "Track application status",
-    nextTitle: "What happens next",
-  },
-  track: {
-    title: "Track your application",
-    sub: "Enter the Application ID you received after submitting — e.g. PA-260913-0001 — to see your current status.",
-    idInput: "Application ID",
-    idPlaceholder: "PA-260913-0001",
-    check: "Check status",
-    found: "Application found",
-    notFound: "No application found with that ID. Double-check and try again, or call us.",
-    privacy: "Only your application status is shown here — never personal details.",
-    updated: "Last updated",
-  },
-  dashboard: {
-    title: "Your dashboard",
-    lead: "Everything tracked for your account — applications and their current status, scoped to you.",
-    role: "Role",
-    applications: "Your applications",
-    noApps: "You haven't submitted an application yet. Explore policies and get assistance whenever you're ready.",
-    noAppsCta: "Explore policies",
-    signOut: "Sign out",
-    status: "Status",
-    submitted: "Submitted",
-    policy: "Policy",
-    idLabel: "Application ID",
-    profile: "Profile",
-    profileEdit: "Edit Profile",
-    saveChanges: "Save changes",
-    saved: "Changes saved",
-    tickets: "Support Tickets",
-    noTickets: "No support tickets yet.",
-    newTicket: "Open a ticket",
-    notifications: "Notifications",
-    noNotifications: "No notifications yet.",
-    markRead: "Mark as read",
-    overview: "Overview",
-    admin: "Administration",
-    users: "Users",
-    policies: "Policies",
-    allApplications: "All Applications",
-    allTickets: "All Tickets",
-    team: "Team",
-    assignedTo: "Assigned to",
-    unassigned: "Unassigned",
-    internalNote: "Internal note",
-    addNote: "Add note",
-    notes: "Notes",
-    statusHistory: "Status history",
-    updateStatus: "Update status",
-    assignTo: "Assign to",
-    requestDocuments: "Request documents",
-    customerInfo: "Customer information",
-    workload: "Workload",
-    totalApplications: "Total applications",
-    totalUsers: "Total users",
-    totalTickets: "Total tickets",
-    recentActivity: "Recent activity",
-    pendingActions: "Pending actions",
-    joinedOn: "Joined",
-    lastActive: "Last active",
-    roleLabel: "Role",
-    Actions: "Actions",
-    View: "View",
-    Edit: "Edit",
-    Back: "Back",
-  },
-  auth: {
-    signInTitle: "Sign in",
-    signUpTitle: "Create your account",
-    loginLead: "Secure sign-in for customers and PolicyAdda team members.",
-    signUpLead: "Create a customer account to see applications you've submitted under your phone number.",
-    name: "Full name",
-    email: "Email",
-    password: "Password",
-    phone: "Phone number",
-    phoneHint: "Enter a valid 10-digit mobile number.",
-    city: "City",
-    signInCta: "Sign in",
-    signUpCta: "Create account",
-    switchToSignUp: "New here? Create an account",
-    switchToLogin: "Already have an account? Sign in",
-    success: "Account created. Signing you in…",
-    policyNote: "Account opening is immediate; you can log in right away.",
-  },
-  verif: {
-    note: "Submitting this form is an enquiry, not a purchase. Nothing is confirmed until you speak with a PolicyAdda executive.",
-    pendingTitle: "Awaiting verified details",
-    pendingBody: "This section will be completed once the PolicyAdda team provides verified information.",
-  },
   quickActions: {
     eyebrow: "Quick Actions",
     title: "Need help with your policy?",
@@ -560,8 +362,6 @@ export const hi: SiteCopy = {
     about: "हमारे बारे में",
     how: "कैसे काम करता है",
     support: "सहायता",
-    login: "लॉगिन",
-    dashboard: "डैशबोर्ड",
     cta: "सहायता लें",
     apply: "आवेदन करें",
   },
@@ -735,111 +535,6 @@ export const hi: SiteCopy = {
     applyNow: "सहायता लें",
     trustSupport: "सहायता से बात करें",
     openSignup: "आवेदन फॉर्म खोलें",
-  },
-  apply: {
-    title: "सहायता लें",
-    sub: "अपने बारे में बताएं — एक PolicyAdda कार्यकारी आपसे संपर्क करेगा। कोई बाध्यता नहीं।",
-    fullName: "आपका पूरा नाम",
-    phone: "फ़ोन नंबर",
-    phoneHint: "मान्य 10-अंकीय मोबाइल नंबर दर्ज करें।",
-    email: "ईमेल",
-    city: "शहर",
-    message: "कुछ जो हमें पता होना चाहिए",
-    msgPlaceholder: "जैसे — मैं 2021 एक्टिवा चलाता हूँ और अपने नवीनीकरण विकल्पों को समझना चाहता हूँ।",
-    submitCta: "आवेदन जमा करें",
-    privacyNote: "आपकी जानकारी केवल इस आवेदन का जवाब देने के लिए उपयोग होती है। सत्यापन के बाद औपचारिक गोपनीयता नीति प्रकाशित की जाएगी।",
-    doneTitle: "आवेदन प्रस्तुत",
-    doneSub: "इस आवेदन आईडी को नोट कर लें — आप ट्रैक पेज पर कभी भी अपनी स्थिति देख सकते हैं। एक PolicyAdda कार्यकारी जल्द ही आपसे संपर्क करेगा।",
-    yourId: "आपकी आवेदन आईडी",
-    trackNow: "आवेदन की स्थिति देखें",
-    nextTitle: "आगे क्या होता है",
-  },
-  track: {
-    title: "अपना आवेदन ट्रैक करें",
-    sub: "आवेदन करने के बाद मिली आवेदन आईडी दर्ज करें — जैसे PA-260913-0001 — अपनी वर्तमान स्थिति देखने के लिए।",
-    idInput: "आवेदन आईडी",
-    idPlaceholder: "PA-260913-0001",
-check: "स्थिति देखें",
-    found: "आवेदन मिल गया",
-    notFound: "इस आईडी के साथ कोई आवेदन नहीं मिला। दोबारा जाँचें और फिर प्रयास करें, या हमें कॉल करें।",
-    privacy: "यहाँ केवल आपका आवेदन स्थिति दिखाई जाती है — व्यक्तिगत विवरण कभी नहीं।",
-    updated: "अंतिम अपडेट",
-  },
-  dashboard: {
-    title: "आपका डैशबोर्ड",
-    lead: "आपके खाते से जुड़ी सारी जानकारी — आवेदन और उनकी वर्तमान स्थिति, केवल आपके लिए।",
-    role: "भूमिका",
-    applications: "आपके आवेदन",
-    noApps: "आपने अभी तक कोई आवेदन नहीं भेजा है। जब चाहें पॉलिसी देखें और सहायता लें।",
-    noAppsCta: "पॉलिसी देखें",
-    signOut: "साइन आउट करें",
-    status: "स्थिति",
-    submitted: "सबमिट किया गया",
-    policy: "पॉलिसी",
-    idLabel: "आवेदन आईडी",
-    profile: "प्रोफ़ाइल",
-    profileEdit: "प्रोफ़ाइल संपादित करें",
-    saveChanges: "परिवर्तन सहेजें",
-    saved: "परिवर्तन सहेजे गए",
-    tickets: "सपोर्ट टिकट",
-    noTickets: "अभी तक कोई सपोर्ट टिकट नहीं।",
-    newTicket: "टिकट खोलें",
-    notifications: "सूचनाएँ",
-    noNotifications: "अभी तक कोई सूचना नहीं।",
-    markRead: "पढ़ा हुआ चिन्हित करें",
-    overview: "अवलोकन",
-    admin: "प्रशासन",
-    users: "उपयोगकर्ता",
-    policies: "पॉलिसी",
-    allApplications: "सभी आवेदन",
-    allTickets: "सभी टिकट",
-    team: "टीम",
-    assignedTo: "सौंपा गया",
-    unassigned: "असाइन नहीं",
-    internalNote: "आंतरिक नोट",
-    addNote: "नोट जोड़ें",
-    notes: "नोट्स",
-    statusHistory: "स्थिति इतिहास",
-    updateStatus: "स्थिति अपडेट करें",
-    assignTo: "सौंपें",
-    requestDocuments: "दस्तावेज़ अनुरोध",
-    customerInfo: "ग्राहक जानकारी",
-    workload: "कार्यभार",
-    totalApplications: "कुल आवेदन",
-    totalUsers: "कुल उपयोगकर्ता",
-    totalTickets: "कुल टिकट",
-    recentActivity: "हालिया गतिविधि",
-    pendingActions: "लंबित कार्य",
-    joinedOn: "शामिल हुए",
-    lastActive: "अंतिम सक्रिय",
-    roleLabel: "भूमिका",
-    Actions: "क्रियाएँ",
-    View: "देखें",
-    Edit: "संपादित करें",
-    Back: "वापस",
-  },
-  auth: {
-    signInTitle: "साइन इन करें",
-    signUpTitle: "खाता बनाएँ",
-    loginLead: "ग्राहकों और PolicyAdda टीम सदस्यों के लिए सुरक्षित साइन-इन।",
-    signUpLead: "ग्राहक खाता बनाएँ ताकि आप अपने मोबाइल नंबर से सबमिट किए गए आवेदन देख सकें।",
-    name: "पूरा नाम",
-    email: "ईमेल",
-    password: "पासवर्ड",
-    phone: "मोबाइल नंबर",
-    phoneHint: "10 अंकों का वैध मोबाइल नंबर दर्ज करें।",
-    city: "शहर",
-    signInCta: "साइन इन करें",
-    signUpCta: "खाता बनाएँ",
-    switchToSignUp: "नए हैं? खाता बनाएँ",
-    switchToLogin: "पहले से खाता है? साइन इन करें",
-    success: "खाता बन गया। आपको लॉग इन किया जा रहा है…",
-    policyNote: "खाता तुरंत खुल जाता है; आप तुरंत लॉग इन कर सकते हैं।",
-  },
-  verif: {
-    note: "यह फ़ॉर्म जमा करना एक पूछताछ है, खरीद नहीं। PolicyAdda कार्यकारी से बात करने तक कुछ भी पक्का नहीं होता।",
-    pendingTitle: "सत्यापित विवरण की प्रतीक्षा",
-    pendingBody: "PolicyAdda टीम द्वारा सत्यापित जानकारी मिलने पर यह अनुभाग पूरा किया जाएगा।",
   },
   quickActions: {
     eyebrow: "त्वरित कार्य",

@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { getCopy } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
-import { getServerSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
 import { siteConfig } from "@/content/config";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -96,19 +95,6 @@ export default async function RootLayout({
   const locale = getLocale();
   const copy = getCopy(locale);
 
-  let signedIn = false;
-  if (isSupabaseConfigured()) {
-    try {
-      const sb = await getServerSupabase();
-      if (sb) {
-        const { data } = await sb.auth.getUser();
-        signedIn = Boolean(data.user);
-      }
-    } catch {
-      // optional session check — never break the shell on auth errors
-    }
-  }
-
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
@@ -120,7 +106,7 @@ export default async function RootLayout({
       <body className={`${panchang.variable} ${array.variable} ${stardom.variable} ${britney.variable} ${zodiak.variable}`}>
         <ScrollProgress />
         <div className="grain" aria-hidden="true" />
-        <Nav copy={copy} locale={locale} signedIn={signedIn} />
+        <Nav copy={copy} locale={locale} />
         <main>{children}</main>
         <Footer copy={copy} locale={locale} config={siteConfig} />
         <Chatbot locale={locale} />

@@ -2,21 +2,20 @@ import type { Metadata } from "next";
 import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { siteConfig } from "@/content/config";
-import { data } from "@/lib/data";
-import { Phone, Clock, Mail, Message, Info } from "@/lib/icons";
-import Accordion from "@/components/Accordion";
-import TicketForm from "@/components/TicketForm";
+import { Phone, Clock, Mail, Message, ExternalLink } from "@/lib/icons";
 import FaqSection from "@/components/FaqSection";
 
 export const metadata: Metadata = {
   title: "Support — PolicyAdda",
-  description: "Contact PolicyAdda for help, submit enquiries, or raise a support ticket.",
+  description: "Contact PolicyAdda for help, submit enquiries, or reach our support team.",
 };
 
 export default function SupportPage() {
   const locale = getLocale();
   const copy = getCopy(locale);
   const c = siteConfig.contact;
+  const enquiryUrl = siteConfig.forms?.enquiry;
+  const claimUrl = siteConfig.forms?.claim;
 
   return (
     <>
@@ -37,6 +36,7 @@ export default function SupportPage() {
               <div className="ico"><Phone size={22} /></div>
               <h3>{copy.support.call}</h3>
               <p className="big">{c.phone.display}</p>
+              {c.phoneSecondary && <p className="big">{c.phoneSecondary.display}</p>}
               <p>{copy.support.callSub}</p>
             </a>
             <div className="card support-card">
@@ -49,30 +49,36 @@ export default function SupportPage() {
               <h3>{copy.support.email}</h3>
               <p>{copy.support.emailSub}</p>
             </div>
-            <div className="card support-card">
+            <a href={c.whatsapp ?? "#"} target="_blank" rel="noreferrer" className="card support-card no-underline">
               <div className="ico"><Message size={22} /></div>
               <h3>{copy.support.whatsapp}</h3>
               <p>{copy.support.whatsappSub}</p>
-            </div>
+            </a>
           </div>
         </div>
       </section>
 
       <section className="pad section-pad-0">
         <div className="wrap">
-          <div className="detail-card">
-            <TicketForm locale={locale} copy={copy} />
-            <aside className="side-card">
-              <div className="card card-pad">
-                <h3>{copy.support.ticket}</h3>
-                <p className="muted-text text-sm mt-2">
-                  {copy.support.tNote}
-                </p>
-              </div>
-              <div className="dev-note mt-3.5">
-                <Info size={16} className="inline-block align-[-3px] mr-1.5" /> {copy.verif.note}
-              </div>
-            </aside>
+          <div className="support-grid">
+            {enquiryUrl && (
+              <a href={enquiryUrl} target="_blank" rel="noreferrer" className="card support-card no-underline">
+                <h3>{locale === "hi" ? "सहायता के लिए आवेदन करें" : "Get Assistance"}</h3>
+                <p>{locale === "hi" ? "आवेदन फ़ॉर्म भरें — PolicyAdda एक्सपर्ट आपसे संपर्क करेगा।" : "Fill the enquiry form — a PolicyAdda expert will contact you."}</p>
+                <span className="btn btn-primary mt-2">
+                  {locale === "hi" ? "आवेदन फ़ॉर्म खोलें" : "Open Enquiry Form"} <ExternalLink size={14} className="inline-block align-[-2px] ml-1" />
+                </span>
+              </a>
+            )}
+            {claimUrl && (
+              <a href={claimUrl} target="_blank" rel="noreferrer" className="card support-card no-underline">
+                <h3>{locale === "hi" ? "दावा दायर करें" : "File a Claim"}</h3>
+                <p>{locale === "hi" ? "क्लेम सूचना फ़ॉर्म भरें — हमारी टीम आपसे संपर्क करेगी।" : "Fill the claim intimation form — our team will reach out."}</p>
+                <span className="btn btn-primary mt-2">
+                  {locale === "hi" ? "क्लेम फ़ॉर्म खोलें" : "Open Claim Form"} <ExternalLink size={14} className="inline-block align-[-2px] ml-1" />
+                </span>
+              </a>
+            )}
           </div>
         </div>
       </section>

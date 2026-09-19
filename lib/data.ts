@@ -6,14 +6,10 @@ import {
   getPoliciesByCategory,
   getPolicyBySlug,
 } from "@/content/policies";
-import { sortedStatuses, getStatusByCode } from "@/content/statuses";
 import { faqs } from "@/content/faqs";
 
 /**
  * Read-oriented data access used by server components.
- * In production this layer routes through the database (Supabase) via the
- * same typed interfaces; today the seeded content satisfies these types so
- * the migration is transparent. (See docs/ARCHITECTURE.md.)
  */
 
 export const data = {
@@ -23,8 +19,6 @@ export const data = {
   policyBySlug: (slug: string) => getPolicyBySlug(slug),
   policiesByCategory: (slug: string) => getPoliciesByCategory(slug),
   featuredPolicies: () => getFeaturedPolicies(),
-  statuses: () => sortedStatuses(),
-  statusByCode: (code: string) => getStatusByCode(code),
   faqs: () => faqs,
 };
 
