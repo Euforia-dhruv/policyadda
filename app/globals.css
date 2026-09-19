@@ -1025,12 +1025,12 @@ section { position: relative; }
 }
 
 /* ============================================================
-   Enquiry / Get Free Quote embed
+   Enquiry / Get Free Quote
    ============================================================ */
-.enquiry-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: var(--sp-8); align-items: center; }
-.enquiry-embed { border-radius: var(--rad); overflow: hidden; border: 1px solid var(--line); background: var(--card); height: 640px; }
-.enquiry-frame { width: 100%; height: 100%; border: none; display: block; }
+.enquiry-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: var(--sp-8); align-items: start; }
+.enquiry-contact-cards { display: flex; flex-direction: column; gap: var(--sp-3); }
+.contact-card { display: flex; align-items: center; gap: var(--sp-3); padding: var(--sp-4); text-decoration: none; color: var(--text); }
+.contact-card p { margin: 0; }
 @media (max-width: 900px) {
   .enquiry-grid { grid-template-columns: 1fr; gap: var(--sp-5); }
-  .enquiry-embed { height: 560px; }
 }
