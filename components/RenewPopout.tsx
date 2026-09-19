@@ -11,19 +11,25 @@ export default function RenewPopout({
   locale,
   variant = "btn",
   label,
+  open: controlledOpen,
+  onClose,
 }: {
   copy: SiteCopy;
   locale: Locale;
   variant?: "btn" | "card";
   label?: string;
+  open?: boolean;
+  onClose?: () => void;
 }) {
-  const [open, setOpen] = useState(false);
+  const [internalOpen, setInternalOpen] = useState(false);
+  const open = controlledOpen ?? internalOpen;
+  const close = onClose ?? (() => setInternalOpen(false));
   const forms = siteConfig.forms;
   const renewUrl = forms?.renew;
 
   const onKey = useCallback((e: KeyboardEvent) => {
-    if (e.key === "Escape") setOpen(false);
-  }, []);
+    if (e.key === "Escape") close();
+  }, [close]);
   useEffect(() => {
     if (!open) return;
     document.body.style.overflow = "hidden";
@@ -39,13 +45,13 @@ export default function RenewPopout({
   return (
     <>
       {variant === "card" ? (
-        <button type="button" className="card support-card renew-card" onClick={() => setOpen(true)}>
+        <button type="button" className="card support-card renew-card" onClick={() => close()}>
           <div className="ico"><ExternalLink size={22} /></div>
           <h3>{label ?? copy.quickActions.renew}</h3>
           <p>{copy.renew.lead}</p>
         </button>
       ) : (
-        <button type="button" className="btn btn-ghost" onClick={() => setOpen(true)}>
+        <button type="button" className="btn btn-ghost" onClick={() => close()}>
           {label ?? copy.quickActions.renew}
         </button>
       )}
@@ -53,7 +59,7 @@ export default function RenewPopout({
       {open && (
         <div className="renew-backdrop" role="dialog" aria-modal="true" aria-label={copy.renew.title}>
           <div className="renew-modal card">
-            <button type="button" className="renew-close" onClick={() => setOpen(false)} aria-label={copy.common.close}>
+            <button type="button" className="renew-close" onClick={() => close()} aria-label={copy.common.close}>
               <X size={18} />
             </button>
             <h2 className="mb-2">{copy.renew.title}</h2>

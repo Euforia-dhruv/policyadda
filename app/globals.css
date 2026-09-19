@@ -308,6 +308,10 @@ section { position: relative; }
   .nav-links a:hover { @apply text-[var(--text)]; }
   .nav-links a[aria-current="page"] { @apply text-[var(--accent-strong)] font-semibold; }
   [data-theme="dark"] .nav-links a[aria-current="page"] { @apply text-[var(--accent)]; }
+  .nav-links .nav-link-btn { @apply transition-colors bg-transparent border-0 cursor-pointer font-medium text-[var(--muted)] p-0; font-size: inherit; }
+  .nav-links .nav-link-btn:hover { @apply text-[var(--text)]; }
+  .nav--transparent .nav-links .nav-link-btn { @apply text-white/70; }
+  .nav--transparent .nav-links .nav-link-btn:hover { @apply text-white; }
   .nav-actions { @apply flex items-center gap-2; }
   .nav-link-login { @apply text-[var(--text-base)] font-semibold text-[var(--text)]; }
   .menu-btn { @apply hidden border border-[var(--line)] bg-[var(--surface)] text-[var(--text)] rounded-[var(--radius-sm)] py-2 px-[11px] text-[15px]; }
@@ -321,6 +325,8 @@ section { position: relative; }
   .mobile-panel a[aria-current="page"] { @apply text-[var(--accent-strong)]; }
   [data-theme="dark"] .mobile-panel a[aria-current="page"] { @apply text-[var(--accent)]; }
   .mobile-panel a:last-child { @apply border-b-0; }
+  .mobile-panel .mobile-link-btn { @apply block w-full text-left py-3 px-1 text-[var(--text-lg)] font-medium text-[var(--text)] border-b border-[var(--line)] transition-colors bg-transparent border-x-0 border-t-0 cursor-pointer; transition-duration: var(--dur-fast); }
+  .mobile-panel .mobile-link-btn:hover { @apply text-[var(--accent)]; }
   .lang { @apply inline-flex border border-[var(--line)] rounded-[var(--radius-pill)] overflow-hidden; }
   .lang button { @apply bg-transparent border-0 py-1.5 px-3 text-[var(--text-xs)] font-bold text-[var(--muted)]; }
   .lang button.on { @apply bg-[var(--accent-soft)] text-[var(--accent-strong)]; }
