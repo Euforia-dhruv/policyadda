@@ -19,6 +19,18 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
 
   return (
     <section className="hero-new">
+      <div className="hero-new-bg">
+        <Image
+          src="/assets/01 - Hero.webp"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+      </div>
+      <div className="hero-new-overlay" />
+
       <div className="wrap hero-new-inner">
         <div className="hero-new-content">
           <motion.p
@@ -46,7 +58,7 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.25 }}
           >
-            Clear advice. Better choices. True support.<br />
+            Clear advice. Better choices. True support.
             Policy Adda — Policy Aapka, Adda Apna.
           </motion.p>
 
@@ -84,22 +96,6 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
             </div>
           </motion.div>
         </div>
-
-        <motion.div
-          className="hero-new-image"
-          initial={{ opacity: 0, scale: 0.96, x: 20 }}
-          animate={inView ? { opacity: 1, scale: 1, x: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }}
-        >
-          <Image
-            src="/assets/01 - Hero.webp"
-            alt="Happy family — insurance made simple with PolicyAdda"
-            width={700}
-            height={500}
-            className="hero-img"
-            priority
-          />
-        </motion.div>
       </div>
     </section>
   );
