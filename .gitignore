@@ -50,4 +50,9 @@ next-env.d.ts
 # playwright mcp scratch
 .playwright-mcp
 .env*
-*.png
+
+# build / lint logs
+*.log
+
+# content documents (local reference only)
+/public/Website/
