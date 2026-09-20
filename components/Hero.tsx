@@ -19,6 +19,11 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
 
   return (
     <section className="hero-new">
+      {/* Decorative blobs */}
+      <div className="hero-new-deco" />
+      <div className="hero-new-deco2" />
+
+      {/* Background image behind right side */}
       <div className="hero-new-bg">
         <Image
           src="/assets/01 - Hero.webp"
@@ -26,21 +31,21 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
           fill
           className="object-cover"
           priority
-          sizes="100vw"
+          sizes="55vw"
         />
       </div>
-      <div className="hero-new-overlay" />
 
       <div className="wrap hero-new-inner">
         <div className="hero-new-content">
-          <motion.p
-            className="hero-new-eyebrow"
-            initial={{ opacity: 0, y: 16 }}
+          <motion.div
+            className="hero-new-badge"
+            initial={{ opacity: 0, y: 12 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
           >
-            INSURANCE, SIMPLIFIED
-          </motion.p>
+            <span className="hero-new-badge-dot" />
+            TRUSTED BY 1M+ INDIANS
+          </motion.div>
 
           <motion.h1
             className="hero-new-h1"
@@ -48,8 +53,9 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Insurance, without the{" "}
-            <span className="hero-new-accent">confusion.</span>
+            Insurance made{" "}
+            <span className="hero-new-accent">simple,</span>{" "}
+            for real life.
           </motion.h1>
 
           <motion.p
@@ -79,23 +85,50 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
             transition={{ duration: 0.5, delay: 0.55 }}
           >
             <div className="hero-trust-item">
-              <Shield size={18} className="hero-trust-icon" />
+              <Shield size={16} className="hero-trust-icon" />
               <span>100% Transparent</span>
             </div>
             <div className="hero-trust-item">
-              <Users size={18} className="hero-trust-icon" />
+              <Users size={16} className="hero-trust-icon" />
               <span>Expert Guidance</span>
             </div>
             <div className="hero-trust-item">
-              <HeadphonesIcon size={18} className="hero-trust-icon" />
+              <HeadphonesIcon size={16} className="hero-trust-icon" />
               <span>Claims Support</span>
-            </div>
-            <div className="hero-trust-item">
-              <ThumbsUp size={18} className="hero-trust-icon" />
-              <span>Customer First</span>
             </div>
           </motion.div>
         </div>
+
+        <motion.div
+          className="hero-new-side"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={inView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
+          <div className="hero-new-photo">
+            <Image
+              src="/assets/01 - Hero.webp"
+              alt="Happy family — insurance made simple with PolicyAdda"
+              fill
+              className="object-cover"
+              sizes="340px"
+            />
+          </div>
+
+          <div className="hero-safety-card">
+            <div className="hero-safety-icon">
+              <Shield size={18} />
+            </div>
+            <div className="hero-safety-text">
+              Your Safety<br />Our Priority
+            </div>
+          </div>
+
+          <div className="hero-more-card">
+            <div className="hero-more-label">More than just insurance</div>
+            <div className="hero-more-sub">A safer tomorrow for the people that matter.</div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
