@@ -1,6 +1,5 @@
 "use client";
 
-import { StaggerContainer, StaggerItem, FadeInUp } from "@/components/effects/ScrollReveal";
 import type { SiteCopy } from "@/content/copy";
 
 export default function HowPageSteps({ copy }: { copy: SiteCopy }) {
@@ -12,25 +11,21 @@ export default function HowPageSteps({ copy }: { copy: SiteCopy }) {
 
   return (
     <>
-      <StaggerContainer className="grid-steps grid-cols-1">
+      <div className="grid-steps" style={{ maxWidth: 720, margin: "0 auto" }}>
         {steps.map((s, i) => (
-          <StaggerItem key={i}>
-            <div className="step">
-              <div className="step-no">{i + 1}</div>
-              <div>
-                <h3>{s.t}</h3>
-                <p className="mb-1">{s.d}</p>
-                {s.extra && <p className="faint-sm">{s.extra}</p>}
-              </div>
+          <div key={i} className="step">
+            <div className="step-no">{i + 1}</div>
+            <div>
+              <h3>{s.t}</h3>
+              <p className="mb-1">{s.d}</p>
+              {s.extra && <p className="faint-sm">{s.extra}</p>}
             </div>
-          </StaggerItem>
+          </div>
         ))}
-      </StaggerContainer>
-      <FadeInUp delay={0.3}>
-        <p className="mt-8">
-          <a href="/policies" className="btn btn-primary">{copy.cta.primary}</a>
-        </p>
-      </FadeInUp>
+      </div>
+      <p className="mt-8 text-center">
+        <a href="/policies" className="btn btn-primary">{copy.cta.primary}</a>
+      </p>
     </>
   );
 }
