@@ -18,7 +18,7 @@ export default function WhySection({ copy }: { copy: SiteCopy }) {
             transition={{ duration: 0.6 }}
           >
             <Image
-              src="/assets/02 — Advisor.png"
+              src="/assets/02 - Advisor.webp"
               alt="PolicyAdda expert advisor — real people, real support"
               width={600}
               height={500}

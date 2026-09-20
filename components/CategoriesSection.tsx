@@ -7,10 +7,10 @@ import Image from "next/image";
 import { motion } from "motion/react";
 
 const CATEGORY_IMAGES: Record<string, string> = {
-  motor: "/assets/03 — Motor.png",
-  health: "/assets/04 — Health.png",
-  travel: "/assets/05 — Travel.png",
-  business: "/assets/06 — Business.png",
+  motor: "/assets/03 - Motor.webp",
+  health: "/assets/04 - Health.webp",
+  travel: "/assets/05 - Travel.webp",
+  business: "/assets/06 - Business.webp",
 };
 
 export function CategoryCard({ cat, locale }: { cat: PolicyCategory; locale: Locale }) {

@@ -92,7 +92,7 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <Image
-            src="/assets/01 — Hero.png"
+            src="/assets/01 - Hero.webp"
             alt="Happy family — insurance made simple with PolicyAdda"
             width={700}
             height={500}
