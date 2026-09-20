@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "eyebrow": "Policy Adda",
+    "titleA": "Insurance made",
+    "titleB": "simple & clear.",
+    "sub": "Compare, choose and get the best insurance plans — all in one place.",
+    "ctaPrimary": "Explore Plans",
+    "ctaSecondary": "Get Free Quote",
+    "videoSrc": "/videos/policyadda-hero-4k.mp4",
+    "posterSrc": "/videos/policyadda-hero-poster.jpg",
+    "showVideo": true
+  },
+  "banners": [],
+  "site": {
+    "brand": "Policy Adda",
+    "tagline": {
+      "en": "Insurance assistance and policy discovery, made clear.",
+      "hi": "बीमा सहायता और पॉलिसी की जानकारी, साफ़ और सरल तरीके से।"
+    },
+    "slogan": {
+      "en": "Policy Aapka, Adda Apna.",
+      "hi": "पॉलिसी आपकी, अड्डा अपना।"
+    }
+  }
+}

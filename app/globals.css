@@ -1034,3 +1034,14 @@ section { position: relative; }
 @media (max-width: 900px) {
   .enquiry-grid { grid-template-columns: 1fr; gap: var(--sp-5); }
 }
+
+/* ---- Admin Panel ---- */
+.admin-shell { max-width: 960px; margin: 0 auto; padding: var(--sp-8) var(--sp-5); }
+.admin-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--sp-3); margin-bottom: var(--sp-6); padding-bottom: var(--sp-4); border-bottom: 1px solid var(--line); }
+.admin-error { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; border-radius: var(--radius-sm); padding: var(--sp-3) var(--sp-4); margin-bottom: var(--sp-4); }
+.admin-tabs { display: flex; gap: var(--sp-1); border-bottom: 2px solid var(--line); margin-bottom: var(--sp-6); }
+.admin-tab { background: none; border: none; border-bottom: 2px solid transparent; margin-bottom: -2px; padding: var(--sp-3) var(--sp-4); font-size: var(--text-base); font-weight: 500; color: var(--muted); cursor: pointer; transition: color var(--dur-fast), border-color var(--dur-fast); }
+.admin-tab:hover { color: var(--text); }
+.admin-tab.active { color: var(--accent-strong); border-bottom-color: var(--accent-strong); }
+.editor-section { padding: var(--sp-4) 0; }
+.editor-heading { font-size: 1.25rem; font-weight: 600; margin-bottom: var(--sp-4); }

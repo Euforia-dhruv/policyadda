@@ -2,18 +2,18 @@
 
 import { useEffect, useRef } from "react";
 
-/**
- * Hero background video — always 4K MP4. No quality fallback.
- */
+interface HeroVideoProps {
+  videoSrc?: string;
+  posterSrc?: string;
+  showVideo?: boolean;
+}
 
-const SRC = "/videos/policyadda-hero-4k.mp4";
-
-export default function HeroVideo() {
+export default function HeroVideo({ videoSrc, posterSrc, showVideo = true }: HeroVideoProps) {
   const ref = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const video = ref.current;
-    if (!video) return;
+    if (!video || !showVideo || !videoSrc) return;
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       video.style.display = "none";
@@ -29,7 +29,7 @@ export default function HeroVideo() {
       }, 3000);
     };
 
-    video.src = SRC;
+    video.src = videoSrc;
     const p = video.play();
     if (p) p.catch(revealPosterIfEmpty);
 
@@ -39,7 +39,9 @@ export default function HeroVideo() {
       video.removeAttribute("src");
       video.load();
     };
-  }, []);
+  }, [videoSrc, showVideo]);
+
+  if (!showVideo || !videoSrc) return null;
 
   return (
     <video
@@ -50,11 +52,11 @@ export default function HeroVideo() {
       loop
       playsInline
       preload="auto"
-      poster="/videos/policyadda-hero-poster.jpg"
+      poster={posterSrc}
       tabIndex={-1}
       aria-hidden="true"
     >
-      <source src={SRC} type="video/mp4" />
+      <source src={videoSrc} type="video/mp4" />
     </video>
   );
 }

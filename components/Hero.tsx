@@ -10,6 +10,18 @@ import HeroVideo from "@/components/HeroVideo";
 import HeroParticles from "@/components/effects/HeroParticles";
 import MagneticButton from "@/components/effects/MagneticButton";
 
+interface HeroContent {
+  eyebrow: string;
+  titleA: string;
+  titleB: string;
+  sub: string;
+  ctaPrimary: string;
+  ctaSecondary: string;
+  videoSrc: string;
+  posterSrc: string;
+  showVideo: boolean;
+}
+
 function HeroSplitText({
   text,
   className,
@@ -61,6 +73,27 @@ function HeroSplitText({
 
 export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale }) {
   const c = siteConfig.contact;
+  const [hero, setHero] = useState<HeroContent | null>(null);
+
+  useEffect(() => {
+    fetch("/api/admin/content")
+      .then((r) => r.ok ? r.json() : null)
+      .then((d) => { if (d?.hero) setHero(d.hero); })
+      .catch(() => {});
+  }, []);
+
+  const h = hero ?? {
+    eyebrow: copy.hero.eyebrow,
+    titleA: copy.hero.titleA,
+    titleB: copy.hero.titleB,
+    sub: copy.hero.sub,
+    ctaPrimary: copy.hero.ctaPrimary,
+    ctaSecondary: copy.hero.ctaSecondary,
+    videoSrc: "/videos/policyadda-hero-4k.mp4",
+    posterSrc: "/videos/policyadda-hero-poster.jpg",
+    showVideo: true,
+  };
+
   const [inView, setInView] = useState(false);
   const { scrollYProgress } = useScroll();
   const heroOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
@@ -76,7 +109,7 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
     <section className="hero hero--video">
       <motion.div className="hero-video" aria-hidden="true" style={{ scale: heroScale }}>
         <div className="hero-video-poster" />
-        <HeroVideo />
+        <HeroVideo videoSrc={h.videoSrc} posterSrc={h.posterSrc} showVideo={h.showVideo} />
       </motion.div>
       <HeroParticles quantity={50} color="255,255,255" className="z-[1]" />
       <div className="hero-tint hero-tint-light" aria-hidden="true" />
@@ -90,15 +123,15 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <span className="hero-eyebrow-line" />
-            {copy.hero.eyebrow}
+            {h.eyebrow}
           </motion.p>
 
           <h1 className="hero-h1">
             <span className="block hero-title-line">
-              <HeroSplitText text={copy.hero.titleA} delay={200} />
+              <HeroSplitText text={h.titleA} delay={200} />
             </span>
             <span className="block hero-title-line hero-title-accent">
-              <HeroSplitText text={copy.hero.titleB} delay={500} />
+              <HeroSplitText text={h.titleB} delay={500} />
             </span>
           </h1>
 
@@ -108,7 +141,7 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
           >
-            {copy.hero.sub}
+            {h.sub}
           </motion.p>
 
           <motion.div
@@ -118,10 +151,10 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
             transition={{ duration: 0.6, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
           >
             <MagneticButton>
-              <a href="/policies" className="btn btn-primary">{copy.hero.ctaPrimary}</a>
+              <a href="/policies" className="btn btn-primary">{h.ctaPrimary}</a>
             </MagneticButton>
             <MagneticButton>
-              <a href="/support" className="btn btn-ghost-light">{copy.hero.ctaSecondary}</a>
+              <a href="/support" className="btn btn-ghost-light">{h.ctaSecondary}</a>
             </MagneticButton>
           </motion.div>
 
