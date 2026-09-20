@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { createClient } from "@/lib/supabase/client";
 
 interface SiteContent {
   hero: {
@@ -34,6 +35,12 @@ export default function AdminDashboard() {
 
   const load = useCallback(async () => {
     try {
+      const supabase = createClient();
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        window.location.href = "/admin";
+        return;
+      }
       const res = await fetch("/api/admin/content");
       if (res.status === 401) {
         window.location.href = "/admin";
@@ -71,11 +78,8 @@ export default function AdminDashboard() {
   }
 
   async function logout() {
-    await fetch("/api/admin/auth", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ action: "logout" }),
-    });
+    const supabase = createClient();
+    await supabase.auth.signOut();
     window.location.href = "/admin";
   }
 
