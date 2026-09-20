@@ -184,10 +184,10 @@ export const en: SiteCopy = {
     ],
   },
   categories: {
-    eyebrow: "Insurance categories",
-    title: "Start with what you need.",
+    eyebrow: "OUR INSURANCE PRODUCTS",
+    title: "Protection for every chapter of your life.",
     lead: "Explore a category, understand your options, and ask us anything.",
-    view: "View policies",
+    view: "Explore",
   },
   how: {
     eyebrow: "How it works",
@@ -210,8 +210,8 @@ export const en: SiteCopy = {
     learnMore: "Learn more",
   },
   why: {
-    eyebrow: "Benefits with Policy Adda",
-    title: "What you get with Policy Adda.",
+    eyebrow: "WHY POLICY ADDA",
+    title: "Real people. Real support. Real difference.",
     lead: "Every policy, every renewal and every claim comes with these benefits.",
     items: [
       { t: "One-Stop Comparison & Access", d: "With multiple insurance tie-ups to choose from, we help you compare options and make an informed choice. Transparent, detailed information about policies is available." },
@@ -313,10 +313,10 @@ export const en: SiteCopy = {
     thanks: "Thanks for submitting your request. Your dedicated expert will contact you soon.",
   },
   cta: {
-    title: "Your policy. Your place for clarity.",
-    sub: "Whatever you're planning next — a policy to choose, a question to answer, or a renewal to review — PolicyAdda is here to guide you.",
-    primary: "Get Assistance",
-    secondary: "Read the FAQ",
+    title: "Insurance feels complicated.\nGetting help shouldn\u2019t.",
+    sub: "Talk to a PolicyAdda expert today. Clear advice, better choices, true support.",
+    primary: "Talk to an Expert",
+    secondary: "WhatsApp Us",
   },
   detail: {
     about: "About this policy concept",
@@ -516,10 +516,10 @@ export const hi: SiteCopy = {
     thanks: "आपके अनुरोध के लिए धन्यवाद। आपका समर्पित एक्सपर्ट जल्द ही संपर्क करेगा।",
   },
   cta: {
-    title: "आपकी पॉलिसी। आपका अड्डा, स्पष्टता के लिए।",
-    sub: "आगे जो भी हो — चुनने के लिए पॉलिसी, जवाब देने के लिए सवाल, या रिन्यूअल की समीक्षा — PolicyAdda मार्गदर्शन के लिए यहाँ है।",
-    primary: "सहायता लें",
-    secondary: "सामान्य प्रश्न पढ़ें",
+    title: "बीमा जटिल लगता है।\nमदद लेना आसान होना चाहिए।",
+    sub: "आज ही PolicyAdda एक्सपर्ट से बात करें। स्पष्ट सलाह, बेहतर विकल्प, सच्चा सहयोग।",
+    primary: "एक्सपर्ट से बात करें",
+    secondary: "WhatsApp करें",
   },
   detail: {
     about: "इस पॉलिसी कॉन्सेप्ट के बारे में",

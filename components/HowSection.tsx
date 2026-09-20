@@ -1,33 +1,35 @@
 "use client";
 
 import type { SiteCopy } from "@/content/copy";
-import { StaggerContainer, StaggerItem, FadeInUp } from "@/components/effects/ScrollReveal";
+import { motion } from "motion/react";
 
 export default function HowSection({ copy }: { copy: SiteCopy }) {
-  const numbered = copy.how.steps.map((s, i) => ({ n: i + 1, t: s.t, d: s.d }));
+  const steps = copy.how.steps.slice(0, 5);
   return (
-    <section className="pad" id="how">
+    <section className="pad" id="how" style={{ background: "var(--surface)" }}>
       <div className="wrap">
-        <FadeInUp>
-          <div className="section-head">
-            <p className="eyebrow">{copy.how.eyebrow}</p>
-            <h2>{copy.how.title}</h2>
-            <p className="lead">{copy.how.lead}</p>
-          </div>
-        </FadeInUp>
-        <StaggerContainer className="grid-steps">
-          {numbered.map((s) => (
-            <StaggerItem key={s.n}>
-              <div className="step">
-                <div className="step-no">{s.n}</div>
-                <div>
-                  <h3>{s.t}</h3>
-                  <p>{s.d}</p>
-                </div>
-              </div>
-            </StaggerItem>
+        <div className="section-head center">
+          <p className="eyebrow">{copy.how.eyebrow}</p>
+          <h2>{copy.how.title}</h2>
+          <p className="lead">{copy.how.lead}</p>
+        </div>
+        <div className="how-steps-row">
+          {steps.map((s, i) => (
+            <motion.div
+              key={i}
+              className="how-step"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+            >
+              <div className="how-step-num">{i + 1}</div>
+              <h3 className="how-step-title">{s.t}</h3>
+              <p className="how-step-desc">{s.d}</p>
+              {i < steps.length - 1 && <div className="how-step-arrow" aria-hidden="true">→</div>}
+            </motion.div>
           ))}
-        </StaggerContainer>
+        </div>
       </div>
     </section>
   );

@@ -45,6 +45,7 @@ export default function Nav({
             <button type="button" className="nav-link-btn" onClick={() => setShowRenew(true)}>Renew Your Policy</button>
             <a href="/support" aria-current={isActive("/support") ? "page" : undefined}>Get Support</a>
             <a href={siteConfig.forms?.partner ?? "#"} target="_blank" rel="noreferrer">Become a Partner</a>
+            <a href="/about" aria-current={isActive("/about") ? "page" : undefined}>About Us</a>
           </nav>
 
           <div className="nav-actions">
@@ -67,6 +68,7 @@ export default function Nav({
         <button type="button" className="mobile-link-btn" onClick={() => { setShowRenew(true); setOpen(false); }}>Renew Your Policy</button>
         <a href="/support" onClick={() => setOpen(false)} aria-current={isActive("/support") ? "page" : undefined}>Get Support</a>
         <a href={siteConfig.forms?.partner ?? "#"} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>Become a Partner</a>
+        <a href="/about" onClick={() => setOpen(false)} aria-current={isActive("/about") ? "page" : undefined}>About Us</a>
         <a href={`tel:${siteConfig.contact.phone.tel}`} className="btn btn-accent mt-2" onClick={() => setOpen(false)}>
           <Phone size={16} className="inline-block align-[-3px] mr-1" />
           Call Now

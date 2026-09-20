@@ -3,25 +3,41 @@
 import type { Locale, PolicyCategory } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import { pick } from "@/lib/i18n";
-import { CategoryIcon } from "@/lib/icons";
-import { StaggerContainer, StaggerItem } from "@/components/effects/ScrollReveal";
-import { GlowCard } from "@/components/effects/GlowCard";
-import { SplitText } from "@/components/effects/SplitText";
-import LumaDrift from "@/components/effects/LumaDrift";
+import Image from "next/image";
+import { motion } from "motion/react";
 
-export function CategoryCard({ cat, locale, copy }: { cat: PolicyCategory; locale: Locale; copy: SiteCopy }) {
+const CATEGORY_IMAGES: Record<string, string> = {
+  motor: "/assets/03 — Motor.png",
+  health: "/assets/04 — Health.png",
+  travel: "/assets/05 — Travel.png",
+  business: "/assets/06 — Business.png",
+};
+
+export function CategoryCard({ cat, locale }: { cat: PolicyCategory; locale: Locale }) {
+  const img = CATEGORY_IMAGES[cat.slug];
+
   return (
-    <a href={`/policies/${cat.slug}`} className="block">
-      <GlowCard glowColor="rgba(23, 79, 134, 0.10)" className="cat-card card-fx">
-        <div className="cat-card-inner">
-          <div className="cat-ico"><CategoryIcon icon={cat.icon} size={22} /></div>
-          <h3>{pick(locale, cat.name)}</h3>
-          <p>{pick(locale, cat.short)}</p>
-          <span className="cat-link">
-            {copy.categories.view} <span aria-hidden="true">→</span>
+    <a href={`/policies/${cat.slug}`} className="group block">
+      <div className="cat-card-new">
+        {img ? (
+          <div className="cat-card-img">
+            <Image
+              src={img}
+              alt={pick(locale, cat.name)}
+              width={400}
+              height={280}
+              className="cat-card-photo"
+            />
+          </div>
+        ) : null}
+        <div className="cat-card-body">
+          <h3 className="cat-card-title">{pick(locale, cat.name)}</h3>
+          <p className="cat-card-desc">{pick(locale, cat.short)}</p>
+          <span className="cat-card-link">
+            Explore <span aria-hidden="true">→</span>
           </span>
         </div>
-      </GlowCard>
+      </div>
     </a>
   );
 }
@@ -37,21 +53,26 @@ export default function CategoriesSection({
 }) {
   if (categories.length === 0) return null;
   return (
-    <section className="pad section-pad-0 relative overflow-hidden" id="categories">
-      <LumaDrift speed={0.3} height="100%" className="absolute inset-0 opacity-[0.07] dark:opacity-[0.12]" />
-      <div className="wrap relative z-10">
-        <div className="section-head">
-          <p className="eyebrow">{copy.categories.eyebrow}</p>
-          <SplitText text={copy.categories.title} as="h2" splitBy="words" staggerDelay={0.04} />
+    <section className="pad" id="categories">
+      <div className="wrap">
+        <div className="section-head center">
+          <p className="eyebrow">{copy.categories.eyebrow || "OUR INSURANCE PRODUCTS"}</p>
+          <h2>{copy.categories.title || "Protection for every chapter of your life."}</h2>
           <p className="lead">{copy.categories.lead}</p>
         </div>
-        <StaggerContainer className="grid-categories">
-          {categories.map((cat) => (
-            <StaggerItem key={cat.id}>
-              <CategoryCard cat={cat} locale={locale} copy={copy} />
-            </StaggerItem>
+        <div className="cat-grid-new">
+          {categories.map((cat, i) => (
+            <motion.div
+              key={cat.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+            >
+              <CategoryCard cat={cat} locale={locale} />
+            </motion.div>
           ))}
-        </StaggerContainer>
+        </div>
       </div>
     </section>
   );

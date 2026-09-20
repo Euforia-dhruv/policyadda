@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { getCopy } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { siteConfig } from "@/content/config";
@@ -8,6 +9,13 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
 import { ScrollProgress } from "@/components/effects/ScrollProgress";
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-plus-jakarta",
+  display: "swap",
+});
 
 const panchang = localFont({
   src: [
@@ -103,9 +111,8 @@ export default async function RootLayout({
         <meta name="theme-color" content="#F8FAFC" />
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
-      <body className={`${panchang.variable} ${array.variable} ${stardom.variable} ${britney.variable} ${zodiak.variable}`}>
+      <body className={`${plusJakarta.variable} ${panchang.variable} ${array.variable} ${stardom.variable} ${britney.variable} ${zodiak.variable}`}>
         <ScrollProgress />
-        <div className="grain" aria-hidden="true" />
         <Nav copy={copy} locale={locale} />
         <main>{children}</main>
         <Footer copy={copy} locale={locale} config={siteConfig} />

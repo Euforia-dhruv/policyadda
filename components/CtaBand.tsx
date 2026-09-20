@@ -1,32 +1,36 @@
 "use client";
 
 import type { SiteCopy } from "@/content/copy";
-import ShineBorder from "@/components/effects/ShineBorder";
-import MagneticButton from "@/components/effects/MagneticButton";
-import { FadeInUp } from "@/components/effects/ScrollReveal";
-import LumaDrift from "@/components/effects/LumaDrift";
+import { siteConfig } from "@/content/config";
+import { motion } from "motion/react";
+import { Phone } from "@/lib/icons";
 
 export default function CtaBand({ copy }: { copy: SiteCopy }) {
+  const c = siteConfig.contact;
   return (
-    <section className="pad relative overflow-hidden" id="cta">
-      <LumaDrift speed={0.4} height="100%" className="absolute inset-0 opacity-15 dark:opacity-25" />
-      <div className="wrap relative z-10">
-        <FadeInUp>
-          <ShineBorder color="var(--accent)" duration={4}>
-            <div className="cta-band">
-              <h2>{copy.cta.title}</h2>
-              <p className="lead">{copy.cta.sub}</p>
-              <div className="cta-actions">
-                <MagneticButton>
-                  <a href="/support" className="btn btn-primary">{copy.cta.primary}</a>
-                </MagneticButton>
-                <MagneticButton>
-                  <a href="/#faq" className="btn btn-ghost">{copy.cta.secondary}</a>
-                </MagneticButton>
-              </div>
-            </div>
-          </ShineBorder>
-        </FadeInUp>
+    <section className="pad" id="cta">
+      <div className="wrap">
+        <motion.div
+          className="cta-new"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="cta-new-title">{copy.cta.title}</h2>
+          <p className="cta-new-sub">{copy.cta.sub}</p>
+          <div className="cta-new-actions">
+            <a href={`tel:${c.phone.tel}`} className="btn btn-primary btn-lg">
+              <Phone size={18} className="inline-block align-[-3px] mr-1" />
+              {copy.cta.primary || "Talk to an Expert"}
+            </a>
+            {c.whatsapp && (
+              <a href={c.whatsapp} target="_blank" rel="noreferrer" className="btn btn-ghost btn-lg">
+                WhatsApp Us
+              </a>
+            )}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
