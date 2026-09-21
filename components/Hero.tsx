@@ -95,6 +95,11 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
           </motion.div>
         </div>
       </div>
+
+      <div className="hero-safety-tag">
+        <Shield size={16} className="hero-safety-tag-icon" />
+        <span>Your Safety Our Priority</span>
+      </div>
     </section>
   );
 }
