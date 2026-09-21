@@ -362,13 +362,13 @@ section { position: relative; }
    ============================================================ */
 .hero-new {
   position: relative;
-  min-height: 92vh;
+  height: 100vh;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
   background: #0B2D6B;
   margin-top: -72px;
-  padding: calc(clamp(60px, 10vh, 100px) + 72px) 0 clamp(48px, 8vh, 80px);
+  padding: 0 0 clamp(48px, 8vh, 80px);
 }
 .hero-new-video {
   position: absolute;
@@ -456,7 +456,7 @@ section { position: relative; }
 }
 .hero-safety-tag-icon { color: var(--accent); flex-shrink: 0; }
 @media (max-width: 640px) {
-  .hero-new { min-height: 85vh; margin-top: -72px; padding: calc(48px + 72px) 0 36px; }
+  .hero-new { height: 100vh; margin-top: -72px; padding: 0 0 36px; }
   .hero-new-inner { padding-left: clamp(16px, 4vw, 24px); }
   .hero-new-h1 { font-size: 1.9rem; }
   .hero-new-actions { flex-direction: column; align-items: stretch; }
