@@ -22,7 +22,13 @@ export default function LoginPage() {
     });
 
     if (authError) {
-      setError(authError.message);
+      if (authError.message.includes("Invalid login")) {
+        setError("Invalid email or password. Please check your credentials.");
+      } else if (authError.message.includes("Email not confirmed")) {
+        setError("Please confirm your email first. Check your inbox for the verification link.");
+      } else {
+        setError(authError.message);
+      }
       setLoading(false);
       return;
     }

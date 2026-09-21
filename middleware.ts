@@ -25,32 +25,36 @@ export async function middleware(request: NextRequest) {
 
   const { pathname } = request.nextUrl;
 
-  const { data: { user } } = await supabase.auth.getUser();
+  try {
+    const { data: { user } } = await supabase.auth.getUser();
 
-  if (pathname.startsWith("/admin")) {
-    if (pathname === "/admin") {
-      if (user) return NextResponse.redirect(new URL("/admin/dashboard", request.url));
-      return response;
+    if (pathname.startsWith("/admin")) {
+      if (pathname === "/admin") {
+        if (user) return NextResponse.redirect(new URL("/admin/dashboard", request.url));
+        return response;
+      }
+
+      if (!user) {
+        return NextResponse.redirect(new URL("/admin", request.url));
+      }
+
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("role")
+        .eq("id", user.id)
+        .single();
+
+      const role = profile?.role;
+      if (role !== "admin" && role !== "super_admin") {
+        return NextResponse.redirect(new URL("/", request.url));
+      }
     }
 
-    if (!user) {
-      return NextResponse.redirect(new URL("/admin", request.url));
-    }
-
-    const { data: profile } = await supabase
-      .from("profiles")
-      .select("role")
-      .eq("id", user.id)
-      .single();
-
-    const role = profile?.role;
-    if (role !== "admin" && role !== "super_admin") {
+    if ((pathname === "/login" || pathname === "/signup") && user) {
       return NextResponse.redirect(new URL("/", request.url));
     }
-  }
-
-  if ((pathname === "/login" || pathname === "/signup") && user) {
-    return NextResponse.redirect(new URL("/", request.url));
+  } catch {
+    // If supabase is unreachable, let the request through
   }
 
   return response;
