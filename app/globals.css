@@ -308,6 +308,7 @@ section { position: relative; }
     @apply hidden flex-col gap-0 pb-4 border-b border-[var(--line)] bg-[var(--surface)];
   }
   .mobile-panel.open { @apply flex; }
+  .mobile-panel:not(.open) { display: none !important; }
   .mobile-panel a { @apply py-3 px-1 text-[var(--text-lg)] font-medium text-[var(--text)] border-b border-[var(--line)] transition-colors; transition-duration: var(--dur-fast); text-decoration: none; }
   .mobile-panel a:hover { @apply text-[var(--accent)]; }
   .mobile-panel a[aria-current="page"] { @apply text-[var(--accent)]; }
@@ -385,6 +386,7 @@ section { position: relative; }
   position: relative;
   z-index: 3;
   max-width: 640px;
+  padding-left: clamp(0px, 4vw, 40px);
 }
 .hero-new-content {}
 .hero-new-eyebrow {
@@ -446,6 +448,7 @@ section { position: relative; }
 .hero-safety-tag-icon { color: var(--accent); flex-shrink: 0; }
 @media (max-width: 640px) {
   .hero-new { min-height: auto; padding: 48px 0 36px; }
+  .hero-new-inner { padding-left: 0; }
   .hero-new-h1 { font-size: 1.9rem; }
   .hero-new-actions { flex-direction: column; align-items: stretch; }
   .hero-new-actions .btn { flex: 1; }
