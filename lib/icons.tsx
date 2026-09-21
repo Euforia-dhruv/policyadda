@@ -45,6 +45,9 @@ export function Check({ size = 20, className }: IconProps) {
 export function X({ size = 20, className }: IconProps) {
   return <svg {...S(size, className)}><path d="M18 6L6 18M6 6l12 12"/></svg>;
 }
+export function ChevronLeft({ size = 20, className }: IconProps) {
+  return <svg {...S(size, className)}><path d="M15 18l-6-6 6-6"/></svg>;
+}
 export function ChevronDown({ size = 20, className }: IconProps) {
   return <svg {...S(size, className)}><path d="M6 9l6 6 6-6"/></svg>;
 }
