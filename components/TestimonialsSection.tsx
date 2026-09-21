@@ -36,11 +36,6 @@ export default function TestimonialsSection({ copy, locale }: { copy: SiteCopy; 
             ))}
           </div>
         </div>
-        <p className="muted-xs text-center mt-4">
-          {locale === "hi"
-            ? "* ग्राहक प्रतिक्रिया उदाहरण सामग्री है।"
-            : "* Customer feedback is illustrative."}
-        </p>
       </div>
     </section>
   );

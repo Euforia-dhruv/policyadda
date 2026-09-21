@@ -3,7 +3,10 @@
 import type { Locale, Policy } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import { pick } from "@/lib/i18n";
+import { siteConfig } from "@/content/config";
 import { motion } from "framer-motion";
+
+const ENQUIRY_URL = siteConfig.forms?.enquiry ?? "#";
 
 export default function PolicyCard({
   policy,
@@ -26,10 +29,10 @@ export default function PolicyCard({
       <h3>{policy.name}</h3>
       <p>{pick(locale, policy.shortDescription)}</p>
       <div className="pbtns">
-        <a href={`/policies/${policy.categorySlug}/${policy.slug}`} className="btn btn-ghost btn-sm">
+        <a href={ENQUIRY_URL} target="_blank" rel="noreferrer" className="btn btn-ghost btn-sm">
           {copy.featured.learnMore}
         </a>
-        <a href={`/apply/${policy.slug}`} className="btn btn-primary btn-sm">
+        <a href={ENQUIRY_URL} target="_blank" rel="noreferrer" className="btn btn-primary btn-sm">
           {copy.nav.apply}
         </a>
       </div>

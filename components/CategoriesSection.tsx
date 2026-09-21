@@ -4,6 +4,10 @@ import { pick } from "@/lib/i18n";
 import Image from "next/image";
 import { ArrowRight } from "@/lib/icons";
 
+import { siteConfig } from "@/content/config";
+
+const ENQUIRY_URL = siteConfig.forms?.enquiry ?? "#";
+
 const CATEGORY_IMAGES: Record<string, string> = {
   motor: "/assets/cards/Motor Insurance.png",
   health: "/assets/cards/Health Insurance.png",
@@ -54,7 +58,9 @@ export default function CategoriesSection({
             return (
               <a
                 key={cat.id}
-                href={`/policies/${cat.slug}`}
+                href={ENQUIRY_URL}
+                target="_blank"
+                rel="noreferrer"
                 className="cat-card"
               >
                 {img && (
