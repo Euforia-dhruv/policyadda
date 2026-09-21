@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/dashboard", "/api/", "/apply/"],
+        disallow: ["/admin/", "/api/", "/login", "/signup"],
       },
     ],
     sitemap: "https://www.policyadda.co.in/sitemap.xml",

@@ -35,7 +35,7 @@ export default async function PolicyDetailPage({ params }: { params: Promise<Par
 
   const cat = data.categoryBySlug(category);
   const catName = cat ? pick(locale, cat.name) : category;
-  const applyHref = policy.googleFormUrl ?? `/apply/${policy.slug}`;
+  const applyHref = policy.googleFormUrl ?? siteConfig.forms?.enquiry ?? "#";
 
   const blocks: { key: "benefits" | "eligibility" | "coverage" | "exclusions"; items: { en: string[]; hi: string[] }; bad?: boolean }[] = [
     { key: "benefits", items: policy.keyBenefits },
@@ -54,7 +54,7 @@ export default async function PolicyDetailPage({ params }: { params: Promise<Par
     <>
       <section className="policy-hero wrap">
         <nav className="breadcrumb" aria-label="Breadcrumb">
-          <a href="/">Home</a>
+          <a href="/">{copy.nav.home}</a>
           <span className="sep">/</span>
           <a href="/policies">{copy.nav.categories}</a>
           <span className="sep">/</span>

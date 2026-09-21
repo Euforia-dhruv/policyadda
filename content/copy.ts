@@ -1,5 +1,5 @@
 export type SiteCopy = {
-  nav: { home: string; categories: string; about: string; how: string; support: string; cta: string; apply: string };
+  nav: { home: string; categories: string; about: string; how: string; support: string; cta: string; apply: string; renew: string; partner: string; getQuote: string; viewAll: string };
   hero: {
     eyebrow: string;
     titleA: string;
@@ -159,8 +159,12 @@ export const en: SiteCopy = {
     about: "About",
     how: "How It Works",
     support: "Support",
-    cta: "Get Assistance",
+    cta: "Call Now",
     apply: "Apply",
+    renew: "Renew Your Policy",
+    partner: "Become a Partner",
+    getQuote: "Get a Quote",
+    viewAll: "View All Categories",
   },
   hero: {
     eyebrow: "Policy Aapka · Adda Apna",
@@ -362,8 +366,12 @@ export const hi: SiteCopy = {
     about: "हमारे बारे में",
     how: "कैसे काम करता है",
     support: "सहायता",
-    cta: "सहायता लें",
+    cta: "कॉल करें",
     apply: "आवेदन करें",
+    renew: "पॉलिसी नवीनीकृत करें",
+    partner: "पार्टनर बनें",
+    getQuote: "कोटेशन प्राप्त करें",
+    viewAll: "सभी श्रेणियाँ देखें",
   },
   hero: {
     eyebrow: "पॉलिसी आपकी · अड्डा अपना",

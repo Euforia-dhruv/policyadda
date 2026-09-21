@@ -73,13 +73,13 @@ export default function Nav({
                 aria-current={isActive("/policies") ? "page" : undefined}
                 onClick={(e) => { if (showMega) e.preventDefault(); }}
               >
-                Insurance Products
+                {copy.nav.categories}
               </a>
             </span>
-            <button type="button" className="nav-link-btn" onClick={() => setShowRenew(true)}>Renew Your Policy</button>
-            <a href="/support" aria-current={isActive("/support") ? "page" : undefined}>Get Support</a>
-            <a href={siteConfig.forms?.partner ?? "#"} target="_blank" rel="noreferrer">Become a Partner</a>
-            <a href="/about" aria-current={isActive("/about") ? "page" : undefined}>About Us</a>
+            <button type="button" className="nav-link-btn" onClick={() => setShowRenew(true)}>{copy.nav.renew}</button>
+            <a href="/support" aria-current={isActive("/support") ? "page" : undefined}>{copy.nav.support}</a>
+            <a href={siteConfig.forms?.partner ?? "#"} target="_blank" rel="noreferrer">{copy.nav.partner}</a>
+            <a href="/about" aria-current={isActive("/about") ? "page" : undefined}>{copy.nav.about}</a>
           </nav>
 
           <div className="nav-actions">
@@ -87,7 +87,7 @@ export default function Nav({
             <ThemeToggle />
             <a href={`tel:${siteConfig.contact.phone.tel}`} className="btn btn-accent btn-sm nav-cta">
               <Phone size={16} className="inline-block align-[-3px] mr-1" />
-              Call Now
+              {copy.nav.cta}
             </a>
             <button className="menu-btn" onClick={() => setOpen(!open)} aria-label="Menu" aria-expanded={open}>
               {open ? "✕" : "☰"}
@@ -127,7 +127,7 @@ export default function Nav({
                   <h4 className="mega-drawer-card-title">{item.label}</h4>
                   <p className="mega-drawer-card-desc">{item.desc}</p>
                   <span className="mega-drawer-card-link">
-                    Get a Quote <ChevronRight size={14} />
+                    {copy.nav.getQuote} <ChevronRight size={14} />
                   </span>
                 </div>
               </a>
@@ -135,7 +135,7 @@ export default function Nav({
           </div>
           <div className="mega-drawer-footer">
             <a href="/policies" className="mega-drawer-footer-link" onClick={() => setShowMega(false)}>
-              View All Categories <ChevronRight size={14} />
+              {copy.nav.viewAll} <ChevronRight size={14} />
             </a>
           </div>
         </div>
@@ -143,14 +143,14 @@ export default function Nav({
 
       <div className={`mobile-panel wrap ${open ? "open" : ""}`}>
         <a href="/" onClick={() => setOpen(false)} aria-current={isActive("/") ? "page" : undefined}>{copy.nav.home}</a>
-        <a href="/policies" onClick={() => setOpen(false)} aria-current={isActive("/policies") ? "page" : undefined}>Insurance Products</a>
-        <button type="button" className="mobile-link-btn" onClick={() => { setShowRenew(true); setOpen(false); }}>Renew Your Policy</button>
-        <a href="/support" onClick={() => setOpen(false)} aria-current={isActive("/support") ? "page" : undefined}>Get Support</a>
-        <a href={siteConfig.forms?.partner ?? "#"} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>Become a Partner</a>
-        <a href="/about" onClick={() => setOpen(false)} aria-current={isActive("/about") ? "page" : undefined}>About Us</a>
+        <a href="/policies" onClick={() => setOpen(false)} aria-current={isActive("/policies") ? "page" : undefined}>{copy.nav.categories}</a>
+        <button type="button" className="mobile-link-btn" onClick={() => { setShowRenew(true); setOpen(false); }}>{copy.nav.renew}</button>
+        <a href="/support" onClick={() => setOpen(false)} aria-current={isActive("/support") ? "page" : undefined}>{copy.nav.support}</a>
+        <a href={siteConfig.forms?.partner ?? "#"} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>{copy.nav.partner}</a>
+        <a href="/about" onClick={() => setOpen(false)} aria-current={isActive("/about") ? "page" : undefined}>{copy.nav.about}</a>
         <a href={`tel:${siteConfig.contact.phone.tel}`} className="btn btn-accent mt-2" onClick={() => setOpen(false)}>
           <Phone size={16} className="inline-block align-[-3px] mr-1" />
-          Call Now
+          {copy.nav.cta}
         </a>
       </div>
 

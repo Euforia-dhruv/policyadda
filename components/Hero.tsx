@@ -42,7 +42,7 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
           >
-            INSURANCE, SIMPLIFIED
+            {copy.hero.eyebrow}
           </motion.p>
 
           <motion.h1
@@ -51,9 +51,8 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Insurance made{" "}
-            <span className="hero-new-accent">simple,</span>{" "}
-            for real life.
+            {copy.hero.titleA}{" "}
+            <span className="hero-new-accent">{copy.hero.titleB}</span>
           </motion.h1>
 
           <motion.p
@@ -62,8 +61,7 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.25 }}
           >
-            Clear advice. Better choices. True support.
-            Policy Adda — Policy Aapka, Adda Apna.
+            {copy.hero.sub}
           </motion.p>
 
           <motion.div
@@ -72,8 +70,8 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <a href={ENQUIRY_URL} target="_blank" rel="noreferrer" className="btn btn-primary btn-lg">Explore Plans</a>
-            <a href={`tel:${c.phone.tel}`} className="btn btn-ghost btn-lg">Talk to an Expert</a>
+            <a href={ENQUIRY_URL} target="_blank" rel="noreferrer" className="btn btn-primary btn-lg">{copy.hero.ctaPrimary}</a>
+            <a href={`tel:${c.phone.tel}`} className="btn btn-ghost btn-lg">{copy.hero.ctaSecondary}</a>
           </motion.div>
 
           <motion.div

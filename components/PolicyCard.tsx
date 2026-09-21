@@ -4,7 +4,7 @@ import type { Locale, Policy } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import { pick } from "@/lib/i18n";
 import { siteConfig } from "@/content/config";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const ENQUIRY_URL = siteConfig.forms?.enquiry ?? "#";
 
