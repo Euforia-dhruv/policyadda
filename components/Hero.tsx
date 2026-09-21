@@ -6,20 +6,8 @@ import { siteConfig } from "@/content/config";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { Shield, Users, HeadphonesIcon } from "@/lib/icons";
-import Image from "next/image";
 
 const ENQUIRY_URL = siteConfig.forms?.enquiry ?? "#";
-
-const SLIDES = [
-  { src: "/assets/cards/Health Insurance.png", alt: "Health Insurance" },
-  { src: "/assets/cards/Motor Insurance.png", alt: "Motor Insurance" },
-  { src: "/assets/cards/Life Insurance.png", alt: "Life Insurance" },
-  { src: "/assets/cards/Business Insurance.png", alt: "Business Insurance" },
-  { src: "/assets/cards/Property & Home Insurance.png", alt: "Property Insurance" },
-  { src: "/assets/cards/Travel Insurance.png", alt: "Travel Insurance" },
-];
-
-const DOUBLED = [...SLIDES, ...SLIDES];
 
 export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale }) {
   const c = siteConfig.contact;
@@ -107,23 +95,6 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
               <span>Claims Support</span>
             </div>
           </motion.div>
-        </div>
-      </div>
-
-      {/* Auto-scrolling product image strip */}
-      <div className="hero-slideshow">
-        <div className="hero-slideshow-track">
-          {DOUBLED.map((s, i) => (
-            <div className="hero-slideshow-slide" key={i}>
-              <Image
-                src={s.src}
-                alt={s.alt}
-                width={260}
-                height={160}
-                className="hero-slideshow-img"
-              />
-            </div>
-          ))}
         </div>
       </div>
 

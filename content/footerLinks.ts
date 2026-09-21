@@ -35,8 +35,19 @@ export const footerColumns: FooterColumn[] = [
     links: [
       L("About Us", "हमारे बारे में", "/about"),
       L("Get Support", "सहायता लें", "/support"),
-      L("File a Claim", "दावा दायर करें", "/claim"),
+      L("File a Claim", "दावा दायर करें", siteConfig.forms?.claim ?? "/support", true),
+      L("Renew Your Policy", "पॉलिसी नवीनीकृत करें", siteConfig.forms?.renew ?? "/support", true),
       L("Become a Partner", "साझीदार बनें", siteConfig.forms?.partner ?? "/support", true),
+      L("Careers", "करियर", siteConfig.forms?.careers ?? "/about", true),
+    ],
+  },
+  {
+    title: { en: "Important Links", hi: "महत्वपूर्ण लिंक" },
+    links: [
+      L("IRDAI", "IRDAI", "https://www.irdai.gov.in", true),
+      L("Insurance Ombudsman", "बीमा लोकपाल", "https://www.irdai.gov.in/en/Helpful-links/Insurance-Ombudsman", true),
+      L("ESIC", "ESIC", "https://www.esic.gov.in", true),
+      L("MACT Calculator", "MACT कैलकुलेटर", "https://services.india.gov.in/service/detail?serviceId=26", true),
       L("Legal & Privacy Policies", "कानूनी और गोपनीयता नीतियाँ", "/privacy"),
     ],
   },
