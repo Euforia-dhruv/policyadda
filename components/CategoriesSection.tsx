@@ -1,66 +1,28 @@
-"use client";
-
 import type { Locale, PolicyCategory } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import { pick } from "@/lib/i18n";
 import Image from "next/image";
-import { motion } from "motion/react";
-import { Shield, Home } from "@/lib/icons";
+import { ArrowRight } from "@/lib/icons";
 
 const CATEGORY_IMAGES: Record<string, string> = {
-  motor: "/assets/03 - Motor.webp",
-  health: "/assets/04 - Health.webp",
-  travel: "/assets/05 - Travel.webp",
-  business: "/assets/06 - Business.webp",
+  motor: "/assets/cards/Motor Insurance.png",
+  health: "/assets/cards/Health Insurance.png",
+  travel: "/assets/cards/Travel Insurance.png",
+  business: "/assets/cards/Business Insurance.png",
+  life: "/assets/cards/Life Insurance.png",
+  property: "/assets/cards/Property & Home Insurance.png",
 };
 
-const CATEGORY_SHORT: Record<string, string> = {
-  motor: "Protect your vehicle with comprehensive coverage",
-  health: "Secure your family's health with the right plan",
-  life: "Plan for the future with life insurance",
-  business: "Shield your business from unexpected risks",
-  property: "Safeguard your home and property",
-  travel: "Travel with peace of mind worldwide",
+const CATEGORY_COPY: Record<string, { en: string; hi: string }> = {
+  health: { en: "For you and your family.", hi: "आप और आपके परिवार के लिए।" },
+  motor: { en: "A safer ride, every time.", hi: "हर सफर सुरक्षित।" },
+  life: { en: "Because tomorrow matters.", hi: "क्योंकि कल मायने रखता है।" },
+  business: { en: "Security for your growth.", hi: "आपकी तरक्की की सुरक्षा।" },
+  property: { en: "Your space, our protection.", hi: "आपकी जगह, हमारी सुरक्षा।" },
+  travel: { en: "Go further, worry less.", hi: "दूर तक जाएं, कम चिंता करें।" },
 };
 
-function PhotoCard({ cat, locale }: { cat: PolicyCategory; locale: Locale }) {
-  const img = CATEGORY_IMAGES[cat.slug];
-  return (
-    <a href={`/policies/${cat.slug}`} className="group block">
-      <div className="cat-photo-card">
-        {img && (
-          <div className="cat-photo-img">
-            <Image
-              src={img}
-              alt={pick(locale, cat.name)}
-              width={600}
-              height={400}
-              className="cat-photo-photo"
-            />
-          </div>
-        )}
-        <div className="cat-photo-body">
-          <span className="cat-photo-label">{pick(locale, cat.name)}</span>
-          <p className="cat-photo-desc">{CATEGORY_SHORT[cat.slug] || pick(locale, cat.short)}</p>
-          <span className="cat-photo-link">Explore <span aria-hidden="true">→</span></span>
-        </div>
-      </div>
-    </a>
-  );
-}
-
-function IconCard({ cat, locale, icon }: { cat: PolicyCategory; locale: Locale; icon: React.ReactNode }) {
-  return (
-    <a href={`/policies/${cat.slug}`} className="group block">
-      <div className="cat-icon-card">
-        <div className="cat-icon-ico">{icon}</div>
-        <h3 className="cat-icon-title">{pick(locale, cat.name)}</h3>
-        <p className="cat-icon-desc">{CATEGORY_SHORT[cat.slug] || pick(locale, cat.short)}</p>
-        <span className="cat-icon-link">Explore <span aria-hidden="true">→</span></span>
-      </div>
-    </a>
-  );
-}
+const CATEGORY_ORDER = ["health", "motor", "life", "business", "property", "travel"];
 
 export default function CategoriesSection({
   categories,
@@ -73,51 +35,50 @@ export default function CategoriesSection({
 }) {
   if (categories.length === 0) return null;
 
-  const photoCategories = categories.filter((c) => CATEGORY_IMAGES[c.slug]);
-  const iconCategories = categories.filter((c) => !CATEGORY_IMAGES[c.slug]);
+  const sorted = CATEGORY_ORDER
+    .map((slug) => categories.find((c) => c.slug === slug))
+    .filter(Boolean) as PolicyCategory[];
 
   return (
-    <section className="pad" id="categories" style={{ background: "#fff" }}>
-      <div className="wrap">
-        <div className="section-head center">
+    <section className="cat-section" id="categories">
+      <div className="cat-section-inner">
+        <div className="cat-section-head">
           <p className="eyebrow">{copy.categories.eyebrow || "OUR INSURANCE PRODUCTS"}</p>
-          <h2>{copy.categories.title || "Protection for every chapter of your life."}</h2>
-          <p className="lead">{copy.categories.lead || "Explore a category, understand your options, and ask us anything."}</p>
+          <h2 className="cat-section-title">{copy.categories.title || "Protection for every chapter of your life."}</h2>
         </div>
 
-        <div className="cat-photo-grid">
-          {photoCategories.map((cat, i) => (
-            <motion.div
-              key={cat.id}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-            >
-              <PhotoCard cat={cat} locale={locale} />
-            </motion.div>
-          ))}
-        </div>
-
-        {iconCategories.length > 0 && (
-          <div className="cat-icon-grid">
-            {iconCategories.map((cat, i) => (
-              <motion.div
+        <div className="cat-grid">
+          {sorted.map((cat) => {
+            const img = CATEGORY_IMAGES[cat.slug];
+            const desc = CATEGORY_COPY[cat.slug];
+            return (
+              <a
                 key={cat.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
+                href={`/policies/${cat.slug}`}
+                className="cat-card"
               >
-                <IconCard
-                  cat={cat}
-                  locale={locale}
-                  icon={cat.slug === "life" ? <Shield size={24} /> : <Home size={24} />}
-                />
-              </motion.div>
-            ))}
-          </div>
-        )}
+                {img && (
+                  <div className="cat-card-img">
+                    <Image
+                      src={img}
+                      alt={pick(locale, cat.name)}
+                      width={400}
+                      height={260}
+                      className="cat-card-photo"
+                    />
+                  </div>
+                )}
+                <div className="cat-card-body">
+                  <h3 className="cat-card-title">{pick(locale, cat.name)}</h3>
+                  <p className="cat-card-desc">{desc ? pick(locale, desc) : pick(locale, cat.short)}</p>
+                  <span className="cat-card-arrow">
+                    <ArrowRight size={16} />
+                  </span>
+                </div>
+              </a>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
