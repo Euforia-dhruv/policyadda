@@ -36,7 +36,7 @@ export default function Nav({
 
   return (
     <>
-      <header className={`nav ${scrolled ? "nav--scrolled" : ""}`}>
+      <header className={`nav ${isHome && !scrolled ? "nav--transparent" : ""} ${scrolled ? "nav--scrolled" : ""}`}>
         <div className="wrap nav-inner">
           <PolicyAddaBrand variant="full" />
 
