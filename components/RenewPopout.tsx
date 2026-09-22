@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import type { Locale } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import { siteConfig } from "@/content/config";
@@ -23,7 +23,7 @@ export default function RenewPopout({
 }) {
   const [internalOpen, setInternalOpen] = useState(false);
   const open = controlledOpen ?? internalOpen;
-  const close = onClose ?? (() => setInternalOpen(false));
+  const close = useMemo(() => onClose ?? (() => setInternalOpen(false)), [onClose]);
   const forms = siteConfig.forms;
   const renewUrl = forms?.renew;
 

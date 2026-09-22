@@ -35,7 +35,7 @@ export default async function CategoryPage({ params }: { params: Promise<Params>
       <section className="pad pb-7">
         <div className="wrap">
           <nav className="breadcrumb" aria-label="Breadcrumb">
-            <a href="/">Home</a>
+            <a href="/">{copy.nav.home}</a>
             <span className="sep">/</span>
             <a href="/policies">{copy.nav.categories}</a>
             <span className="sep">/</span>
@@ -53,10 +53,10 @@ export default async function CategoryPage({ params }: { params: Promise<Params>
         <div className="wrap">
           {policies.length === 0 ? (
             <div className="notice-center">
-              <h2>Coming soon</h2>
-              <p>Policy concepts for this category are being prepared.</p>
+              <h2>{copy.common.comingSoon}</h2>
+              <p>{copy.common.comingSoonSub}</p>
               <p className="mt-3">
-                <a href="/support" className="btn btn-primary">Contact support</a>
+                <a href="/support" className="btn btn-primary">{copy.support.call}</a>
               </p>
             </div>
           ) : (

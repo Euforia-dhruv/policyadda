@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { createClient } from "@/lib/supabase/client";
 
 interface SiteContent {
@@ -277,7 +278,7 @@ function HeroEditor({
         </div>
         {hero.posterSrc && (
           <div className="mt-2">
-            <img src={hero.posterSrc} alt="Poster preview" className="rounded max-h-40 border border-[var(--line)]" />
+            <Image src={hero.posterSrc} alt="Poster preview" width={320} height={180} className="rounded max-h-40 border border-[var(--line)]" unoptimized />
           </div>
         )}
       </div>
@@ -338,7 +339,7 @@ function BannerEditor({
               <input type="file" accept="image/*" className="hidden" onChange={(e) => handleUpload(i, e)} />
             </label>
           </div>
-          {b.src && <img src={b.src} alt={b.alt} className="rounded mt-2 max-h-32 border border-[var(--line)]" />}
+          {b.src && <Image src={b.src} alt={b.alt} width={256} height={128} className="rounded mt-2 max-h-32 border border-[var(--line)]" unoptimized />}
           <Field label="Alt Text" value={b.alt} onChange={(v) => updateBanner(i, "alt", v)} />
           <Field label="Link URL (optional)" value={b.href} onChange={(v) => updateBanner(i, "href", v)} />
         </div>

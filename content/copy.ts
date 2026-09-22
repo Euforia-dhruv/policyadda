@@ -69,6 +69,12 @@ export type SiteCopy = {
     tSuccessSub: string;
     tNote: string;
     cats: string[];
+    enquiryTitle: string;
+    enquiryLead: string;
+    enquiryCta: string;
+    claimTitle: string;
+    claimLead: string;
+    claimCta: string;
   };
   claim: {
     eyebrow: string;
@@ -149,6 +155,8 @@ export type SiteCopy = {
     loading: string;
     submit: string;
     optional: string;
+    comingSoon: string;
+    comingSoonSub: string;
   };
 };
 
@@ -270,6 +278,12 @@ export const en: SiteCopy = {
     tSuccessSub: "We've received your ticket and will reply by email.",
     tNote: "With the ticket number you receive, you can follow up by mentioning it in the subject of your email or call.",
     cats: ["General question", "Application status", "Policy question", "Claim support", "Renewal", "Other"],
+    enquiryTitle: "Get Assistance",
+    enquiryLead: "Fill the enquiry form — a PolicyAdda expert will contact you.",
+    enquiryCta: "Open Enquiry Form",
+    claimTitle: "File a Claim",
+    claimLead: "Fill the claim intimation form — our team will reach out.",
+    claimCta: "Open Claim Form",
   },
   footer: {
     tagline: "Policy Aapka, Adda Apna. Insurance assistance and policy discovery, made clear.",
@@ -356,6 +370,8 @@ export const en: SiteCopy = {
     loading: "Loading…",
     submit: "Submit",
     optional: "optional",
+    comingSoon: "Coming soon",
+    comingSoonSub: "Policy concepts for this category are being prepared.",
   },
 };
 
@@ -477,6 +493,12 @@ export const hi: SiteCopy = {
     tSuccessSub: "हमें आपका टिकट मिल गया है और ईमेल द्वारा जवाब देंगे।",
     tNote: "मिले टिकट नंबर के साथ आप अपने ईमेल या कॉल के विषय में उसका उल्लेख करके अनुसरण कर सकते हैं।",
     cats: ["सामान्य प्रश्न", "आवेदन की स्थिति", "पॉलिसी प्रश्न", "क्लेम सहायता", "नवीनीकरण", "अन्य"],
+    enquiryTitle: "सहायता के लिए आवेदन करें",
+    enquiryLead: "आवेदन फ़ॉर्म भरें — PolicyAdda एक्सपर्ट आपसे संपर्क करेगा।",
+    enquiryCta: "आवेदन फ़ॉर्म खोलें",
+    claimTitle: "दावा दायर करें",
+    claimLead: "क्लेम सूचना फ़ॉर्म भरें — हमारी टीम आपसे संपर्क करेगी।",
+    claimCta: "क्लेम फ़ॉर्म खोलें",
   },
   footer: {
     tagline: "बीमा सहायता और पॉलिसी की जानकारी, साफ़ और सरल तरीके से।",
@@ -563,5 +585,7 @@ export const hi: SiteCopy = {
     loading: "लोड हो रहा है…",
     submit: "जमा करें",
     optional: "वैकल्पिक",
+    comingSoon: "जल्द आ रहा है",
+    comingSoonSub: "इस श्रेणी की पॉलिसी अवधारणाएँ तैयार की जा रही हैं।",
   },
 };

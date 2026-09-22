@@ -20,8 +20,6 @@ type Msg = {
   disclaimer?: boolean;
 };
 
-let msgId = 0;
-
 function nl(text: string) {
   return text.split("\n").map((seg, i) =>
     seg === "" ? <br key={i} /> : <span key={i}>{seg}</span>
@@ -34,9 +32,10 @@ export default function Chatbot({ locale }: { locale: Locale }) {
   const [messages, setMessages] = useState<Msg[]>([]);
   const bodyRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const msgIdRef = useRef(0);
 
   useEffect(() => {
-    const start: Msg = { id: msgId++, role: "bot", text: welcomeMessage[locale] };
+    const start: Msg = { id: msgIdRef.current++, role: "bot", text: welcomeMessage[locale] };
     setMessages([start]);
   }, [locale]);
 
@@ -60,7 +59,7 @@ export default function Chatbot({ locale }: { locale: Locale }) {
   }, [open]);
 
   function answer(q: string, viaChipIntent?: string) {
-    const userMsg: Msg = { id: msgId++, role: "user", text: q };
+    const userMsg: Msg = { id: msgIdRef.current++, role: "user", text: q };
     const hasDevanagari = /[\u0900-\u097F]/.test(q);
     let reply: ChatReply;
     if (viaChipIntent) {
@@ -71,7 +70,7 @@ export default function Chatbot({ locale }: { locale: Locale }) {
     }
     const localized = replyForLocale(reply, locale, hasDevanagari);
     const botMsg: Msg = {
-      id: msgId++,
+      id: msgIdRef.current++,
       role: "bot",
       text: localized.text,
       link: localized.link,
@@ -101,7 +100,7 @@ export default function Chatbot({ locale }: { locale: Locale }) {
       {open && (
         <div className="chat-panel" role="dialog" aria-label="Policy Adda AI Assistant">
           <div className="chat-head">
-            <div className="chat-avatar">🤖</div>
+            <div className="chat-avatar" aria-hidden="true">🤖</div>
             <div>
               <p className="chat-name">Policy Adda AI Assistant</p>
               <p className="chat-online">Online • Insurance Assistant</p>

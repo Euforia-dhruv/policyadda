@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import localFont from "next/font/local";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { getCopy } from "@/lib/i18n";
@@ -102,6 +103,9 @@ export default async function RootLayout({
 }) {
   const locale = getLocale();
   const copy = getCopy(locale);
+  const h = await headers();
+  const pathname = h.get("x-invoke-path") ?? h.get("x-matched-path") ?? "";
+  const isAdmin = pathname.startsWith("/admin") || pathname.startsWith("/login") || pathname.startsWith("/signup");
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -113,10 +117,10 @@ export default async function RootLayout({
       </head>
       <body className={`${plusJakarta.variable} ${panchang.variable} ${array.variable} ${stardom.variable} ${britney.variable} ${zodiak.variable}`}>
         <ScrollProgress />
-        <Nav copy={copy} locale={locale} />
+        {!isAdmin && <Nav copy={copy} locale={locale} />}
         <main>{children}</main>
-        <Footer copy={copy} locale={locale} config={siteConfig} />
-        <Chatbot locale={locale} />
+        {!isAdmin && <Footer copy={copy} locale={locale} config={siteConfig} />}
+        {!isAdmin && <Chatbot locale={locale} />}
       </body>
     </html>
   );

@@ -63,19 +63,19 @@ export default function SupportPage() {
           <div className="support-grid">
             {enquiryUrl && (
               <a href={enquiryUrl} target="_blank" rel="noreferrer" className="card support-card no-underline">
-                <h3>{locale === "hi" ? "सहायता के लिए आवेदन करें" : "Get Assistance"}</h3>
-                <p>{locale === "hi" ? "आवेदन फ़ॉर्म भरें — PolicyAdda एक्सपर्ट आपसे संपर्क करेगा।" : "Fill the enquiry form — a PolicyAdda expert will contact you."}</p>
+                <h3>{copy.support.enquiryTitle}</h3>
+                <p>{copy.support.enquiryLead}</p>
                 <span className="btn btn-primary mt-2">
-                  {locale === "hi" ? "आवेदन फ़ॉर्म खोलें" : "Open Enquiry Form"} <ExternalLink size={14} className="inline-block align-[-2px] ml-1" />
+                  {copy.support.enquiryCta} <ExternalLink size={14} className="inline-block align-[-2px] ml-1" />
                 </span>
               </a>
             )}
             {claimUrl && (
               <a href={claimUrl} target="_blank" rel="noreferrer" className="card support-card no-underline">
-                <h3>{locale === "hi" ? "दावा दायर करें" : "File a Claim"}</h3>
-                <p>{locale === "hi" ? "क्लेम सूचना फ़ॉर्म भरें — हमारी टीम आपसे संपर्क करेगी।" : "Fill the claim intimation form — our team will reach out."}</p>
+                <h3>{copy.support.claimTitle}</h3>
+                <p>{copy.support.claimLead}</p>
                 <span className="btn btn-primary mt-2">
-                  {locale === "hi" ? "क्लेम फ़ॉर्म खोलें" : "Open Claim Form"} <ExternalLink size={14} className="inline-block align-[-2px] ml-1" />
+                  {copy.support.claimCta} <ExternalLink size={14} className="inline-block align-[-2px] ml-1" />
                 </span>
               </a>
             )}

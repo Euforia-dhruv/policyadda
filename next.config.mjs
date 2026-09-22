@@ -24,7 +24,7 @@ function securityHeaders() {
         `connect-src ${connectSrc}`,
         "img-src 'self' data: https:",
         "font-src 'self' data:",
-        "media-src 'self' blob:",
+        "media-src 'self'",
         "frame-src 'none'",
         "frame-ancestors 'none'",
         "object-src 'none'",
