@@ -75,6 +75,48 @@ export default function PrivacyPage() {
             <p className="muted-sm mb-4">
               As an insurance intermediary/broker, Policy Adda may collect and process your information to facilitate insurance enquiries, quotations, policy purchases, renewals, servicing and other insurance-related services. Where required, your information may be shared with insurance companies, service providers and other authorised parties for processing your requests and providing the relevant services, in accordance with applicable laws and regulations.
             </p>
+            <p className="muted-sm mb-4">
+              This Privacy Notice applies to information collected through the Platform. The Platform may also contain links to third-party websites, including websites of insurers and other service providers. Any information provided directly to such third-party websites will be governed by their respective privacy policies and terms. We recommend reviewing their privacy policies before sharing your personal information.
+            </p>
+            <p className="muted-sm mb-4">
+              This Privacy Notice shall be read together with the applicable terms and conditions, agreements and other notices issued by Policy Adda and shall be subject to applicable Indian laws, regulations and regulatory requirements, including those applicable to insurance intermediaries.
+            </p>
+            <p className="muted-sm mb-4">
+              Policy Adda may amend or update this Privacy Notice from time to time to reflect changes in applicable laws, regulatory requirements, business practices or services. The updated Privacy Notice will be published on the Platform. Users are advised to review this page periodically for the latest version.
+            </p>
+          </div>
+
+          <div className="detail-block">
+            <h2 className="tl-label text-base">Categories of Personal Information We Collect</h2>
+            <div className="overflow-x-auto mb-3">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr style={{ borderBottom: "1px solid var(--border, #e2e8f0)" }}>
+                    <th className="text-left py-2 pr-3 font-semibold">Sr. No.</th>
+                    <th className="text-left py-2 pr-3 font-semibold">Category</th>
+                    <th className="text-left py-2 font-semibold">Types of Information Collected</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["1", "Personal Information", "Name, Date of Birth, Gender, Nominee/Beneficiary Data"],
+                    ["2", "Contact Information", "Phone Number, Email Address, Address, Pincode"],
+                    ["3", "Demographic Information", "Age, Marital Status, Nationality"],
+                    ["4", "Employment Information", "Occupation, Employer Name, Job Title, Employment Status, Income Range"],
+                    ["5", "Education", "Educational Qualifications"],
+                    ["6", "Health Information", "Medical History, Pre-existing Conditions"],
+                    ["7", "Multimedia Data", "Photographs"],
+                    ["8", "Digital Interaction Data", "IP Address, Browsing History, Cookies, Device Information, Clickstream Data"],
+                  ].map(([n, cat, types]) => (
+                    <tr key={n} style={{ borderBottom: "1px solid var(--border, #e2e8f0)" }}>
+                      <td className="py-2 pr-3 align-top">{n}</td>
+                      <td className="py-2 pr-3 align-top">{cat}</td>
+                      <td className="py-2 align-top">{types}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
 
           <div className="detail-block">
@@ -106,6 +148,13 @@ export default function PrivacyPage() {
           </div>
 
           <div className="detail-block">
+            <h2 className="tl-label text-base">Legal Basis for Processing</h2>
+            <p className="muted-sm">
+              We process personal information on lawful grounds, including: Provision of Services (insurance broking services such as quotations, proposal submission, policy servicing and claims assistance); Legal and Regulatory Compliance; Legitimate Uses (policy renewals, customer support, service management, fraud prevention and business operations); and Consent (where required, particularly for promotional communications — you may withdraw or manage your consent subject to applicable law). We process personal information lawfully, fairly and transparently and only for legitimate and permitted purposes.
+            </p>
+          </div>
+
+          <div className="detail-block">
             <h2 className="tl-label text-base">Sharing of Personal Information</h2>
             <p className="muted-sm">
               We may share your personal information where necessary to provide services, fulfil business purposes or comply with applicable law. This may include sharing with: Insurance Companies (to obtain quotations, process proposals, issue or service policies and assist with claims); Authorised Service Providers (for document management, secure data storage, technology and other operational support); Government and Regulatory Authorities (where required by law); and Business Transfers (in case of merger, acquisition or restructuring). We require third parties to maintain appropriate confidentiality and security.
@@ -120,9 +169,23 @@ export default function PrivacyPage() {
           </div>
 
           <div className="detail-block">
+            <h2 className="tl-label text-base">Location of Data Processing</h2>
+            <p className="muted-sm">
+              Your personal information may be collected, processed and stored in India, subject to applicable law and regulatory requirements. We implement appropriate technical and organisational measures to protect your information.
+            </p>
+          </div>
+
+          <div className="detail-block">
             <h2 className="tl-label text-base">Data Security</h2>
             <p className="muted-sm">
               We maintain reasonable technical, organisational and physical security measures to protect personal information against unauthorised access, use, alteration, disclosure, loss or destruction. However, no method of transmission or electronic storage is completely secure. You are responsible for maintaining the confidentiality of your account credentials.
+            </p>
+          </div>
+
+          <div className="detail-block">
+            <h2 className="tl-label text-base">How Long Personal Data is Retained</h2>
+            <p className="muted-sm">
+              Policy Adda retains personal data only for as long as necessary for the purposes for which it was collected and as required under applicable laws, regulatory requirements, and business needs.
             </p>
           </div>
 
@@ -143,7 +206,7 @@ export default function PrivacyPage() {
           <div className="detail-block">
             <h2 className="tl-label text-base">Grievance Redressal</h2>
             <p className="muted-sm">
-              Policy Adda is committed to addressing privacy-related concerns promptly and in accordance with applicable data protection, insurance, and cybersecurity laws. You may raise your privacy-related grievance with our designated Grievance Officer through the contact details provided in this Privacy Notice.
+              Policy Adda is committed to addressing privacy-related concerns promptly and in accordance with applicable data protection, insurance, and cybersecurity laws. You may raise your privacy-related grievance with our designated Grievance Officer through the contact details provided in this Privacy Notice. Where applicable, you may further approach the competent regulatory or statutory authority. For grievances covered under the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021, Policy Adda will acknowledge and address complaints within the timelines prescribed under applicable law.
             </p>
           </div>
 
