@@ -49,6 +49,8 @@ export const footerColumns: FooterColumn[] = [
       L("ESIC", "ESIC", "https://www.esic.gov.in", true),
       L("MACT Calculator", "MACT कैलकुलेटर", "https://services.india.gov.in/service/detail?serviceId=26", true),
       L("Legal & Privacy Policies", "कानूनी और गोपनीयता नीतियाँ", "/privacy"),
+      L("Cookie Policy", "कुकी नीति", "/cookies"),
+      L("Terms & Conditions", "नियम और शर्तें", "/terms"),
     ],
   },
 ];
