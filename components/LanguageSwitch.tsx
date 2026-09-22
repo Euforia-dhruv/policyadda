@@ -10,7 +10,8 @@ export default function LanguageSwitch({
   className?: string;
 }) {
   const go = (l: string) => {
-    fetch(`/api/locale?l=${l}`).then(() => window.location.reload());
+    document.cookie = `policyadda_locale=${l}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Lax`;
+    fetch(`/api/locale?l=${l}`).finally(() => window.location.reload());
   };
 
   return (

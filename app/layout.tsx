@@ -9,6 +9,7 @@ import { siteConfig } from "@/content/config";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
+import PromoPopup from "@/components/PromoPopup";
 import { ScrollProgress } from "@/components/effects/ScrollProgress";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -94,7 +95,7 @@ export const metadata: Metadata = {
   },
 };
 
-const themeInit = `(function(){try{var t=localStorage.getItem('policyadda_theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`;
+const themeInit = `(function(){try{var t=localStorage.getItem('policyadda_theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='dark'?'#0B1120':'#F8FAFC');}catch(e){}})();`;
 
 export default async function RootLayout({
   children,
@@ -121,6 +122,7 @@ export default async function RootLayout({
         <main>{children}</main>
         {!isAdmin && <Footer copy={copy} locale={locale} config={siteConfig} />}
         {!isAdmin && <Chatbot locale={locale} />}
+        {!isAdmin && <PromoPopup copy={copy} locale={locale} />}
       </body>
     </html>
   );

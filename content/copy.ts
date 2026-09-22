@@ -106,6 +106,16 @@ export type SiteCopy = {
     note: string;
     thanks: string;
   };
+  promo: {
+    tagline: string;
+    title: string;
+    lead: string;
+    primary: string;
+    secondary: string;
+    whatsapp: string;
+    later: string;
+    dismiss: string;
+  };
   footer: {
     tagline: string;
     explore: string;
@@ -347,6 +357,16 @@ export const en: SiteCopy = {
     note: "The partner form opens in a new tab — without leaving or redirecting this page.",
     thanks: "Thanks for submitting your request. We will contact you shortly.",
   },
+  promo: {
+    tagline: "FREE QUOTE",
+    title: "Need the right policy?",
+    lead: "Talk to a PolicyAdda expert — clear advice, no obligation. Or open the enquiry form and we'll call you back.",
+    primary: "Get a free quote",
+    secondary: "Call Now",
+    whatsapp: "WhatsApp Us",
+    later: "Maybe later",
+    dismiss: "Don't show again for 7 days",
+  },
   cta: {
     title: "Insurance feels complicated.\nGetting help shouldn\u2019t.",
     sub: "Talk to a PolicyAdda expert today. Clear advice, better choices, true support.",
@@ -570,6 +590,16 @@ export const hi: SiteCopy = {
     formCta: "पार्टनर फ़ॉर्म खोलें",
     note: "पार्टनर फ़ॉर्म नए टैब में खुलेगा — इस पृष्ठ को छोड़े या रीडायरेक्ट किए बिना।",
     thanks: "आपके अनुरोध के लिए धन्यवाद। हम शीघ्र ही आपसे संपर्क करेंगे।",
+  },
+  promo: {
+    tagline: "मुफ़्त कोटेशन",
+    title: "सही पॉलिसी चाहिए?",
+    lead: "PolicyAdda एक्सपर्ट से बात करें — स्पष्ट सलाह, कोई बाध्यता नहीं। या एन्क्वायरी फ़ॉर्म खोलें, हम आपसे संपर्क करेंगे।",
+    primary: "मुफ़्त कोटेशन लें",
+    secondary: "अभी कॉल करें",
+    whatsapp: "WhatsApp करें",
+    later: "बाद में",
+    dismiss: "7 दिन तक दोबारा न दिखाएँ",
   },
   cta: {
     title: "बीमा जटिल लगता है।\nमदद लेना आसान होना चाहिए।",

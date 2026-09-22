@@ -94,6 +94,7 @@
 
 /* ── Token: Theme — Light ── */
 :root {
+  color-scheme: light;
   --bg: #F8FAFC;
   --bg-gradient: none;
   --surface: #fff;
@@ -127,6 +128,7 @@
 
 /* ── Token: Theme — Dark ── */
 [data-theme="dark"] {
+  color-scheme: dark;
   --bg: #0B1120;
   --bg-gradient: none;
   --surface: #111827;
@@ -272,7 +274,7 @@ section { position: relative; }
 @layer components {
   .nav {
     @apply sticky top-0 z-nav;
-    background: #fff;
+    background: var(--surface);
     border-bottom: 1px solid var(--line);
     transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
   }
@@ -296,7 +298,7 @@ section { position: relative; }
   .brand { @apply inline-flex items-center gap-[11px]; flex-shrink: 0; }
   .brand-seal { @apply w-10 h-10 object-contain flex-none; }
   .brand-wordmark { @apply w-[201px] h-[34px] object-contain flex-none; }
-  .nav-links { @apply flex items-center gap-5; font-size: 14px; font-weight: 500; color: #475569; white-space: nowrap; }
+  .nav-links { @apply flex items-center gap-5; font-size: 14px; font-weight: 500; color: var(--muted); white-space: nowrap; }
   .nav-links a { @apply transition-colors; transition-duration: var(--dur-fast); color: inherit; text-decoration: none; }
   .nav-links a:hover { color: #2563EB; }
   .nav-links a[aria-current="page"] { font-weight: 600; color: #2563EB; }
@@ -1006,6 +1008,12 @@ section { position: relative; }
 .renew-close { position: absolute; top: 12px; right: 12px; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); background: var(--surface); cursor: pointer; transition: color var(--dur-fast) ease, border-color var(--dur-fast) ease; }
 .renew-close:hover { color: var(--accent-strong); border-color: var(--accent-line); }
 .renew-thanks { padding: var(--sp-3) var(--sp-4); border-left: 3px solid var(--ok); background: var(--surface-2); color: var(--muted); font-size: var(--text-sm); border-radius: 0 var(--radius) var(--radius) 0; }
+.promo-actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-bottom: var(--sp-3); }
+.promo-foot { display: flex; justify-content: space-between; gap: var(--sp-3); margin-top: var(--sp-4); padding-top: var(--sp-4); border-top: 1px solid var(--line); }
+.promo-later, .promo-dismiss { background: none; border: 0; cursor: pointer; font-size: var(--text-sm); color: var(--muted); text-decoration: underline-offset-4; transition: color var(--dur-fast) ease; }
+.promo-later:hover { color: var(--text); text-decoration: underline; }
+.promo-dismiss { color: var(--accent); }
+.promo-dismiss:hover { text-decoration: underline; }
 .renew-card { text-align: left; cursor: pointer; width: 100%; font: inherit; }
 .renew-card:hover { transform: translateY(-2px); }
 
@@ -1109,7 +1117,7 @@ section { position: relative; }
 /* ============================================================
    Categories — compact 6-card product grid
    ============================================================ */
-.cat-section { background: #fff; padding: clamp(40px, 6vw, 72px) 0 clamp(36px, 5vw, 60px); }
+.cat-section { background: var(--surface); padding: clamp(40px, 6vw, 72px) 0 clamp(36px, 5vw, 60px); }
 .cat-section-inner { width: min(1320px, 92vw); margin: 0 auto; }
 .cat-section-head { text-align: center; margin-bottom: clamp(24px, 3vw, 40px); }
 .cat-section-title { font-family: var(--font-display); font-size: clamp(28px, 3.2vw, 44px); font-weight: 800; line-height: 1.15; letter-spacing: -0.025em; color: var(--text); margin-top: var(--sp-3); }
