@@ -81,11 +81,11 @@ export async function middleware(request: NextRequest) {
 
       const { data: profile } = await supabase
         .from("profiles")
-        .select("role")
-        .eq("id", user.id)
+        .select("role_code")
+        .eq("user_id", user.id)
         .single();
 
-      const role = profile?.role;
+      const role = profile?.role_code;
       if (role !== "admin" && role !== "super_admin") {
         return NextResponse.redirect(new URL("/", request.url));
       }

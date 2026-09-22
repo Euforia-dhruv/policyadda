@@ -21,10 +21,10 @@ async function isAdmin(req: NextRequest): Promise<boolean> {
   if (!user) return false;
   const { data: profile } = await supabase
     .from("profiles")
-    .select("role")
-    .eq("id", user.id)
+    .select("role_code")
+    .eq("user_id", user.id)
     .single();
-  return profile?.role === "admin" || profile?.role === "super_admin";
+  return profile?.role_code === "admin" || profile?.role_code === "super_admin";
 }
 
 export async function GET(req: NextRequest) {
