@@ -2,11 +2,10 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 import type { Locale } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import { siteConfig } from "@/content/config";
-import { Phone, Shield, Car, Heart, Briefcase, Home, Plane, ChevronRight } from "@/lib/icons";
+import { Phone, Shield, Car, Heart, Briefcase, Home, Plane, ChevronRight, ChevronDown } from "@/lib/icons";
 import LanguageSwitch from "./LanguageSwitch";
 import ThemeToggle from "./ThemeToggle";
 import PolicyAddaBrand from "./brand/PolicyAddaBrand";
@@ -14,12 +13,12 @@ import RenewPopout from "./RenewPopout";
 import PartnerPopout from "./PartnerPopout";
 
 const MEGA_ITEMS = [
-  { slug: "health", label: "Health Insurance", desc: "For you and your family.", img: "/assets/cards/Health Insurance.png", icon: <Heart size={20} /> },
-  { slug: "motor", label: "Motor Insurance", desc: "A safer ride, every time.", img: "/assets/cards/Motor Insurance.png", icon: <Car size={20} /> },
-  { slug: "life", label: "Life Insurance", desc: "Because tomorrow matters.", img: "/assets/cards/Life Insurance.png", icon: <Shield size={20} /> },
-  { slug: "business", label: "Business Insurance", desc: "Security for your growth.", img: "/assets/cards/Business Insurance.png", icon: <Briefcase size={20} /> },
-  { slug: "property", label: "Property & Home Insurance", desc: "Your space, our protection.", img: "/assets/cards/Property & Home Insurance.png", icon: <Home size={20} /> },
-  { slug: "travel", label: "Travel Insurance", desc: "Go further, worry less.", img: "/assets/cards/Travel Insurance.png", icon: <Plane size={20} /> },
+  { slug: "health", label: "Health Insurance", icon: <Heart size={18} /> },
+  { slug: "motor", label: "Motor Insurance", icon: <Car size={18} /> },
+  { slug: "life", label: "Life Insurance", icon: <Shield size={18} /> },
+  { slug: "business", label: "Business Insurance", icon: <Briefcase size={18} /> },
+  { slug: "property", label: "Property & Home Insurance", icon: <Home size={18} /> },
+  { slug: "travel", label: "Travel Insurance", icon: <Plane size={18} /> },
 ];
 
 const ENQUIRY_URL = siteConfig.forms?.enquiry ?? "#";
@@ -76,6 +75,7 @@ export default function Nav({
                 onClick={(e) => { if (showMega) e.preventDefault(); }}
               >
                 {copy.nav.categories}
+                <ChevronDown size={13} className="nav-chevron" />
               </a>
             </span>
             <button type="button" className="nav-link-btn" onClick={() => setShowRenew(true)}>{copy.nav.renew}</button>
@@ -98,13 +98,13 @@ export default function Nav({
         </div>
       </header>
 
-      {/* Mega Menu Drawer */}
+      {/* Insurance Products dropdown — minimal list */}
       <div
         className={`mega-drawer ${showMega ? "mega-drawer--open" : ""}`}
         onMouseEnter={openMega}
         onMouseLeave={closeMega}
       >
-        <div className="wrap mega-drawer-inner">
+        <div className="mega-drawer-inner">
           <div className="mega-drawer-grid">
             {MEGA_ITEMS.map((item) => (
               <a
@@ -113,22 +113,9 @@ export default function Nav({
                 className="mega-drawer-card"
                 onClick={() => setShowMega(false)}
               >
-                <div className="mega-drawer-card-img">
-                  <Image
-                    src={item.img}
-                    alt={item.label}
-                    width={280}
-                    height={170}
-                    className="mega-drawer-card-photo"
-                  />
-                </div>
+                <div className="mega-drawer-card-icon">{item.icon}</div>
                 <div className="mega-drawer-card-body">
-                  <div className="mega-drawer-card-icon">{item.icon}</div>
                   <h4 className="mega-drawer-card-title">{item.label}</h4>
-                  <p className="mega-drawer-card-desc">{item.desc}</p>
-                  <span className="mega-drawer-card-link">
-                    {copy.nav.view} <ChevronRight size={14} />
-                  </span>
                 </div>
               </a>
             ))}
