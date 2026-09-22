@@ -1087,7 +1087,10 @@ section { position: relative; }
 .partners-row.reverse { animation-direction: reverse; }
 @keyframes partners-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .partners-marquee:hover .partners-row { animation-play-state: paused; }
-.partner-chip { flex: 0 0 auto; padding: 12px 20px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); font-weight: 600; font-size: var(--text-sm); color: var(--text); white-space: nowrap; }
+.partner-chip { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; padding: 12px 20px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); min-height: 56px; min-width: 140px; }
+.partner-chip-logo { max-height: 32px; max-width: 120px; width: auto; height: auto; object-fit: contain; filter: grayscale(0.15); transition: filter var(--dur-fast) ease; }
+.partner-chip:hover .partner-chip-logo { filter: grayscale(0); }
+.partner-chip-text { font-weight: 600; font-size: var(--text-sm); color: var(--text); white-space: nowrap; }
 @media (prefers-reduced-motion: reduce) {
   .partners-row { animation: none; flex-wrap: wrap; width: auto; }
 }

@@ -69,7 +69,7 @@ export interface SiteConfig {
   tagline: { en: string; hi: string };
   slogan: { en: string; hi: string };
   contact: BusinessContact;
-  partners?: string[];
+  partners?: (string | { name: string; logo?: string })[];
   forms?: {
     enquiry?: string;
     renew?: string;
