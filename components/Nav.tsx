@@ -107,9 +107,7 @@ export default function Nav({
             {MEGA_ITEMS.map((item) => (
               <a
                 key={item.slug}
-                href={ENQUIRY_URL}
-                target="_blank"
-                rel="noreferrer"
+                href={`/policies/${item.slug}`}
                 className="mega-drawer-card"
                 onClick={() => setShowMega(false)}
               >
@@ -127,7 +125,7 @@ export default function Nav({
                   <h4 className="mega-drawer-card-title">{item.label}</h4>
                   <p className="mega-drawer-card-desc">{item.desc}</p>
                   <span className="mega-drawer-card-link">
-                    {copy.nav.getQuote} <ChevronRight size={14} />
+                    {copy.nav.view} <ChevronRight size={14} />
                   </span>
                 </div>
               </a>
