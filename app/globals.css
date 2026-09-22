@@ -611,6 +611,31 @@ section { position: relative; }
    Grids
    ============================================================ */
 .grid-policies { display: grid; gap: var(--sp-5); grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.cat-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+}
+.cat-hero-copy { max-width: none; margin-bottom: 0; }
+.cat-hero-media {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  box-shadow: var(--shadow);
+}
+.cat-hero-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 900px) {
+  .cat-hero { grid-template-columns: 1fr; }
+  .cat-hero-media { order: -1; }
+}
 .grid-features { display: grid; gap: var(--sp-4); grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
 .grid-steps { display: grid; gap: var(--sp-4); grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
@@ -6,6 +7,15 @@ import { data } from "@/lib/data";
 import PolicyCard from "@/components/PolicyCard";
 
 type Params = { category: string };
+
+const CATEGORY_IMAGE: Record<string, { src: string; alt: string }> = {
+  motor: { src: "/assets/03 - Motor.webp", alt: "Motor insurance" },
+  health: { src: "/assets/04 - Health.webp", alt: "Health insurance" },
+  travel: { src: "/assets/05 - Travel.webp", alt: "Travel insurance" },
+  business: { src: "/assets/06 - Business.webp", alt: "Business insurance" },
+  life: { src: "/assets/02 - Advisor.webp", alt: "Life insurance advisor" },
+  property: { src: "/assets/cards/Property & Home Insurance.png", alt: "Property and home insurance" },
+};
 
 export const dynamicParams = true;
 
@@ -29,6 +39,7 @@ export default async function CategoryPage({ params }: { params: Promise<Params>
   if (!cat) notFound();
 
   const policies = data.policiesByCategory(category);
+  const image = CATEGORY_IMAGE[category];
 
   return (
     <>
@@ -41,10 +52,24 @@ export default async function CategoryPage({ params }: { params: Promise<Params>
             <span className="sep">/</span>
             <span>{pick(locale, cat.name)}</span>
           </nav>
-          <div className="section-head">
-            <p className="eyebrow">{cat.icon} {copy.categories.eyebrow}</p>
-            <h2>{pick(locale, cat.name)}</h2>
-            <p className="lead">{pick(locale, cat.description)}</p>
+          <div className="cat-hero">
+            <div className="section-head cat-hero-copy">
+              <p className="eyebrow">{cat.icon} {copy.categories.eyebrow}</p>
+              <h2>{pick(locale, cat.name)}</h2>
+              <p className="lead">{pick(locale, cat.description)}</p>
+            </div>
+            {image && (
+              <div className="cat-hero-media">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={640}
+                  height={400}
+                  priority
+                  className="cat-hero-img"
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>
