@@ -98,6 +98,14 @@ export type SiteCopy = {
     note: string;
     thanks: string;
   };
+  partnerPopout: {
+    title: string;
+    tagline: string;
+    lead: string;
+    formCta: string;
+    note: string;
+    thanks: string;
+  };
   footer: {
     tagline: string;
     explore: string;
@@ -331,6 +339,14 @@ export const en: SiteCopy = {
     note: "The renewal form opens in a new tab — without leaving or redirecting this page.",
     thanks: "Thanks for submitting your request. Your dedicated expert will contact you soon.",
   },
+  partnerPopout: {
+    title: "Become a Partner",
+    tagline: "Earn up to 1 Lakh per month, from anywhere.",
+    lead: "Join our network of insurance professionals. Share the opportunity form — our team will reach out to discuss how we can work together.",
+    formCta: "Open the partner form",
+    note: "The partner form opens in a new tab — without leaving or redirecting this page.",
+    thanks: "Thanks for submitting your request. We will contact you shortly.",
+  },
   cta: {
     title: "Insurance feels complicated.\nGetting help shouldn\u2019t.",
     sub: "Talk to a PolicyAdda expert today. Clear advice, better choices, true support.",
@@ -546,6 +562,14 @@ export const hi: SiteCopy = {
     formCta: "नवीनीकरण फ़ॉर्म खोलें",
     note: "नवीनीकरण फ़ॉर्म नए टैब में खुलेगा — इस पृष्ठ को छोड़े या रीडायरेक्ट किए बिना।",
     thanks: "आपके अनुरोध के लिए धन्यवाद। आपका समर्पित एक्सपर्ट जल्द ही संपर्क करेगा।",
+  },
+  partnerPopout: {
+    title: "पार्टनर बनें",
+    tagline: "कहीं से भी, हर महीने 1 लाख तक कमाएँ।",
+    lead: "हमारे बीमा पेशेवरों के नेटवर्क से जुड़ें। अवसर फ़ॉर्म भरें — हमारी टीम आपसे सहयोग पर चर्चा के लिए संपर्क करेगी।",
+    formCta: "पार्टनर फ़ॉर्म खोलें",
+    note: "पार्टनर फ़ॉर्म नए टैब में खुलेगा — इस पृष्ठ को छोड़े या रीडायरेक्ट किए बिना।",
+    thanks: "आपके अनुरोध के लिए धन्यवाद। हम शीघ्र ही आपसे संपर्क करेंगे।",
   },
   cta: {
     title: "बीमा जटिल लगता है।\nमदद लेना आसान होना चाहिए।",

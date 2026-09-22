@@ -11,6 +11,7 @@ import LanguageSwitch from "./LanguageSwitch";
 import ThemeToggle from "./ThemeToggle";
 import PolicyAddaBrand from "./brand/PolicyAddaBrand";
 import RenewPopout from "./RenewPopout";
+import PartnerPopout from "./PartnerPopout";
 
 const MEGA_ITEMS = [
   { slug: "health", label: "Health Insurance", desc: "For you and your family.", img: "/assets/cards/Health Insurance.png", icon: <Heart size={20} /> },
@@ -33,6 +34,7 @@ export default function Nav({
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showRenew, setShowRenew] = useState(false);
+  const [showPartner, setShowPartner] = useState(false);
   const [showMega, setShowMega] = useState(false);
   const megaTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
@@ -78,7 +80,7 @@ export default function Nav({
             </span>
             <button type="button" className="nav-link-btn" onClick={() => setShowRenew(true)}>{copy.nav.renew}</button>
             <a href="/support" aria-current={isActive("/support") ? "page" : undefined}>{copy.nav.support}</a>
-            <a href={siteConfig.forms?.partner ?? "#"} target="_blank" rel="noreferrer">{copy.nav.partner}</a>
+            <button type="button" className="nav-link-btn" onClick={() => setShowPartner(true)}>{copy.nav.partner}</button>
             <a href="/about" aria-current={isActive("/about") ? "page" : undefined}>{copy.nav.about}</a>
           </nav>
 
@@ -144,7 +146,7 @@ export default function Nav({
         <a href="/policies" onClick={() => setOpen(false)} aria-current={isActive("/policies") ? "page" : undefined}>{copy.nav.categories}</a>
         <button type="button" className="mobile-link-btn" onClick={() => { setShowRenew(true); setOpen(false); }}>{copy.nav.renew}</button>
         <a href="/support" onClick={() => setOpen(false)} aria-current={isActive("/support") ? "page" : undefined}>{copy.nav.support}</a>
-        <a href={siteConfig.forms?.partner ?? "#"} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>{copy.nav.partner}</a>
+        <button type="button" className="mobile-link-btn" onClick={() => { setShowPartner(true); setOpen(false); }}>{copy.nav.partner}</button>
         <a href="/about" onClick={() => setOpen(false)} aria-current={isActive("/about") ? "page" : undefined}>{copy.nav.about}</a>
         <a href={`tel:${siteConfig.contact.phone.tel}`} className="btn btn-accent mt-2" onClick={() => setOpen(false)}>
           <Phone size={16} className="inline-block align-[-3px] mr-1" />
@@ -152,7 +154,8 @@ export default function Nav({
         </a>
       </div>
 
-      {showRenew && <RenewPopout onClose={() => setShowRenew(false)} locale={locale} copy={copy} variant="card" />}
+      {showRenew && <RenewPopout open onClose={() => setShowRenew(false)} locale={locale} copy={copy} variant="card" />}
+      {showPartner && <PartnerPopout open onClose={() => setShowPartner(false)} locale={locale} copy={copy} variant="card" />}
     </>
   );
 }
