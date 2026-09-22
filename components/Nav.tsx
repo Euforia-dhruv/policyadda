@@ -77,6 +77,30 @@ export default function Nav({
                 {copy.nav.categories}
                 <ChevronDown size={13} className="nav-chevron" />
               </a>
+              <div className={`mega-drawer ${showMega ? "mega-drawer--open" : ""}`}>
+                <div className="mega-drawer-inner">
+                  <div className="mega-drawer-grid">
+                    {MEGA_ITEMS.map((item) => (
+                      <a
+                        key={item.slug}
+                        href={`/policies/${item.slug}`}
+                        className="mega-drawer-card"
+                        onClick={() => setShowMega(false)}
+                      >
+                        <div className="mega-drawer-card-icon">{item.icon}</div>
+                        <div className="mega-drawer-card-body">
+                          <h4 className="mega-drawer-card-title">{item.label}</h4>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                  <div className="mega-drawer-footer">
+                    <a href="/policies" className="mega-drawer-footer-link" onClick={() => setShowMega(false)}>
+                      {copy.nav.viewAll} <ChevronRight size={14} />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </span>
             <button type="button" className="nav-link-btn" onClick={() => setShowRenew(true)}>{copy.nav.renew}</button>
             <a href="/support" aria-current={isActive("/support") ? "page" : undefined}>{copy.nav.support}</a>
@@ -97,36 +121,6 @@ export default function Nav({
           </div>
         </div>
       </header>
-
-      {/* Insurance Products dropdown — minimal list */}
-      <div
-        className={`mega-drawer ${showMega ? "mega-drawer--open" : ""}`}
-        onMouseEnter={openMega}
-        onMouseLeave={closeMega}
-      >
-        <div className="mega-drawer-inner">
-          <div className="mega-drawer-grid">
-            {MEGA_ITEMS.map((item) => (
-              <a
-                key={item.slug}
-                href={`/policies/${item.slug}`}
-                className="mega-drawer-card"
-                onClick={() => setShowMega(false)}
-              >
-                <div className="mega-drawer-card-icon">{item.icon}</div>
-                <div className="mega-drawer-card-body">
-                  <h4 className="mega-drawer-card-title">{item.label}</h4>
-                </div>
-              </a>
-            ))}
-          </div>
-          <div className="mega-drawer-footer">
-            <a href="/policies" className="mega-drawer-footer-link" onClick={() => setShowMega(false)}>
-              {copy.nav.viewAll} <ChevronRight size={14} />
-            </a>
-          </div>
-        </div>
-      </div>
 
       <div className={`mobile-panel wrap ${open ? "open" : ""}`}>
         <a href="/" onClick={() => setOpen(false)} aria-current={isActive("/") ? "page" : undefined}>{copy.nav.home}</a>
