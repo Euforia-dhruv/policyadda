@@ -26,7 +26,10 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
           muted
           loop
           playsInline
+          preload="metadata"
           poster="/assets/01 - Hero.webp"
+          aria-hidden="true"
+          tabIndex={-1}
           className="hero-video-el"
         >
           <source src="/videos/policyadda-hero-4k.mp4" type="video/mp4" />

@@ -587,12 +587,75 @@ section { position: relative; }
   .hero-slideshow-track { gap: 10px; }
 }
 @media (max-width: 640px) {
-  .hero-new { height: 100vh; margin-top: -72px; padding: 0 0 36px; }
-  .hero-new-inner { padding-left: clamp(16px, 4vw, 24px); }
-  .hero-new-h1 { font-size: 1.9rem; }
-  .hero-new-actions { flex-direction: column; align-items: stretch; }
-  .hero-new-actions .btn { flex: 1; }
-  .hero-new-trust { gap: var(--sp-3); }
+  .hero-new {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 540px;
+    max-height: none;
+    margin-top: -72px;
+    padding: 0 0 max(28px, env(safe-area-inset-bottom));
+    align-items: flex-end;
+  }
+  .hero-video-el {
+    object-position: 68% center;
+  }
+  .hero-video-overlay {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.12) 28%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0.82) 100%),
+      linear-gradient(90deg, rgba(0,0,0,0.35) 0%, transparent 70%);
+  }
+  .hero-new-inner {
+    padding-left: 18px;
+    padding-right: 18px;
+    width: 100%;
+  }
+  .hero-new-content { max-width: none; }
+  .hero-new-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    margin-bottom: var(--sp-3);
+  }
+  .hero-new-eyebrow::before { width: 18px; }
+  .hero-new-h1 {
+    font-size: clamp(1.75rem, 7.5vw, 2.1rem);
+    line-height: 1.12;
+    margin-bottom: var(--sp-3);
+    letter-spacing: -0.02em;
+  }
+  .hero-new-sub {
+    font-size: 14px;
+    line-height: 1.55;
+    max-width: none;
+    margin-bottom: var(--sp-5);
+    color: rgba(255,255,255,0.82);
+  }
+  .hero-new-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: var(--sp-5);
+  }
+  .hero-new-actions .btn {
+    flex: 1;
+    width: 100%;
+    min-height: 48px;
+    justify-content: center;
+  }
+  .hero-new-actions .btn-lg {
+    padding: 13px 20px;
+    font-size: 15px;
+  }
+  .hero-new-trust {
+    gap: 10px 14px;
+    flex-wrap: wrap;
+  }
+  .hero-trust-item {
+    font-size: 12px;
+    gap: 5px;
+  }
+  .hero-safety-tag {
+    display: none;
+  }
 }
 
 /* ============================================================
@@ -1062,7 +1125,10 @@ section { position: relative; }
 @media (prefers-reduced-motion: reduce) {
   .grain { display: none; }
   *, *::before, *::after { animation-duration: 0s !important; transition-duration: 0.05s !important; }
-  .hero-video video { display: none; }
+  .hero-new-video video { display: none; }
+  .hero-new-video {
+    background: #0B2D6B url("/assets/01 - Hero.webp") center / cover no-repeat;
+  }
 }
 
 
