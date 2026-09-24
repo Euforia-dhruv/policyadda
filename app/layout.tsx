@@ -117,6 +117,7 @@ export default async function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
       <body className={`${plusJakarta.variable} ${panchang.variable} ${array.variable} ${stardom.variable} ${britney.variable} ${zodiak.variable}`}>
+        <div className="page-bg" aria-hidden />
         <ScrollProgress />
         {!isAdmin && <Nav copy={copy} locale={locale} />}
         <main>{children}</main>

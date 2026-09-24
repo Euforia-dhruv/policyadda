@@ -178,24 +178,36 @@ body {
   --page-bg-image: url("/assets/04 - Health.webp");
 }
 
-html, body {
+html {
   font-family: var(--font-ui);
   background: var(--bg);
+  transition: background var(--dur-normal) ease, color var(--dur-normal) ease;
+}
+
+body {
+  font-family: var(--font-ui);
+  background: transparent;
+  transition: background var(--dur-normal) ease, color var(--dur-normal) ease;
+  margin: 0; padding: 0;
+}
+
+.page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--bg);
   background-image:
     linear-gradient(
-      color-mix(in srgb, var(--bg) 78%, transparent),
-      color-mix(in srgb, var(--bg) 78%, transparent)
+      color-mix(in srgb, var(--bg) 55%, transparent),
+      color-mix(in srgb, var(--bg) 55%, transparent)
     ),
     var(--page-bg-image);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  transition: background var(--dur-normal) ease, color var(--dur-normal) ease;
-  margin: 0; padding: 0;
 }
 
-.cat-page-bg-style { display: none; }
 ::selection { background: var(--accent); color: #fff; }
 img, video { max-width: 100%; height: auto; display: block; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: var(--radius-sm); }

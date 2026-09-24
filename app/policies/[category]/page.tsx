@@ -5,6 +5,7 @@ import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { data } from "@/lib/data";
 import PolicyCard from "@/components/PolicyCard";
+import SetPageBg from "@/components/SetPageBg";
 
 type Params = { category: string };
 
@@ -43,14 +44,7 @@ export default async function CategoryPage({ params }: { params: Promise<Params>
 
   return (
     <>
-      {image && (
-        <style
-          className="cat-page-bg-style"
-          dangerouslySetInnerHTML={{
-            __html: `:root{--page-bg-image:url("${image.src}")}`,
-          }}
-        />
-      )}
+      {image && <SetPageBg src={image.src} />}
       <section className="pad pb-7">
         <div className="wrap">
           <nav className="breadcrumb" aria-label="Breadcrumb">

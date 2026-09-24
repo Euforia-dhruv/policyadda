@@ -6,6 +6,7 @@ import { data } from "@/lib/data";
 import { siteConfig } from "@/content/config";
 import { Phone, Clock } from "@/lib/icons";
 import Accordion from "@/components/Accordion";
+import SetPageBg from "@/components/SetPageBg";
 
 type Params = { category: string; slug: string };
 
@@ -63,14 +64,7 @@ export default async function PolicyDetailPage({ params }: { params: Promise<Par
 
   return (
     <>
-      {catBg && (
-        <style
-          className="cat-page-bg-style"
-          dangerouslySetInnerHTML={{
-            __html: `:root{--page-bg-image:url("${catBg}")}`,
-          }}
-        />
-      )}
+      {catBg && <SetPageBg src={catBg} />}
       <section className="policy-hero wrap">
         <nav className="breadcrumb" aria-label="Breadcrumb">
           <a href="/">{copy.nav.home}</a>
