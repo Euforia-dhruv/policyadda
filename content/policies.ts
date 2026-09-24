@@ -3028,6 +3028,95 @@ export const policies: Policy[] = [
     "isFeatured": false
   },
   {
+    "id": "pol-general-insurance",
+    "slug": "general-insurance",
+    "categorySlug": "business",
+    "name": "General Insurance",
+    "providerNote": {
+      "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+      "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+    },
+    "shortDescription": {
+      "en": "Broad non-life protection for assets, liability, travel, and everyday business risks under one umbrella.",
+      "hi": "संपत्ति, देयता, यात्रा और रोज़मर्रा के व्यावसायिक जोखिमों के लिए व्यापक गैर-जीवन सुरक्षा।"
+    },
+    "fullDescription": {
+      "en": "General insurance covers non-life risks including property, liability, marine, travel, and other commercial exposures. It helps businesses and individuals recover financially from insured events such as fire, theft, accidents, and third-party claims.",
+      "hi": "जनरल इंश्योरेंस संपत्ति, देयता, समुद्री, यात्रा और अन्य वाणिज्यिक जोखिमों सहित गैर-जीवन जोखिमों को कवर करता है।"
+    },
+    "keyBenefits": {
+      "en": [
+        "Protection for business and personal assets",
+        "Liability and third-party cover options",
+        "Flexible covers for different risk types",
+        "Claim assistance through Policy Adda"
+      ],
+      "hi": [
+        "व्यावसायिक और व्यक्तिगत संपत्ति की सुरक्षा",
+        "देयता और थर्ड-पार्टी कवर विकल्प",
+        "विभिन्न जोखिम प्रकारों के लिए लचीले कवर",
+        "Policy Adda द्वारा क्लेम सहायता"
+      ]
+    },
+    "eligibility": {
+      "en": [
+        "Individuals and businesses seeking non-life insurance protection"
+      ],
+      "hi": [
+        "गैर-जीवन बीमा सुरक्षा चाहने वाले व्यक्ति और व्यवसाय"
+      ]
+    },
+    "coverage": {
+      "en": [
+        "Property and asset damage",
+        "Liability exposures",
+        "Travel and marine risks (where applicable)",
+        "Other insured non-life events"
+      ],
+      "hi": [
+        "संपत्ति और एसेट क्षति",
+        "देयता जोखिम",
+        "यात्रा और समुद्री जोखिम (जहां लागू हो)",
+        "अन्य बीमित गैर-जीवन घटनाएँ"
+      ]
+    },
+    "exclusions": {
+      "en": [
+        "Wear and tear or gradual loss",
+        "Known or pre-existing damage",
+        "Events outside policy scope"
+      ],
+      "hi": [
+        "टूट-फूट या क्रमिक हानि",
+        "ज्ञात या पहले से मौजूद क्षति",
+        "पॉलिसी दायरे से बाहर की घटनाएँ"
+      ]
+    },
+    "documents": [
+      {
+        "label": {
+          "en": "Identity proof (Aadhaar/PAN)",
+          "hi": "पहचान प्रमाण (आधार/पैन)"
+        }
+      },
+      {
+        "label": {
+          "en": "Asset or business details",
+          "hi": "संपत्ति या व्यवसाय विवरण"
+        },
+        "optional": true
+      }
+    ],
+    "faqs": [],
+    "disclaimer": {
+      "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+      "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+    },
+    "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
     "id": "pol-travel",
     "slug": "travel-insurance",
     "categorySlug": "travel",

@@ -19,6 +19,9 @@ export default function PolicyCard({
   copy: SiteCopy;
   full?: boolean;
 }) {
+  const detailHref = `/policies/${policy.categorySlug}/${policy.slug}`;
+  const applyHref = policy.googleFormUrl ?? ENQUIRY_URL;
+
   return (
     <motion.div
       className="card card-hover policy-card"
@@ -29,10 +32,15 @@ export default function PolicyCard({
       <h3>{policy.name}</h3>
       <p>{pick(locale, policy.shortDescription)}</p>
       <div className="pbtns">
-        <a href={ENQUIRY_URL} target="_blank" rel="noreferrer" className="btn btn-ghost btn-sm">
+        <a href={detailHref} className="btn btn-ghost btn-sm">
           {copy.featured.learnMore}
         </a>
-        <a href={ENQUIRY_URL} target="_blank" rel="noreferrer" className="btn btn-primary btn-sm">
+        <a
+          href={applyHref}
+          target="_blank"
+          rel="noreferrer"
+          className="btn btn-primary btn-sm"
+        >
           {copy.nav.apply}
         </a>
       </div>

@@ -1,10 +1,13 @@
 import type { Locale } from "@/lib/types";
 import { siteConfig } from "@/content/config";
+import { getActiveCategories } from "@/content/categories";
+import { getPoliciesByCategory } from "@/content/policies";
 
 export type FooterLink = {
   label: { en: string; hi: string };
   href: string;
   external?: boolean;
+  children?: FooterLink[];
 };
 
 export type FooterColumn = {
@@ -18,17 +21,30 @@ const L = (en: string, hi: string, href: string, external = false): FooterLink =
   external,
 });
 
+function insuranceFooterLinks(): FooterLink[] {
+  const categoryOrder = ["health", "motor", "life", "business", "property", "travel"];
+  const cats = getActiveCategories();
+  const ordered = [
+    ...categoryOrder
+      .map((slug) => cats.find((c) => c.slug === slug))
+      .filter((c): c is NonNullable<typeof c> => Boolean(c)),
+    ...cats.filter((c) => !categoryOrder.includes(c.slug)),
+  ];
+
+  return ordered.map((cat) => ({
+    label: cat.name,
+    href: `/policies/${cat.slug}`,
+    children: getPoliciesByCategory(cat.slug).map((sub) => ({
+      label: { en: sub.name, hi: sub.name },
+      href: `/policies/${cat.slug}/${sub.slug}`,
+    })),
+  }));
+}
+
 export const footerColumns: FooterColumn[] = [
   {
     title: { en: "Insurance Products", hi: "बीमा उत्पाद" },
-    links: [
-      L("Motor Insurance", "मोटर बीमा", "/policies/motor"),
-      L("Health Insurance", "स्वास्थ्य बीमा", "/policies/health"),
-      L("Life Insurance", "जीवन बीमा", "/policies/life"),
-      L("Business Insurance", "व्यावसायिक बीमा", "/policies/business"),
-      L("Travel Insurance", "यात्रा बीमा", "/policies/travel"),
-      L("Property Insurance", "संपत्ति बीमा", "/policies/property"),
-    ],
+    links: insuranceFooterLinks(),
   },
   {
     title: { en: "Company", hi: "कंपनी" },

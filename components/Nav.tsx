@@ -1,27 +1,30 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import type { Locale } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import { siteConfig } from "@/content/config";
 import { Phone, Shield, Car, Heart, Briefcase, Home, Plane, ChevronRight, ChevronDown } from "@/lib/icons";
+import { getActiveCategories } from "@/content/categories";
+import { getPoliciesByCategory } from "@/content/policies";
+import { pick } from "@/lib/i18n";
 import LanguageSwitch from "./LanguageSwitch";
 import ThemeToggle from "./ThemeToggle";
 import PolicyAddaBrand from "./brand/PolicyAddaBrand";
 import RenewPopout from "./RenewPopout";
 import PartnerPopout from "./PartnerPopout";
 
-const MEGA_ITEMS = [
-  { slug: "health", label: "Health Insurance", icon: <Heart size={18} /> },
-  { slug: "motor", label: "Motor Insurance", icon: <Car size={18} /> },
-  { slug: "life", label: "Life Insurance", icon: <Shield size={18} /> },
-  { slug: "business", label: "Business Insurance", icon: <Briefcase size={18} /> },
-  { slug: "property", label: "Property & Home Insurance", icon: <Home size={18} /> },
-  { slug: "travel", label: "Travel Insurance", icon: <Plane size={18} /> },
-];
+const CATEGORY_ICONS: Record<string, ReactNode> = {
+  health: <Heart size={18} />,
+  motor: <Car size={18} />,
+  life: <Shield size={18} />,
+  business: <Briefcase size={18} />,
+  property: <Home size={18} />,
+  travel: <Plane size={18} />,
+};
 
-const ENQUIRY_URL = siteConfig.forms?.enquiry ?? "#";
+const CATEGORY_ORDER = ["health", "motor", "life", "business", "property", "travel"];
 
 export default function Nav({
   copy,
@@ -35,10 +38,29 @@ export default function Nav({
   const [showRenew, setShowRenew] = useState(false);
   const [showPartner, setShowPartner] = useState(false);
   const [showMega, setShowMega] = useState(false);
+  const [activeCat, setActiveCat] = useState("health");
   const megaTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname?.startsWith(href) ?? false;
+
+  const megaCats = useMemo(() => {
+    const cats = getActiveCategories();
+    const ordered = CATEGORY_ORDER
+      .map((slug) => cats.find((c) => c.slug === slug))
+      .filter((c): c is NonNullable<typeof c> => Boolean(c));
+    const rest = cats.filter((c) => !CATEGORY_ORDER.includes(c.slug));
+    return [...ordered, ...rest].map((cat) => ({
+      cat,
+      subs: getPoliciesByCategory(cat.slug),
+    }));
+  }, []);
+
+  useEffect(() => {
+    if (megaCats.length > 0 && !megaCats.some((m) => m.cat.slug === activeCat)) {
+      setActiveCat(megaCats[0].cat.slug);
+    }
+  }, [megaCats, activeCat]);
 
   const onScroll = useCallback(() => setScrolled(window.scrollY > 20), []);
   useEffect(() => {
@@ -56,6 +78,8 @@ export default function Nav({
   };
 
   const isHome = pathname === "/";
+  const activeEntry = megaCats.find((m) => m.cat.slug === activeCat) ?? megaCats[0];
+  const mobileInsurance = megaCats;
 
   return (
     <>
@@ -79,20 +103,53 @@ export default function Nav({
               </a>
               <div className={`mega-drawer ${showMega ? "mega-drawer--open" : ""}`}>
                 <div className="mega-drawer-inner">
-                  <div className="mega-drawer-grid">
-                    {MEGA_ITEMS.map((item) => (
-                      <a
-                        key={item.slug}
-                        href={`/policies/${item.slug}`}
-                        className="mega-drawer-card"
-                        onClick={() => setShowMega(false)}
-                      >
-                        <div className="mega-drawer-card-icon">{item.icon}</div>
-                        <div className="mega-drawer-card-body">
-                          <h4 className="mega-drawer-card-title">{item.label}</h4>
+                  <div className="mega-drawer-layout">
+                    <div className="mega-drawer-cats" role="list">
+                      {megaCats.map(({ cat }) => (
+                        <a
+                          key={cat.slug}
+                          href={`/policies/${cat.slug}`}
+                          className={`mega-drawer-card ${activeCat === cat.slug ? "is-active" : ""}`}
+                          onMouseEnter={() => setActiveCat(cat.slug)}
+                          onFocus={() => setActiveCat(cat.slug)}
+                          onClick={() => setShowMega(false)}
+                        >
+                          <div className="mega-drawer-card-icon">
+                            {CATEGORY_ICONS[cat.slug] ?? <Shield size={18} />}
+                          </div>
+                          <div className="mega-drawer-card-body">
+                            <h4 className="mega-drawer-card-title">{pick(locale, cat.name)}</h4>
+                          </div>
+                          <ChevronRight size={14} className="mega-drawer-card-chevron" />
+                        </a>
+                      ))}
+                    </div>
+                    {activeEntry && (
+                      <div className="mega-drawer-subs" key={activeEntry.cat.slug}>
+                        <div className="mega-drawer-subs-head">
+                          <span>{pick(locale, activeEntry.cat.name)}</span>
+                          <a
+                            href={`/policies/${activeEntry.cat.slug}`}
+                            className="mega-drawer-subs-all"
+                            onClick={() => setShowMega(false)}
+                          >
+                            {copy.nav.viewAll}
+                          </a>
                         </div>
-                      </a>
-                    ))}
+                        <div className="mega-drawer-subs-list">
+                          {activeEntry.subs.map((sub) => (
+                            <a
+                              key={sub.id}
+                              href={`/policies/${activeEntry.cat.slug}/${sub.slug}`}
+                              className="mega-drawer-sub-link"
+                              onClick={() => setShowMega(false)}
+                            >
+                              {sub.name}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <div className="mega-drawer-footer">
                     <a href="/policies" className="mega-drawer-footer-link" onClick={() => setShowMega(false)}>
@@ -124,7 +181,39 @@ export default function Nav({
 
       <div className={`mobile-panel wrap ${open ? "open" : ""}`}>
         <a href="/" onClick={() => setOpen(false)} aria-current={isActive("/") ? "page" : undefined}>{copy.nav.home}</a>
-        <a href="/policies" onClick={() => setOpen(false)} aria-current={isActive("/policies") ? "page" : undefined}>{copy.nav.categories}</a>
+        <details className="mobile-insurance">
+          <summary>{copy.nav.categories}</summary>
+          <div className="mobile-insurance-list">
+            {mobileInsurance.map(({ cat, subs }) => (
+              <div key={cat.slug} className="mobile-insurance-group">
+                <a
+                  href={`/policies/${cat.slug}`}
+                  className="mobile-insurance-cat"
+                  onClick={() => setOpen(false)}
+                >
+                  {CATEGORY_ICONS[cat.slug] ?? <Shield size={16} />}
+                  {pick(locale, cat.name)}
+                </a>
+                {subs.length > 0 && (
+                  <div className="mobile-insurance-subs">
+                    {subs.map((sub) => (
+                      <a
+                        key={sub.id}
+                        href={`/policies/${cat.slug}/${sub.slug}`}
+                        onClick={() => setOpen(false)}
+                      >
+                        {sub.name}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            <a href="/policies" className="mobile-insurance-all" onClick={() => setOpen(false)}>
+              {copy.nav.viewAll} <ChevronRight size={14} />
+            </a>
+          </div>
+        </details>
         <button type="button" className="mobile-link-btn" onClick={() => { setShowRenew(true); setOpen(false); }}>{copy.nav.renew}</button>
         <a href="/support" onClick={() => setOpen(false)} aria-current={isActive("/support") ? "page" : undefined}>{copy.nav.support}</a>
         <button type="button" className="mobile-link-btn" onClick={() => { setShowPartner(true); setOpen(false); }}>{copy.nav.partner}</button>

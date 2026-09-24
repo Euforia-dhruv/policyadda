@@ -3027,6 +3027,95 @@
       "isFeatured": false
     },
     {
+      "id": "pol-general-insurance",
+      "slug": "general-insurance",
+      "categorySlug": "business",
+      "name": "General Insurance",
+      "providerNote": {
+        "en": "Policy Adda facilitates insurance products from authorised insurers. Coverage, benefits, exclusions, terms, conditions and premiums vary by insurer and plan. Please read the policy wording carefully before purchasing.",
+        "hi": "Policy Adda अधिकृत बीमाकर्ताओं से बीमा उत्पाद सुविधा प्रदान करता है। कृपया खरीदने से पहले पॉलिसी शब्दावली ध्यान से पढ़ें।"
+      },
+      "shortDescription": {
+        "en": "Broad non-life protection for assets, liability, travel, and everyday business risks under one umbrella.",
+        "hi": "संपत्ति, देयता, यात्रा और रोज़मर्रा के व्यावसायिक जोखिमों के लिए व्यापक गैर-जीवन सुरक्षा।"
+      },
+      "fullDescription": {
+        "en": "General insurance covers non-life risks including property, liability, marine, travel, and other commercial exposures. It helps businesses and individuals recover financially from insured events such as fire, theft, accidents, and third-party claims.",
+        "hi": "जनरल इंश्योरेंस संपत्ति, देयता, समुद्री, यात्रा और अन्य वाणिज्यिक जोखिमों सहित गैर-जीवन जोखिमों को कवर करता है।"
+      },
+      "keyBenefits": {
+        "en": [
+          "Protection for business and personal assets",
+          "Liability and third-party cover options",
+          "Flexible covers for different risk types",
+          "Claim assistance through Policy Adda"
+        ],
+        "hi": [
+          "व्यावसायिक और व्यक्तिगत संपत्ति की सुरक्षा",
+          "देयता और थर्ड-पार्टी कवर विकल्प",
+          "विभिन्न जोखिम प्रकारों के लिए लचीले कवर",
+          "Policy Adda द्वारा क्लेम सहायता"
+        ]
+      },
+      "eligibility": {
+        "en": [
+          "Individuals and businesses seeking non-life insurance protection"
+        ],
+        "hi": [
+          "गैर-जीवन बीमा सुरक्षा चाहने वाले व्यक्ति और व्यवसाय"
+        ]
+      },
+      "coverage": {
+        "en": [
+          "Property and asset damage",
+          "Liability exposures",
+          "Travel and marine risks (where applicable)",
+          "Other insured non-life events"
+        ],
+        "hi": [
+          "संपत्ति और एसेट क्षति",
+          "देयता जोखिम",
+          "यात्रा और समुद्री जोखिम (जहां लागू हो)",
+          "अन्य बीमित गैर-जीवन घटनाएँ"
+        ]
+      },
+      "exclusions": {
+        "en": [
+          "Wear and tear or gradual loss",
+          "Known or pre-existing damage",
+          "Events outside policy scope"
+        ],
+        "hi": [
+          "टूट-फूट या क्रमिक हानि",
+          "ज्ञात या पहले से मौजूद क्षति",
+          "पॉलिसी दायरे से बाहर की घटनाएँ"
+        ]
+      },
+      "documents": [
+        {
+          "label": {
+            "en": "Identity proof (Aadhaar/PAN)",
+            "hi": "पहचान प्रमाण (आधार/पैन)"
+          }
+        },
+        {
+          "label": {
+            "en": "Asset or business details",
+            "hi": "संपत्ति या व्यवसाय विवरण"
+          },
+          "optional": true
+        }
+      ],
+      "faqs": [],
+      "disclaimer": {
+        "en": "Final policy benefits, premiums, coverage, eligibility, and exclusions depend on the applicable insurer and policy documentation. This is an informational summary - not a policy document. Please contact Policy Adda for assistance before purchasing.",
+        "hi": "अंतिम पॉलिसी लाभ, प्रीमियम, कवरेज, पात्रता और बहिष्करण लागू बीमाकर्ता और पॉलिसी दस्तावेज़ पर निर्भर करते हैं।"
+      },
+      "googleFormUrl": "https://forms.gle/hN36TAi7iNkcSJgs8",
+      "isActive": true,
+      "isFeatured": false
+    },
+    {
       "id": "pol-travel",
       "slug": "travel-insurance",
       "categorySlug": "travel",
@@ -3280,26 +3369,86 @@
       }
     },
     "partners": [
-      "Tata AIG General Insurance",
-      "AXIS Max Life Insurance",
-      "HDFC ERGO General Insurance",
-      "SBI General Insurance",
-      "Kiwi General Insurance",
-      "ICICI Lombard General Insurance",
-      "Bajaj Allianz General Insurance",
-      "Go Digit General Insurance",
-      "Zuno General Insurance",
-      "Liberty General Insurance",
-      "IFFCO Tokio General Insurance",
-      "IndusInd Nippon General Insurance",
-      "Cholamandalam MS General Insurance",
-      "Royal Sundaram General Insurance",
-      "Generali Central Insurance",
-      "Universal Sompo General Insurance",
-      "Shriram General Insurance",
-      "Magma HDI General Insurance",
-      "Navi General Insurance",
-      "Raheja QBE General Insurance"
+      {
+        "name": "Tata AIG General Insurance",
+        "logo": "/partners/tata-aig.svg"
+      },
+      {
+        "name": "AXIS Max Life Insurance",
+        "logo": "/partners/axis-max-life.svg"
+      },
+      {
+        "name": "HDFC ERGO General Insurance",
+        "logo": "/partners/hdfc-ergo.png"
+      },
+      {
+        "name": "SBI General Insurance",
+        "logo": "/partners/sbi-general.webp"
+      },
+      {
+        "name": "Kiwi General Insurance",
+        "logo": "/partners/kiwi.svg"
+      },
+      {
+        "name": "ICICI Lombard General Insurance",
+        "logo": "/partners/icici-lombard.png"
+      },
+      {
+        "name": "Bajaj Allianz General Insurance",
+        "logo": "/partners/bajaj-allianz.png"
+      },
+      {
+        "name": "Go Digit General Insurance",
+        "logo": "/partners/go-digit.svg"
+      },
+      {
+        "name": "Zuno General Insurance",
+        "logo": "/partners/zuno-general.svg"
+      },
+      {
+        "name": "Liberty General Insurance",
+        "logo": "/partners/liberty-general.png"
+      },
+      {
+        "name": "IFFCO Tokio General Insurance",
+        "logo": "/partners/iffco-tokio.svg"
+      },
+      {
+        "name": "IndusInd Nippon General Insurance",
+        "logo": "/partners/indusind-nippon.svg"
+      },
+      {
+        "name": "Cholamandalam MS General Insurance",
+        "logo": "/partners/cholamandalam.svg"
+      },
+      {
+        "name": "Royal Sundaram General Insurance",
+        "logo": "/partners/royal-sundaram.png"
+      },
+      {
+        "name": "Generali Central Insurance",
+        "logo": "/partners/generali-central.svg"
+      },
+      {
+        "name": "Universal Sompo General Insurance",
+        "logo": "/partners/universal-sompo-wiki.svg"
+      },
+      {
+        "name": "Shriram General Insurance",
+        "logo": "/partners/shriram-general.jpg"
+      },
+      {
+        "name": "Magma HDI General Insurance",
+        "logo": "/partners/magma-hdi.png"
+      },
+      {
+        "name": "Navi General Insurance",
+        "logo": "/partners/navi.svg"
+      },
+      {
+        "name": "Raheja QBE General Insurance",
+        "logo": "/partners/raheja-qbe.png"
+      }
     ],
     "forms": {
       "enquiry": "https://forms.gle/hN36TAi7iNkcSJgs8",
@@ -3463,119 +3612,6 @@
       "a": {
         "en": "As per IRDAI regulations, once all the required documents are submitted and verified, insurers generally settle straightforward death claims within 15 to 30 days. However, if the policy has been active for less than 3 years, a mandatory investigation may be carried out, which can legally take up to 90 days.",
         "hi": "IRDAI नियमों के अनुसार, एक बार सभी आवश्यक दस्तावेज़ जमा और सत्यापित हो जाने के बाद, बीमाकर्ता आम तौर पर 15 से 30 दिनों के भीतर सीधी मृत्यु दावों का निपटान करते हैं। हालांकि, यदि पॉलिसी 3 वर्ष से कम समय के लिए सक्रिय रही है, तो एक अनिवार्य जांच की जा सकती है, जिसमें कानूनी रूप से 90 दिन तक का समय लग सकता है।"
-      }
-    }
-  ],
-  "workflowStatuses": [
-    {
-      "code": "submitted",
-      "order": 1,
-      "label": {
-        "en": "Application Submitted",
-        "hi": "आवेदन प्रस्तुत"
-      },
-      "description": {
-        "en": "We have received your details.",
-        "hi": "हमें आपकी जानकारी प्राप्त हो गई है।"
-      }
-    },
-    {
-      "code": "under_review",
-      "order": 2,
-      "label": {
-        "en": "Under Review",
-        "hi": "समीक्षा में"
-      },
-      "description": {
-        "en": "Our team is checking your enquiry.",
-        "hi": "हमारी टीम आपकी पूछताछ की जाँच कर रही है।"
-      }
-    },
-    {
-      "code": "assigned",
-      "order": 3,
-      "label": {
-        "en": "Executive Assigned",
-        "hi": "कार्यकारी नियुक्त"
-      },
-      "description": {
-        "en": "A PolicyAdda executive has been assigned to you.",
-        "hi": "आपके लिए एक PolicyAdda कार्यकारी नियुक्त किया गया है।"
-      }
-    },
-    {
-      "code": "contacted",
-      "order": 4,
-      "label": {
-        "en": "Customer Contacted",
-        "hi": "ग्राहक से संपर्क"
-      },
-      "description": {
-        "en": "Our executive has contacted you.",
-        "hi": "हमारे कार्यकारी ने आपसे संपर्क किया है।"
-      }
-    },
-    {
-      "code": "processing",
-      "order": 5,
-      "label": {
-        "en": "Processing",
-        "hi": "प्रक्रिया जारी"
-      },
-      "description": {
-        "en": "Your application is being processed.",
-        "hi": "आपका आवेदन संसाधित किया जा रहा है।"
-      }
-    },
-    {
-      "code": "completed",
-      "order": 6,
-      "terminal": true,
-      "label": {
-        "en": "Completed",
-        "hi": "पूर्ण"
-      },
-      "description": {
-        "en": "The process has been completed.",
-        "hi": "प्रक्रिया पूर्ण हो गई है।"
-      }
-    },
-    {
-      "code": "on_hold",
-      "order": 7,
-      "label": {
-        "en": "On Hold",
-        "hi": "रोक दिया गया"
-      },
-      "description": {
-        "en": "Awaiting further information.",
-        "hi": "अधिक जानकारी की प्रतीक्षा में।"
-      }
-    },
-    {
-      "code": "rejected",
-      "order": 8,
-      "terminal": true,
-      "label": {
-        "en": "Rejected",
-        "hi": "अस्वीकृत"
-      },
-      "description": {
-        "en": "This application could not proceed.",
-        "hi": "यह आवेदन आगे नहीं बढ़ सका।"
-      }
-    },
-    {
-      "code": "cancelled",
-      "order": 9,
-      "terminal": true,
-      "label": {
-        "en": "Cancelled",
-        "hi": "रद्द"
-      },
-      "description": {
-        "en": "The application has been cancelled.",
-        "hi": "आवेदन रद्द कर दिया गया है।"
       }
     }
   ]

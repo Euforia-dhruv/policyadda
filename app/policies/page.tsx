@@ -4,7 +4,6 @@ import { getLocale } from "@/lib/locale";
 import { data } from "@/lib/data";
 import CategoriesSection from "@/components/CategoriesSection";
 import Image from "next/image";
-import { siteConfig } from "@/content/config";
 
 export const metadata: Metadata = {
   title: "Policies — PolicyAdda",
@@ -19,8 +18,6 @@ const CATEGORY_IMAGES: Record<string, string> = {
   life: "/assets/cards/Life Insurance.png",
   property: "/assets/cards/Property & Home Insurance.png",
 };
-
-const ENQUIRY_URL = siteConfig.forms?.enquiry ?? "#";
 
 export default function PoliciesPage() {
   const locale = getLocale();
@@ -55,9 +52,7 @@ export default function PoliciesPage() {
                 {catPolicies.map((p) => (
                   <a
                     key={p.id}
-                    href={ENQUIRY_URL}
-                    target="_blank"
-                    rel="noreferrer"
+                    href={`/policies/${cat.slug}/${p.slug}`}
                     className="cat-sub-card"
                   >
                     <h3 className="cat-sub-card-title">{p.name}</h3>

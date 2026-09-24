@@ -69,7 +69,7 @@ export default function Footer({
               <h4>{pickFooterLabel(col.title, locale)}</h4>
               <ul>
                 {col.links.map((l, i) => (
-                  <li key={`${l.href}-${i}`}>
+                  <li key={`${l.href}-${i}`} className={l.children?.length ? "f-has-subs" : undefined}>
                     <a
                       href={l.href}
                       {...(l.external ? { target: "_blank", rel: "noreferrer" } : {})}
@@ -77,6 +77,15 @@ export default function Footer({
                       {pickFooterLabel(l.label, locale)}
                       {l.external && <ExternalLink size={12} className="f-ext" />}
                     </a>
+                    {l.children && l.children.length > 0 && (
+                      <ul className="f-subs">
+                        {l.children.map((child) => (
+                          <li key={child.href}>
+                            <a href={child.href}>{pickFooterLabel(child.label, locale)}</a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 ))}
               </ul>
