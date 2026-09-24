@@ -190,6 +190,23 @@ html, body {
   transition: background var(--dur-normal) ease, color var(--dur-normal) ease;
   margin: 0; padding: 0;
 }
+
+.cat-page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--bg) 92%, transparent),
+      color-mix(in srgb, var(--bg) 92%, transparent)
+    ),
+    var(--cat-bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 ::selection { background: var(--accent); color: #fff; }
 img, video { max-width: 100%; height: auto; display: block; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: var(--radius-sm); }

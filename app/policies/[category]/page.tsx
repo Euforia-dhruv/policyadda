@@ -43,6 +43,13 @@ export default async function CategoryPage({ params }: { params: Promise<Params>
 
   return (
     <>
+      {image && (
+        <div
+          className="cat-page-bg"
+          aria-hidden
+          style={{ ["--cat-bg-image" as string]: `url("${image.src}")` }}
+        />
+      )}
       <section className="pad pb-7">
         <div className="wrap">
           <nav className="breadcrumb" aria-label="Breadcrumb">

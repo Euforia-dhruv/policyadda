@@ -9,6 +9,15 @@ import Accordion from "@/components/Accordion";
 
 type Params = { category: string; slug: string };
 
+const CATEGORY_BG: Record<string, string> = {
+  motor: "/assets/03 - Motor.webp",
+  health: "/assets/04 - Health.webp",
+  travel: "/assets/05 - Travel.webp",
+  business: "/assets/06 - Business.webp",
+  life: "/assets/02 - Advisor.webp",
+  property: "/assets/cards/Property & Home Insurance.png",
+};
+
 export const dynamicParams = true;
 
 export function generateStaticParams(): Params[] {
@@ -50,8 +59,17 @@ export default async function PolicyDetailPage({ params }: { params: Promise<Par
     exclusions: copy.detail.exclusions,
   };
 
+  const catBg = CATEGORY_BG[category];
+
   return (
     <>
+      {catBg && (
+        <div
+          className="cat-page-bg"
+          aria-hidden
+          style={{ ["--cat-bg-image" as string]: `url("${catBg}")` }}
+        />
+      )}
       <section className="policy-hero wrap">
         <nav className="breadcrumb" aria-label="Breadcrumb">
           <a href="/">{copy.nav.home}</a>
