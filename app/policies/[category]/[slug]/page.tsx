@@ -64,10 +64,11 @@ export default async function PolicyDetailPage({ params }: { params: Promise<Par
   return (
     <>
       {catBg && (
-        <div
-          className="cat-page-bg"
-          aria-hidden
-          style={{ ["--cat-bg-image" as string]: `url("${catBg}")` }}
+        <style
+          className="cat-page-bg-style"
+          dangerouslySetInnerHTML={{
+            __html: `:root{--page-bg-image:url("${catBg}")}`,
+          }}
         />
       )}
       <section className="policy-hero wrap">

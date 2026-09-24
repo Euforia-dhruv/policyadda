@@ -174,15 +174,19 @@ body {
 /* ============================================================
    Base overrides (on top of Tailwind preflight)
    ============================================================ */
+:root {
+  --page-bg-image: url("/assets/04 - Health.webp");
+}
+
 html, body {
   font-family: var(--font-ui);
   background: var(--bg);
   background-image:
     linear-gradient(
-      color-mix(in srgb, var(--bg) 92%, transparent),
-      color-mix(in srgb, var(--bg) 92%, transparent)
+      color-mix(in srgb, var(--bg) 78%, transparent),
+      color-mix(in srgb, var(--bg) 78%, transparent)
     ),
-    url("/assets/04 - Health.webp");
+    var(--page-bg-image);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -191,22 +195,7 @@ html, body {
   margin: 0; padding: 0;
 }
 
-.cat-page-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-color: var(--bg);
-  background-image:
-    linear-gradient(
-      color-mix(in srgb, var(--bg) 92%, transparent),
-      color-mix(in srgb, var(--bg) 92%, transparent)
-    ),
-    var(--cat-bg-image);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+.cat-page-bg-style { display: none; }
 ::selection { background: var(--accent); color: #fff; }
 img, video { max-width: 100%; height: auto; display: block; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: var(--radius-sm); }

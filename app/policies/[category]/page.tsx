@@ -44,10 +44,11 @@ export default async function CategoryPage({ params }: { params: Promise<Params>
   return (
     <>
       {image && (
-        <div
-          className="cat-page-bg"
-          aria-hidden
-          style={{ ["--cat-bg-image" as string]: `url("${image.src}")` }}
+        <style
+          className="cat-page-bg-style"
+          dangerouslySetInnerHTML={{
+            __html: `:root{--page-bg-image:url("${image.src}")}`,
+          }}
         />
       )}
       <section className="pad pb-7">
