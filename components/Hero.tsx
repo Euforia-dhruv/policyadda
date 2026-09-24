@@ -5,6 +5,7 @@ import type { SiteCopy } from "@/content/copy";
 import { siteConfig } from "@/content/config";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import Image from "next/image";
 import { Shield, Users, HeadphonesIcon } from "@/lib/icons";
 
 const ENQUIRY_URL = siteConfig.forms?.enquiry ?? "#";
@@ -35,6 +36,15 @@ export default function Hero({ copy, locale }: { copy: SiteCopy; locale: Locale 
           <source src="/videos/policyadda-hero-4k.mp4" type="video/mp4" />
         </video>
         <div className="hero-video-overlay" />
+        <Image
+          src="/moto.png"
+          alt="PolicyAdda — Policy Aapka, Adda Apna"
+          width={1128}
+          height={191}
+          sizes="(max-width: 640px) 82vw, 300px"
+          priority
+          className="hero-moto"
+        />
       </div>
 
       <div className="wrap hero-new-inner">
