@@ -199,8 +199,8 @@ body {
   background-color: var(--bg);
   background-image:
     linear-gradient(
-      color-mix(in srgb, var(--bg) 55%, transparent),
-      color-mix(in srgb, var(--bg) 55%, transparent)
+      color-mix(in srgb, var(--bg) 72%, transparent),
+      color-mix(in srgb, var(--bg) 72%, transparent)
     ),
     var(--page-bg-image);
   background-size: cover;
