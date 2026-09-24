@@ -177,7 +177,15 @@ body {
 html, body {
   font-family: var(--font-ui);
   background: var(--bg);
-  background-image: var(--bg-gradient);
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--bg) 92%, transparent),
+      color-mix(in srgb, var(--bg) 92%, transparent)
+    ),
+    url("/assets/04 - Health.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   transition: background var(--dur-normal) ease, color var(--dur-normal) ease;
   margin: 0; padding: 0;
