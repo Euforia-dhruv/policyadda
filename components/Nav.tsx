@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useMemo, useRef, type ReactNode } from "react";
+import { useState, useEffect, useMemo, useRef, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import type { Locale } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
@@ -34,7 +34,6 @@ export default function Nav({
   locale: Locale;
 }) {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [showRenew, setShowRenew] = useState(false);
   const [showPartner, setShowPartner] = useState(false);
   const [showMega, setShowMega] = useState(false);
@@ -62,13 +61,6 @@ export default function Nav({
     }
   }, [megaCats, activeCat]);
 
-  const onScroll = useCallback(() => setScrolled(window.scrollY > 20), []);
-  useEffect(() => {
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [onScroll]);
-
   const openMega = () => {
     if (megaTimeout.current) clearTimeout(megaTimeout.current);
     setShowMega(true);
@@ -77,13 +69,12 @@ export default function Nav({
     megaTimeout.current = setTimeout(() => setShowMega(false), 150);
   };
 
-  const isHome = pathname === "/";
   const activeEntry = megaCats.find((m) => m.cat.slug === activeCat) ?? megaCats[0];
   const mobileInsurance = megaCats;
 
   return (
     <>
-      <header className={`nav ${isHome && !scrolled ? "nav--transparent" : ""} ${scrolled ? "nav--scrolled" : ""}`}>
+      <header className="nav">
         <div className="wrap nav-inner">
           <PolicyAddaBrand variant="full" />
 

@@ -276,25 +276,8 @@ section { position: relative; }
     @apply sticky top-0 z-nav;
     background: var(--surface);
     border-bottom: 1px solid var(--line);
-    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
   }
-  .nav--transparent {
-    background: transparent !important;
-    border-bottom: none !important;
-    box-shadow: none !important;
-  }
-  .nav--transparent .nav-links a { color: rgba(255,255,255,0.85); }
-  .nav--transparent .nav-links a:hover { color: #fff; }
-  .nav--transparent .nav-links a[aria-current="page"] { color: #fff; font-weight: 600; }
-  .nav--transparent .nav-links .nav-link-btn { color: rgba(255,255,255,0.85); }
-  .nav--transparent .nav-links .nav-link-btn:hover { color: #fff; }
-  .nav--transparent .theme-btn { border-color: rgba(255,255,255,0.25); background: transparent; color: #fff; }
-  .nav--transparent .lang button { color: rgba(255,255,255,0.65); }
-  .nav--transparent .lang button.on { color: #fff; background: rgba(255,255,255,0.15); }
-  .nav--transparent .lang-sep { color: rgba(255,255,255,0.35); }
-  .nav--transparent .menu-btn { border-color: rgba(255,255,255,0.25); background: transparent; color: #fff; }
-  .nav--transparent .nav-cta { background: #F59E0B; color: #000; border-color: transparent; }
-  .nav--scrolled { box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
   .nav-inner { @apply flex items-center justify-between; padding: 14px 0; min-height: 72px; gap: 24px; }
   .brand { @apply inline-flex items-center gap-[11px]; flex-shrink: 0; }
   .brand-seal { @apply w-10 h-10 object-cover flex-none; border-radius: 50%; }
@@ -589,12 +572,12 @@ section { position: relative; }
    ============================================================ */
 .hero-new {
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 72px);
+  min-height: 540px;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
   background: #0B2D6B;
-  margin-top: -72px;
   padding: 0 0 clamp(48px, 8vh, 80px);
 }
 .hero-new-video {
@@ -728,11 +711,9 @@ section { position: relative; }
 }
 @media (max-width: 640px) {
   .hero-new {
-    height: 100vh;
-    height: 100dvh;
+    height: calc(100dvh - 72px);
     min-height: 540px;
     max-height: none;
-    margin-top: -72px;
     padding: 0 0 max(28px, env(safe-area-inset-bottom));
     align-items: flex-end;
   }
@@ -742,7 +723,7 @@ section { position: relative; }
   .hero-moto {
     display: block;
     position: absolute;
-    top: max(88px, calc(env(safe-area-inset-top) + 76px));
+    top: max(20px, env(safe-area-inset-top));
     left: 50%;
     transform: translateX(-50%);
     width: min(82vw, 300px);
