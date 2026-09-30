@@ -98,6 +98,8 @@ export type SiteCopy = {
     submit: string;
     enquirySubmit: string;
     claimSubmit: string;
+    careersSubmit: string;
+    resumeHint: string;
     submitting: string;
     success: string;
     failed: string;
@@ -344,6 +346,8 @@ export const en: SiteCopy = {
     submit: "Submit",
     enquirySubmit: "Get Free Quote",
     claimSubmit: "Submit Claim Intimation",
+    careersSubmit: "Submit Application",
+    resumeHint: "Paste a link to your resume (Google Drive, Dropbox, etc.)",
     submitting: "Submitting…",
     success: "Thank you! Your submission has been received. Our team will contact you shortly.",
     failed: "Something went wrong while submitting. Please try again.",
@@ -573,6 +577,8 @@ export const hi: SiteCopy = {
     submit: "जमा करें",
     enquirySubmit: "मुफ़्त कोटेशन पाएँ",
     claimSubmit: "क्लेम सूचना जमा करें",
+    careersSubmit: "आवेदन जमा करें",
+    resumeHint: "अपने रिज़्यूमे का लिंक पेस्ट करें (Google Drive, Dropbox आदि)",
     submitting: "भेजा जा रहा है…",
     success: "धन्यवाद! आपका फ़ॉर्म प्राप्त हुआ है। हमारी टीम शीघ्र ही आपसे संपर्क करेगी।",
     failed: "फ़ॉर्म भेजते समय समस्या हुई। कृपया दोबारा प्रयास करें।",

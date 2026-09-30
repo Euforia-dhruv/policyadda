@@ -1,5 +1,4 @@
 import type { Locale } from "@/lib/types";
-import { siteConfig } from "@/content/config";
 import { getActiveCategories } from "@/content/categories";
 
 export type FooterLink = {
@@ -48,7 +47,7 @@ export const footerColumns: FooterColumn[] = [
       L("File a Claim", "दावा दायर करें", "/claim"),
       L("Renew Your Policy", "पॉलिसी नवीनीकृत करें", "/enquiry"),
       L("Become a Partner", "साझीदार बनें", "/partner"),
-      L("Careers", "करियर", siteConfig.forms?.careers ?? "/about", true),
+      L("Careers", "करियर", "/careers"),
     ],
   },
   {
@@ -57,7 +56,6 @@ export const footerColumns: FooterColumn[] = [
       L("IRDAI", "IRDAI", "https://www.irdai.gov.in", true),
       L("Insurance Ombudsman", "बीमा लोकपाल", "https://www.irdai.gov.in/en/Helpful-links/Insurance-Ombudsman", true),
       L("ESIC", "ESIC", "https://www.esic.gov.in", true),
-      L("MACT Calculator", "MACT कैलकुलेटर", "https://services.india.gov.in/service/detail?serviceId=26", true),
       L("Legal & Privacy Policies", "कानूनी और गोपनीयता नीतियाँ", "/privacy"),
       L("Cookie Policy", "कुकी नीति", "/cookies"),
       L("Terms & Conditions", "नियम और शर्तें", "/terms"),

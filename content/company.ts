@@ -2,8 +2,6 @@ import type { Locale } from "@/lib/types";
 
 export type Bilingual = { en: string; hi: string };
 
-export const careersFormUrl = "https://forms.gle/epS84cizW4k69DLh6";
-
 export const company = {
   tagline: {
     en: "Your Trusted Insurance & Risk Management Partner.",

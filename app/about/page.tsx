@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import { getCopy, pick } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { siteConfig } from "@/content/config";
-import { company, pickLocale, careersFormUrl } from "@/content/company";
+import { company, pickLocale } from "@/content/company";
 import type { Bilingual } from "@/content/company";
 import StatCard from "@/components/StatCard";
-import { ExternalLink } from "@/lib/icons";
 
 export const metadata: Metadata = {
   title: "About Us — Policy Adda",
@@ -169,8 +168,8 @@ export default function AboutPage() {
           <h3 className="mb-1"><T value={company.careers.resume.title} locale={l} /></h3>
           <p className="muted-sm mb-4"><T value={company.careers.resume.text} locale={l} /></p>
           <p className="mb-4">
-            <a href={careersFormUrl} target="_blank" rel="noreferrer" className="btn btn-primary">
-              <T value={company.careers.resume.cta} locale={l} /> <ExternalLink size={14} className="inline-block align-[-2px] ml-1" />
+            <a href="/careers" className="btn btn-primary">
+              <T value={company.careers.resume.cta} locale={l} />
             </a>
           </p>
 

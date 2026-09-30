@@ -113,7 +113,10 @@ export default function GoogleForm({
   const renderField = (f: GoogleFormField) => {
     const id = `${formKey}-${f.key}`;
     const err = errors[f.key];
-    const describedBy = err ? `${id}-err` : undefined;
+    const h = f.hint ? fs[f.hint] : undefined;
+    const hint = typeof h === "string" ? h : undefined;
+    const describedBy =
+      [err ? `${id}-err` : "", hint ? `${id}-hint` : ""].filter(Boolean).join(" ") || undefined;
     const common = {
       id,
       name: f.key,
@@ -172,6 +175,11 @@ export default function GoogleForm({
           )}
         </label>
         {control}
+        {hint && (
+          <p className="hint" id={`${id}-hint`}>
+            {hint}
+          </p>
+        )}
         {err && (
           <p className="err" id={`${id}-err`}>
             {msg(err)}

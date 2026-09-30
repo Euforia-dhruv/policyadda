@@ -1,4 +1,5 @@
 import { isValidEmail, isValidIndianPhone } from "@/lib/utils";
+import type { SiteCopy } from "@/content/copy";
 
 /**
  * Config for the three Google Forms that back our custom in-site forms.
@@ -16,6 +17,8 @@ export type GoogleFormField = {
   required?: boolean;
   options?: string[];
   autocomplete?: string;
+  /** key of a copy.forms string rendered as a hint under the control */
+  hint?: keyof SiteCopy["forms"];
 };
 
 export type GoogleFormDef = {
@@ -41,7 +44,7 @@ const PRODUCT_OPTIONS = [
 
 const CLAIM_OPTIONS = [...PRODUCT_OPTIONS.slice(0, -1), "Other Insurance"];
 
-export type FormKey = "enquiry" | "claim" | "partner";
+export type FormKey = "enquiry" | "claim" | "partner" | "careers";
 
 export const GOOGLE_FORMS: Record<FormKey, GoogleFormDef> = {
   enquiry: {
@@ -79,6 +82,25 @@ export const GOOGLE_FORMS: Record<FormKey, GoogleFormDef> = {
       { key: "mobile", entry: "entry.268309656", label: "Mobile Number", kind: "tel", required: true, autocomplete: "tel" },
       { key: "email", entry: "entry.311878053", label: "Email Id", kind: "email", required: true, autocomplete: "email" },
       { key: "pincode", entry: "entry.1879410659", label: "Pincode", kind: "pincode", required: true, autocomplete: "postal-code" },
+    ],
+  },
+  careers: {
+    id: "1FAIpQLSdCwdze8lKkDNOwaYXLb-3EJUGT8bchYaEK-Gu5moksqsCS2Q",
+    fields: [
+      { key: "name", entry: "entry.1572478204", label: "Name", kind: "text", required: true, autocomplete: "name" },
+      { key: "contact", entry: "entry.1435310084", label: "Contact Number", kind: "tel", required: true, autocomplete: "tel" },
+      { key: "email", entry: "entry.989534537", label: "Email", kind: "email", required: true, autocomplete: "email" },
+      {
+        key: "role",
+        entry: "entry.2000132775",
+        label: "Role Applied For",
+        kind: "select",
+        required: true,
+        options: ["Sales Executive", "Team Leader", "HR Recruiter", "Other Role"],
+      },
+      { key: "currentCtc", entry: "entry.1926913955", label: "Current CTC", kind: "text", required: true },
+      { key: "expectedCtc", entry: "entry.1148556711", label: "Expected CTC", kind: "text", required: true },
+      { key: "resume", entry: "entry.1825045809", label: "Resume Link", kind: "textarea", required: true, hint: "resumeHint" },
     ],
   },
 };
