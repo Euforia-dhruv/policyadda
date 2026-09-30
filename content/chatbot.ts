@@ -40,7 +40,7 @@ export const quickChips: { label: { en: string; hi: string }; intent: string }[]
 const expertActions: ChatAction[] = [
   { label: { en: "📞 Call Me", hi: "📞 मुझे कॉल करें" }, href: `tel:${siteConfig.contact.phone.tel}` },
   { label: { en: "💬 WhatsApp Me", hi: "💬 व्हाट्सऐप करें" }, href: siteConfig.contact.whatsapp ?? "#", external: true },
-  { label: { en: "📅 Schedule a Call", hi: "📅 कॉल का समय तय करें" }, href: siteConfig.forms?.enquiry ?? "#", external: true },
+  { label: { en: "📅 Schedule a Call", hi: "📅 कॉल का समय तय करें" }, href: "/#enquiry" },
 ];
 
 export const intents: ChatIntent[] = [
@@ -53,7 +53,7 @@ export const intents: ChatIntent[] = [
         hi: "🚗 मैं कार बीमा में मदद कर सकता हूँ — नया कवर, नवीनीकरण, कोटेशन तुलना, ऐड-ऑन या क्लेम सहायता। आप कार बीमा की पूरी जानकारी यहाँ देख सकते हैं, और हमारी टीम आपको सर्वश्रेष्ठ बीमाकर्ताओं से बेहतरीन प्रीमियम दिलाएगी।",
       },
       link: { label: { en: "View Car Insurance", hi: "कार बीमा देखें" }, href: "/policies/motor/car-insurance" },
-      actions: [{ label: { en: "Get a quote", hi: "कोटेशन पाएँ" }, href: siteConfig.forms?.enquiry ?? "#", external: true }],
+      actions: [{ label: { en: "Get a quote", hi: "कोटेशन पाएँ" }, href: "/#enquiry" }],
     },
   },
   {
@@ -65,7 +65,7 @@ export const intents: ChatIntent[] = [
         hi: "🏍️ बाइक या दोपहिया बीमा के लिए, मैं कंप्रीहेंसिव या थर्ड-पार्टी कवर की तुलना और ऐड-ऑन समझने में मदद कर सकता हूँ। आपके लिए सारी जानकारी यहाँ है।",
       },
       link: { label: { en: "View Bike Insurance", hi: "बाइक बीमा देखें" }, href: "/policies/motor/bike-insurance" },
-      actions: [{ label: { en: "Get a quote", hi: "कोटेशन पाएँ" }, href: siteConfig.forms?.enquiry ?? "#", external: true }],
+      actions: [{ label: { en: "Get a quote", hi: "कोटेशन पाएँ" }, href: "/#enquiry" }],
     },
   },
   {
@@ -77,7 +77,7 @@ export const intents: ChatIntent[] = [
         hi: "🏥 स्वास्थ्य बीमा के लिए, मैं व्यक्तिगत, फैमिली फ्लोटर, सीनियर सिटीज़न और ग्रुप मेडिक्लेम विकल्पों — कैशलेस अस्पताल कवरेज सहित — में मदद कर सकता हूँ। यहाँ विवरण और तेज़ कोटेशन का विकल्प है।",
       },
       link: { label: { en: "View Health Insurance", hi: "स्वास्थ्य बीमा देखें" }, href: "/policies/health/health-insurance" },
-      actions: [{ label: { en: "Get a quote", hi: "कोटेशन पाएँ" }, href: siteConfig.forms?.enquiry ?? "#", external: true }],
+      actions: [{ label: { en: "Get a quote", hi: "कोटेशन पाएँ" }, href: "/#enquiry" }],
     },
   },
   {
@@ -89,7 +89,7 @@ export const intents: ChatIntent[] = [
         hi: "🏠 होम / संपत्ति बीमा के लिए, हम संपत्ति, होम और होम-लोन सुरक्षा के साथ अग्नि और चोरी कवर देते हैं। नीचे विवरण देखें — हमारी टीम बीमित राशि और कवरेज पर मार्गदर्शन भी कर सकती है।",
       },
       link: { label: { en: "View Property & Home Insurance", hi: "संपत्ति और होम बीमा देखें" }, href: "/policies/property/property-and-home-insurance" },
-      actions: [{ label: { en: "Get a quote", hi: "कोटेशन पाएँ" }, href: siteConfig.forms?.enquiry ?? "#", external: true }],
+      actions: [{ label: { en: "Get a quote", hi: "कोटेशन पाएँ" }, href: "/#enquiry" }],
     },
   },
   {
@@ -101,7 +101,7 @@ export const intents: ChatIntent[] = [
         hi: "❤️ लाइफ़ बीमा के लिए, हम टर्म प्लान, चाइल्ड, रिटायरमेंट और निवेश-लिंक्ड विकल्पों में मदद करते हैं। आपके परिवार की सुरक्षा हमारी प्राथमिकता है — आइए आपके लिए सही बीमा राशि चुनें।",
       },
       link: { label: { en: "View Life Insurance", hi: "लाइफ़ बीमा देखें" }, href: "/policies/life/life-insurance" },
-      actions: [{ label: { en: "Get a quote", hi: "कोटेशन पाएँ" }, href: siteConfig.forms?.enquiry ?? "#", external: true }],
+      actions: [{ label: { en: "Get a quote", hi: "कोटेशन पाएँ" }, href: "/#enquiry" }],
     },
   },
   {
@@ -113,7 +113,7 @@ export const intents: ChatIntent[] = [
         hi: "🏢 बिज़नेस और एसएमई बीमा के लिए, हम बिज़नेस लायबिलिटी, साइबर, कॉन्ट्रैक्टर्स ऑल रिस्क, वर्कमैन कंपेंशेशन, मरीन और कार्गो, सरकारी जमानत बॉन्ड और बहुत कुछ कवर करते हैं। अपनी ज़रूरत बताएँ, हम अनुकूलित प्रस्ताव दिलवाएँगे।",
       },
       link: { label: { en: "View Business Insurance", hi: "बिज़नेस बीमा देखें" }, href: "/policies/business/business-liability-insurance" },
-      actions: [{ label: { en: "Talk to a business expert", hi: "बिज़नेस एक्सपर्ट से बात करें" }, href: siteConfig.forms?.enquiry ?? "#", external: true }],
+      actions: [{ label: { en: "Talk to a business expert", hi: "बिज़नेस एक्सपर्ट से बात करें" }, href: "/#enquiry" }],
     },
   },
   {
@@ -125,7 +125,7 @@ export const intents: ChatIntent[] = [
         hi: "✈️ यात्रा बीमा के लिए, हम घरेलू और अंतर्राष्ट्रीय कवरेज में मदद करते हैं — मेडिकल इमरजेंसी, ट्रिप में देरी और खोया सामान। नीचे विवरण देखें।",
       },
       link: { label: { en: "View Travel Insurance", hi: "यात्रा बीमा देखें" }, href: "/policies/travel/travel-insurance" },
-      actions: [{ label: { en: "Get a quote", hi: "कोटेशन पाएँ" }, href: siteConfig.forms?.enquiry ?? "#", external: true }],
+      actions: [{ label: { en: "Get a quote", hi: "कोटेशन पाएँ" }, href: "/#enquiry" }],
     },
   },
   {
@@ -137,7 +137,7 @@ export const intents: ChatIntent[] = [
         hi: "🔄 नवीनीकरण बहुत आसान है। अपनी पॉलिसी नंबर / वाहन या पॉलिसी विवरण साझा करें और हम जाँचेंगे कि आप अपना No-Claim Bonus (NCB) बरकरार रख सकते हैं या नहीं और आपका वर्तमान कवरेज पर्याप्त है या नहीं। आप हमारे क्विक रिन्यूअल फॉर्म से तुरंत नवीनीकरण भी कर सकते हैं।",
       },
       link: { label: { en: "Renew my policy", hi: "अपनी पॉलिसी नवीनीकृत करें" }, href: "/support" },
-      actions: [{ label: { en: "Open renewal form", hi: "नवीनीकरण फ़ॉर्म खोलें" }, href: siteConfig.forms?.renew ?? "#", external: true }],
+      actions: [{ label: { en: "Open renewal form", hi: "नवीनीकरण फ़ॉर्म खोलें" }, href: "/#enquiry" }],
     },
   },
   {
@@ -150,7 +150,7 @@ export const intents: ChatIntent[] = [
       },
       link: { label: { en: "File / track a claim", hi: "क्लेम दायर / ट्रैक करें" }, href: "/claim" },
       actions: [
-        { label: { en: "Open claim form", hi: "क्लेम फ़ॉर्म खोलें" }, href: siteConfig.forms?.claim ?? "#", external: true },
+        { label: { en: "Open claim form", hi: "क्लेम फ़ॉर्म खोलें" }, href: "/claim" },
         { label: { en: "📞 Claim helpline", hi: "📞 क्लेम हेल्पलाइन" }, href: `tel:${siteConfig.contact.phone.tel}` },
       ],
       disclaimer: true,
@@ -165,7 +165,7 @@ export const intents: ChatIntent[] = [
         hi: "📊 मैं आपके लिए एक व्यक्तिगत कोटेशन तैयार करना चाहूँगा। बताइए आपको कौन-सा उत्पाद चाहिए (मोटर, हेल्थ, लाइफ़, बिज़नेस, प्रॉपर्टी या ट्रैवल), और कोटेशन कहाँ भेजूँ? आप आवेदन फ़ॉर्म से भी शुरू कर सकते हैं।",
       },
       link: { label: { en: "Explore all policies", hi: "सभी पॉलिसी देखें" }, href: "/policies" },
-      actions: [{ label: { en: "Get a quote", hi: "कोटेशन पाएँ" }, href: siteConfig.forms?.enquiry ?? "#", external: true }],
+      actions: [{ label: { en: "Get a quote", hi: "कोटेशन पाएँ" }, href: "/#enquiry" }],
     },
   },
   {
@@ -187,7 +187,7 @@ export const intents: ChatIntent[] = [
         en: "🤝 Great to hear you're interested in partnering with Policy Adda! Fill in the partner form and our team will reach out to discuss the opportunity.",
         hi: "🤝 पॉलिसी अड्डा के साथ साझेदारी में रुचि लेने के लिए धन्यवाद! साझेदार फ़ॉर्म भरें और हमारी टीम मौके पर चर्चा के लिए संपर्क करेगी।",
       },
-      actions: [{ label: { en: "Become a partner", hi: "साझीदार बनें" }, href: siteConfig.forms?.partner ?? "#", external: true }],
+      actions: [{ label: { en: "Become a partner", hi: "साझीदार बनें" }, href: "/partner" }],
     },
   },
   {
@@ -195,7 +195,7 @@ export const intents: ChatIntent[] = [
     keywords: ["hi", "hello", "hey", "namaste", "good morning", "good evening", "hii"],
     reply: {
       text: welcomeMessage,
-      actions: [{ label: { en: "Talk to an expert", hi: "एक्सपर्ट से बात करें" }, href: siteConfig.forms?.enquiry ?? "#", external: true }],
+      actions: [{ label: { en: "Talk to an expert", hi: "एक्सपर्ट से बात करें" }, href: "/#enquiry" }],
     },
   },
   {

@@ -14,8 +14,8 @@ export default function SupportPage() {
   const locale = getLocale();
   const copy = getCopy(locale);
   const c = siteConfig.contact;
-  const enquiryUrl = siteConfig.forms?.enquiry;
-  const claimUrl = siteConfig.forms?.claim;
+  const enquiryUrl = "/#enquiry";
+  const claimUrl = "/claim";
 
   return (
     <>
@@ -61,24 +61,16 @@ export default function SupportPage() {
       <section className="pad section-pad-0">
         <div className="wrap">
           <div className="support-grid">
-            {enquiryUrl && (
-              <a href={enquiryUrl} target="_blank" rel="noreferrer" className="card support-card no-underline">
-                <h3>{copy.support.enquiryTitle}</h3>
-                <p>{copy.support.enquiryLead}</p>
-                <span className="btn btn-primary mt-2">
-                  {copy.support.enquiryCta} <ExternalLink size={14} className="inline-block align-[-2px] ml-1" />
-                </span>
-              </a>
-            )}
-            {claimUrl && (
-              <a href={claimUrl} target="_blank" rel="noreferrer" className="card support-card no-underline">
-                <h3>{copy.support.claimTitle}</h3>
-                <p>{copy.support.claimLead}</p>
-                <span className="btn btn-primary mt-2">
-                  {copy.support.claimCta} <ExternalLink size={14} className="inline-block align-[-2px] ml-1" />
-                </span>
-              </a>
-            )}
+            <a href={enquiryUrl} className="card support-card no-underline">
+              <h3>{copy.support.enquiryTitle}</h3>
+              <p>{copy.support.enquiryLead}</p>
+              <span className="btn btn-primary mt-2">{copy.support.enquiryCta}</span>
+            </a>
+            <a href={claimUrl} className="card support-card no-underline">
+              <h3>{copy.support.claimTitle}</h3>
+              <p>{copy.support.claimLead}</p>
+              <span className="btn btn-primary mt-2">{copy.support.claimCta}</span>
+            </a>
           </div>
         </div>
       </section>

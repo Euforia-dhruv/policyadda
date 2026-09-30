@@ -45,9 +45,9 @@ export const footerColumns: FooterColumn[] = [
     links: [
       L("About Us", "हमारे बारे में", "/about"),
       L("Get Support", "सहायता लें", "/support"),
-      L("File a Claim", "दावा दायर करें", siteConfig.forms?.claim ?? "/support", true),
-      L("Renew Your Policy", "पॉलिसी नवीनीकृत करें", siteConfig.forms?.renew ?? "/support", true),
-      L("Become a Partner", "साझीदार बनें", siteConfig.forms?.partner ?? "/support", true),
+      L("File a Claim", "दावा दायर करें", "/claim"),
+      L("Renew Your Policy", "पॉलिसी नवीनीकृत करें", "/#enquiry"),
+      L("Become a Partner", "साझीदार बनें", "/partner"),
       L("Careers", "करियर", siteConfig.forms?.careers ?? "/about", true),
     ],
   },

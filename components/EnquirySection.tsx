@@ -2,10 +2,9 @@ import type { Locale } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import { siteConfig } from "@/content/config";
 import { ExternalLink, Phone, Mail } from "@/lib/icons";
+import GoogleForm from "@/components/GoogleForm";
 
 export default function EnquirySection({ copy, locale }: { copy: SiteCopy; locale: Locale }) {
-  const formUrl = siteConfig.forms?.enquiry;
-
   return (
     <section className="pad" id="enquiry">
       <div className="wrap">
@@ -14,12 +13,8 @@ export default function EnquirySection({ copy, locale }: { copy: SiteCopy; local
             <p className="eyebrow">{copy.home.enquiryEyebrow}</p>
             <h2>{copy.home.enquiryTitle}</h2>
             <p className="lead">{copy.home.enquiryLead}</p>
-            {formUrl && (
-              <a href={formUrl} target="_blank" rel="noreferrer" className="btn btn-primary">
-                {copy.home.enquiryCta} <ExternalLink size={14} className="inline-block align-[-2px] ml-1" />
-              </a>
-            )}
-            {copy.home.enquiryNote && <p className="muted-xs">{copy.home.enquiryNote}</p>}
+            <GoogleForm formKey="enquiry" copy={copy} submitLabel={copy.forms.enquirySubmit} />
+            {copy.home.enquiryNote && <p className="muted-xs mt-3">{copy.home.enquiryNote}</p>}
           </div>
 
           <div className="enquiry-contact-cards">

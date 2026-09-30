@@ -39,7 +39,6 @@ export type SiteCopy = {
     enquiryEyebrow: string;
     enquiryTitle: string;
     enquiryLead: string;
-    enquiryCta: string;
     enquiryNote: string;
   };
   support: {
@@ -80,8 +79,6 @@ export type SiteCopy = {
     eyebrow: string;
     title: string;
     lead: string;
-    formCta: string;
-    formNote: string;
     thanks: string;
     helpline: string;
     helplineSub: string;
@@ -94,17 +91,31 @@ export type SiteCopy = {
   renew: {
     title: string;
     lead: string;
-    formCta: string;
-    note: string;
     thanks: string;
   };
   partnerPopout: {
     title: string;
     tagline: string;
     lead: string;
-    formCta: string;
-    note: string;
     thanks: string;
+  };
+  forms: {
+    submit: string;
+    enquirySubmit: string;
+    claimSubmit: string;
+    submitting: string;
+    success: string;
+    failed: string;
+    required: string;
+    invalidEmail: string;
+    invalidPhone: string;
+    invalidPin: string;
+    invalidSelect: string;
+    invalidDate: string;
+    selectPlaceholder: string;
+    next: string;
+    back: string;
+    claimSteps: string[];
   };
   promo: {
     tagline: string;
@@ -267,8 +278,7 @@ export const en: SiteCopy = {
     enquiryEyebrow: "Get Free Quote",
     enquiryTitle: "Start with a free quote.",
     enquiryLead: "Fill in a short enquiry form and a PolicyAdda expert will contact you with the best options. No obligation, no commitment.",
-    enquiryCta: "Open the enquiry form",
-    enquiryNote: "The enquiry Google Form opens in a new tab. Submit button: Get Free Quote.",
+    enquiryNote: "Your details stay private — we only use them to call you back.",
   },
   support: {
     eyebrow: "Support",
@@ -325,8 +335,6 @@ export const en: SiteCopy = {
     eyebrow: "File New Claim",
     title: "We're here to help when you need it most.",
     lead: "File your claim intimation quickly — our dedicated Claim expert team will contact you and manage the rest.",
-    formCta: "Open the claim intimation form",
-    formNote: "The claim intimation Google Form opens in a new tab.",
     thanks: "Your Claim intimation has been received! Your dedicated Claim expert will contact you soon.",
     helpline: "Dedicated Claim Helpline",
     helplineSub: "Need instant help? Call our Claim expert now.",
@@ -345,17 +353,31 @@ export const en: SiteCopy = {
   renew: {
     title: "Renew Your Policy",
     lead: "Keep your coverage active. Fill in your details — your dedicated expert will contact you to complete the renewal.",
-    formCta: "Open the renewal form",
-    note: "The renewal form opens in a new tab — without leaving or redirecting this page.",
     thanks: "Thanks for submitting your request. Your dedicated expert will contact you soon.",
   },
   partnerPopout: {
     title: "Become a Partner",
     tagline: "Earn up to 1 Lakh per month, from anywhere.",
     lead: "Join our network of insurance professionals. Share the opportunity form — our team will reach out to discuss how we can work together.",
-    formCta: "Open the partner form",
-    note: "The partner form opens in a new tab — without leaving or redirecting this page.",
     thanks: "Thanks for submitting your request. We will contact you shortly.",
+  },
+  forms: {
+    submit: "Submit",
+    enquirySubmit: "Get Free Quote",
+    claimSubmit: "Submit Claim Intimation",
+    submitting: "Submitting…",
+    success: "Thank you! Your submission has been received. Our team will contact you shortly.",
+    failed: "Something went wrong while submitting. Please try again.",
+    required: "This field is required.",
+    invalidEmail: "Please enter a valid email address.",
+    invalidPhone: "Please enter a valid 10-digit mobile number.",
+    invalidPin: "Please enter a valid 6-digit pincode.",
+    invalidSelect: "Please select an option.",
+    invalidDate: "Please enter a valid date and time.",
+    selectPlaceholder: "Select an option",
+    next: "Next",
+    back: "Back",
+    claimSteps: ["Your Details", "Policy Details", "Incident Details", "Review & Submit"],
   },
   promo: {
     tagline: "FREE QUOTE",
@@ -501,8 +523,7 @@ export const hi: SiteCopy = {
     enquiryEyebrow: "मुफ़्त कोटेशन",
     enquiryTitle: "मुफ़्त कोटेशन से शुरुआत करें।",
     enquiryLead: "एक छोटा आवेदन फ़ॉर्म भरें और एक PolicyAdda एक्सपर्ट सर्वोत्तम विकल्पों के साथ संपर्क करेगा। कोई बाध्यता नहीं।",
-    enquiryCta: "आवेदन फ़ॉर्म खोलें",
-    enquiryNote: "आवेदन Google फ़ॉर्म नए टैब में खुलेगा। सबमिट बटन: Get Free Quote।",
+    enquiryNote: "आपकी जानकारी निजी रहती है — हम इसका उपयोग केवल आपको वापस कॉल करने के लिए करते हैं।",
   },
   support: {
     eyebrow: "सहायता",
@@ -559,8 +580,6 @@ export const hi: SiteCopy = {
     eyebrow: "नया क्लेम दायर करें",
     title: "जब आपको सबसे ज़्यादा ज़रूरत हो, हम मदद के लिए यहाँ हैं।",
     lead: "अपनी क्लेम सूचना जल्दी दर्ज करें — हमारी समर्पित क्लेम एक्सपर्ट टीम संपर्क करेगी और आगे की प्रक्रिया संभाल लेगी।",
-    formCta: "क्लेम सूचना फ़ॉर्म खोलें",
-    formNote: "क्लेम सूचना Google फ़ॉर्म नए टैब में खुलेगा।",
     thanks: "आपकी क्लेम सूचना प्राप्त हो गई है! आपका समर्पित क्लेम एक्सपर्ट जल्द ही संपर्क करेगा।",
     helpline: "समर्पित क्लेम हेल्पलाइन",
     helplineSub: "तुरंत मदद चाहिए? अभी हमारे क्लेम एक्सपर्ट को कॉल करें।",
@@ -579,17 +598,31 @@ export const hi: SiteCopy = {
   renew: {
     title: "अपनी पॉलिसी नवीनीकृत करें",
     lead: "अपना कवरेज सक्रिय रखें। अपना विवरण भरें — आपका समर्पित एक्सपर्ट नवीनीकरण पूरा करने के लिए संपर्क करेगा।",
-    formCta: "नवीनीकरण फ़ॉर्म खोलें",
-    note: "नवीनीकरण फ़ॉर्म नए टैब में खुलेगा — इस पृष्ठ को छोड़े या रीडायरेक्ट किए बिना।",
     thanks: "आपके अनुरोध के लिए धन्यवाद। आपका समर्पित एक्सपर्ट जल्द ही संपर्क करेगा।",
   },
   partnerPopout: {
     title: "पार्टनर बनें",
     tagline: "कहीं से भी, हर महीने 1 लाख तक कमाएँ।",
     lead: "हमारे बीमा पेशेवरों के नेटवर्क से जुड़ें। अवसर फ़ॉर्म भरें — हमारी टीम आपसे सहयोग पर चर्चा के लिए संपर्क करेगी।",
-    formCta: "पार्टनर फ़ॉर्म खोलें",
-    note: "पार्टनर फ़ॉर्म नए टैब में खुलेगा — इस पृष्ठ को छोड़े या रीडायरेक्ट किए बिना।",
     thanks: "आपके अनुरोध के लिए धन्यवाद। हम शीघ्र ही आपसे संपर्क करेंगे।",
+  },
+  forms: {
+    submit: "जमा करें",
+    enquirySubmit: "मुफ़्त कोटेशन पाएँ",
+    claimSubmit: "क्लेम सूचना जमा करें",
+    submitting: "भेजा जा रहा है…",
+    success: "धन्यवाद! आपका फ़ॉर्म प्राप्त हुआ है। हमारी टीम शीघ्र ही आपसे संपर्क करेगी।",
+    failed: "फ़ॉर्म भेजते समय समस्या हुई। कृपया दोबारा प्रयास करें।",
+    required: "यह फ़ील्ड आवश्यक है।",
+    invalidEmail: "कृपया एक वैध ईमेल पता दर्ज करें।",
+    invalidPhone: "कृपया एक वैध 10 अंकों का मोबाइल नंबर दर्ज करें।",
+    invalidPin: "कृपया एक वैध 6 अंकों का पिन कोड दर्ज करें।",
+    invalidSelect: "कृपया एक विकल्प चुनें।",
+    invalidDate: "कृपया वैध दिनांक और समय दर्ज करें।",
+    selectPlaceholder: "एक विकल्प चुनें",
+    next: "आगे",
+    back: "पीछे",
+    claimSteps: ["आपकी जानकारी", "पॉलिसी जानकारी", "घटना की जानकारी", "समीक्षा और जमा करें"],
   },
   promo: {
     tagline: "मुफ़्त कोटेशन",

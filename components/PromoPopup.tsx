@@ -4,7 +4,7 @@ import { useEffect, useState, useCallback } from "react";
 import type { Locale } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import { siteConfig } from "@/content/config";
-import { ExternalLink, X, Phone } from "@/lib/icons";
+import { X, Phone } from "@/lib/icons";
 
 const DISMISS_KEY = "pa-promo-dismissed-at";
 const SESSION_KEY = "pa-promo-shown-session";
@@ -13,7 +13,7 @@ const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
 export default function PromoPopup({ copy, locale }: { copy: SiteCopy; locale: Locale }) {
   const [open, setOpen] = useState(false);
   const p = copy.promo;
-  const enquiryUrl = siteConfig.forms?.enquiry ?? "#";
+  const enquiryUrl = "/#enquiry";
   const tel = siteConfig.contact.phone.tel;
   const wa = siteConfig.contact.whatsapp;
 
@@ -100,8 +100,8 @@ export default function PromoPopup({ copy, locale }: { copy: SiteCopy; locale: L
         <h2 className="mb-2">{p.title}</h2>
         <p className="muted-text text-base mb-4">{p.lead}</p>
         <div className="promo-actions">
-          <a href={enquiryUrl} target="_blank" rel="noreferrer" className="btn btn-primary">
-            {p.primary} <ExternalLink size={14} className="inline-block align-[-2px] ml-1" />
+          <a href={enquiryUrl} onClick={close} className="btn btn-primary">
+            {p.primary}
           </a>
           <a href={`tel:${tel}`} className="btn btn-ghost">
             <Phone size={16} className="inline-block align-[-3px] mr-1" />

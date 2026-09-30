@@ -3,8 +3,8 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
 import type { Locale } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
-import { siteConfig } from "@/content/config";
 import { ExternalLink, X } from "@/lib/icons";
+import GoogleForm from "@/components/GoogleForm";
 
 export default function RenewPopout({
   copy,
@@ -24,8 +24,6 @@ export default function RenewPopout({
   const [internalOpen, setInternalOpen] = useState(false);
   const open = controlledOpen ?? internalOpen;
   const close = useMemo(() => onClose ?? (() => setInternalOpen(false)), [onClose]);
-  const forms = siteConfig.forms;
-  const renewUrl = forms?.renew;
 
   const onKey = useCallback((e: KeyboardEvent) => {
     if (e.key === "Escape") close();
@@ -39,8 +37,6 @@ export default function RenewPopout({
       window.removeEventListener("keydown", onKey);
     };
   }, [open, onKey]);
-
-  if (!renewUrl) return null;
 
   return (
     <>
@@ -64,13 +60,12 @@ export default function RenewPopout({
             </button>
             <h2 className="mb-2">{copy.renew.title}</h2>
             <p className="muted-text text-base mb-4">{copy.renew.lead}</p>
-            <a href={renewUrl} target="_blank" rel="noreferrer" className="btn btn-primary mb-4">
-              {copy.renew.formCta} <ExternalLink size={14} className="inline-block align-[-2px] ml-1" />
-            </a>
-            <p className="dev-note mb-4">{copy.renew.note}</p>
-            <div className="renew-thanks">
-              {copy.renew.thanks}
-            </div>
+            <GoogleForm
+              formKey="enquiry"
+              copy={copy}
+              successMessage={copy.renew.thanks}
+              submitLabel={copy.forms.enquirySubmit}
+            />
           </div>
         </div>
       )}

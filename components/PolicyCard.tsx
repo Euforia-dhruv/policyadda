@@ -3,10 +3,7 @@
 import type { Locale, Policy } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
 import { pick } from "@/lib/i18n";
-import { siteConfig } from "@/content/config";
 import { motion } from "motion/react";
-
-const ENQUIRY_URL = siteConfig.forms?.enquiry ?? "#";
 
 export default function PolicyCard({
   policy,
@@ -20,7 +17,7 @@ export default function PolicyCard({
   full?: boolean;
 }) {
   const detailHref = `/policies/${policy.categorySlug}/${policy.slug}`;
-  const applyHref = policy.googleFormUrl ?? ENQUIRY_URL;
+  const applyHref = "/#enquiry";
 
   return (
     <motion.div
@@ -37,8 +34,6 @@ export default function PolicyCard({
         </a>
         <a
           href={applyHref}
-          target="_blank"
-          rel="noreferrer"
           className="btn btn-primary btn-sm"
         >
           {copy.nav.apply}

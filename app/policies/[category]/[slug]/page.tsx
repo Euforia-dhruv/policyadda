@@ -45,7 +45,7 @@ export default async function PolicyDetailPage({ params }: { params: Promise<Par
 
   const cat = data.categoryBySlug(category);
   const catName = cat ? pick(locale, cat.name) : category;
-  const applyHref = policy.googleFormUrl ?? siteConfig.forms?.enquiry ?? "#";
+  const applyHref = "/#enquiry";
 
   const blocks: { key: "benefits" | "eligibility" | "coverage" | "exclusions"; items: { en: string[]; hi: string[] }; bad?: boolean }[] = [
     { key: "benefits", items: policy.keyBenefits },
@@ -147,13 +147,8 @@ export default async function PolicyDetailPage({ params }: { params: Promise<Par
               <p className="muted-text text-sm mb-4">
                 {copy.detail.readySub}
               </p>
-              <a
-                href={applyHref}
-                className="btn btn-primary btn-block"
-                target={policy.googleFormUrl ? "_blank" : undefined}
-                rel={policy.googleFormUrl ? "noreferrer" : undefined}
-              >
-                {policy.googleFormUrl ? copy.detail.openSignup : copy.detail.applyNow}
+              <a href={applyHref} className="btn btn-primary btn-block">
+                {copy.detail.openSignup}
               </a>
               <a href="/support" className="btn btn-ghost btn-block mt-2">
                 {copy.detail.trustSupport}

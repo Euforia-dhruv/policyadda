@@ -1535,3 +1535,20 @@ section { position: relative; }
   .cat-sub-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .cat-sub-card { padding: 12px 12px 14px; }
 }
+
+/* ============================================================
+   Custom in-site forms (submitted to Google Sheets via /api/forms)
+   ============================================================ */
+.gf-steps { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin: 0 0 var(--sp-5); padding: 0; list-style: none; }
+.gf-step { display: flex; align-items: center; gap: 6px; font-size: var(--text-xs); color: var(--faint); font-weight: 700; }
+.gf-step.is-active { color: var(--accent); }
+.gf-step.is-done { color: var(--muted); }
+.gf-step-no { font-variant-numeric: tabular-nums; }
+.gf-actions { display: flex; align-items: center; justify-content: flex-end; gap: var(--sp-3); flex-wrap: wrap; margin-top: var(--sp-2); }
+.gf-actions .gf-back { margin-right: auto; }
+.gf-review { margin: 0 0 var(--sp-4); }
+.gf-review div { display: flex; justify-content: space-between; gap: var(--sp-4); padding: 9px 0; border-bottom: 1px dashed var(--line); }
+.gf-review dt { color: var(--muted); font-size: var(--text-sm); font-weight: 600; }
+.gf-review dd { margin: 0; font-size: var(--text-sm); text-align: right; word-break: break-word; }
+.gf-done .form-ok { align-items: center; }
+.renew-modal .gf { max-width: none; padding: 0; border: 0; background: transparent; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }

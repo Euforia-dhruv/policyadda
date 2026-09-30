@@ -3,7 +3,8 @@ import { getCopy } from "@/lib/i18n";
 import { getLocale } from "@/lib/locale";
 import { siteConfig } from "@/content/config";
 import Accordion from "@/components/Accordion";
-import { Phone, Message, ExternalLink, FileText } from "@/lib/icons";
+import GoogleForm from "@/components/GoogleForm";
+import { Phone, Message } from "@/lib/icons";
 import { claimFaqs } from "@/content/faqs";
 
 export const metadata: Metadata = {
@@ -15,7 +16,6 @@ export default function ClaimPage() {
   const locale = getLocale();
   const copy = getCopy(locale);
   const c = siteConfig.contact;
-  const claimUrl = siteConfig.forms?.claim;
   const whatsapp = c.whatsapp;
 
   return (
@@ -32,16 +32,13 @@ export default function ClaimPage() {
 
       <section className="pad section-pad-0">
         <div className="wrap">
-          {claimUrl && (
-            <a href={claimUrl} target="_blank" rel="noreferrer" className="btn btn-primary mb-3">
-              {copy.claim.formCta} <ExternalLink size={14} className="inline-block align-[-2px] ml-1" />
-            </a>
-          )}
-          <p className="muted-xs mb-6">{copy.claim.formNote}</p>
-
-          <div className="claim-thanks mb-8">
-            <FileText size={18} />
-            <span>{copy.claim.thanks}</span>
+          <div className="mb-8">
+            <GoogleForm
+              formKey="claim"
+              copy={copy}
+              successMessage={copy.claim.thanks}
+              submitLabel={copy.forms.claimSubmit}
+            />
           </div>
 
           <div className="support-grid mb-6">

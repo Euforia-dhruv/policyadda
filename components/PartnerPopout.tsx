@@ -3,8 +3,8 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
 import type { Locale } from "@/lib/types";
 import type { SiteCopy } from "@/content/copy";
-import { siteConfig } from "@/content/config";
 import { ExternalLink, X } from "@/lib/icons";
+import GoogleForm from "@/components/GoogleForm";
 
 export default function PartnerPopout({
   copy,
@@ -24,8 +24,6 @@ export default function PartnerPopout({
   const [internalOpen, setInternalOpen] = useState(false);
   const open = controlledOpen ?? internalOpen;
   const close = useMemo(() => onClose ?? (() => setInternalOpen(false)), [onClose]);
-  const forms = siteConfig.forms;
-  const partnerUrl = forms?.partner;
   const p = copy.partnerPopout;
 
   const onKey = useCallback((e: KeyboardEvent) => {
@@ -40,8 +38,6 @@ export default function PartnerPopout({
       window.removeEventListener("keydown", onKey);
     };
   }, [open, onKey]);
-
-  if (!partnerUrl) return null;
 
   return (
     <>
@@ -66,13 +62,7 @@ export default function PartnerPopout({
             <h2 className="mb-2">{p.title}</h2>
             <p className="mb-2 font-semibold" style={{ color: "var(--accent)" }}>{p.tagline}</p>
             <p className="muted-text text-base mb-4">{p.lead}</p>
-            <a href={partnerUrl} target="_blank" rel="noreferrer" className="btn btn-primary mb-4">
-              {p.formCta} <ExternalLink size={14} className="inline-block align-[-2px] ml-1" />
-            </a>
-            <p className="dev-note mb-4">{p.note}</p>
-            <div className="renew-thanks">
-              {p.thanks}
-            </div>
+            <GoogleForm formKey="partner" copy={copy} successMessage={p.thanks} />
           </div>
         </div>
       )}
