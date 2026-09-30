@@ -1,13 +1,11 @@
 import type { Locale } from "@/lib/types";
 import { siteConfig } from "@/content/config";
 import { getActiveCategories } from "@/content/categories";
-import { getPoliciesByCategory } from "@/content/policies";
 
 export type FooterLink = {
   label: { en: string; hi: string };
   href: string;
   external?: boolean;
-  children?: FooterLink[];
 };
 
 export type FooterColumn = {
@@ -34,10 +32,6 @@ function insuranceFooterLinks(): FooterLink[] {
   return ordered.map((cat) => ({
     label: cat.name,
     href: `/policies/${cat.slug}`,
-    children: getPoliciesByCategory(cat.slug).map((sub) => ({
-      label: { en: sub.name, hi: sub.name },
-      href: `/policies/${cat.slug}/${sub.slug}`,
-    })),
   }));
 }
 
