@@ -175,7 +175,7 @@ body {
    Base overrides (on top of Tailwind preflight)
    ============================================================ */
 :root {
-  --page-bg-image: url("/assets/04 - Health.webp");
+  --page-bg-image: none;
 }
 
 html {
@@ -1292,21 +1292,18 @@ section { position: relative; }
 
 
 /* ============================================================
-   Renew pop-out modal (client spec: same-screen pop-out, blur)
+   Modal shell (used by the promo pop-out)
    ============================================================ */
 .renew-backdrop { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: var(--sp-6); background: rgba(8, 15, 26, 0.6); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
 .renew-modal { position: relative; width: 100%; max-width: 520px; padding: var(--sp-8); }
 .renew-close { position: absolute; top: 12px; right: 12px; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); background: var(--surface); cursor: pointer; transition: color var(--dur-fast) ease, border-color var(--dur-fast) ease; }
 .renew-close:hover { color: var(--accent-strong); border-color: var(--accent-line); }
-.renew-thanks { padding: var(--sp-3) var(--sp-4); border-left: 3px solid var(--ok); background: var(--surface-2); color: var(--muted); font-size: var(--text-sm); border-radius: 0 var(--radius) var(--radius) 0; }
 .promo-actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-bottom: var(--sp-3); }
 .promo-foot { display: flex; justify-content: space-between; gap: var(--sp-3); margin-top: var(--sp-4); padding-top: var(--sp-4); border-top: 1px solid var(--line); }
 .promo-later, .promo-dismiss { background: none; border: 0; cursor: pointer; font-size: var(--text-sm); color: var(--muted); text-decoration: underline-offset-4; transition: color var(--dur-fast) ease; }
 .promo-later:hover { color: var(--text); text-decoration: underline; }
 .promo-dismiss { color: var(--accent); }
 .promo-dismiss:hover { text-decoration: underline; }
-.renew-card { text-align: left; cursor: pointer; width: 100%; font: inherit; }
-.renew-card:hover { transform: translateY(-2px); }
 
 
 /* ============================================================

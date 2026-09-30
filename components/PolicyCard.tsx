@@ -17,7 +17,7 @@ export default function PolicyCard({
   full?: boolean;
 }) {
   const detailHref = `/policies/${policy.categorySlug}/${policy.slug}`;
-  const applyHref = "/#enquiry";
+  const applyHref = "/enquiry";
 
   return (
     <motion.div

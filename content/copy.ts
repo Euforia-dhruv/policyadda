@@ -88,11 +88,6 @@ export type SiteCopy = {
     lifecycleLead: string;
     steps: { t: string; d: string }[];
   };
-  renew: {
-    title: string;
-    lead: string;
-    thanks: string;
-  };
   partnerPopout: {
     title: string;
     tagline: string;
@@ -164,17 +159,6 @@ export type SiteCopy = {
     applyNow: string;
     trustSupport: string;
     openSignup: string;
-  };
-  quickActions: {
-    eyebrow: string;
-    title: string;
-    lead: string;
-    renew: string;
-    renewSub: string;
-    claim: string;
-    claimSub: string;
-    partner: string;
-    partnerSub: string;
   };
   common: {
     close: string;
@@ -350,11 +334,6 @@ export const en: SiteCopy = {
       { t: "Settlement", d: "Once approved, the payment is processed to your registered account — we stay with you until the end." },
     ],
   },
-  renew: {
-    title: "Renew Your Policy",
-    lead: "Keep your coverage active. Fill in your details — your dedicated expert will contact you to complete the renewal.",
-    thanks: "Thanks for submitting your request. Your dedicated expert will contact you soon.",
-  },
   partnerPopout: {
     title: "Become a Partner",
     tagline: "Earn up to 1 Lakh per month, from anywhere.",
@@ -409,17 +388,6 @@ export const en: SiteCopy = {
     applyNow: "Get assistance",
     trustSupport: "Talk to support",
     openSignup: "Open application form",
-  },
-  quickActions: {
-    eyebrow: "Quick Actions",
-    title: "Need help with your policy?",
-    lead: "Renew an existing policy, file a claim, or partner with us — all in a few clicks.",
-    renew: "Renew Your Policy",
-    renewSub: "Keep your coverage active. Quick renewal assistance.",
-    claim: "File a Claim",
-    claimSub: "Need to make a claim? We'll guide you through it.",
-    partner: "Become a Partner",
-    partnerSub: "Join our network of insurance professionals.",
   },
   common: {
     close: "Close",
@@ -595,11 +563,6 @@ export const hi: SiteCopy = {
       { t: "निपटान", d: "अनुमोदित होने के बाद भुगतान आपके पंजीकृत खाते में किया जाता है — हम अंत तक आपके साथ रहते हैं।" },
     ],
   },
-  renew: {
-    title: "अपनी पॉलिसी नवीनीकृत करें",
-    lead: "अपना कवरेज सक्रिय रखें। अपना विवरण भरें — आपका समर्पित एक्सपर्ट नवीनीकरण पूरा करने के लिए संपर्क करेगा।",
-    thanks: "आपके अनुरोध के लिए धन्यवाद। आपका समर्पित एक्सपर्ट जल्द ही संपर्क करेगा।",
-  },
   partnerPopout: {
     title: "पार्टनर बनें",
     tagline: "कहीं से भी, हर महीने 1 लाख तक कमाएँ।",
@@ -654,17 +617,6 @@ export const hi: SiteCopy = {
     applyNow: "सहायता लें",
     trustSupport: "सहायता से बात करें",
     openSignup: "आवेदन फॉर्म खोलें",
-  },
-  quickActions: {
-    eyebrow: "त्वरित कार्य",
-    title: "अपनी पॉलिसी में सहायता चाहिए?",
-    lead: "मौजूदा पॉलिसी का नवीनीकरण करें, दावा दायर करें, या हमसे जुड़ें — बस कुछ क्लिक में।",
-    renew: "अपनी पॉलिसी नवीनीकृत करें",
-    renewSub: "अपना कवरेज सक्रिय रखें। त्वरित नवीनीकरण सहायता।",
-    claim: "दावा दायर करें",
-    claimSub: "दावा करना है? हम आपका मार्गदर्शन करेंगे।",
-    partner: "पार्टनर बनें",
-    partnerSub: "हमारे बीमा पेशेवरों के नेटवर्क से जुड़ें।",
   },
   common: {
     close: "बंद करें",

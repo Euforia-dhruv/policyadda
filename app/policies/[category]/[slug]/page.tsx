@@ -45,7 +45,7 @@ export default async function PolicyDetailPage({ params }: { params: Promise<Par
 
   const cat = data.categoryBySlug(category);
   const catName = cat ? pick(locale, cat.name) : category;
-  const applyHref = "/#enquiry";
+  const applyHref = "/enquiry";
 
   const blocks: { key: "benefits" | "eligibility" | "coverage" | "exclusions"; items: { en: string[]; hi: string[] }; bad?: boolean }[] = [
     { key: "benefits", items: policy.keyBenefits },

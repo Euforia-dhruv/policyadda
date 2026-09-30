@@ -14,7 +14,7 @@ export default function SupportPage() {
   const locale = getLocale();
   const copy = getCopy(locale);
   const c = siteConfig.contact;
-  const enquiryUrl = "/#enquiry";
+  const enquiryUrl = "/enquiry";
   const claimUrl = "/claim";
 
   return (

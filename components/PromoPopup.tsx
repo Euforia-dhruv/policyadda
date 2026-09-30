@@ -13,7 +13,7 @@ const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
 export default function PromoPopup({ copy, locale }: { copy: SiteCopy; locale: Locale }) {
   const [open, setOpen] = useState(false);
   const p = copy.promo;
-  const enquiryUrl = "/#enquiry";
+  const enquiryUrl = "/enquiry";
   const tel = siteConfig.contact.phone.tel;
   const wa = siteConfig.contact.whatsapp;
 
