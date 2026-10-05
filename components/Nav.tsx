@@ -148,6 +148,7 @@ export default function Nav({
             </span>
             <a href="/enquiry" className="nav-link-btn">{copy.nav.renew}</a>
             <a href="/support" aria-current={isActive("/support") ? "page" : undefined}>{copy.nav.support}</a>
+            <a href="/gallery" aria-current={isActive("/gallery") ? "page" : undefined}>{copy.nav.gallery}</a>
             <a href="/partner" className="nav-link-btn">{copy.nav.partner}</a>
             <a href="/about" aria-current={isActive("/about") ? "page" : undefined}>{copy.nav.about}</a>
           </nav>
@@ -203,6 +204,7 @@ export default function Nav({
         </details>
         <a href="/enquiry" className="mobile-link-btn" onClick={() => setOpen(false)}>{copy.nav.renew}</a>
         <a href="/support" onClick={() => setOpen(false)} aria-current={isActive("/support") ? "page" : undefined}>{copy.nav.support}</a>
+        <a href="/gallery" onClick={() => setOpen(false)} aria-current={isActive("/gallery") ? "page" : undefined}>{copy.nav.gallery}</a>
         <a href="/partner" className="mobile-link-btn" onClick={() => setOpen(false)}>{copy.nav.partner}</a>
         <a href="/about" onClick={() => setOpen(false)} aria-current={isActive("/about") ? "page" : undefined}>{copy.nav.about}</a>
         <a href={`tel:${siteConfig.contact.phone.tel}`} className="btn btn-accent mt-2" onClick={() => setOpen(false)}>

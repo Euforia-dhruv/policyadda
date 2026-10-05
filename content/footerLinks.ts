@@ -43,6 +43,7 @@ export const footerColumns: FooterColumn[] = [
     title: { en: "Company", hi: "कंपनी" },
     links: [
       L("About Us", "हमारे बारे में", "/about"),
+      L("Gallery", "गैलरी", "/gallery"),
       L("Get Support", "सहायता लें", "/support"),
       L("File a Claim", "दावा दायर करें", "/claim"),
       L("Renew Your Policy", "पॉलिसी नवीनीकृत करें", "/enquiry"),
