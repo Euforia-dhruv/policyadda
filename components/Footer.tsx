@@ -92,6 +92,16 @@ export default function Footer({
 
         <div className="footer-bottom">
           <span>{footerCopyright()}. {copy.footer.rights}</span>
+          <a
+            href="https://ventriee.in"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2"
+            aria-label="Designed and developed by Ventriee"
+          >
+            Designed &amp; Developed by
+            <img src="/ventriee-emblem.png" alt="VENTRIEE" width={18} height={18} className="inline-block h-[18px] w-[18px] object-contain" />
+          </a>
         </div>
       </div>
     </footer>
